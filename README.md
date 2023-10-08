@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5d10895b-1156-44e7-902b-6eb317642eb5/deploy-status)](https://app.netlify.com/sites/solidsnk86/deploys)
 
-- `este es mi portafolio [Esta en dasarrollo...]``
+- `este es mi portafolio [Esta en dasarrollo...]`
 
 ### Herramientas que he usado:
 
