@@ -1,6 +1,6 @@
-## solidsnk86 /portfolio
+![Static Badge](https://img.shields.io/badge/solidSnk86-Portfolio-green)
 
-- mi portfolio personal
+- este es mi portafolio [Esta en dasarrollo...]
 
 ### Herramientas que he usado:
 
