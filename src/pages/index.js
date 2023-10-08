@@ -31,6 +31,7 @@ export default function Home() {
 				<meta property='og:type' content='website' />
 				<meta property='twitter:card' content='summary_large_image' />
 				<link rel='icon' href='/favicon.svg' />
+				<meta name="theme-color" content="#FDBA8C" />
 			</Head>
 
 			<MT />
