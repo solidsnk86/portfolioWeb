@@ -4,7 +4,6 @@ const nextConfig = {
 	pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 	experimental: {
 		esmExternals: false,
-		mdxRs: true
 	}
 }
 
