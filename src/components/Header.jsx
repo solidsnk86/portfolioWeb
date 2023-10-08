@@ -4,8 +4,6 @@ import { GithubStats } from '@/components/GithubStats'
 
 export function Header() {
 	const navigation = [
-		{ name: 'Proyectos', href: '/projects/' },
-		{ name: 'Contacto', href: '/contact/' },
 		{ name: 'Blog', href: 'https://neotecs.netlify.app' }
 	]
 
