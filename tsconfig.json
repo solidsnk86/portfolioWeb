@@ -30,5 +30,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/contact/page.js"  ]
+, "src/components/contact/page.tsx"  ]
 }
