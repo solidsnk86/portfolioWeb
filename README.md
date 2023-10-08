@@ -16,7 +16,7 @@
 
 [![CSS](https://img.shields.io/badge/CSS-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
---------------------------|
+
 | solidsnk86 / portfolio  |
 --------------------------|
 
