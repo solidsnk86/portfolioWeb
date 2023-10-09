@@ -1,13 +1,10 @@
 import { Inter, Inter_Tight as InterTight } from 'next/font/google'
 import Head from 'next/head'
-
 import { Background } from '@/components/Background'
 import { LF } from '@/sections/languages'
 import { Header } from '@/components/Header'
-import { MT } from '@/components/MeteorLanguages'
+import Particles from '@/components/particles'
 import { AboutMe } from '../components/AboutMe'
-import { MenuIcon } from 'lucide-react'
-
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['greek'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -32,18 +29,21 @@ export default function Home() {
 				<meta property='og:type' content='website' />
 				<meta property='twitter:card' content='summary_large_image' />
 				<link rel='icon' href='/favicon.svg' />
-				<meta name="theme-color" content="#FDBA8C" />
+				<meta name='theme-color' content='#FDBA8C' />
 			</Head>
 
-			<MT />
 			<Background />
 
 			<header id='header' className='relative w-full mb-10 overflow-hidden z-[99999]'>
 				<Header />
 			</header>
 
-			<main className={`${inter.className} max-w-5xl m-auto mt-36 pb-20 px-4`}>
-				<AboutMe />
+			<main className={`${inter.className} max-w-5xl m-auto mt-14 pb-20 px-4`}>
+			<Particles
+				className="absolute inset-0 -z-10 animate-fade-in"
+				quantity={100}
+			/>
+					<AboutMe />
 				<LF />
 			</main>
 		</>
