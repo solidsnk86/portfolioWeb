@@ -16,6 +16,8 @@ export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: [
 export default function Home() {
 	const title = 'Portfolio Calcagni Gabriel'
 	const description = '¡Ey, chequea por mi portfolio!'
+	const favicon = 'https://github.com/solidsnk86/portfolioWeb/blob/master/public/android-chrome-512x512.png?raw=true'
+	const ogImg = 'https://github.com/solidsnk86/neotecs.tech/blob/master/img/Image-og.png?raw=true'
 
 	const HomeTitle = ({ Tag = 'h2',  children }) => {
 		return (
@@ -26,13 +28,12 @@ export default function Home() {
 	}
 
 	const TwitterFollow = () => {
-		const tit = 'solidsnk86 Portfolio'
-		const encodeUri = encodeURIComponent(window.location.href);
-		window.open(`https://twitter.com/share?url=${encodeUri}&title=${tit}`)
+		const tit = 'Portfolio solidsnk86'
+		const encodeUri = encodeURIComponent(window.location.href)
+		const urlImg = encodeURIComponent(ogImg)
+		window.open(`https://twitter.com/share?url=${encodeUri}&title=${tit}&image=${urlImg}`)
 	}
 	
-	const favicon = 'https://github.com/solidsnk86/portfolioWeb/blob/master/public/android-chrome-512x512.png?raw=true'
-	const ogImg = 'https://github.com/solidsnk86/neotecs.tech/blob/master/img/Image-og.png?raw=true'
 	return (
 		<>
 			<Head>
