@@ -86,7 +86,7 @@ export default function Home() {
 							title: 'NeoTecs',
 							repoName: 'NeoTecs',
 							repo: 'https://raw.githubusercontent.com/solidsnk86/NeoTecs/d885993b4b1b43703dfbe29aa0daf07f97db04fb/public/images/favicon.svg',
-							description: 'Web con documentación de configuración Wi-Fi.',
+							description: 'Blog de documentado de configuración Wi-Fi.',
 							logo: 'icon.png'
 						}
 					].map((item) => (
