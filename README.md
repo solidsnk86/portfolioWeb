@@ -3,7 +3,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5d10895b-1156-44e7-902b-6eb317642eb5/deploy-status)](https://app.netlify.com/sites/solidsnk86/deploys)
 
-- `Este es mi portafolio web`
+- `Este es mi portafolio web en React con NextJs 13`
 
 * Herramientas que he usado:
 
