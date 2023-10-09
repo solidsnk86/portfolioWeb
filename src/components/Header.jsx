@@ -5,7 +5,7 @@ import { GithubStats } from '@/components/GithubStats'
 export function Header() {
 	const navigation = [
 		{ name: 'Blog', href: 'https://neotecs.netlify.app' },
-		{ name: 'Contacto', href: 'pages/contact/' }
+		{ name: 'Contacto', href: 'https://www.linkedin.com/in/gabriel-calcagni/' }
 	]
 
 	return (
@@ -16,7 +16,7 @@ export function Header() {
 						<ul className='flex'>
 							{navigation.map((item) => (
 								<li className='font-semibold space-x-4 text-orange-300 mr-5 cursor-pointer hover:text-zinc-300 transition-all'>
-									<Link key={item.href} href={item.href}>
+									<Link key={item.href} href={item.href} target='_blank'>
 										{item.name}
 									</Link>
 								</li>
