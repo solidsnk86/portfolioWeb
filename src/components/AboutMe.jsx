@@ -4,19 +4,23 @@ import { Logo } from './Logo'
 
 export function AboutMe() {
 	const CardTitle = ({ Tag = 'p', children }) => {
-		return <Tag className='text-sm sm:text-xs md:text-xs xl:text-sm from-zinc-300 text-center my-20 italic font-thin'>{children}</Tag>
+		return (
+			<Tag className='text-sm sm:text-xs md:text-xs xl:text-sm from-zinc-300 text-center my-20 italic font-thin'>
+				{children}
+			</Tag>
+		)
 	}
 
 	return (
 		<>
 			<nav className='text-white flex list-none relative justify-center m-auto'>
-				<div className='img-container block'>
-				<div className='mt-12'>
-							<div className='relative block mt-6'>
-								<Logo className='w-[500px]' />
-							</div>
+				<div className='block mt-28 xl:mt-24'>
+					<div>
+						<div className='relative flex'>
+							<Logo className='w-[500px]' />
 						</div>
-					<aside className='flex-col relative top-20 mx-3'>
+					</div>
+					<aside className='flex-col relative top-10 mx-3'>
 						<CardTitle>
 							Hola mi nombre es Gabriel, soy desarrollador Front End con 1 año de experiencia, uso
 							tecnolgías como React y NextJS, trabajo en mi proyecto
