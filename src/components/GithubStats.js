@@ -48,17 +48,17 @@ export const GithubStats = ({ repoName }) => {
 	}, [repoName])
 
 	return (
-		<div className='inline-flex items-center space-x-2'>
+		<div className='inline-flex items-center space-x-1'>
 			<a
 				className='text-xs hover:opacity-50 hover:no-underline'
 				href={`https://github.com/solidsnk86/${repoName}/`}
 				rel='noopener'
 				target='_blank'
 			>
-				<GithubIcon className='inline-block' height='20' />
+				<GithubIcon className='inline-block text-zinc-300' height='20' />
 			</a>
 			<a
-				className='text-xs hover:no-underline'
+				className='text-xs text-zinc-300 hover:no-underline'
 				href={`https://github.com/solidsnk86/${repoName}/`}
 				rel='noopener'
 				target='_blank'

@@ -5,7 +5,8 @@ import { GithubStats } from '@/components/GithubStats'
 export function Header() {
 	const navigation = [
 		{ name: 'Contacto', href: 'https://www.linkedin.com/in/gabriel-calcagni/' },
-		{ name: 'Blog', href: 'https://neotecs.netlify.app' }
+		{ name: 'Blog', href: 'https://neotecs.netlify.app' },
+		{ name: 'Proyectos', href: '#proyectos' }
 		
 	]
 
@@ -22,19 +23,20 @@ export function Header() {
 									</Link>
 								</li>
 							))}
-
-							<li>
+						</ul>
+					</div>
+				</div>
+				<ul>
+				<li className='absolute right-5 top-3'>
 								{[
 									{
-										repoName: 'NeoTecs'
+										repoName: 'portfolioWeb'
 									}
 								].map((item) => (
 									<GithubStats repoName={item.repoName} />
 								))}
 							</li>
-						</ul>
-					</div>
-				</div>
+				</ul>
 			</div>
 		</>
 	)
