@@ -29,11 +29,11 @@ body {
 	}
 }
 
-.text-header-shadow:hover {
-	filter: drop-shadow(0 0 10px tomato);
-}
-
 #header {
 	animation-timeline: scroll();
 	animation-range: 0 150px;
+}
+
+.text-header-shadow:hover {
+	filter: drop-shadow(0 0 10px tomato);
 }
