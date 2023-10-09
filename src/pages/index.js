@@ -66,7 +66,7 @@ export default function Home() {
 							repoName: 'GerArt',
 							repo: 'https://github.com/solidsnk86/GerArt/blob/master/assets/img/android-chrome-512x512.png?raw=true',
 							description: 'Proyecto portfolio web de arte y dibujo.',
-							logo: 'swiper.svg'
+							logo: 'icon.svg'
 						},
 						{
 							url: 'https://neotecs.netlify.app/',
