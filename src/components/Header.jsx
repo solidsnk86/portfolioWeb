@@ -4,8 +4,9 @@ import { GithubStats } from '@/components/GithubStats'
 
 export function Header() {
 	const navigation = [
-		{ name: 'Blog', href: 'https://neotecs.netlify.app' },
-		{ name: 'Contacto', href: 'https://www.linkedin.com/in/gabriel-calcagni/' }
+		{ name: 'Contacto', href: 'https://www.linkedin.com/in/gabriel-calcagni/' },
+		{ name: 'Blog', href: 'https://neotecs.netlify.app' }
+		
 	]
 
 	return (
