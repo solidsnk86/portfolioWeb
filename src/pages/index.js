@@ -16,6 +16,10 @@ export default function Home() {
 	const title = 'Portfolio Calcagni Gabriel'
 	const description = '¡Ey, chequea por mi portfolio!'
 
+	const HomeTitle = ({ Tag = 'h2', children }) => {
+		return <Tag className='text-5xl font-semibold text-blue-200 flex justify-center m-auto my-6'>{children}</Tag>
+	}
+
 	return (
 		<>
 			<Head>
@@ -45,6 +49,7 @@ export default function Home() {
 				<Particles className='absolute inset-0 -z-10 animate-fade-in' quantity={100} />
 				<AboutMe />
 				<LF />
+				<HomeTitle>Mis Proyectos</HomeTitle>
 				<div className='sm:flex items-stretch max-w-3xl mx-auto space-y-4 text-left sm:space-y-0 sm:space-x-8 sm:text-center'>
 					{[
 						{
