@@ -17,9 +17,9 @@ export default function Home() {
 	const title = 'Portfolio Calcagni Gabriel'
 	const description = '¡Ey, chequea por mi portfolio!'
 
-	const HomeTitle = ({ Tag = 'h2', children }) => {
+	const HomeTitle = ({ Tag = 'h2',  children, id }) => {
 		return (
-			<Tag className='text-5xl font-semibold text-blue-200 flex justify-center m-auto my-6'>
+			<Tag id='proyectos' className='text-5xl font-semibold text-blue-200 flex justify-center m-auto my-6'>
 				{children}
 			</Tag>
 		)
