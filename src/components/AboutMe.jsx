@@ -12,7 +12,7 @@ export function AboutMe() {
 			<nav className='text-white flex list-none relative justify-center m-auto'>
 				<div className='img-container block'>
 				<div className='mt-12'>
-							<div className='relative block'>
+							<div className='relative block mt-6'>
 								<Logo className='w-[500px]' />
 							</div>
 						</div>
