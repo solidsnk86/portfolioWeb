@@ -6,7 +6,7 @@ import { Card } from '@/components/Card'
 const socials = [
 	{
 		icon: <Twitter size={20} />,
-		href: 'https://twitter.com/chronark_',
+		href: 'https://twitter.com/CalcagniGabriel',
 		label: 'Twitter',
 		handle: '@CalcagniGabriel'
 	},
