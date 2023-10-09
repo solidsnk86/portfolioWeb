@@ -8,6 +8,7 @@ import { AboutMe } from '@/components/AboutMe'
 import { GithubStats } from '@/components/GithubStats'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
+import { TwitterIcon } from '@/components/TwitterIcon'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['greek'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -17,7 +18,16 @@ export default function Home() {
 	const description = '¡Ey, chequea por mi portfolio!'
 
 	const HomeTitle = ({ Tag = 'h2', children }) => {
-		return <Tag className='text-5xl font-semibold text-blue-200 flex justify-center m-auto my-6'>{children}</Tag>
+		return (
+			<Tag className='text-5xl font-semibold text-blue-200 flex justify-center m-auto my-6'>
+				{children}
+			</Tag>
+		)
+	}
+
+	const compartirTwitter = () => {
+		const encodeUri = encodeURIComponent(window.location.href);
+		window.open(`https://twitter.com/share?url=${encodeUri}`);
 	}
 
 	return (
@@ -100,6 +110,12 @@ export default function Home() {
 				</div>
 			</main>
 			<Footer />
+			<div className='flex justify-center m-auto'>
+				<span className='flex mx-1 my-3 text-[#00000] text-sm bg-[#1D9BF0] py-2 px-3 rounded cursor-pointer hover:opacity-[.6] transition-all' onClick={compartirTwitter}>
+					<TwitterIcon className='w-4 h-4 mx-1 mt-1' />
+					¡Compartir en Twitter!
+				</span>
+			</div>
 		</>
 	)
 }
