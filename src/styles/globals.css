@@ -10,14 +10,23 @@ body {
 
 @keyframes add-shadow {
 	to {
-		box-shadow: 0 5px 5px -3px rgba(255, 255, 255,.25);
-		background: rgba(0, 0, 0, .3);
+		box-shadow: 0 5px 5px -3px rgba(255, 255, 255, 0.25);
+		background: rgba(0, 0, 0, 0.3);
 	}
 }
 
 #header {
 	backdrop-filter: blur(10px);
 	animation: add-shadow linear both;
+}
+
+@media (max-width: 762px) {
+	#header {
+		position: sticky;
+		top: 0;
+		backdrop-filter: blur(10px);
+		animation: add-shadow linear both;
+	}
 }
 
 .text-header-shadow:hover {
@@ -33,81 +42,80 @@ body {
 #  NAVBAR SECTION   |
 ===================*/
 .navbar {
-    grid-area: navbar;
-    margin: 5px;
+	grid-area: navbar;
+	margin: 5px;
 }
 
 .navbar .img-container {
-    margin-top: 60px;
+	margin-top: 60px;
 }
 
 .navbar .img-container .avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid #adadad;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 5px solid #adadad;
 }
 
 @keyframes rubberBand {
-    from {
-      -webkit-transform: scale3d(1, 1, 1);
-      transform: scale3d(1, 1, 1);
-    }
-  
-    30% {
-      -webkit-transform: scale3d(1.25, 0.75, 1);
-      transform: scale3d(1.25, 0.75, 1);
-    }
-  
-    40% {
-      -webkit-transform: scale3d(0.75, 1.25, 1);
-      transform: scale3d(0.75, 1.25, 1);
-    }
-  
-    50% {
-      -webkit-transform: scale3d(1.15, 0.85, 1);
-      transform: scale3d(1.15, 0.85, 1);
-    }
-  
-    65% {
-      -webkit-transform: scale3d(0.95, 1.05, 1);
-      transform: scale3d(0.95, 1.05, 1);
-    }
-  
-    75% {
-      -webkit-transform: scale3d(1.05, 0.95, 1);
-      transform: scale3d(1.05, 0.95, 1);
-    }
-  
-    to {
-      -webkit-transform: scale3d(1, 1, 1);
-      transform: scale3d(1, 1, 1);
-    }
+	from {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+
+	30% {
+		-webkit-transform: scale3d(1.25, 0.75, 1);
+		transform: scale3d(1.25, 0.75, 1);
+	}
+
+	40% {
+		-webkit-transform: scale3d(0.75, 1.25, 1);
+		transform: scale3d(0.75, 1.25, 1);
+	}
+
+	50% {
+		-webkit-transform: scale3d(1.15, 0.85, 1);
+		transform: scale3d(1.15, 0.85, 1);
+	}
+
+	65% {
+		-webkit-transform: scale3d(0.95, 1.05, 1);
+		transform: scale3d(0.95, 1.05, 1);
+	}
+
+	75% {
+		-webkit-transform: scale3d(1.05, 0.95, 1);
+		transform: scale3d(1.05, 0.95, 1);
+	}
+
+	to {
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
 }
 
 .navbar .portfolio-datos {
-    text-align: center;
+	text-align: center;
 }
 
 .navbar .portfolio-datos h4 {
-    margin-top: 10px;
+	margin-top: 10px;
 }
 
 .navbar .portfolio-datos .card-info {
-    display: inline-flex;
+	display: inline-flex;
 }
 
 .navbar .portfolio-datos .card-info i {
-    margin: 10px;
-    cursor: pointer;
+	margin: 10px;
+	cursor: pointer;
 }
 
 .navbar .card-info-contact {
-    display: none;
+	display: none;
 }
 
 .navbar .portfolio-datos .card-info i:hover {
-    text-shadow: 0 0 15px #888, 0 0 35px #999;
-    transform: scale(1.1);
+	text-shadow: 0 0 15px #888, 0 0 35px #999;
+	transform: scale(1.1);
 }
-
