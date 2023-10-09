@@ -21,7 +21,7 @@ export default function Home() {
 
 	const HomeTitle = ({ Tag = 'h2',  children }) => {
 		return (
-			<Tag id='proyectos' className={`${inter.className} text-4xl xl:text-6xl md:text-5xl font-black text-transparent [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:white] flex justify-center m-auto my-16`}>
+			<Tag id='proyectos' className='text-4xl xl:text-6xl md:text-5xl font-black text-transparent [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:white] flex justify-center m-auto my-16'>
 				{children}
 			</Tag>
 		)
