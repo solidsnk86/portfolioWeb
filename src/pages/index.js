@@ -25,21 +25,21 @@ export default function Home() {
 		)
 	}
 
-	const compartirTwitter = () => {
+	const TwitterFollow = () => {
 		const tit = 'solidsnk86 Portfolio'
 		const encodeUri = encodeURIComponent(window.location.href);
 		window.open(`https://twitter.com/share?url=${encodeUri}&title=${tit}`)
 	}
 	
 	const favicon = 'https://github.com/solidsnk86/portfolioWeb/blob/master/public/android-chrome-512x512.png?raw=true'
-
+	const ogImg = 'https://github.com/solidsnk86/neotecs.tech/blob/master/img/Image-og.png?raw=true'
 	return (
 		<>
 			<Head>
 				<title>Calcagni Gabriel</title>
 				<meta name='description' content={description} />
 				<meta property='og:image' />
-				<meta property='twitter:image' />
+				<meta property='twitter:image' content={ogImg} />
 				<meta property='og:title' content={title} />
 				<meta property='twitter:title' content={title} />
 				<meta property='og:description' content={description} />
@@ -114,7 +114,7 @@ export default function Home() {
 			</main>
 			<Footer />
 			<div className='flex justify-center m-auto'>
-				<span className='flex mx-1 my-3 text-[#00000] text-sm bg-[#1D9BF0] py-2 px-3 rounded cursor-pointer hover:opacity-[.6] transition-all' onClick={compartirTwitter}>
+				<span className='flex mx-1 my-3 text-[#00000] text-sm bg-[#1D9BF0] py-2 px-3 rounded cursor-pointer hover:opacity-[.6] transition-all' onClick={TwitterFollow}>
 					<TwitterIcon className='w-4 h-4 mx-1 mt-[2px]' />
 					¡Compartir en Twitter!
 				</span>
