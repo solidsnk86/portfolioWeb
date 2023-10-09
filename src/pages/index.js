@@ -26,11 +26,12 @@ export default function Home() {
 	}
 
 	const compartirTwitter = () => {
-		const title = 'solidsnk86 Portfolio'
+		const tit = 'solidsnk86 Portfolio'
 		const encodeUri = encodeURIComponent(window.location.href);
-		window.open(`https://twitter.com/share?url=${encodeUri}&title=${title}`)
+		window.open(`https://twitter.com/share?url=${encodeUri}&title=${tit}`)
 	}
-	  
+	
+	const favicon = 'https://github.com/solidsnk86/portfolioWeb/blob/master/public/android-chrome-512x512.png?raw=true'
 
 	return (
 		<>
@@ -47,7 +48,7 @@ export default function Home() {
 				<meta property='twitter:url' />
 				<meta property='og:type' content='website' />
 				<meta property='twitter:card' content='summary_large_image' />
-				<link rel='icon' href='/favicon.svg' />
+				<link rel='icon' href={favicon} />
 				<meta name='theme-color' content='#FDBA8C' />
 			</Head>
 
