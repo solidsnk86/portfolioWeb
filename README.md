@@ -1,10 +1,11 @@
-![Static Badge](https://img.shields.io/badge/solidSnk86-Portfolio-green)
+| solidsnk86 / portfolio  |
+--------------------------|
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5d10895b-1156-44e7-902b-6eb317642eb5/deploy-status)](https://app.netlify.com/sites/solidsnk86/deploys)
 
 - `este es mi portafolio [Esta en dasarrollo...]`
 
-### Herramientas que he usado:
+### Herramientas que he usado: ###
 
 [![Next.js](https://img.shields.io/badge/Next.js-%23000000.svg?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 
@@ -16,7 +17,4 @@
 
 [![CSS](https://img.shields.io/badge/CSS-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-
-| solidsnk86 / portfolio  |
---------------------------|
 
