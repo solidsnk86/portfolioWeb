@@ -10,23 +10,23 @@ import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
 import { TwitterIcon } from '@/components/TwitterIcon'
 
-export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['greek'] })
+export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
 
 export default function Home() {
 	const title = 'Portfolio Calcagni Gabriel'
 	const description = '¡Ey, chequea por mi portfolio!'
 
-	const HomeTitle = ({ Tag = 'h2',  children, id }) => {
+	const HomeTitle = ({ Tag = 'h2',  children }) => {
 		return (
-			<Tag id='proyectos' className='text-5xl font-semibold text-blue-200 flex justify-center m-auto my-6'>
+			<Tag id='proyectos' className={`${inter.className} text-5xl font-black text-transparent [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:white] flex justify-center m-auto my-16`}>
 				{children}
 			</Tag>
 		)
 	}
 
 	const compartirTwitter = () => {
-		const title = 'solidSnk86 Portfoio'
+		const title = 'solidsnk86 Portfolio'
 		const encodeUri = encodeURIComponent(window.location.href);
 		window.open(`https://twitter.com/share?url=${encodeUri}&title=${title}`)
 	}
@@ -85,7 +85,7 @@ export default function Home() {
 							title: 'NeoTecs',
 							repoName: 'NeoTecs',
 							repo: 'https://raw.githubusercontent.com/solidsnk86/NeoTecs/d885993b4b1b43703dfbe29aa0daf07f97db04fb/public/images/favicon.svg',
-							description: 'Blog de documantacion configuración Wi-Fi.',
+							description: 'Blog de documentado de configuración Wi-Fi.',
 							logo: 'icon.png'
 						}
 					].map((item) => (
