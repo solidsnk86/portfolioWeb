@@ -11,7 +11,7 @@ export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: [
 
 export default function Home() {
 	const title = 'Portfolio Calcagni Gabriel'
-	const description = '¡Echa un vistazo a mi portfolio!'
+	const description = '¡Ey, pásate por mi portfolio!'
 
 	return (
 		<>
@@ -39,10 +39,10 @@ export default function Home() {
 			</header>
 
 			<main className={`${inter.className} max-w-5xl m-auto mt-14 pb-20 px-4`}>
-			<Particles
+				<Particles
 				className="absolute inset-0 -z-10 animate-fade-in"
 				quantity={100}
-			/>
+				/>
 					<AboutMe />
 				<LF />
 			</main>
