@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import { Logo } from './Logo'
-import { inter, interTight } from '../pages'
 
 export function AboutMe() {
 	const CardTitle = ({ Tag = 'p', children }) => {
