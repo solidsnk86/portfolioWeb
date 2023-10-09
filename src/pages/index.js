@@ -5,6 +5,7 @@ import { LF } from '@/sections/languages'
 import { Header } from '@/components/Header'
 import Particles from '@/components/particles'
 import { AboutMe } from '../components/AboutMe'
+import { Footer } from '@/components/Footer'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['greek'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -46,6 +47,7 @@ export default function Home() {
 					<AboutMe />
 				<LF />
 			</main>
+			<Footer />
 		</>
 	)
 }
