@@ -6,6 +6,7 @@ import { LF } from '@/sections/languages'
 import { Header } from '@/components/Header'
 import { MT } from '@/components/MeteorLanguages'
 import { AboutMe } from '../components/AboutMe'
+import { MenuIcon } from 'lucide-react'
 
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['greek'] })
