@@ -8,7 +8,7 @@ import { AboutMe } from '@/components/AboutMe'
 import { GithubStats } from '@/components/GithubStats'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
-import { TwitterIcon } from '@/components/TwitterIcon'
+
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -26,13 +26,6 @@ export default function Home() {
 			</Tag>
 		)
 	}
-
-	const TwitterFollow = () => {
-		const tit = 'Portfolio solidsnk86'
-		const encodeUri = encodeURIComponent(window.location.href)
-		const urlImg = encodeURIComponent(ogImg)
-		window.open(`https://twitter.com/share?url=${encodeUri}&title=${tit}&image=${urlImg}`)
-	}
 	
 	return (
 		<>
@@ -45,7 +38,7 @@ export default function Home() {
 				<meta property='twitter:title' content={title} />
 				<meta property='og:description' content={description} />
 				<meta property='twitter:description' content={description} />
-				<meta property='og:url' />
+				<meta property='og:url' content={ogImg} />
 				<meta property='twitter:url' />
 				<meta property='og:type' content='website' />
 				<meta property='twitter:card' content='summary_large_image' />
@@ -114,12 +107,6 @@ export default function Home() {
 				</div>
 			</main>
 			<Footer />
-			<div className='flex justify-center m-auto'>
-				<span className='flex mx-1 my-3 text-[#00000] text-sm bg-[#1D9BF0] py-2 px-3 rounded cursor-pointer hover:opacity-[.6] transition-all' onClick={TwitterFollow}>
-					<TwitterIcon className='w-4 h-4 mx-1 mt-[2px]' />
-					¡Compartir en Twitter!
-				</span>
-			</div>
 		</>
 	)
 }
