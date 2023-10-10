@@ -23,7 +23,7 @@ export default function Home() {
 		return (
 			<Tag
 				id='proyectos'
-				className='flex justify-center m-auto my-16 text-sky-200 text-4xl xl:text-6xl md:text-5xl font-bold '
+				className='flex justify-center m-auto my-16 text-sky-100 text-4xl xl:text-6xl md:text-5xl font-bold '
 			>
 				{children}
 			</Tag>
