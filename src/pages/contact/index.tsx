@@ -11,20 +11,20 @@ const socials = [
 	{
 		icon: <TwitterIcon  />,
 		href: 'https://twitter.com/CalcagniGabriel',
-		label: '@CalcagniGabriel',
-		handle: 'Twitter'
+		label: 'Twitter',
+		handle: '@CalcagniGabriel'
 	},
 	{
 		icon: <Mail size={24} />,
 		href: 'mailto:calcagni.gabriel86@gmailcom',
-		label: 'calcagni.gabriel86@gmail.com',
-		handle: 'Mail'
+		label: 'Mail',
+		handle: 'calcagni.gabriel86@gmail.com'
 	},
 	{
 		icon: <Github size={24} />,
 		href: 'https://github.com/solidsnk86',
-		label: 'solidsnk86',
-		handle: 'Github'
+		label: 'Github',
+		handle: 'solidsnk86'
 	}
 ]
 
