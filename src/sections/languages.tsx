@@ -98,8 +98,6 @@ const Lang = [
 	}
 ]
 
-const srcVideo = 'https://resend.com/static/landing-page/3d-react.mp4'
-
 const ReviewCard = ({ logo, name }: { logo: string | ReactNode; name: string }) => {
 	return (
 		<div
@@ -121,9 +119,6 @@ export const LF = () => {
 			<h2 className='xl:text-6xl md:text-4xl text-2xl font-bold text-center text-blue-100'>
 				Frames y Lenguajes que uso con
 			</h2>
-			<video width={200} height={100}>
-				<source src={srcVideo} />
-			</video>
 			<p className='max-w-lg text-xl text-sky-200 text-center [†ext-wrap:balance] mt-4'></p>
 			<div className='relative flex flex-col items-center justify-center w-full h-full gap-4 py-20 overflow-hidden rounded-lg bg-background'>
 				<Marquee pauseOnHover className='[--duration:40s]'>
