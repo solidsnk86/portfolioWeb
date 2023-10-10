@@ -1,5 +1,6 @@
 import { Inter, Inter_Tight as InterTight } from 'next/font/google'
 import Head from 'next/head'
+import { renderToString } from 'react-dom/server'
 import { Background } from '@/components/Background'
 import { LF } from '@/sections/languages'
 import { Header } from '@/components/Header'
@@ -8,6 +9,7 @@ import { AboutMe } from '@/components/AboutMe'
 import { GithubStats } from '@/components/GithubStats'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
+import { FaviconIcon } from '@/components/FaviconIcon'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -15,8 +17,6 @@ export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: [
 export default function Home() {
 	const title = 'Portfolio Calcagni Gabriel'
 	const description = '¡Ey, chequea por mi portfolio!'
-	const favicon =
-		'https://github.com/solidsnk86/portfolioWeb/blob/master/public/android-chrome-512x512.png?raw=true'
 	const ogImg = 'https://github.com/solidsnk86/neotecs.tech/blob/master/img/Image-og.png?raw=true'
 
 	const HomeTitle = ({ Tag = 'h2', children }) => {
@@ -29,6 +29,8 @@ export default function Home() {
 			</Tag>
 		)
 	}
+
+	const favicon2String = renderToString(<FaviconIcon />)
 
 	return (
 		<>
@@ -45,7 +47,14 @@ export default function Home() {
 				<meta property='twitter:url' />
 				<meta property='og:type' content='website' />
 				<meta property='twitter:card' content='summary_large_image' />
-				<link rel='icon' href={favicon} />
+				<link
+					rel='shortcut icon'
+					href={`data:image/svg+xml,${encodeURIComponent(favicon2String)}`}
+				/>
+				<link
+					rel='apple-touch-icon'
+					href={`data:image/svg+xml,${encodeURIComponent(favicon2String)}`}
+				/>
 				<meta name='theme-color' content='#FDBA8C' />
 			</Head>
 
