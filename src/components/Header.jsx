@@ -1,13 +1,11 @@
 import Link from 'next/link'
 import { GithubStats } from '@/components/GithubStats'
 
-
 export function Header() {
 	const navigation = [
 		{ name: 'Contacto', href: 'https://www.linkedin.com/in/gabriel-calcagni/' },
 		{ name: 'Blog', href: 'https://neotecs.netlify.app' },
 		{ name: 'Proyectos', href: '#proyectos' }
-		
 	]
 
 	return (
@@ -27,15 +25,15 @@ export function Header() {
 					</div>
 				</div>
 				<ul>
-				<li className='absolute right-5 top-3'>
-								{[
-									{
-										repoName: 'portfolioWeb'
-									}
-								].map((item) => (
-									<GithubStats repoName={item.repoName} />
-								))}
-							</li>
+					<li className='absolute right-5 top-3'>
+						{[
+							{
+								repoName: 'portfolioWeb'
+							}
+						].map((item) => (
+							<GithubStats repoName={item.repoName} />
+						))}
+					</li>
 				</ul>
 			</div>
 		</>

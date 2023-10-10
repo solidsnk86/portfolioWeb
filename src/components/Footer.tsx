@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { GithubIcon } from 'lucide-react'
-import { TwitterIcon } from '@/components/TwitterIcon'
 
 export const Footer = () => {
 
@@ -26,7 +25,6 @@ export const Footer = () => {
 					</Link>
 				))
 			}
-			
 		</div>
 	)
 }

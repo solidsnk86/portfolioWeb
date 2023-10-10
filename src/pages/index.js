@@ -9,24 +9,27 @@ import { GithubStats } from '@/components/GithubStats'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
 
-
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
 
 export default function Home() {
 	const title = 'Portfolio Calcagni Gabriel'
 	const description = '¡Ey, chequea por mi portfolio!'
-	const favicon = 'https://github.com/solidsnk86/portfolioWeb/blob/master/public/android-chrome-512x512.png?raw=true'
+	const favicon =
+		'https://github.com/solidsnk86/portfolioWeb/blob/master/public/android-chrome-512x512.png?raw=true'
 	const ogImg = 'https://github.com/solidsnk86/neotecs.tech/blob/master/img/Image-og.png?raw=true'
 
-	const HomeTitle = ({ Tag = 'h2',  children }) => {
+	const HomeTitle = ({ Tag = 'h2', children }) => {
 		return (
-			<Tag id='proyectos' className='text-4xl xl:text-6xl md:text-5xl font-black text-transparent [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:white] flex justify-center m-auto my-16'>
+			<Tag
+				id='proyectos'
+				className='text-4xl xl:text-6xl md:text-5xl font-black text-transparent [-webkit-text-stroke-width:1px] [-webkit-text-stroke-color:white] flex justify-center m-auto my-16'
+			>
 				{children}
 			</Tag>
 		)
 	}
-	
+
 	return (
 		<>
 			<Head>
@@ -82,7 +85,7 @@ export default function Home() {
 							repo: 'https://github.com/solidsnk86/GerArt/blob/master/assets/img/android-chrome-512x512.png?raw=true',
 							description: 'Portfolio web de arte y dibujo.',
 							logo: 'icon.svg'
-						},
+						}
 					].map((item) => (
 						<div
 							className='flex flex-col text-zinc-300 items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg sm:hover:shadow-2xl hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 hover:scale-[1.05]'
