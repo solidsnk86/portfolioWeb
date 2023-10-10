@@ -38,7 +38,7 @@ export default function Example() {
 			<ArrowLeft  className='flex relative left-6 top-6 cursor-pointer text-zinc-300 hover:opacity-[.8]' onClick={handleButtonBack} />
 			<Background />
 			<div className='container flex items-center justify-center min-h-screen px-4 mx-auto'>
-				<div className='grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16'>
+				<div className='grid w-full grid-cols-1 gap-8 mx-auto mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>
 					{socials.map((s) => (
 						<Card key={s.label}>
 							<Link
