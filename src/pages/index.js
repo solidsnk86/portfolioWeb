@@ -84,7 +84,7 @@ export default function Home() {
 							title: 'NeoTecs',
 							repoName: 'NeoTecs',
 							repo: 'https://raw.githubusercontent.com/solidsnk86/NeoTecs/d885993b4b1b43703dfbe29aa0daf07f97db04fb/public/images/favicon.svg',
-							description: 'Documentación web de configuración Wi-Fi.',
+							description: 'Documentación web de configuración Wi-Fi',
 							logo: 'icon.png'
 						},
 						{
@@ -92,7 +92,7 @@ export default function Home() {
 							title: 'Ger Art',
 							repoName: 'GerArt',
 							repo: 'https://github.com/solidsnk86/GerArt/blob/master/assets/img/android-chrome-512x512.png?raw=true',
-							description: 'Portfolio web de arte y dibujo.',
+							description: 'Portfolio web de arte y dibujo tradicional',
 							logo: 'icon.svg'
 						}
 					].map((item) => (

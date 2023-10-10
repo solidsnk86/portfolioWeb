@@ -1,33 +1,42 @@
-import { Github, Mail, Twitter } from 'lucide-react'
+import { Github, Mail, ArrowLeft, Target } from 'lucide-react'
 import Link from 'next/link'
-import { Header } from '@/components/Header'
+import { renderToString } from 'react-dom/server'
+import { Background } from '@/components/Background'
 import { Card } from '@/components/Card'
+import { TwitterIcon } from '@/components/TwitterIcon'
+
+const twitter2String = renderToString(<TwitterIcon />)
 
 const socials = [
 	{
-		icon: <Twitter size={20} />,
+		icon: <TwitterIcon  />,
 		href: 'https://twitter.com/CalcagniGabriel',
-		label: 'Twitter',
-		handle: '@CalcagniGabriel'
+		label: '@CalcagniGabriel',
+		handle: 'Twitter'
 	},
 	{
-		icon: <Mail size={20} />,
+		icon: <Mail size={24} />,
 		href: 'mailto:calcagni.gabriel86@gmailcom',
-		label: 'Email',
-		handle: 'https://neotecs.netlify.app/'
+		label: 'calcagni.gabriel86@gmail.com',
+		handle: 'Mail'
 	},
 	{
-		icon: <Github size={20} />,
-		href: 'https://github.com/soldisnk86',
-		label: 'Github',
-		handle: 'solidsnk86'
+		icon: <Github size={24} />,
+		href: 'https://github.com/solidsnk86',
+		label: 'solidsnk86',
+		handle: 'Github'
 	}
 ]
+
+const handleButtonBack = () => {
+	window.open('/', '_self')
+}
 
 export default function Example() {
 	return (
 		<div className=' bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
-			<Header />
+			<ArrowLeft  className='flex relative left-6 top-6 cursor-pointer text-zinc-300 hover:opacity-[.8]' onClick={handleButtonBack} />
+			<Background />
 			<div className='container flex items-center justify-center min-h-screen px-4 mx-auto'>
 				<div className='grid w-full grid-cols-1 gap-8 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-16'>
 					{socials.map((s) => (
@@ -43,7 +52,7 @@ export default function Example() {
 								/>
 								<span className='relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange'>
 									{s.icon}
-								</span>{' '}
+								</span>
 								<div className='z-10 flex flex-col items-center'>
 									<span className='text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display'>
 										{s.handle}
