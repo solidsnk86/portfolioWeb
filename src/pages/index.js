@@ -63,7 +63,7 @@ export default function Home() {
 				<Particles className='absolute inset-0 -z-10 animate-fade-in' quantity={133} />
 				<AboutMe />
 				<LF />
-				<HomeTitle>Mis Proyectos</HomeTitle>
+				<HomeTitle>Mis proyectos...</HomeTitle>
 				<div className='sm:flex items-stretch max-w-3xl mx-auto space-y-4 text-left sm:space-y-0 sm:space-x-8 sm:text-center'>
 					{[
 						{
@@ -75,6 +75,14 @@ export default function Home() {
 							logo: 'factura.png'
 						},
 						{
+							url: 'https://neotecs.netlify.app/',
+							title: 'NeoTecs',
+							repoName: 'NeoTecs',
+							repo: 'https://raw.githubusercontent.com/solidsnk86/NeoTecs/d885993b4b1b43703dfbe29aa0daf07f97db04fb/public/images/favicon.svg',
+							description: 'Documentación web de configuración Wi-Fi.',
+							logo: 'icon.png'
+						},
+						{
 							url: 'https://solidsnk86.github.io/GerArt/',
 							title: 'Ger Art',
 							repoName: 'GerArt',
@@ -82,14 +90,6 @@ export default function Home() {
 							description: 'Portfolio web de arte y dibujo.',
 							logo: 'icon.svg'
 						},
-						{
-							url: 'https://neotecs.netlify.app/',
-							title: 'NeoTecs',
-							repoName: 'NeoTecs',
-							repo: 'https://raw.githubusercontent.com/solidsnk86/NeoTecs/d885993b4b1b43703dfbe29aa0daf07f97db04fb/public/images/favicon.svg',
-							description: 'Documentación web de configuración Wi-Fi.',
-							logo: 'icon.png'
-						}
 					].map((item) => (
 						<div
 							className='flex flex-col text-zinc-300 items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg sm:hover:shadow-2xl hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 hover:scale-[1.05]'
