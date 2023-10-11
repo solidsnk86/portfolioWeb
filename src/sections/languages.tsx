@@ -117,7 +117,7 @@ export const LF = () => {
 	return (
 		<section className='flex flex-col flex-wrap items-center justify-center my-48'>
 			<h2 className='xl:text-6xl md:text-4xl text-2xl font-bold text-center text-sky-100'>
-				Frames y Lenguajes que uso con
+				Frames y Lenguajes que uso
 			</h2>
 			<p className='max-w-lg text-xl text-sky-200 text-center [†ext-wrap:balance] mt-4'></p>
 			<div className='relative flex flex-col items-center justify-center w-full h-full gap-4 py-20 overflow-hidden rounded-lg bg-background'>

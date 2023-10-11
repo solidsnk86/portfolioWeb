@@ -1,7 +1,6 @@
 import { Github, Mail, ArrowLeft, Target } from 'lucide-react'
 import Link from 'next/link'
 import { renderToString } from 'react-dom/server'
-import { Background } from '@/components/Background'
 import { Card } from '@/components/Card'
 import { TwitterIcon } from '@/components/TwitterIcon'
 
@@ -9,22 +8,22 @@ const twitter2String = renderToString(<TwitterIcon />)
 
 const socials = [
 	{
-		icon: <TwitterIcon  />,
+		icon: <TwitterIcon />,
 		href: 'https://twitter.com/CalcagniGabriel',
-		label: '@CalcagniGabriel',
-		handle: 'Twitter'
+		label: 'Twitter',
+		handle: '@CalcagniGabriel'
 	},
 	{
 		icon: <Mail size={24} />,
 		href: 'mailto:calcagni.gabriel86@gmailcom',
-		label: 'calcagni.gabriel86@gmail.com',
-		handle: 'Mail'
+		label: 'Mail',
+		handle: 'calcagni.gabriel86@gmail.com'
 	},
 	{
 		icon: <Github size={24} />,
 		href: 'https://github.com/solidsnk86',
-		label: 'solidsnk86',
-		handle: 'Github'
+		label: 'Github',
+		handle: 'solidsnk86'
 	}
 ]
 
@@ -35,10 +34,9 @@ const handleButtonBack = () => {
 export default function Example() {
 	return (
 		<div className=' bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
-			<ArrowLeft  className='flex relative left-6 top-6 cursor-pointer text-zinc-300 hover:opacity-[.8]' onClick={handleButtonBack} />
-			<Background />
-			<div className='container flex items-center justify-center min-h-screen px-4 mx-auto'>
-				<div className='grid w-full grid-cols-1 gap-8 mx-auto mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>
+			<ArrowLeft  className='flex sticky left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]' onClick={handleButtonBack} />
+			<div className='container flex items-center min-h-screen justify-center px-4 mx-auto'>
+				<div className='grid w-full grid-cols-1 gap-8 mx-auto mb-5 mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>
 					{socials.map((s) => (
 						<Card key={s.label}>
 							<Link
@@ -54,7 +52,7 @@ export default function Example() {
 									{s.icon}
 								</span>
 								<div className='z-10 flex flex-col items-center'>
-									<span className='text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display'>
+									<span className='text-sm font-medium duration-150 lg:text-2xl text-zinc-200 group-hover:text-white'>
 										{s.handle}
 									</span>
 									<span className='mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200'>
