@@ -1,7 +1,6 @@
 import { Inter, Inter_Tight as InterTight } from 'next/font/google'
 import Head from 'next/head'
 import { renderToString } from 'react-dom/server'
-import { Background } from '@/components/Background'
 import { LF } from '@/sections/languages'
 import { Header } from '@/components/Header'
 import Particles from '@/components/particles'
@@ -58,13 +57,11 @@ export default function Home() {
 				<meta name='theme-color' content='#FDBA8C' />
 			</Head>
 
-			<Background />
-
 			<header id='header' className='relative w-full mb-10 overflow-hidden z-[99999]'>
 				<Header />
 			</header>
 
-			<main className={`${inter.className} max-w-5xl m-auto mt-14 pb-20 px-4`}>
+			<main className={`${inter.className} max-w-5xl m-auto mt-14 pb-20 px-4 `}>
 				<Particles className='absolute inset-0 -z-10 animate-fade-in' quantity={133} />
 				<AboutMe />
 				<LF />

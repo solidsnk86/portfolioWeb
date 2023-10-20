@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-	background: #000214;
+	background: #000000;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 }

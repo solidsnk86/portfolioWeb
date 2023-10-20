@@ -33,7 +33,7 @@ const handleButtonBack = () => {
 
 export default function Example() {
 	return (
-		<div className=' bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
+		<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
 			<ArrowLeft  className='flex sticky left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]' onClick={handleButtonBack} />
 			<div className='container flex items-center min-h-screen justify-center px-4 mx-auto'>
 				<div className='grid w-full grid-cols-1 gap-8 mx-auto mb-5 mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>
