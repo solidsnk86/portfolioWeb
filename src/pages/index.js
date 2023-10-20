@@ -75,32 +75,43 @@ export default function Home() {
 							url: 'https://solidsnk86.github.io/formularioWeb/',
 							title: 'Formulario Web',
 							repoName: 'formularioWeb',
-							repo: 'https://github.com/solidsnk86/formularioWeb/blob/master/img/factura.png?raw=true',
+							logo: 'https://github.com/solidsnk86/formularioWeb/blob/master/img/factura.png?raw=true',
 							description: 'Proyecto demo de facturación online',
-							logo: 'factura.png'
 						},
 						{
 							url: 'https://neotecs.netlify.app/',
 							title: 'NeoTecs',
 							repoName: 'NeoTecs',
-							repo: 'https://raw.githubusercontent.com/solidsnk86/NeoTecs/d885993b4b1b43703dfbe29aa0daf07f97db04fb/public/images/favicon.svg',
-							description: 'Documentación web de configuración Wi-Fi',
-							logo: 'icon.png'
+							logo: 'https://raw.githubusercontent.com/solidsnk86/NeoTecs/d885993b4b1b43703dfbe29aa0daf07f97db04fb/public/images/favicon.svg',
+							description: 'Documentación de configuración Wi-Fi',
 						},
 						{
 							url: 'https://solidsnk86.github.io/GerArt/',
 							title: 'Ger Art',
 							repoName: 'GerArt',
-							repo: 'https://github.com/solidsnk86/GerArt/blob/master/assets/img/android-chrome-512x512.png?raw=true',
-							description: 'Portfolio web de arte y dibujo tradicional',
-							logo: 'icon.svg'
+							logo: 'https://github.com/solidsnk86/GerArt/blob/master/assets/img/android-chrome-512x512.png?raw=true',
+							description: 'Portfolio web de dibujo tradicional',
+						},
+						{
+							url: 'https://tablerobap.netlify.app/',
+							title: 'Tablero BAP',
+							repoName: 'tablero-369',
+							logo: 'https://github.com/solidsnk86/tablero-369/blob/master/public/logo-bap-removebg.png?raw=true',
+							description: 'Tablero Digital para bochas'
+						},
+						{
+							url: 'https://solidsnk86.github.io/Portfolio-CG/',
+							title: 'Currículum Web',
+							repoName: 'Portfolio-CG',
+							logo: 'https://github.com/solidsnk86/CvOnline-modelo1/blob/master/img/cv.png?raw=true',
+							description: 'Currículum Vitae Web y portfolio'
 						}
 					].map((item) => (
 						<div
 							className='flex flex-col text-zinc-300 items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg sm:hover:shadow-2xl hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 hover:scale-[1.05]'
 							key={item.title}
 						>
-							<img className='w-20 sm:w-auto xl:w-32 sm:mr-0' src={item.repo} alt={item.title} />
+							<img className='w-20 sm:w-auto xl:w-32 sm:mr-0' src={item.logo} alt={item.title} />
 							<span className='font-bold mt-4 mb-2'>{item.title}</span>
 							<span className='text-sm mb-2 opacity-[.7]'>{item.description}</span>
 
@@ -119,6 +130,9 @@ export default function Home() {
 				</div>
 			</main>
 			<Footer />
+			<a href='https://visitcount.itsvg.in'>
+				<img src='https://visitcount.itsvg.in/api?id=solidsnk86&label=Visitas&color=12&icon=5&pretty=false' />
+			</a>
 		</>
 	)
 }
