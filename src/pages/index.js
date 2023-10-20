@@ -90,7 +90,7 @@ export default function Home() {
 							title: 'Ger Art',
 							repoName: 'GerArt',
 							logo: 'https://github.com/solidsnk86/GerArt/blob/master/assets/img/android-chrome-512x512.png?raw=true',
-							description: 'Portfolio web de dibujo tradicional',
+							description: 'Portfolio web de arte y dibujo tradicional',
 						},
 						{
 							url: 'https://tablerobap.netlify.app/',
