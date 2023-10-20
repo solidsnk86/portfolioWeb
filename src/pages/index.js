@@ -127,9 +127,6 @@ export default function Home() {
 				</div>
 			</main>
 			<Footer />
-			<a href='https://visitcount.itsvg.in'>
-				<img src='https://visitcount.itsvg.in/api?id=solidsnk86&label=Visitas&color=12&icon=5&pretty=false' />
-			</a>
 		</>
 	)
 }
