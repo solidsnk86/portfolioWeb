@@ -30,7 +30,7 @@ export function Header() {
 							<img src='https://visitcount.itsvg.in/api?id=solidsnk86&label=Visitas&color=12&icon=5&pretty=true' />
 						</a>
 					</li>
-					<li>
+					<li className='mt-[1px]'>
 						{[
 							{
 								repoName: 'portfolioWeb'
