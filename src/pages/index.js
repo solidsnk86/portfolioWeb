@@ -9,6 +9,8 @@ import { GithubStats } from '@/components/GithubStats'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
 import { FaviconIcon } from '@/components/FaviconIcon'
+import { MyIcon } from '../components/MyIcon'
+import { NeoTecsIcon } from '../components/NeotecsIcon'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -30,6 +32,8 @@ export default function Home() {
 	}
 
 	const favicon2String = renderToString(<FaviconIcon />)
+	const cvIcon = renderToString(<MyIcon />)
+	const neoIcon = renderToString(<NeoTecsIcon />)
 
 	return (
 		<>
@@ -79,7 +83,7 @@ export default function Home() {
 							url: 'https://neotecs.netlify.app/',
 							title: 'NeoTecs',
 							repoName: 'NeoTecs',
-							logo: 'https://raw.githubusercontent.com/solidsnk86/NeoTecs/d885993b4b1b43703dfbe29aa0daf07f97db04fb/public/images/favicon.svg',
+							logo: `data:image/svg+xml,${encodeURIComponent(neoIcon)}`,
 							description: 'Documentación de configuración Wi-Fi',
 						},
 						{
@@ -93,7 +97,7 @@ export default function Home() {
 							url: 'https://solidsnk86.github.io/Portfolio-CG/',
 							title: 'Currículum Web',
 							repoName: 'Portfolio-CG',
-							logo: 'https://github.com/solidsnk86/CvOnline-modelo1/blob/master/img/cv.png?raw=true',
+							logo: `data:image/svg+xml,${encodeURIComponent(cvIcon)}`,
 							description: 'Currículum Vitae Web y portfolio'
 						}
 					].map((item) => (
