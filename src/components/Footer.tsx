@@ -18,7 +18,7 @@ export const Footer = () => {
 						key={i.href}
 						href={i.href}
 					>
-						<span className='bg-[#0B1223] px-3 py-2 text-orange-400 text-sm rounded-full hover:text-red-500 hover:transition-[.5s] hover:opacity-[.6]'>
+						<span className='bg-[#0B1223] px-3 py-2 text-orange-400 text-sm rounded-full hover:text-red-500 hover:transition-[.5s] hover:brightness-150'>
 							{i.icon}
 							{i.str}
 						</span>
