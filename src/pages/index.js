@@ -12,6 +12,7 @@ import { FaviconIcon } from '@/components/FaviconIcon'
 import { MyIcon } from '../components/MyIcon'
 import { NeoTecsIcon } from '../components/NeotecsIcon'
 import { FormIcon } from '../components/FormIcon'
+import { ScoreBoardIcon } from '../components/TablerIcon'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -36,6 +37,7 @@ export default function Home() {
 	const cvIcon = renderToString(<MyIcon />)
 	const neoIcon = renderToString(<NeoTecsIcon />)
 	const formIcon = renderToString(<FormIcon />)
+	const scoreBoard = renderToString(<ScoreBoardIcon />)
 
 	return (
 		<>
@@ -92,7 +94,7 @@ export default function Home() {
 							url: 'https://tablerobap.netlify.app/',
 							title: 'Tablero BAP',
 							repoName: 'tablero-369',
-							logo: 'https://github.com/solidsnk86/tablero-369/blob/master/public/logo-bap-removebg.png?raw=true',
+							logo: `data:image/svg+xml,${encodeURIComponent(scoreBoard)}`,
 							description: 'Tablero Digital para bochas'
 						},
 						{
