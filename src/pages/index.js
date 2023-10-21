@@ -11,6 +11,7 @@ import { Footer } from '@/components/Footer'
 import { FaviconIcon } from '@/components/FaviconIcon'
 import { MyIcon } from '../components/MyIcon'
 import { NeoTecsIcon } from '../components/NeotecsIcon'
+import { FormIcon } from '../components/FormIcon'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -34,6 +35,7 @@ export default function Home() {
 	const favicon2String = renderToString(<FaviconIcon />)
 	const cvIcon = renderToString(<MyIcon />)
 	const neoIcon = renderToString(<NeoTecsIcon />)
+	const formIcon = renderToString(<FormIcon />)
 
 	return (
 		<>
@@ -76,7 +78,7 @@ export default function Home() {
 							url: 'https://solidsnk86.github.io/formularioWeb/',
 							title: 'Formulario Web',
 							repoName: 'formularioWeb',
-							logo: 'https://github.com/solidsnk86/formularioWeb/blob/master/img/factura.png?raw=true',
+							logo: `data:image/svg+xml,${encodeURIComponent(formIcon)}`,
 							description: 'Proyecto demo de facturación online',
 						},
 						{
