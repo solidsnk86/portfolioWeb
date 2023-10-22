@@ -92,7 +92,7 @@ export default function Home() {
 						},
 						{
 							url: 'https://tablerobap.netlify.app/',
-							title: 'Tablero BAP',
+							title: 'Tablero Digital',
 							repoName: 'tablero-369',
 							logo: `data:image/svg+xml,${encodeURIComponent(scoreBoard)}`,
 							description: 'Tablero Digital para bochas'
