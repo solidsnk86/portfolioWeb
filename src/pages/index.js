@@ -19,7 +19,7 @@ export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: [
 
 export default function Home() {
 	const title = 'Portfolio Calcagni Gabriel'
-	const description = '¡Ey, chequea por mi portfolio!'
+	const description = '¡Ey, pásate y echa un vistazo a mi portfolio!'
 	const ogImg = 'https://github.com/solidsnk86/neotecs.tech/blob/master/img/Image-og.png?raw=true'
 
 	const HomeTitle = ({ Tag = 'h2', children }) => {
