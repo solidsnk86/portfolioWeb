@@ -1,11 +1,8 @@
 import { Github, Mail, ArrowLeft } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { renderToString } from 'react-dom/server'
 import { Card } from '@/components/Card'
 import { TwitterIcon } from '@/components/TwitterIcon'
-
-const twitter2String = renderToString(<TwitterIcon />)
 
 const socials = [
 	{

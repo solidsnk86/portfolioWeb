@@ -8,7 +8,6 @@ import { AboutMe } from '@/components/AboutMe'
 import { GithubStats } from '@/components/GithubStats'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
-import { FaviconIcon } from '@/components/FaviconIcon'
 import { MyIcon } from '../components/MyIcon'
 import { NeoTecsIcon } from '../components/NeotecsIcon'
 import { FormIcon } from '../components/FormIcon'
@@ -34,7 +33,6 @@ export default function Home() {
 		)
 	}
 
-	const favicon2String = renderToString(<FaviconIcon />)
 	const cvIcon = renderToString(<MyIcon />)
 	const neoIcon = renderToString(<NeoTecsIcon />)
 	const formIcon = renderToString(<FormIcon />)
@@ -57,11 +55,11 @@ export default function Home() {
 				<meta property='twitter:card' content='summary_large_image' />
 				<link
 					rel='shortcut icon'
-					href={`data:image/svg+xml,${encodeURIComponent(favicon2String)}`}
+					href={`data:image/svg+xml,${encodeURIComponent(cvIcon)}`}
 				/>
 				<link
 					rel='apple-touch-icon'
-					href={`data:image/svg+xml,${encodeURIComponent(favicon2String)}`}
+					href={`data:image/svg+xml,${encodeURIComponent(cvIcon)}`}
 				/>
 				<meta name='theme-color' content='#FDBA8C' />
 			</Head>
