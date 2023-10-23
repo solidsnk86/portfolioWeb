@@ -13,6 +13,7 @@ import { MyIcon } from '../components/MyIcon'
 import { NeoTecsIcon } from '../components/NeotecsIcon'
 import { FormIcon } from '../components/FormIcon'
 import { ScoreBoardIcon } from '../components/TablerIcon'
+import { TresDButton } from '../components/TresDButton'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -128,6 +129,7 @@ export default function Home() {
 				</div>
 			</main>
 			<Footer />
+			<TresDButton />
 		</>
 	)
 }

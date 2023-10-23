@@ -5,7 +5,7 @@ export const Footer = () => {
 
 	const githubLink = [
 		{
-			str: 'seguir @solidsnk86',
+			str: '@solidsnk86',
 			href: 'https://github.com/solidsnk86',
 			icon: <GithubIcon className="inline mx-1 text-zinc-300 w-5 h-5 mb-1" />
 		}
