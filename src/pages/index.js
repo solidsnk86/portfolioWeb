@@ -8,6 +8,7 @@ import { AboutMe } from '@/components/AboutMe'
 import { GithubStats } from '@/components/GithubStats'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
+import { FaviconIcon } from '@/components/FaviconIcon'
 import { MyIcon } from '../components/MyIcon'
 import { NeoTecsIcon } from '../components/NeotecsIcon'
 import { FormIcon } from '../components/FormIcon'
@@ -33,6 +34,7 @@ export default function Home() {
 		)
 	}
 
+	const favicon2String = renderToString(<FaviconIcon />)
 	const cvIcon = renderToString(<MyIcon />)
 	const neoIcon = renderToString(<NeoTecsIcon />)
 	const formIcon = renderToString(<FormIcon />)
@@ -100,7 +102,7 @@ export default function Home() {
 							url: 'https://solidsnk86.github.io/Portfolio-CG/',
 							title: 'Currículum Web',
 							repoName: 'Portfolio-CG',
-							logo: `data:image/svg+xml,${encodeURIComponent(cvIcon)}`,
+							logo: `data:image/svg+xml,${encodeURIComponent(favicon2String)}`,
 							description: 'Currículum Vitae Web y portfolio'
 						}
 					].map((item) => (
