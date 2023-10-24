@@ -1,5 +1,4 @@
-export const MyIcon = (props) => {
-	const { ...attrs } = props
+export const MyIcon = () => {
 	return (
 		<svg
 			role='img'
