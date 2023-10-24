@@ -25,11 +25,6 @@ export function Header() {
 					</div>
 				</div>
 				<ul className='absolute right-5 top-3 flex'>
-					<li className='mt-1 mr-2'>
-						<a href='https://visitcount.itsvg.in'>
-							<img src='https://visitcount.itsvg.in/api?id=solidsnk86&label=Visitas&color=12&icon=5&pretty=true' />
-						</a>
-					</li>
 					<li className='mt-[1px]'>
 						{[
 							{
