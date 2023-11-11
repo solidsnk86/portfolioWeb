@@ -112,8 +112,8 @@ const ReviewCard = ({ logo, name }: { logo: string | ReactNode; name: string }) 
 export const LF = () => {
 	return (
 		<section className='flex flex-col flex-wrap items-center justify-center my-48'>
-			<h2 className='xl:text-6xl md:text-4xl text-2xl font-bold text-center text-sky-100'>
-				Frames y Lenguajes que uso
+			<h2 className='xl:text-5xl md:text-4xl text-2xl font-bold text-center text-sky-100'>
+			"Frameworks, tools, and languages that I mostly use."
 			</h2>
 			<VideoReactIcon />
 			<p className='max-w-lg text-xl text-sky-200 text-center [†ext-wrap:balance] mt-4'></p>

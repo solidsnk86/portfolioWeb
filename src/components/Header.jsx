@@ -3,9 +3,9 @@ import { GithubStats } from '@/components/GithubStats'
 
 export function Header() {
 	const navigation = [
-		{ name: 'Contacto', href: '/contact/' },
+		{ name: 'Contact', href: '/contact/' },
 		{ name: 'Blog', href: '/blog/' },
-		{ name: 'Proyectos', href: '#proyectos' }
+		{ name: 'Projects', href: '#proyectos' }
 	]
 
 	return (

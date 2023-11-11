@@ -22,15 +22,16 @@ export function AboutMe() {
 					</div>
 					<aside className='flex-col relative top-10 mx-3'>
 						<CardTitle>
-							Hola mi nombre es Gabriel, soy desarrollador Front End con 1 año de experiencia, uso
-							tecnolgías como React y NextJS, trabajo en mi proyecto
+							Hi, my name is Gabriel. I am a Front End developer with 1 year of experience, using
+							technologies such as React and Next.js. I work on my project 
 							<Link
 								className='mx-1 duration-500 hover:text-orange-400 underline'
 								href='https://neotecs.netlify.app/'
 							>
 								Neotecs
 							</Link>
-							en las noches. Actualmente estudiando!
+							during the
+							evenings. Currently, I am studying and keep learning!
 						</CardTitle>
 					</aside>
 				</div>
