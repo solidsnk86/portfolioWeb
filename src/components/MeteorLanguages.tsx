@@ -7,7 +7,7 @@ interface MeteorsProps {
 	number?: number
 }
 
-export const MT = ({ number = 20 }: MeteorsProps) => {
+export const MT = ({ number = 6 }: MeteorsProps) => {
 	const [meteorStyles, setMeteorStyles] = useState([])
 	const ref = useRef(null)
 
