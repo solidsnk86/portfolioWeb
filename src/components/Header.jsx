@@ -15,7 +15,7 @@ export function Header() {
 					<div className='w-full flex gap-3 md:gap-6 items-center md:justify-center text-sm md:text-base !justify-center'>
 						<ul className='flex'>
 							{navigation.map((item) => (
-								<li className='text-header-shadow font-semibold space-x-4 text-orange-300 mr-5 cursor-pointer hover:text-zinc-300 transition-all'>
+								<li className='text-header-shadow font-semibold space-x-4 text-[#E0F2FE] mr-5 cursor-pointer hover:text-zinc-300 transition-all'>
 									<Link key={item.href} href={item.href} target='_self'>
 										{item.name}
 									</Link>
