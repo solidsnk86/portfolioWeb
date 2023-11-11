@@ -77,28 +77,28 @@ export default function Home() {
 							title: 'Formulario Web',
 							repoName: 'formularioWeb',
 							logo: `data:image/svg+xml,${encodeURIComponent(formIcon)}`,
-							description: 'Proyecto demo de facturación online'
+							description: 'Project demo of online billing.'
 						},
 						{
 							url: 'https://neotecs.netlify.app/',
 							title: 'NeoTecs',
 							repoName: 'NeoTecs',
 							logo: `data:image/svg+xml,${encodeURIComponent(neoIcon)}`,
-							description: 'Documentación de configuración Wi-Fi'
+							description: 'Documentation for Web Programing.'
 						},
 						{
 							url: 'https://tablerobap.netlify.app/',
 							title: 'Tablero Digital',
 							repoName: 'tablero-369',
 							logo: `data:image/svg+xml,${encodeURIComponent(scoreBoard)}`,
-							description: 'Tablero Digital para bochas'
+							description: 'Digital scoreboard for bocce.'
 						},
 						{
 							url: 'https://solidsnk86.github.io/Portfolio-CG/',
 							title: 'Currículum Web',
 							repoName: 'Portfolio-CG',
 							logo: `data:image/svg+xml,${encodeURIComponent(favicon2String)}`,
-							description: 'Currículum Vitae Web y portfolio'
+							description: 'Web curriculum vitae and portfolio.'
 						}
 					].map((item) => (
 						<div
