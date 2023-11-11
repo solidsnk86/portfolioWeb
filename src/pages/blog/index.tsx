@@ -15,6 +15,15 @@ const articles = [
 		description:
 			'Explore our comprehensive web documentation designed to guide you through the process of programming and configuring wireless access points from various leading brands. Whether you are a seasoned developer or just getting started, our documentation offers step-by-step instructions, code examples, and valuable insights to streamline your experience.',
 		url: 'https://neotecs.netlify.app'
+	},
+	{
+		user: '93176365',
+		name: 'Calcagni Gabriel',
+		posted: 'March 23, 2023',
+		title: 'Exciting Update: "I am delighted to unveil our latest venture at NeoTecs—a cutting-edge online invoicing platform."',
+		description:
+			'Dive into our extensive web documentation crafted to assist you in effortlessly managing invoices, quotes, and receipts. This user-friendly platform allows you to send and download these essential documents for free. Whether you are a seasoned user or a newcomer, our documentation offers clear guidance with step-by-step instructions, code examples, and insightful tips to optimize your invoicing process.',
+		url: 'https://solidsnk86.github.io/formularioWeb/'
 	}
 ]
 
@@ -34,7 +43,7 @@ const FollowOnTwitter = () => {
 
 export default function MyBlog() {
 	return (
-		<main onDrag={notDrag} className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-screen'>
+		<main onDrag={notDrag} className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-[100%]'>
 			<Head>
 				<meta name='theme-color' content='#FDBA8C' />
 			</Head>
