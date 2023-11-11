@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { MT } from '@/components/MeteorLanguages'
+import { Footer } from '@/components/Footer'
 
 const articles = [
 	{
@@ -25,6 +26,10 @@ function notDrag() {
 	document.documentElement.addEventListener('dragstart', (e) => {
 		e.preventDefault()
 	})
+}
+
+const FollowOnTwitter = () => {
+	window.open('https://twitter.com/CalcagniGabriel')
 }
 
 export default function MyBlog() {
@@ -49,7 +54,7 @@ export default function MyBlog() {
 							</header>
 							<aside className='flex space-x-3'>
 								<ImageAvatar user={user} />
-								<div className='flex-col'>
+								<div className='flex-col cursor-pointer' onClick={FollowOnTwitter}>
 									<span className='font-semibold'>{name}</span>
 									<p className='font-light text-zinc-600 text-sm'>NeoTecs Dev</p>
 								</div>
@@ -61,6 +66,7 @@ export default function MyBlog() {
 					</Card>
 				</div>
 			))}
+			<Footer />
 		</main>
 	)
 }
