@@ -20,9 +20,9 @@ const articles = [
 		user: '93176365',
 		name: 'Calcagni Gabriel',
 		posted: 'March 23, 2023',
-		title: 'Awsome Update: "I am delighted to unveil our latest venture at NeoTecs—a cutting-edge online invoicing platform."',
+		title: 'Awsome Update: "I am delighted to unveil our latest venture at NeoTecs a cutting-edge online invoicing platform."',
 		description:
-			'Dive into our extensive web documentation crafted to assist you in effortlessly managing invoices, quotes, and receipts. This user-friendly platform allows you to send and download these essential documents for free. Whether you are a seasoned user or a newcomer, our documentation offers clear guidance with step-by-step instructions, code examples, and insightful tips to optimize your invoicing process.',
+			'Dive into the web where i crafted to assist you in effortlessly managing invoices, quotes, and receipts. This user-friendly platform allows you to send and download these essential documents for free. Whether you are a seasoned user or a newcomer, our documentation offers clear guidance with step-by-step instructions, code examples, and insightful tips to optimize your invoicing process.',
 		url: 'https://solidsnk86.github.io/formularioWeb/'
 	}
 ]
