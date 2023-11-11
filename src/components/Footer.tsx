@@ -19,8 +19,7 @@ export const Footer = () => {
 						{i.icon}
 						{i.str}
 					</span>
-					· 
-					<span className='mx-2'>{i.year}</span>
+					·<span className='mx-2'>{i.year}</span>
 				</Link>
 			))}
 		</div>
