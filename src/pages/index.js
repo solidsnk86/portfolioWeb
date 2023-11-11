@@ -56,14 +56,8 @@ export default function Home() {
 				<meta property='twitter:url' />
 				<meta property='og:type' content='website' />
 				<meta property='twitter:card' content='summary_large_image' />
-				<link
-					rel='shortcut icon'
-					href={`data:image/svg+xml,${encodeURIComponent(cvIcon)}`}
-				/>
-				<link
-					rel='apple-touch-icon'
-					href={`data:image/svg+xml,${encodeURIComponent(cvIcon)}`}
-				/>
+				<link rel='shortcut icon' href={`data:image/svg+xml,${encodeURIComponent(cvIcon)}`} />
+				<link rel='apple-touch-icon' href={`data:image/svg+xml,${encodeURIComponent(cvIcon)}`} />
 				<meta name='theme-color' content='#FDBA8C' />
 			</Head>
 
@@ -83,14 +77,14 @@ export default function Home() {
 							title: 'Formulario Web',
 							repoName: 'formularioWeb',
 							logo: `data:image/svg+xml,${encodeURIComponent(formIcon)}`,
-							description: 'Proyecto demo de facturación online',
+							description: 'Proyecto demo de facturación online'
 						},
 						{
 							url: 'https://neotecs.netlify.app/',
 							title: 'NeoTecs',
 							repoName: 'NeoTecs',
 							logo: `data:image/svg+xml,${encodeURIComponent(neoIcon)}`,
-							description: 'Documentación de configuración Wi-Fi',
+							description: 'Documentación de configuración Wi-Fi'
 						},
 						{
 							url: 'https://tablerobap.netlify.app/',
@@ -111,7 +105,11 @@ export default function Home() {
 							className='flex flex-col text-zinc-300 items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg hover:shadow-[#D4D4D8] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 hover:scale-[1.05]'
 							key={item.title}
 						>
-							<img className='w-24 sm:w-24 md:w-24 lg:w-24 xl:w-28 sm:mr-0' src={item.logo} alt={item.title} />
+							<img
+								className='w-24 sm:w-24 md:w-24 lg:w-24 xl:w-28 sm:mr-0'
+								src={item.logo}
+								alt={item.title}
+							/>
 							<span className='font-bold mt-4 mb-2'>{item.title}</span>
 							<span className='text-sm mb-2 opacity-[.7]'>{item.description}</span>
 

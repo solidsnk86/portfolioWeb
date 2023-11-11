@@ -23,7 +23,7 @@ async function fetchGitStats(local, repoName) {
 			localStorage.setItem(`${repoName}-git-stats-date`, new Date().getTime())
 			localStorage.setItem(
 				`${repoName}-git-stats-stars`,
-				stargazers_count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') // eslint-disable-next-line camelcase | Probar desactivar esto del eslint o permitir snake-case
+				stargazers_count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 			)
 		}
 

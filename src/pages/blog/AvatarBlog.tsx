@@ -1,9 +1,9 @@
-export const ImageAvatar = ({ user }) => {
+export default function ImageAvatar({ user }) {
 	return (
 		<div>
 			<img src={`https://avatars.githubusercontent.com/u/${user}?v=4`}
-				className="rounded-full"
-				alt="Avatar Image."
+				className='rounded-full'
+				alt='Avatar Image.'
 				width={45}
 				height={45}
 			/>
