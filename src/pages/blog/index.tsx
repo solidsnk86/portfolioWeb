@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { Card } from '@/components/Card';
 import { MT } from '@/components/MeteorLanguages';
 
+
 const articles = [
   {
     user: '93176365',
@@ -21,6 +22,10 @@ const articles = [
 const handleButtonBack = () => {
   window.open('/', '_self');
 };
+
+document.documentElement.addEventListener('dragstart', (e) => {
+	e.preventDefault()
+})
 
 export default function MyBlog() {
   return (
@@ -46,7 +51,7 @@ export default function MyBlog() {
                 <ImageAvatar user={user} />
                 <div className='flex-col'>
                   <span className='font-semibold'>{name}</span>
-                  <p className='font-light text-[#5D5D5D] text-sm'>NeoTecs Dev</p>
+                  <p className='font-light text-zinc-600 text-sm'>NeoTecs Dev</p>
                 </div>
                 <Link href={url} className='absolute right-10 bottom-10 flex hover:underline'>
                   Read More <ArrowRight className='mx-1' />
