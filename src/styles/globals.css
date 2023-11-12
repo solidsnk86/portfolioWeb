@@ -141,6 +141,6 @@ body {
   }
 
   .read-more:hover .arrow {
-	transform: translateX(5px);
+	transform: translateX(3px);
 	transition: .3s ease-in-out;
   }
