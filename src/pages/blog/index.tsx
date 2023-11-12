@@ -20,6 +20,7 @@ const articles = [
 	{
 		user: '93176365',
 		name: 'Calcagni Gabriel',
+		companyDev: 'NeoTecs',
 		posted: 'March 23, 2023',
 		title:
 			'First Proyect Update: "I am delighted to unveil our latest venture at NeoTecs a cutting-edge online invoicing platform."',
@@ -73,30 +74,30 @@ export default function MyBlog() {
 				className='flex relative xl:fixed left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
 				onClick={handleButtonBack}
 			/>
-			{articles.map((article, index) => (
+			{articles.map((a, index) => (
 				<div key={index} className='xl:w-1/2 justify-center mx-auto pt-20 px-3'>
 					<Card>
 						<article className='p-6 space-y-6 relative'>
 							<header>
-								<span className='text-zinc-400 text-sm'>{article.posted}</span>
-								<span className='text-zinc-400 absolute top-4 right-5'>
-									<EyeIcon className='float-right mx-2 my-[2px] w-5 h-5' />
+								<span className='text-zinc-400 text-sm'>{a.posted}</span>
+								<span className='text-zinc-400 absolute top-[25px] right-5 text-sm'>
+									<EyeIcon className='float-right mx-2 my-[2px] w-4 h-4' />
 									{views}
 								</span>
-								<h1 className='text-2xl font-semibold my-2'>{article.title}</h1>
+								<h1 className='text-2xl font-semibold my-2'>{a.title}</h1>
 								<p className='text-zinc-400 xl:line-clamp-none line-clamp-3'>
-									{article.description}
+									{a.description}
 								</p>
 							</header>
 							<aside className='flex space-x-3'>
-								<ImageAvatar user={article.user} />
+								<ImageAvatar user={a.user} />
 								<div className='flex-col cursor-pointer' onClick={FollowOnTwitter}>
-									<span className='font-semibold'>{article.name}</span>
-									<p className='font-light text-zinc-600 text-sm'>NeoTecs Dev</p>
+									<span className='font-semibold'>{a.name}</span>
+									<p className='font-light text-zinc-600 text-sm'>{a.companyDev}</p>
 								</div>
 								<Link
-									href={article.url}
-									onClick={articleVisited}
+									href={a.url}
+									onMouseOver={articleVisited}
 									className='read-more absolute right-2 bottom-5 xl:right-10 xl:bottom-10 flex hover:underline'
 								>
 									Read More <ArrowRight className='mx-1 arrow' />
