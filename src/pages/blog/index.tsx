@@ -67,8 +67,8 @@ export default function MyBlog() {
 									<span className='font-semibold'>{name}</span>
 									<p className='font-light text-zinc-600 text-sm'>NeoTecs Dev</p>
 								</div>
-								<Link href={url} className='absolute right-2 bottom-5 xl:right-10 xl:bottom-10 flex hover:underline'>
-									Read More <ArrowRight className='mx-1' />
+								<Link href={url} className='read-more absolute right-2 bottom-5 xl:right-10 xl:bottom-10 flex hover:underline'>
+									Read More <ArrowRight className='mx-1 arrow' />
 								</Link>
 							</aside>
 						</article>
