@@ -49,7 +49,7 @@ export default function MyBlog() {
 			</Head>
 			<MT />
 			<ArrowLeft
-				className='flex fixed left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
+				className='flex xl:fixed left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
 				onClick={handleButtonBack}
 			/>
 			{articles.map(({ user, name, title, description, posted, url }) => (
@@ -67,7 +67,7 @@ export default function MyBlog() {
 									<span className='font-semibold'>{name}</span>
 									<p className='font-light text-zinc-600 text-sm'>NeoTecs Dev</p>
 								</div>
-								<Link href={url} className='absolute right-10 bottom-10 flex hover:underline'>
+								<Link href={url} className='absolute right-2 bottom-5 xl:right-10 xl:bottom-10 flex hover:underline'>
 									Read More <ArrowRight className='mx-1' />
 								</Link>
 							</aside>
