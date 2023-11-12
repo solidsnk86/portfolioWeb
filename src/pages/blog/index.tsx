@@ -49,7 +49,7 @@ export default function MyBlog() {
 			</Head>
 			<MT />
 			<ArrowLeft
-				className='flex xl:fixed left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
+				className='flex relative xl:fixed left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
 				onClick={handleButtonBack}
 			/>
 			{articles.map(({ user, name, title, description, posted, url }) => (

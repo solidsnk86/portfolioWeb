@@ -5,6 +5,7 @@ export const TwitterIcon = (props) => {
 			xmlns='http://www.w3.org/2000/svg'
 			width='22'
 			height='22'
+			className="x-icon"
 			viewBox='0 0 24 24'
 			fill='currentColor'
 			{...attrs}

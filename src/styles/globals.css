@@ -71,6 +71,11 @@ body {
 	transition-duration: .2s;
 	-webkit-user-select: none;
 	user-select: none;
+	text-shadow: 1px 2px 3px #222;
+  }
+
+  .x-icon {
+	text-shadow: 1px 2px 3px #222;
   }
   
   .button:active .button-top {
