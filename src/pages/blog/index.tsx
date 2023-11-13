@@ -11,24 +11,13 @@ const articles = [
 	{
 		user: '93176365',
 		name: 'Calcagni Gabriel',
+		companyDev: 'NeoTecs',
 		posted: 'November 11, 2023',
 		title: 'Exciting News: "I am grateful to present to you this project from NeoTecs."',
 		description:
 			'Explore our comprehensive web documentation designed to guide you through the process of programming and configuring wireless access points from various leading brands. Whether you are a seasoned developer or just getting started, our documentation offers step-by-step instructions, code examples, and valuable insights to streamline your experience.',
 		url: 'https://neotecs.netlify.app'
 	},
-	{
-		user: '93176365',
-		name: 'Calcagni Gabriel',
-		companyDev: 'NeoTecs',
-		posted: 'March 23, 2023',
-		title:
-			'First Proyect Update: "I am delighted to unveil our latest venture at NeoTecs a cutting-edge online invoicing platform."',
-		description:
-			'Dive into the web where I crafted to assist you in effortlessly managing invoices, quotes, and receipts. This user-friendly platform allows you to send and download these essential documents for free. Whether you are a seasoned user or a newcomer, our documentation offers clear guidance with step-by-step instructions, code examples, and insightful tips to optimize your invoicing process.',
-		url: 'https://solidsnk86.github.io/formularioWeb/'
-	}
-	// ... Puedes agregar más objetos aquí
 ]
 
 const handleButtonBack = () => {
@@ -97,7 +86,7 @@ export default function MyBlog() {
 								</div>
 								<Link
 									href={a.url}
-									onMouseOver={articleVisited}
+									onClick={articleVisited}
 									className='read-more absolute right-2 bottom-5 xl:right-10 xl:bottom-10 flex hover:underline'
 								>
 									Read More <ArrowRight className='mx-1 arrow' />

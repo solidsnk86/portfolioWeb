@@ -12,7 +12,7 @@ export const Footer = () => {
 		}
 	]
 	return (
-		<div className='flex mt-40 justify-center m-auto'>
+		<div className='flex pt-20 pb-5 justify-center m-auto'>
 			{githubLink.map((i) => (
 				<Link key={i.href} href={i.href} className='text-orange-400 text-sm'>
 					<span className='hover:text-red-500 hover:transition-[.5s] hover:brightness-150 mx-2'>
