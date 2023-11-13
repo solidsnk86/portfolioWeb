@@ -17,7 +17,7 @@ const articles = [
 		description:
 			'Explore our comprehensive web documentation designed to guide you through the process of programming and configuring wireless access points from various leading brands. Whether you are a seasoned developer or just getting started, our documentation offers step-by-step instructions, code examples, and valuable insights to streamline your experience.',
 		url: 'https://neotecs.netlify.app'
-	},
+	}
 ]
 
 const handleButtonBack = () => {
