@@ -1,17 +1,17 @@
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import ImageAvatar from './AvatarBlog';
-import { ArrowLeft, ArrowRight, EyeIcon } from 'lucide-react';
-import Head from 'next/head';
-import { Card } from '@/components/Card';
-import { MT } from '@/components/MeteorLanguages';
-import { Footer } from '@/components/Footer';
-import { createClient } from '@supabase/supabase-js';
+import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import ImageAvatar from './AvatarBlog'
+import { ArrowLeft, ArrowRight, EyeIcon } from 'lucide-react'
+import Head from 'next/head'
+import { Card } from '@/components/Card'
+import { MT } from '@/components/MeteorLanguages'
+import { Footer } from '@/components/Footer'
+import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
 	'https://wbywikatpjrneagwppxf.supabase.co',
 	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndieXdpa2F0cGpybmVhZ3dwcHhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk4Mzg5MzAsImV4cCI6MjAxNTQxNDkzMH0.nv6KxxPZBSiROB3-bak4LGAud2ex-wCDvyykMrYDCZQ'
-);
+)
 
 const articles = [
 	{
@@ -25,58 +25,58 @@ const articles = [
 		url: 'https://neotecs.netlify.app',
 		articleId: 1
 	}
-];
+]
 
 const sendViews = async (articleId) => {
 	try {
-		const { data, error } = await supabase.from('views').upsert([{ article_id: articleId }]);
+		const { data, error } = await supabase.from('views').upsert([{ article_id: articleId }])
 
 		if (error) {
-			console.error('Error sending views:', error);
+			console.error('Error sending views:', error)
 		} else {
-			console.log('Views sent successfully:', data);
+			console.log('Views sent successfully:', data)
 		}
 	} catch (error) {
-		console.error('Error sending views:', error);
+		console.error('Error sending views:', error)
 	}
-};
+}
 
 export default function MyBlog() {
-	const [articleViews, setArticleViews] = useState({});
+	const [articleViews, setArticleViews] = useState({})
 
 	useEffect(() => {
 		const fetchArticleViews = async () => {
 			try {
-				const { data, error } = await supabase.from('views').select();
-				console.log(data);
+				const { data, error } = await supabase.from('views').select()
+				console.log(data)
 
 				if (error) {
-					console.error('Error fetching article views:', error);
+					console.error('Error fetching article views:', error)
 				} else {
 					const viewsData = data.reduce((acc, view) => {
-						acc[parseInt(view.article_id, 10)] = view.id;
-						return acc;
-					}, {});
+						acc[parseInt(view.article_id, 10)] = view.id
+						return acc
+					}, {})
 
-					setArticleViews(viewsData);
+					setArticleViews(viewsData)
 				}
 			} catch (error) {
-				console.error('Error fetching article views:', error);
+				console.error('Error fetching article views:', error)
 			}
-		};
+		}
 
-		fetchArticleViews();
-	}, []);
+		fetchArticleViews()
+	}, [])
 
 	const articleVisited = async (articleId) => {
-		const newViews = (articleViews[articleId] || 0) + 1;
+		const newViews = (articleViews[articleId] || 0) + 1
 		setArticleViews((prevViews) => {
-			const updatedViews = { ...prevViews, [articleId]: newViews };
-			console.log('Updated Views:', updatedViews);
-			return updatedViews;
-		});
-		sendViews(articleId);
-	};
+			const updatedViews = { ...prevViews, [articleId]: newViews }
+			console.log('Updated Views:', updatedViews)
+			return updatedViews
+		})
+		sendViews(articleId)
+	}
 
 	return (
 		<main className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-screen'>
@@ -124,5 +124,5 @@ export default function MyBlog() {
 			))}
 			<Footer />
 		</main>
-	);
+	)
 }
