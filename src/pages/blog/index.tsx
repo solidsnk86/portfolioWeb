@@ -106,7 +106,7 @@ export default function MyBlog() {
 									<p className='font-light text-zinc-600 text-sm'>{a.companyDev}</p>
 								</div>
 								<Link
-									href=''
+									href='http://neotecs.netlify.app'
 									onClick={() => articleVisited(a.articleId)}
 									className='read-more absolute right-2 bottom-5 xl:right-10 xl:bottom-10 flex hover:underline'
 								>
