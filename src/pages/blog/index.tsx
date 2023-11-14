@@ -54,7 +54,6 @@ export default function MyBlog() {
           console.error('Error fetching article views:', error);
         } else {
           const viewsData = data.reduce((acc, view) => {
-            // Parseamos el article_id a número
             acc[parseInt(view.article_id, 10)] = view.views_count;
             return acc;
           }, {});
