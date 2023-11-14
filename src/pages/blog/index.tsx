@@ -76,7 +76,7 @@ export default function MyBlog() {
 	return (
 		<main className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-screen'>
 			<Head>
-				<meta name='theme-color' content='#FDBA8C' />
+				<meta name='theme-color' content='#F05252' />
 			</Head>
 			<MT />
 			<ArrowLeft
