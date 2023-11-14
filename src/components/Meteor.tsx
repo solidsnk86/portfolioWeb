@@ -5,7 +5,7 @@ interface MeteorsProps {
 	number?: number
 }
 
-export const Meteors = ({ number = 20 }: MeteorsProps) => {
+export const Meteors = ({ number = 6 }: MeteorsProps) => {
 	const [meteorStyles, setMeteorStyles] = useState<Array<CSSProperties>>([])
 
 	useEffect(() => {

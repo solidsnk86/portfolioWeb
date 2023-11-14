@@ -6,6 +6,7 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { MT } from '@/components/MeteorLanguages'
 import { Footer } from '@/components/Footer'
+import { createClient } from '@supabase/supabase-js'
 
 const articles = [
 	{
@@ -35,7 +36,26 @@ const FollowOnTwitter = () => {
 }
 
 export default function MyBlog() {
+	const supabase = createClient(
+		'https://wbywikatpjrneagwppxf.supabase.co',
+		'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndieXdpa2F0cGpybmVhZ3dwcHhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk4Mzg5MzAsImV4cCI6MjAxNTQxNDkzMH0.nv6KxxPZBSiROB3-bak4LGAud2ex-wCDvyykMrYDCZQ'
+	)
+
 	const [views, setViews] = useState(0)
+
+	const sendViews = async (articleId) => {
+		try {
+			const { data, error } = await supabase.from('views').insert({ article_id: articleId })
+
+			if (error) {
+				console.error('Error sending views:', error)
+			} else {
+				console.log('Views sent successfully:', data)
+			}
+		} catch (error) {
+			console.error('Error sending views:', error)
+		}
+	}
 
 	useEffect(() => {
 		const storedViews = localStorage.getItem('articleViews')
@@ -44,10 +64,11 @@ export default function MyBlog() {
 		}
 	}, [])
 
-	const articleVisited = () => {
+	const articleVisited = (articleId) => {
 		const newViews = views + 1
 		setViews(newViews)
 		localStorage.setItem('articleViews', newViews.toString())
+		sendViews(articleId)
 	}
 
 	return (
@@ -74,9 +95,7 @@ export default function MyBlog() {
 									{views}
 								</span>
 								<h1 className='text-2xl font-semibold my-2'>{a.title}</h1>
-								<p className='text-zinc-400 xl:line-clamp-none line-clamp-3'>
-									{a.description}
-								</p>
+								<p className='text-zinc-400 xl:line-clamp-none line-clamp-3'>{a.description}</p>
 							</header>
 							<aside className='flex space-x-3'>
 								<ImageAvatar user={a.user} />

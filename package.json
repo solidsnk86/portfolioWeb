@@ -10,6 +10,7 @@
     "lint:eslint": "npm run lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.38.4",
     "atropos": "2.0.2",
     "autoprefixer": "10.4.15",
     "canvas-confetti": "1.6.0",

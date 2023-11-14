@@ -7,7 +7,7 @@ export const Footer = () => {
 		{
 			str: 'solidsnk86',
 			href: 'https://github.com/solidsnk86',
-			icon: <MyIcon className='inline mx-2 text-zinc-300 w-6 h-6 mb-1' />,
+			icon: <MyIcon className='inline mx-2 text-zinc-300 w-6 h-6 mb-1 fill-red-500' />,
 			year: '2023'
 		}
 	]
