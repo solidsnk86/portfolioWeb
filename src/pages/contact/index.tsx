@@ -33,7 +33,7 @@ export default function Example() {
 	return (
 		<>
 			<Head>
-				<meta name='theme-color' content='#FDBA8C' />
+				<meta name='theme-color' content='#F05252' />
 			</Head>
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
 				<ArrowLeft className='flex sticky left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]' onClick={handleButtonBack} />
