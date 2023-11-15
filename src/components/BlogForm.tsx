@@ -57,7 +57,7 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 					type='button'
 					onClick={() => sendPost()}
 				>
-					Publish
+					Post
 				</button>
 			</form>
 		</section>
