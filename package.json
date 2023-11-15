@@ -29,7 +29,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "supabase": "^1.110.1",
-    "tabler-icons-react": "^1.56.0"
+    "tabler-icons-react": "^1.56.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.8.3",
