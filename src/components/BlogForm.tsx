@@ -30,7 +30,7 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 					value={newPost.user}
 					placeholder='User GitHub ID'
 					className='placeholder:text-slate-100'
-					onChange={(e) => setNewPost({ ...newPost, user: e.target.value })}
+					onChange={(e) => setNewPost({ ...newPost, user_id: e.target.value })}
 				/>
 				<input
 					type='text'
