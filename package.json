@@ -22,6 +22,7 @@
     "ipdata": "^2.2.4",
     "lucide-react": "^0.284.0",
     "next": "^13.5.4",
+    "next-auth": "^4.24.5",
     "next-link": "^2.0.0",
     "postcss": "8.4.29",
     "react": "^18.2.0",

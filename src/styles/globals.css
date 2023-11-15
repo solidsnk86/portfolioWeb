@@ -50,13 +50,13 @@ body {
 	font: inherit;
 	cursor: pointer;
 	border-radius: 50px;
-  }
+}
 
-  .button:hover {
-	filter: drop-shadow(0 0 18px #0078D4);
-  }
-  
-  .button-top {
+.button:hover {
+	filter: drop-shadow(0 0 18px #0078d4);
+}
+
+.button-top {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -66,23 +66,23 @@ body {
 	transform: translateY(0);
 	text-align: center;
 	color: #fff;
-	text-shadow: 0 -1px rgba(0, 0, 0, .25);
+	text-shadow: 0 -1px rgba(0, 0, 0, 0.25);
 	transition-property: transform;
-	transition-duration: .2s;
+	transition-duration: 0.2s;
 	-webkit-user-select: none;
 	user-select: none;
 	text-shadow: 1px 2px 3px #222;
-  }
+}
 
-  .x-icon {
+.x-icon {
 	text-shadow: 1px 2px 3px #222;
-  }
-  
-  .button:active .button-top {
+}
+
+.button:active .button-top {
 	transform: translateY(6px);
-  }
-  
-  .button-top::after {
+}
+
+.button-top::after {
 	content: '';
 	position: absolute;
 	z-index: -1;
@@ -90,20 +90,20 @@ body {
 	width: 100%;
 	height: 100%;
 	box-sizing: content-box;
-	background-image: radial-gradient(#0078D4, #115AD3);
+	background-image: radial-gradient(#0078d4, #115ad3);
 	text-align: center;
 	color: #fff;
-	box-shadow: inset 0 0 0px 1px rgba(255, 255, 255, .2), 0 1px 2px 1px rgba(255, 255, 255, .2);
+	box-shadow: inset 0 0 0px 1px rgba(255, 255, 255, 0.2), 0 1px 2px 1px rgba(255, 255, 255, 0.2);
 	transition-property: border-radius, padding, width, transform;
-	transition-duration: .2s;
-  }
-  
-  .button:active .button-top::after {
+	transition-duration: 0.2s;
+}
+
+.button:active .button-top::after {
 	border-radius: 50px;
 	padding: 0 2px;
-  }
-  
-  .button-bottom {
+}
+
+.button-bottom {
 	position: absolute;
 	z-index: -1;
 	bottom: 4px;
@@ -114,18 +114,29 @@ body {
 	height: calc(100% - 10px);
 	box-sizing: content-box;
 	background-color: rgb(0, 59, 136);
-	background-image: radial-gradient(4px 8px at 4px calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(4px 8px at calc(100% - 4px) calc(100% - 8px), rgba(255, 255, 255, .25), transparent), radial-gradient(16px at -4px 0, white, transparent), radial-gradient(16px at calc(100% + 4px) 0, white, transparent);
-	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5), inset 0 -1px 3px 3px rgba(0, 0, 0, .4);
+	background-image: radial-gradient(
+			4px 8px at 4px calc(100% - 8px),
+			rgba(255, 255, 255, 0.25),
+			transparent
+		),
+		radial-gradient(
+			4px 8px at calc(100% - 4px) calc(100% - 8px),
+			rgba(255, 255, 255, 0.25),
+			transparent
+		),
+		radial-gradient(16px at -4px 0, white, transparent),
+		radial-gradient(16px at calc(100% + 4px) 0, white, transparent);
+	box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5), inset 0 -1px 3px 3px rgba(0, 0, 0, 0.4);
 	transition-property: border-radius, padding-top;
-	transition-duration: .2s;
-  }
-  
-  .button:active .button-bottom {
+	transition-duration: 0.2s;
+}
+
+.button:active .button-bottom {
 	border-radius: 50px / 50px 50px 50px 50px;
 	padding-top: 0;
-  }
-  
-  .button-base {
+}
+
+.button-base {
 	position: absolute;
 	z-index: -2;
 	top: 4px;
@@ -133,14 +144,19 @@ body {
 	border-radius: 50px;
 	width: 100%;
 	height: calc(100% - 4px);
-	background-color: rgba(0, 0, 0, .15);
-	box-shadow: 0 1px 1px 0 rgba(255, 255, 255, .75), inset 0 2px 2px rgba(0, 0, 0, .25);
-  }
-  .arrow-left {
+	background-color: rgba(0, 0, 0, 0.15);
+	box-shadow: 0 1px 1px 0 rgba(255, 255, 255, 0.75), inset 0 2px 2px rgba(0, 0, 0, 0.25);
+}
+.arrow-left {
 	left: 30px;
-  }
+}
 
-  .read-more:hover .arrow {
+.read-more:hover .arrow {
 	transform: translateX(3px);
-	transition: .3s ease-in-out;
-  }
+	transition: 0.3s ease-in-out;
+}
+
+.form input, textarea {
+	background-color: transparent;
+	border-radius: 10px;
+}
