@@ -42,7 +42,7 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 				<textarea
 					value={newPost.description}
 					placeholder='Description about your post..'
-					className='placeholder:text-zinc-400 w-[30%]'
+					className='placeholder:text-zinc-400 w-[64%] xl:w-[30%]'
 					onChange={(e) => setNewPost({ ...newPost, description: e.target.value })}
 				/>
 				<input
