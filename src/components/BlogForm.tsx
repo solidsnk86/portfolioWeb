@@ -43,7 +43,7 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 					value={newPost.description}
 					placeholder='Description about your post..'
 					className='placeholder:text-zinc-400'
-					maxLength={333}
+					maxLength={500}
 					onChange={(e) => setNewPost({ ...newPost, description: e.target.value })}
 				/>
 				<input

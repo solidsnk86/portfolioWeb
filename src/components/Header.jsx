@@ -6,7 +6,6 @@ export function Header() {
 		{ name: 'Contact', href: '/contact/' },
 		{ name: 'Blog', href: '/blog/' },
 		{ name: 'Projects', href: '#proyectos' },
-		{ name: 'Login', href: '/Login' }
 	]
 
 	return (

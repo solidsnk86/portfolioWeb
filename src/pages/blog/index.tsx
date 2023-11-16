@@ -45,23 +45,23 @@ const MyBlog = () => {
 	useEffect(() => {
 		const fetchArticleViews = async () => {
 			try {
-				const { data, error } = await supabase.from('views').select()
-
+				const { data, error } = await supabase.from('views').select();
+				console.log(data)
 				if (error) {
-					console.error('Error fetching article views:', error)
+					console.error('Error fetching article views:', error);
 				} else {
 					const viewsData = data.reduce((acc, view) => {
-						acc[parseInt(view.article_id, 10)] = view.id
-						return acc
-					}, {})
-
-					setArticleViews(viewsData)
+						acc[view.article_id] = view.id;
+						return acc;
+					}, {});
+		
+					setArticleViews(viewsData);
 				}
 			} catch (error) {
-				console.error('Error fetching article views:', error)
+				console.error('Error fetching article views:', error);
 			}
-		}
-
+		};
+		
 		const fetchLikes = async () => {
 			try {
 				const { data, error } = await supabase.from('likes').select('post_id, user_id')
@@ -138,7 +138,7 @@ const MyBlog = () => {
 			const { data: postExists, error: postExistsError } = await supabase
 				.from('posts')
 				.select('id')
-				.eq('id', post_id)
+				.eq('article_id', '1ceaf39e-6aaf-4fad-9251-4a0de699956a')
 				.single()
 
 			if (postExistsError) {
@@ -237,7 +237,7 @@ const MyBlog = () => {
 									</Link>
 								</aside>
 								<button onClick={() => handleLike(post.article_id)}>
-									<Heart className='inline mx-2 hover:fill-red-500 transition-all' />{' '}
+									<Heart className='inline mx-2 hover:fill-red-500 transition-all hover:animate-pulse' />
 									{likes[post.article_id] ? likes[post.article_id].length : 0}
 								</button>
 							</article>
