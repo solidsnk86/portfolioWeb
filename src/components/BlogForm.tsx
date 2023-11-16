@@ -5,15 +5,15 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 				<h1 className='text-xl font-semibold border-l-4 border-zinc-600 my-3 pl-3'>
 					What Can You Post?
 				</h1>
-				<ul className='list-disc'>
+				<ul className='list-decimal m-8'>
 					<li>
-						Projects Showcase: Share your latest and greatest projects! Whether
-						it's a web app, a mobile application, or even a hardware project, we want to see what you've
-						been working on. Don't forget to include details about the technologies you used and the
-						challenges you overcame.
+						Projects Showcase: Share your latest and greatest projects! Whether it's a web app, a
+						mobile application, or even a hardware project, i want to see what you've been working
+						on. Don't forget to include details about the technologies you used and the challenges
+						you overcame.
 					</li>
-					<li>
-						This feature is in development, use with caution!
+					<li className='border-l-4 border-red-500 rounded border px-1 w-fit bg-red-900 bg-opacity-[0.6]'>
+						🍦 This feature is in development, use with caution!
 					</li>
 				</ul>
 			</div>
