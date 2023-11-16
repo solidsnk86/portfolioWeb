@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import ImageAvatar from './AvatarBlog'
-import { ArrowLeft, ArrowRight, EyeIcon } from 'lucide-react'
+import { ArrowLeft, ArrowRight, EyeIcon, Heart } from 'lucide-react'
 import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { MT } from '@/components/MeteorLanguages'
@@ -30,6 +30,7 @@ const formatDate = (dateString) => {
 const MyBlog = () => {
 	const [articleViews, setArticleViews] = useState({})
 	const [posts, setPosts] = useState([])
+	const [likes, setLikes] = useState({})
 	const [newPost, setNewPost] = useState({
 		user_id: '',
 		name: '',
@@ -44,13 +45,13 @@ const MyBlog = () => {
 	useEffect(() => {
 		const fetchArticleViews = async () => {
 			try {
-				const { data, error } = await supabase.from('views').select()
+				const { data, error } = await supabase.from('views').select('post_id')
 
 				if (error) {
 					console.error('Error fetching article views:', error)
 				} else {
 					const viewsData = data.reduce((acc, view) => {
-						acc[view.views] = view.article_id
+						acc[view.post_id] = view.post_id
 						return acc
 					}, {})
 
@@ -58,6 +59,28 @@ const MyBlog = () => {
 				}
 			} catch (error) {
 				console.error('Error fetching article views:', error)
+			}
+		}
+
+		const fetchLikes = async () => {
+			try {
+				const { data, error } = await supabase.from('likes').select('post_id, user_id')
+
+				if (error) {
+					console.error('Error fetching likes:', error)
+				} else {
+					const likesData = data.reduce((acc, like) => {
+						if (!acc[like.post_id]) {
+							acc[like.post_id] = []
+						}
+						acc[like.post_id].push(like.user_id)
+						return acc
+					}, {})
+
+					setLikes(likesData)
+				}
+			} catch (error) {
+				console.error('Error fetching likes:', error)
 			}
 		}
 
@@ -76,6 +99,7 @@ const MyBlog = () => {
 		}
 
 		fetchArticleViews()
+		fetchLikes()
 		fetchPosts()
 	}, [])
 
@@ -109,6 +133,56 @@ const MyBlog = () => {
 		}
 	}
 
+	const sendLike = async (post_id) => {
+		try {
+			// Verificar si el post al que se está dando like existe
+			const { data: postExists, error: postExistsError } = await supabase
+				.from('posts')
+				.select('id')
+				.eq('id', post_id)
+				.single()
+
+			if (postExistsError) {
+				console.error('Error checking if post exists:', postExistsError)
+				return
+			}
+
+			if (!postExists) {
+				console.error('Post does not exist')
+				return
+			}
+
+			const user_id = 'Neo'
+			const { data, error } = await supabase.from('likes').upsert([{ post_id, user_id }])
+
+			if (error) {
+				console.error('Error sending like:', error)
+			} else {
+				console.log('Like sent successfully:', data)
+			}
+		} catch (error) {
+			console.error('Error sending like:', error)
+		}
+	}
+
+	const handleLike = async (post_id) => {
+		try {
+			await sendLike(post_id)
+
+			setLikes((prevLikes) => {
+				const existingLikes = prevLikes[post_id] || []
+				const updatedLikes = {
+					...prevLikes,
+					[post_id]: [...existingLikes, '']
+				}
+				console.log('Updated Likes:', updatedLikes)
+				return updatedLikes
+			})
+		} catch (error) {
+			console.error('Error handling like:', error)
+		}
+	}
+
 	const articleVisited = async (article_id) => {
 		const newViews = (articleViews[article_id] || 0) + 1
 		setArticleViews((prevViews) => {
@@ -120,7 +194,10 @@ const MyBlog = () => {
 	}
 
 	return (
-		<main className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-[100%]'>
+		<main
+			ref={useRef}
+			className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-[100%]'
+		>
 			<Head>
 				<meta name='theme-color' content='#F05252' />
 			</Head>
@@ -160,6 +237,10 @@ const MyBlog = () => {
 									Read More <ArrowRight className='mx-1 arrow' />
 								</Link>
 							</aside>
+							<button onClick={() => handleLike(post.article_id)}>
+								<Heart className='inline mx-2 hover:fill-red-500 transition-all' />{' '}
+								{likes[post.article_id] ? likes[post.article_id].length : 0}
+							</button>
 						</article>
 					</Card>
 				</div>
