@@ -7,8 +7,8 @@ import { Card } from '@/components/Card'
 import { MT } from '@/components/MeteorLanguages'
 import { Footer } from '@/components/Footer'
 import { createClient } from '@supabase/supabase-js'
-import { BlogHeader } from '@/components/BlogHeader'
-import BlogForm from '@/components/BlogForm'
+import { BlogHeader } from '@/pages/blog/BlogHeader'
+import BlogForm from '@/pages/blog/BlogForm'
 import { v4 as uuidv4 } from 'uuid'
 
 const supabase = createClient(
@@ -34,7 +34,7 @@ const MyBlog = () => {
 	const [newPost, setNewPost] = useState({
 		user_id: '',
 		name: '',
-		company_dev: 'NeoTecs',
+		company_dev: '',
 		title: '',
 		description: '',
 		url: '',
@@ -45,13 +45,13 @@ const MyBlog = () => {
 	useEffect(() => {
 		const fetchArticleViews = async () => {
 			try {
-				const { data, error } = await supabase.from('views').select('post_id')
+				const { data, error } = await supabase.from('views').select()
 
 				if (error) {
 					console.error('Error fetching article views:', error)
 				} else {
 					const viewsData = data.reduce((acc, view) => {
-						acc[view.post_id] = view.post_id
+						acc[parseInt(view.article_id, 10)] = view.id
 						return acc
 					}, {})
 
@@ -103,9 +103,9 @@ const MyBlog = () => {
 		fetchPosts()
 	}, [])
 
-	const sendViews = async (article_id) => {
+	const sendViews = async (articleId) => {
 		try {
-			const { data, error } = await supabase.from('views').upsert([{ article_id }])
+			const { data, error } = await supabase.from('views').upsert([{ article_id: articleId }])
 
 			if (error) {
 				console.error('Error sending views:', error)
@@ -200,7 +200,7 @@ const MyBlog = () => {
 					<meta name='theme-color' content='#F05252' />
 				</Head>
 				<ArrowLeft
-					className='flex relative xl:fixed left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
+					className='flex relative xl:fixed left-[14px] top-[1.6rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
 					onClick={() => window.open('/', '_self')}
 				/>
 				<BlogHeader />

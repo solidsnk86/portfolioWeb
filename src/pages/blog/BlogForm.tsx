@@ -5,9 +5,9 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 				<h1 className='text-xl font-semibold border-l-4 border-zinc-600 my-3 pl-3'>
 					What Can You Post?
 				</h1>
-				<ul className='list-decimal m-8'>
+				<ul className='list-decimal m-8 space-y-2 text-sm xl:text-[16px]'>
 					<li>
-						Projects Showcase: Share your latest and greatest projects! Whether it's a web app, a
+						🍪 Projects Showcase:<br/> Share your latest and greatest projects! Whether it's a web app, a
 						mobile application, or even a hardware project, i want to see what you've been working
 						on. Don't forget to include details about the technologies you used and the challenges
 						you overcame.
@@ -42,8 +42,16 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 				<textarea
 					value={newPost.description}
 					placeholder='Description about your post..'
-					className='placeholder:text-zinc-400 w-[64%] xl:w-[30%]'
+					className='placeholder:text-zinc-400'
+					maxLength={333}
 					onChange={(e) => setNewPost({ ...newPost, description: e.target.value })}
+				/>
+				<input
+					type='text'
+					value={newPost.company_dev}
+					placeholder='Dev name'
+					className='placeholder:text-slate-100'
+					onChange={(e) => setNewPost({ ...newPost, company_dev: e.target.value })}
 				/>
 				<input
 					type='text'
