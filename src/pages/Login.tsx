@@ -1,41 +1,9 @@
 'use client'
 
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
 import Head from 'next/head'
 import { ArrowLeft } from 'lucide-react'
 
 export default function Login() {
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
-	const router = useRouter()
-	const supabase = createClientComponentClient()
-
-	const handleSignUp = async () => {
-		await supabase.auth.signUp({
-			email,
-			password,
-			options: {
-				emailRedirectTo: `${location.origin}/auth/callback`
-			}
-		})
-		router.refresh()
-	}
-
-	const handleSignIn = async () => {
-		await supabase.auth.signInWithPassword({
-			email,
-			password
-		})
-		router.refresh()
-	}
-
-	const handleSignOut = async () => {
-		await supabase.auth.signOut()
-		router.refresh()
-	}
-
 	return (
 		<>
 			<Head>
@@ -87,7 +55,7 @@ export default function Login() {
 						Sign in with Google
 					</button>
 					<div className='buttons-login flex flex-col space-y-4'>
-						<button onClick={handleSignIn}>Sign in</button>
+						<button>Sign in</button>
 					</div>
 				</form>
 			</main>

@@ -45,23 +45,23 @@ const MyBlog = () => {
 	useEffect(() => {
 		const fetchArticleViews = async () => {
 			try {
-				const { data, error } = await supabase.from('views').select();
+				const { data, error } = await supabase.from('views').select()
 				console.log(data)
 				if (error) {
-					console.error('Error fetching article views:', error);
+					console.error('Error fetching article views:', error)
 				} else {
 					const viewsData = data.reduce((acc, view) => {
-						acc[view.article_id] = view.id;
-						return acc;
-					}, {});
-		
-					setArticleViews(viewsData);
+						acc[view.article_id] = view.id
+						return acc
+					}, {})
+
+					setArticleViews(viewsData)
 				}
 			} catch (error) {
-				console.error('Error fetching article views:', error);
+				console.error('Error fetching article views:', error)
 			}
-		};
-		
+		}
+
 		const fetchLikes = async () => {
 			try {
 				const { data, error } = await supabase.from('likes').select('post_id, user_id')
