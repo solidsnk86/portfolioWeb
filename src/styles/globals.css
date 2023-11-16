@@ -178,7 +178,7 @@ textarea {
 	filter: drop-shadow(0 0 6px #999);
 	background-color: #ccc;
 	color: #000000;
-	transition: .1s ease-in-out;
+	transition: 0.1s ease-in-out;
 }
 
 /* ==============> HR <============== */
@@ -189,12 +189,37 @@ textarea {
 	justify-content: center;
 	margin-bottom: 10px;
 	margin-top: 12px;
-  }
-  
-  .hr-container hr {
+}
+
+.hr-container hr {
 	flex-grow: 1;
 	height: 2px;
 	background-color: #666;
 	border: none;
 	margin: 0 10px;
-  }
+}
+
+/* SPINER */
+
+.spinner {
+    position: fixed;
+    left: calc(50% - 20px);
+    top: 50%;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #F05252;
+    z-index: 99;
+    animation: spinn 1s linear infinite;
+}
+
+@keyframes spinn {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

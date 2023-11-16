@@ -28,6 +28,7 @@ const formatDate = (dateString) => {
 }
 
 const MyBlog = () => {
+	const [preloaderVisible, setPreloaderVisible] = useState(true)
 	const [articleViews, setArticleViews] = useState({})
 	const [posts, setPosts] = useState([])
 	const [likes, setLikes] = useState({})
@@ -41,6 +42,14 @@ const MyBlog = () => {
 		posted: new Date().toISOString(),
 		article_id: uuidv4()
 	})
+
+	useEffect(() => {
+		const preloaderTimeout = setTimeout(() => {
+			setPreloaderVisible(false)
+		}, 2000)
+
+		return () => clearTimeout(preloaderTimeout)
+	}, [])
 
 	useEffect(() => {
 		const fetchArticleViews = async () => {
@@ -196,6 +205,7 @@ const MyBlog = () => {
 		<>
 			<MT />
 			<main className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-[100%]'>
+				{preloaderVisible && <div className='spinner'></div>}
 				<Head>
 					<meta name='theme-color' content='#F05252' />
 				</Head>
