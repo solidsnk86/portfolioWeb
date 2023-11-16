@@ -7,8 +7,8 @@ import { Card } from '@/components/Card'
 import { MT } from '@/components/MeteorLanguages'
 import { Footer } from '@/components/Footer'
 import { createClient } from '@supabase/supabase-js'
-import { BlogHeader } from '@/pages/blog/BlogHeader'
-import BlogForm from '@/pages/blog/BlogForm'
+import { BlogHeader } from '@/components/BlogHeader'
+import BlogForm from '@/components/BlogForm'
 import { v4 as uuidv4 } from 'uuid'
 
 const supabase = createClient(
