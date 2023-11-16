@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import ImageAvatar from './AvatarBlog'
 import { ArrowLeft, ArrowRight, EyeIcon, Heart } from 'lucide-react'
 import Head from 'next/head'
@@ -195,7 +195,6 @@ const MyBlog = () => {
 
 	return (
 		<main
-			ref={useRef}
 			className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-[100%]'
 		>
 			<Head>
