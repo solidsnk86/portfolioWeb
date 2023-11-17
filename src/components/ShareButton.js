@@ -4,8 +4,8 @@ export function ShareButton({ postTitle, postDescription, postUrl }) {
 	const shareButton = () => {
 		if (navigator.share) {
 			navigator.share({
-				title: postTitle,
-				text: postDescription,
+				title: postDescription,
+				text: postTitle,
 				url: postUrl
 			})
 		}
