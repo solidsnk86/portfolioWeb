@@ -10,6 +10,7 @@ import { createClient } from '@supabase/supabase-js'
 import { BlogHeader } from '@/components/BlogHeader'
 import BlogForm from '@/components/BlogForm'
 import { v4 as uuidv4 } from 'uuid'
+import { ShareButton } from '@/components/ShareButton'
 
 const supabase = createClient(
 	'https://wbywikatpjrneagwppxf.supabase.co',
@@ -251,6 +252,9 @@ const MyBlog = () => {
 								<button onClick={() => handleLike(post.article_id)}>
 									<Heart className='inline mx-2 hover:fill-red-500 transition-all hover:animate-pulse' />
 									{likes[post.article_id] ? likes[post.article_id].length : 0}
+								</button>
+								<button>
+									<ShareButton postTitle={post.title} postDescription={post.description} postUrl={post.url} />
 								</button>
 							</article>
 						</Card>
