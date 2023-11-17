@@ -12,6 +12,9 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 						on. Don't forget to include details about the technologies you used and the challenges
 						you overcame.
 					</li>
+					<li>
+						At the moment in this blog, anyone can post, i´m working 👨‍💻 in the login user to generate a post!
+					</li>
 					<li className='border-l-4 border-red-500 rounded border px-1 w-fit bg-red-900 bg-opacity-[0.6]'>
 						🍦 This feature is in development, use with caution!
 					</li>

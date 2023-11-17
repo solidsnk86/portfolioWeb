@@ -10,6 +10,7 @@ import { createClient } from '@supabase/supabase-js'
 import { BlogHeader } from '@/components/BlogHeader'
 import BlogForm from '@/components/BlogForm'
 import { v4 as uuidv4 } from 'uuid'
+import { ShareButton } from '@/components/ShareButton'
 
 const supabase = createClient(
 	'https://wbywikatpjrneagwppxf.supabase.co',
@@ -201,6 +202,7 @@ const MyBlog = () => {
 		sendViews(article_id)
 	}
 
+
 	return (
 		<>
 			<MT />
@@ -215,7 +217,7 @@ const MyBlog = () => {
 				/>
 				<BlogHeader />
 				{posts.map((post) => (
-					<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-20 px-3'>
+					<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-16 px-3'>
 						<Card>
 							<article className='p-6 space-y-6 relative'>
 								<header>
@@ -249,6 +251,13 @@ const MyBlog = () => {
 								<button onClick={() => handleLike(post.article_id)}>
 									<Heart className='inline mx-2 hover:fill-red-500 transition-all hover:animate-pulse' />
 									{likes[post.article_id] ? likes[post.article_id].length : 0}
+								</button>
+								<button className='mx-1'>
+									<ShareButton
+										postTitle={post.title}
+										postDescription={post.description}
+										postUrl={post.url}
+									/>
 								</button>
 							</article>
 						</Card>
