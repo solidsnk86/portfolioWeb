@@ -144,34 +144,36 @@ const MyBlog = () => {
 
 	const sendLike = async (article_id) => {
 		try {
-		  const { data: postExists, error: postExistsError } = await supabase
-			.from('posts')
-			.select('id')
-			.eq('article_id', article_id)
-			.single();
-	  
-		  if (postExistsError) {
-			console.error('Error checking if post exists:', postExistsError);
-			return;
-		  }
-	  
-		  if (!postExists) {
-			console.error('Post does not exist');
-			return;
-		  }
-	  
-		  const user_id = 'Neo';
-		  const { data, error } = await supabase.from('likes').upsert([{ post_id: article_id, user_id }]);
-	  
-		  if (error) {
-			console.error('Error sending like:', error);
-		  } else {
-			console.log('Like sent successfully:', data);
-		  }
+			const { data: postExists, error: postExistsError } = await supabase
+				.from('posts')
+				.select('id')
+				.eq('article_id', article_id)
+				.single()
+
+			if (postExistsError) {
+				console.error('Error checking if post exists:', postExistsError)
+				return
+			}
+
+			if (!postExists) {
+				console.error('Post does not exist')
+				return
+			}
+
+			const user_id = 'Neo'
+			const { data, error } = await supabase
+				.from('likes')
+				.upsert([{ post_id: article_id, user_id }])
+
+			if (error) {
+				console.error('Error sending like:', error)
+			} else {
+				console.log('Like sent successfully:', data)
+			}
 		} catch (error) {
-		  console.error('Error sending like:', error);
+			console.error('Error sending like:', error)
 		}
-	  };
+	}
 
 	const handleLike = async (post_id) => {
 		try {
