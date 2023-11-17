@@ -16,7 +16,7 @@ export function ShareButton({ postTitle, postDescription, postUrl }) {
 			className='relative text-right space-x-4 text-lg cursor-pointer hover:opacity-[.6] transition-all text-primary'
 			onClick={shareButton}
 		>
-			<Share2Icon className='inline-flex text-xl mx-2' title='Compartir' />
+			<Share2Icon className='inline-flex text-xl mx-4 mt-[1px]' title='Compartir' />
 		</section>
 	)
 }
