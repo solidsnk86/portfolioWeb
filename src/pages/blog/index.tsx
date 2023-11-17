@@ -10,7 +10,6 @@ import { createClient } from '@supabase/supabase-js'
 import { BlogHeader } from '@/components/BlogHeader'
 import BlogForm from '@/components/BlogForm'
 import { v4 as uuidv4 } from 'uuid'
-import { ShareButton } from '@/components/ShareButton'
 
 const supabase = createClient(
 	'https://wbywikatpjrneagwppxf.supabase.co',
@@ -143,36 +142,36 @@ const MyBlog = () => {
 		}
 	}
 
-	const sendLike = async (post_id) => {
+	const sendLike = async (article_id) => {
 		try {
-			const { data: postExists, error: postExistsError } = await supabase
-				.from('posts')
-				.select('id')
-				.eq('article_id', '1ceaf39e-6aaf-4fad-9251-4a0de699956a')
-				.single()
-
-			if (postExistsError) {
-				console.error('Error checking if post exists:', postExistsError)
-				return
-			}
-
-			if (!postExists) {
-				console.error('Post does not exist')
-				return
-			}
-
-			const user_id = 'Neo'
-			const { data, error } = await supabase.from('likes').upsert([{ post_id, user_id }])
-
-			if (error) {
-				console.error('Error sending like:', error)
-			} else {
-				console.log('Like sent successfully:', data)
-			}
+		  const { data: postExists, error: postExistsError } = await supabase
+			.from('posts')
+			.select('id')
+			.eq('article_id', article_id)
+			.single();
+	  
+		  if (postExistsError) {
+			console.error('Error checking if post exists:', postExistsError);
+			return;
+		  }
+	  
+		  if (!postExists) {
+			console.error('Post does not exist');
+			return;
+		  }
+	  
+		  const user_id = 'Neo';
+		  const { data, error } = await supabase.from('likes').upsert([{ post_id: article_id, user_id }]);
+	  
+		  if (error) {
+			console.error('Error sending like:', error);
+		  } else {
+			console.log('Like sent successfully:', data);
+		  }
 		} catch (error) {
-			console.error('Error sending like:', error)
+		  console.error('Error sending like:', error);
 		}
-	}
+	  };
 
 	const handleLike = async (post_id) => {
 		try {
@@ -202,7 +201,6 @@ const MyBlog = () => {
 		sendViews(article_id)
 	}
 
-
 	return (
 		<>
 			<MT />
@@ -217,7 +215,7 @@ const MyBlog = () => {
 				/>
 				<BlogHeader />
 				{posts.map((post) => (
-					<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-16 px-3'>
+					<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-20 px-3'>
 						<Card>
 							<article className='p-6 space-y-6 relative'>
 								<header>
@@ -251,13 +249,6 @@ const MyBlog = () => {
 								<button onClick={() => handleLike(post.article_id)}>
 									<Heart className='inline mx-2 hover:fill-red-500 transition-all hover:animate-pulse' />
 									{likes[post.article_id] ? likes[post.article_id].length : 0}
-								</button>
-								<button className='mx-1'>
-									<ShareButton
-										postTitle={post.title}
-										postDescription={post.description}
-										postUrl={post.url}
-									/>
 								</button>
 							</article>
 						</Card>
