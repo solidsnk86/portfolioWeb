@@ -5,30 +5,15 @@ import { ArrowLeft, ArrowRight, EyeIcon, Heart } from 'lucide-react'
 import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { Footer } from '@/components/Footer'
-import { createClient } from '@supabase/supabase-js'
+import { supabase } from '@/utils/supabase'
 import { BlogHeader } from '@/components/BlogHeader'
 import BlogForm from '@/components/BlogForm'
 import { v4 as uuidv4 } from 'uuid'
 import { ShareButton } from '@/components/ShareButton'
-
-const supabase = createClient(
-	'https://wbywikatpjrneagwppxf.supabase.co',
-	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndieXdpa2F0cGpybmVhZ3dwcHhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTk4Mzg5MzAsImV4cCI6MjAxNTQxNDkzMH0.nv6KxxPZBSiROB3-bak4LGAud2ex-wCDvyykMrYDCZQ'
-)
-
-const formatDate = (dateString) => {
-	const formattedDate = new Date(dateString).toLocaleDateString('es-ES', {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-		hour: 'numeric',
-		minute: '2-digit'
-	})
-	return formattedDate
-}
+import { Preloader } from '@/lib/Preloader'
+import { FormatDate } from '@/components/FormatDate'
 
 const MyBlog = () => {
-	const [preloaderVisible, setPreloaderVisible] = useState(true)
 	const [articleViews, setArticleViews] = useState({})
 	const [posts, setPosts] = useState([])
 	const [likes, setLikes] = useState({})
@@ -42,14 +27,6 @@ const MyBlog = () => {
 		posted: new Date().toISOString(),
 		article_id: uuidv4()
 	})
-
-	useEffect(() => {
-		const preloaderTimeout = setTimeout(() => {
-			setPreloaderVisible(false)
-		}, 2000)
-
-		return () => clearTimeout(preloaderTimeout)
-	}, [])
 
 	useEffect(() => {
 		const fetchArticleViews = async () => {
@@ -212,7 +189,7 @@ const MyBlog = () => {
 
 	return (
 		<main className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-[100%]'>
-			{preloaderVisible && <div className='spinner'></div>}
+			<Preloader />
 			<Head>
 				<meta name='theme-color' content='#F05252' />
 			</Head>
@@ -226,7 +203,7 @@ const MyBlog = () => {
 					<Card>
 						<article className='p-6 space-y-6 relative'>
 							<header>
-								<span className='text-zinc-400 text-sm'>{formatDate(post.posted)}</span>
+								<FormatDate post={post} />
 								<span className='text-zinc-400 absolute top-[25px] right-5 text-sm'>
 									<EyeIcon className='float-right mx-2 my-[2px] w-4 h-4' />
 									{articleViews[post.article_id] || 0}
