@@ -55,12 +55,15 @@ const MyBlog = () => {
 		const fetchArticleViews = async () => {
 			try {
 				const { data, error } = await supabase.from('views').select()
-				console.log(data)
+
 				if (error) {
 					console.error('Error fetching article views:', error)
 				} else {
 					const viewsData = data.reduce((acc, view) => {
-						acc[view.article_id] = view.id
+						if (!acc[view.article_id]) {
+							acc[view.article_id] = 0
+						}
+						acc[view.article_id]++
 						return acc
 					}, {})
 
@@ -197,12 +200,13 @@ const MyBlog = () => {
 	}
 
 	const articleVisited = async (article_id) => {
-		const newViews = (articleViews[article_id] || 0) + 1
 		setArticleViews((prevViews) => {
+			const newViews = (prevViews[article_id] || 0) + 1
 			const updatedViews = { ...prevViews, [article_id]: newViews }
 			console.log('Updated Views:', updatedViews)
 			return updatedViews
 		})
+
 		sendViews(article_id)
 	}
 
@@ -248,7 +252,7 @@ const MyBlog = () => {
 								</Link>
 							</aside>
 							<button onClick={() => handleLike(post.article_id)}>
-								<Heart className='inline mx-2 hover:fill-red-500 transition-all hover:animate-pulse' />
+								<Heart className='inline mx-2 hover:fill-red-500 transition-all' />
 								{likes[post.article_id] ? likes[post.article_id].length : 0}
 							</button>
 							<button>
