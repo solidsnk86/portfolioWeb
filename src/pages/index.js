@@ -18,10 +18,16 @@ import { TresDButton } from '../components/TresDButton'
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
 
+const favicon2String = renderToString(<FaviconIcon />)
+const cvIcon = renderToString(<MyIcon />)
+const neoIcon = renderToString(<NeoTecsIcon />)
+const formIcon = renderToString(<FormIcon />)
+const scoreBoard = renderToString(<ScoreBoardIcon />)
+
 export default function Home() {
 	const title = 'Portfolio Calcagni Gabriel'
 	const description = '¡Ey, pásate y echa un vistazo a mi portfolio!'
-	const ogImg = 'https://github.com/solidsnk86/neotecs.tech/blob/master/img/Image-og.png?raw=true'
+	const ogImg = cvIcon
 
 	const HomeTitle = ({ Tag = 'h2', children }) => {
 		return (
@@ -33,12 +39,6 @@ export default function Home() {
 			</Tag>
 		)
 	}
-
-	const favicon2String = renderToString(<FaviconIcon />)
-	const cvIcon = renderToString(<MyIcon />)
-	const neoIcon = renderToString(<NeoTecsIcon />)
-	const formIcon = renderToString(<FormIcon />)
-	const scoreBoard = renderToString(<ScoreBoardIcon />)
 
 	return (
 		<>
@@ -102,7 +102,7 @@ export default function Home() {
 						}
 					].map((item) => (
 						<div
-							className='flex flex-col text-zinc-300 items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg hover:shadow-[#D4D4D8] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 hover:scale-[1.05]'
+							className='flex flex-col text-zinc-300 items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg hover:shadow-[#73737a] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 hover:scale-[1.05]'
 							key={item.title}
 						>
 							<img
@@ -116,7 +116,7 @@ export default function Home() {
 							<GithubStats repoName={item.repoName} />
 							<a
 								href={item.url}
-								className='hover:opacity-60 px-3 py-1 rounded mt-2 text-md'
+								className='hover:brightness-150 px-3 py-1 rounded mt-2 text-md'
 								target='_blank'
 								rel='noopener noreferrer'
 							>

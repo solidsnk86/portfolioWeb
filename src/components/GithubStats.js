@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { GithubIcon } from './GithubIcon'
+import { StarIcon } from './StarIcon'
 
 function getLocalStats(repoName) {
 	return {
@@ -55,7 +55,7 @@ export const GithubStats = ({ repoName }) => {
 				rel='noopener'
 				target='_blank'
 			>
-				<GithubIcon className='inline-block text-zinc-300' height='20' />
+				<StarIcon className='inline-block text-zinc-300' />
 			</a>
 			<a
 				className='text-xs text-zinc-300 hover:no-underline'

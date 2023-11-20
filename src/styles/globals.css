@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	scroll-behavior: smooth;
+}
+
 body {
 	background: #000000;
 	overflow-x: hidden;
-	scroll-behavior: smooth;
 }
 
 @keyframes add-shadow {

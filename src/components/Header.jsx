@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { GithubStats } from '@/components/GithubStats'
+import { GithubStats } from './GithubStats'
 
 export function Header() {
 	const navigation = [
