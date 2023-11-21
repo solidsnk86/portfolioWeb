@@ -8,8 +8,8 @@ export const BlogHeader = () => {
 				your projects featured on this blog or even the stuff you consider intrest!. It's currently
 				in the development and testing phase. Your participation would be greatly appreciated!
 			</p>
-			<ul className="list-disc pt-6 m-8">
-				<li>
+			<ul className="list-disc pt-6 m-8 underline underline-offset-4">
+				<li className="text-zinc-400">
 					Latest Posts:
 				</li>
 			</ul>
