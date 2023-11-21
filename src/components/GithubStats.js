@@ -55,7 +55,7 @@ export const GithubStats = ({ repoName }) => {
 				rel='noopener'
 				target='_blank'
 			>
-				<StarIcon className='inline-block text-zinc-300' />
+				<StarIcon className='inline-block text-zinc-300 mb-[2px]' />
 			</a>
 			<a
 				className='text-xs text-zinc-300 hover:no-underline'
