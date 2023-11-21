@@ -199,7 +199,7 @@ const MyBlog = () => {
 			/>
 			<BlogHeader />
 			{posts.map((post) => (
-				<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-10 px-3'>
+				<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-[33px] px-3'>
 					<Card>
 						<article className='p-6 space-y-6 relative'>
 							<header>
@@ -223,7 +223,7 @@ const MyBlog = () => {
 								<Link
 									href={post.url}
 									onClick={() => articleVisited(post.article_id)}
-									className='read-more absolute right-2 bottom-5 xl:right-10 xl:bottom-10 flex hover:underline'
+									className='read-more absolute right-2 bottom-5 xl:right-10 xl:bottom-[26px] flex hover:underline'
 								>
 									Read More <ArrowRight className='mx-1 arrow' />
 								</Link>
