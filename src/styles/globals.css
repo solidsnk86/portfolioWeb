@@ -41,6 +41,10 @@ body {
 	filter: drop-shadow(0 0 10px tomato);
 }
 
+.link-shadow:hover {
+	filter: drop-shadow(0 0 9px orange);
+}
+
 /*************************
 ** BUTTON GAMEPAD STYLES *
 **************************/

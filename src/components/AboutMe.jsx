@@ -5,7 +5,7 @@ import { Logo } from './Logo'
 export function AboutMe() {
 	const CardTitle = ({ Tag = 'p', children }) => {
 		return (
-			<Tag className='text-sm sm:text-xs md:text-xs xl:text-sm from-zinc-300 text-center my-20 italic font-thin'>
+			<Tag className='text-sm md:text-md xl:text-lg from-zinc-300 text-center my-20 italic font-thin'>
 				{children}
 			</Tag>
 		)
@@ -14,7 +14,7 @@ export function AboutMe() {
 	return (
 		<>
 			<nav className='text-white flex list-none relative justify-center m-auto'>
-				<div className='block mt-28 xl:mt-24'>
+				<div className='block mt-24 xl:mt-10'>
 					<div>
 						<div className='relative flex'>
 							<Logo className='w-[500px]' />
@@ -25,7 +25,7 @@ export function AboutMe() {
 							Hi, my name is Gabriel. I am a Front End developer with 1 year of experience, using
 							technologies such as React and Next.js. I work on my project
 							<Link
-								className='mx-1 duration-500 hover:text-orange-400 underline'
+								className='mx-1 duration-500 text-orange-400 underline link-shadow'
 								href='https://neotecs.netlify.app/'
 							>
 								Neotecs

@@ -33,7 +33,7 @@ export default function Home() {
 		return (
 			<Tag
 				id='proyectos'
-				className='flex justify-center m-auto my-16 text-sky-100 text-4xl xl:text-6xl md:text-5xl font-bold '
+				className='flex justify-center m-auto my-16 text-sky-100 text-4xl xl:text-5xl md:text-5xl font-bold '
 			>
 				{children}
 			</Tag>
@@ -102,7 +102,7 @@ export default function Home() {
 						}
 					].map((item) => (
 						<div
-							className='flex flex-col text-zinc-300 items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg hover:shadow-[#73737a] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 hover:scale-[1.05]'
+							className='flex flex-col text-zinc-300 items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg hover:shadow-[#66666b] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 hover:scale-[1.05]'
 							key={item.title}
 						>
 							<img
@@ -121,7 +121,7 @@ export default function Home() {
 								rel='noopener noreferrer'
 							>
 								Link
-								<ExternalLink className='inline-flex mx-1 mb-2 relative text-md' />
+								<ExternalLink className='inline-flex mx-1 mb-1 relative text-md w-4 h-4 ' />
 							</a>
 						</div>
 					))}
