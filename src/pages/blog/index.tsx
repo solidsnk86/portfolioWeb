@@ -199,7 +199,7 @@ const MyBlog = () => {
 			/>
 			<BlogHeader />
 			{posts.map((post) => (
-				<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-20 px-3'>
+				<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-10 px-3'>
 					<Card>
 						<article className='p-6 space-y-6 relative'>
 							<header>
