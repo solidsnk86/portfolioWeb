@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { useState } from 'react'
 import { MessageCircleIcon } from 'lucide-react'
 
 const BlogForm = ({ newPost, setNewPost, sendPost }) => {
@@ -17,7 +16,7 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 
 	const toggleForm = () => {
 		setShowForm(!showForm)
-	  }
+	}
 
 	return (
 		<section className='xl:w-1/2 xl:justify-center xl:m-auto'>
@@ -42,15 +41,18 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 					</li>
 				</ul>
 			</div>
-			<button onClick={toggleForm} className='flex font-bold cursor-pointer rounded-lg p-2 border border-zinc-600 outline-slate-200 outline-offset-2 outline-4 hover:bg-red-500'>
-			Post Something! <MessageCircleIcon className='mx-1' />
+			<button
+				onClick={toggleForm}
+				className='flex font-bold cursor-pointer rounded-lg p-2 border border-zinc-600 outline-slate-200 outline-offset-2 outline-4 hover:bg-red-500'
+			>
+				Post Something! <MessageCircleIcon className='mx-1' />
 			</button>
 			<form
-        className={`${
-          showForm ? 'block' : 'hidden'
-        } flex flex-col gap-4 items-center m-auto justify-center text-slate-100 p-5 form`}
-        onSubmit={handleSubmit(onSubmit)}
-      >
+				className={`${
+					showForm ? 'block' : 'hidden'
+				} flex flex-col gap-4 items-center m-auto justify-center text-slate-100 p-5 form`}
+				onSubmit={handleSubmit(onSubmit)}
+			>
 				<input
 					type='text'
 					{...register('name')}
