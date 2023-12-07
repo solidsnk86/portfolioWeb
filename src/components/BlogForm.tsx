@@ -43,7 +43,7 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 			</div>
 			<button
 				onClick={toggleForm}
-				className='flex font-bold cursor-pointer rounded-lg p-2 border border-zinc-600 outline-slate-200 outline-offset-2 outline-4 hover:bg-red-500'
+				className='flex justify-center mx-auto font-bold cursor-pointer rounded-lg p-2 border border-zinc-600 outline-slate-200 outline-offset-2 outline-4 hover:bg-red-500'
 			>
 				Post Something! <MessageCircleIcon className='mx-1' />
 			</button>
