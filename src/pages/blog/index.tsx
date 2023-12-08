@@ -204,7 +204,7 @@ const MyBlog = () => {
 						<article className='p-6 space-y-6 relative'>
 							<header>
 								<FormatDate post={post} />
-								<span className='text-zinc-400 absolute top-[25px] right-5 text-sm'>
+								<span className='text-zinc-400 absolute top-[27px] right-5 text-sm'>
 									<EyeIcon className='float-right mx-2 my-[2px] w-4 h-4' />
 									{articleViews[post.article_id] || 0}
 								</span>
@@ -223,7 +223,7 @@ const MyBlog = () => {
 								<Link
 									href={post.url}
 									onClick={() => articleVisited(post.article_id)}
-									className='read-more absolute right-2 bottom-5 xl:right-10 xl:bottom-[26px] flex hover:underline'
+									className='read-more absolute right-2 bottom-[25px] xl:right-10 xl:bottom-[26px] flex hover:underline'
 								>
 									Read More <ArrowRight className='mx-1 arrow' />
 								</Link>
