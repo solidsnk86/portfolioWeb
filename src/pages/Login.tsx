@@ -1,13 +1,13 @@
 // 'use client'
 
-import { type Session, createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { type Session } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
 import { Button } from '@nextui-org/button'
+import { supabase } from '@/utils/supabase'
 
 /* eslint-disable multiline-ternary */
 
 export default function AuthButton({ session }: { session: Session | null }) {
-	const supabase = createClientComponentClient()
 	const router = useRouter()
 
 	const handleSignIn = async () => {
