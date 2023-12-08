@@ -14,7 +14,7 @@ export default function AuthButton({ session }: { session: Session | null }) {
 		await supabase.auth.signInWithOAuth({
 			provider: 'github',
 			options: {
-				redirectTo: 'https://solidsnk86.netlify.app/auth/callback'
+				redirectTo: 'https://wbywikatpjrneagwppxf.supabase.co/auth/v1/callback'
 			}
 		})
 	}
@@ -30,7 +30,7 @@ export default function AuthButton({ session }: { session: Session | null }) {
 				<button
 					onClick={handleSignIn}
 					type='button'
-					className='text-white hover:bg-zinc-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:ring-gray-500 hover:bg-[#050708]/30 mr-2 mb-2 shadow-md hover:shadow-red-500 transition-shadow'
+					className='text-white hover:bg-zinc-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:ring-gray-500 hover:bg-[#050708]/30 mr-2 mb-2 shadow-md hover:shadow-red-400 hover:scale-[1.02] transition-shadow'
 				>
 					<svg
 						className='w-4 h-4 mr-2'
