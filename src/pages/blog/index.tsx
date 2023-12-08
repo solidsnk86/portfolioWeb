@@ -13,12 +13,13 @@ import { ShareButton } from '@/components/ShareButton'
 import { Preloader } from '@/lib/Preloader'
 import { FormatDate } from '@/components/FormatDate'
 
-const MyBlog = () => {
+const MyBlog = ({ session }) => {
+	const userId = session?.user?.id || ''
 	const [articleViews, setArticleViews] = useState({})
 	const [posts, setPosts] = useState([])
 	const [likes, setLikes] = useState({})
 	const [newPost, setNewPost] = useState({
-		user_id: '',
+		user_id: userId,
 		name: '',
 		company_dev: '',
 		title: '',
@@ -93,7 +94,7 @@ const MyBlog = () => {
 		fetchArticleViews()
 		fetchLikes()
 		fetchPosts()
-	}, [])
+	}, [userId])
 
 	const sendViews = async (articleId) => {
 		try {
@@ -118,7 +119,7 @@ const MyBlog = () => {
 			} else {
 				console.log('Post sent successfully:', data)
 				sendViews(newPost.article_id)
-				setPosts([...posts, newPost])
+				setPosts([...posts, { ...newPost, user_id: userId }])
 			}
 		} catch (error) {
 			console.error('Error sending post:', error)
@@ -143,10 +144,7 @@ const MyBlog = () => {
 				return
 			}
 
-			const user_id = 'Neo'
-			const { data, error } = await supabase
-				.from('likes')
-				.upsert([{ post_id: article_id, user_id }])
+			const { data, error } = await supabase.from('likes').upsert([{ post_id: article_id, userId }])
 
 			if (error) {
 				console.error('Error sending like:', error)
@@ -197,7 +195,7 @@ const MyBlog = () => {
 				className='flex relative xl:fixed left-[14px] top-[1.6rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
 				onClick={() => window.open('/', '_self')}
 			/>
-			<BlogHeader />
+			<BlogHeader session={session} />
 			{posts.map((post) => (
 				<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-[33px] px-3'>
 					<Card>
