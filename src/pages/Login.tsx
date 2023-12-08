@@ -14,7 +14,7 @@ export default function AuthButton({ session }: { session: Session | null }) {
 		await supabase.auth.signInWithOAuth({
 			provider: 'github',
 			options: {
-				redirectTo: 'https://wbywikatpjrneagwppxf.supabase.co/auth/v1/callback'
+				redirectTo: 'https://solidsnk86.netlify.app/auth/callback'
 			}
 		})
 	}
