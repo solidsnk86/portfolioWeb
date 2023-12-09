@@ -21,5 +21,5 @@
 
 > [!Important]
 > En ésta web app utilizo Supabase con PostgreSQL como back-end para la creación de tablas como usuarios, vistas de artículos, likes, el estampado de fecha, entre otras cookies.
-> Si bien esto es un proyecto personal pueden descargar o clonar este repositorio para editarlo a su agrado!
+> Si bien esto es un proyecto personal pueden descargar o clonar este repositorio para editarlo a tu agrado.
 
