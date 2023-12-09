@@ -28,7 +28,9 @@
 
 ```bash
 npm install @latest
-# or
+# o
 yarn install
 ```
+#
 
+Pueden ajustar y modificar las reglas `eslintrc` que por gusto y agrado utilizo para mi proyecto.
