@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { MessageCircleIcon } from 'lucide-react'
+import { InfoCircle } from 'tabler-icons-react'
 
 const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 	const [showForm, setShowForm] = useState(false)
@@ -21,7 +22,7 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 	return (
 		<section className='xl:w-1/2 xl:justify-center xl:m-auto'>
 			<div className='m-10'>
-				<h1 className='text-xl font-semibold border-l-4 border-zinc-600 my-3 pl-3'>
+				<h1 className='text-xl font-semibold border-l-4 border-zinc-600 pl-3'>
 					What Can You Post?
 				</h1>
 				<ul className='list-decimal m-8 space-y-2 text-sm xl:text-[16px]'>
@@ -36,10 +37,11 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 						⏳ At the moment in this blog, everyone can post. I'm working 👨‍💻 on the user login auth
 						to generate a post with the user's GitHub avatar and username!
 					</li>
-					<li className='border-l-4 border-red-500 rounded border px-1 w-fit bg-red-900 bg-opacity-[0.6]'>
-						🍦 This feature is in development, use with caution!
-					</li>
 				</ul>
+				<div className='border-l-4 border-red-500 h-20 px-1 w-fit bg-opacity-[0.6] p-3 pl-4 text-red-500'>
+					<p className='font-semibold text-lg'><InfoCircle className='w-5 inline mb-1' /> Note</p>
+					<p>This feature is in development, use with caution!</p>
+				</div>
 			</div>
 			<button
 				onClick={toggleForm}
