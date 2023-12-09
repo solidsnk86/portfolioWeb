@@ -34,3 +34,8 @@ yarn install
 #
 
 Pueden ajustar y modificar las reglas `eslintrc` que por gusto y agrado utilizo para mi proyecto.
+
+> [!Note]
+> Sin más para añadir, espero les guste este proyecto que uso como portfolio para presentar mis proyectos
+> con la API de GitHub Stats para determinar la cantidad de estrellas del proyecto.
+
