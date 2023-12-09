@@ -23,3 +23,12 @@
 > En ésta web app utilizo Supabase con PostgreSQL como back-end para la creación de tablas como usuarios, vistas de artículos, likes, el estampado de fecha, entre otras cookies.
 > Si bien esto es un proyecto personal pueden descargar o clonar este repositorio para editarlo a tu agrado.
 
+> Una vez descargado el repositorio y/o clonado con `git clone [repo/url](https://github.com/solidsnk86/portfolioWeb/)`
+> deben instalar todas las dependencias que uso aquí.
+
+```bash
+npm install @latest
+# or
+yarn install
+```
+
