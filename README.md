@@ -19,5 +19,7 @@
 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-
+> [!Importante]
+> En ésta web app utilizo Supabase con PostgreSQL como back-end para la creación de tablas como usuarios, vistas de artículos, likes, el estampado de fecha, entre otras cookies.
+> Si bien esto es un proyecto personal pueden descargar o clonar este repositorio para editarlo a su agrado!
 
