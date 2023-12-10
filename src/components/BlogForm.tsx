@@ -38,7 +38,7 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 						to generate a post with the user's GitHub avatar and username!
 					</li>
 				</ul>
-				<div className='border-l-4 border-red-500 h-20 px-1 w-fit bg-opacity-[0.6] p-3 pl-4 text-red-500'>
+				<div className='border-l-4 border-red-500 px-1 w-fit bg-opacity-[0.6] p-3 pl-4 text-red-500'>
 					<p className='font-semibold text-lg'><InfoCircle className='w-5 inline mb-1' /> Note</p>
 					<p>This feature is in development, use with caution!</p>
 				</div>
