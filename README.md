@@ -19,5 +19,23 @@
 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
+> [!Important]
+> En ésta web app utilizo Supabase con PostgreSQL como back-end para la creación de tablas como usuarios, vistas de artículos, likes, el estampado de fecha, entre otras cookies.
+> Si bien esto es un proyecto personal pueden descargar o clonar este repositorio para editarlo a tu agrado.
 
+> Una vez descargado el repositorio y/o clonado con `git clone https://github.com/solidsnk86/portfolioWeb/`
+> deben instalar todas las dependencias que uso aquí.
+
+```bash
+npm install @latest
+# o
+yarn install
+```
+#
+
+Pueden ajustar y modificar las reglas `eslintrc` que por gusto y agrado utilizo para mi proyecto.
+
+> [!Note]
+> Sin más para añadir, espero les guste este proyecto que uso como portfolio para presentar mis proyectos
+> con la API de GitHub Stats para determinar la cantidad de estrellas del proyecto.
 
