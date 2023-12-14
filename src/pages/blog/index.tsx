@@ -143,8 +143,8 @@ const MyBlog = ({ session }) => {
 				console.error('Post does not exist')
 				return
 			}
-
-			const { data, error } = await supabase.from('likes').upsert([{ post_id: article_id, userId }])
+			const user_id = 'Neo'
+			const { data, error } = await supabase.from('likes').upsert([{ post_id: article_id, user_id }])
 
 			if (error) {
 				console.error('Error sending like:', error)
@@ -155,7 +155,7 @@ const MyBlog = ({ session }) => {
 			console.error('Error sending like:', error)
 		}
 	}
-
+	
 	const handleLike = async (post_id) => {
 		try {
 			await sendLike(post_id)
