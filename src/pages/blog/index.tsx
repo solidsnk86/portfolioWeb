@@ -143,7 +143,7 @@ const MyBlog = ({ session }) => {
 				console.error('Post does not exist')
 				return
 			}
-			const user_id = 'Neo'
+			const user_id = userId
 			const { data, error } = await supabase.from('likes').upsert([{ post_id: article_id, user_id }])
 
 			if (error) {
