@@ -83,7 +83,7 @@ export default function Home() {
 						},
 						{
 							url: 'https://neotecs.netlify.app/',
-							title: 'NeoTecs',
+							title: 'NeoTecs Web',
 							repoName: 'NeoTecs',
 							logo: `data:image/svg+xml,${encodeURIComponent(neoIcon)}`,
 							description: 'Documentation for Web Programing.'
@@ -103,7 +103,7 @@ export default function Home() {
 							description: 'Web curriculum vitae and portfolio.'
 						},
 						{
-							url: '',
+							url: 'https://github.com/solidsnk86/neo-scraper',
 							title: 'Neo Scraper',
 							repoName: 'neo-scraper',
 							logo: `data:image/svg+xml,${encodeURIComponent(neoScraper)}`,
