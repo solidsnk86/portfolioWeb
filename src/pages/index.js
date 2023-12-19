@@ -14,6 +14,7 @@ import { NeoTecsIcon } from '../components/NeotecsIcon'
 import { FormIcon } from '../components/FormIcon'
 import { ScoreBoardIcon } from '../components/TablerIcon'
 import { TresDButton } from '../components/TresDButton'
+import { ScraperIcon } from '../components/ScraperIcon'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -23,6 +24,7 @@ const cvIcon = renderToString(<MyIcon />)
 const neoIcon = renderToString(<NeoTecsIcon />)
 const formIcon = renderToString(<FormIcon />)
 const scoreBoard = renderToString(<ScoreBoardIcon />)
+const neoScraper = renderToString(<ScraperIcon />)
 
 export default function Home() {
 	const title = 'Portfolio Calcagni Gabriel'
@@ -99,6 +101,13 @@ export default function Home() {
 							repoName: 'Portfolio-CG',
 							logo: `data:image/svg+xml,${encodeURIComponent(favicon2String)}`,
 							description: 'Web curriculum vitae and portfolio.'
+						},
+						{
+							url: '',
+							title: 'Neo Scraper',
+							repoName: 'neo-scraper',
+							logo: `data:image/svg+xml,${encodeURIComponent(neoScraper)}`,
+							description: 'Web scraping app with Flask.'
 						}
 					].map((item) => (
 						<div
