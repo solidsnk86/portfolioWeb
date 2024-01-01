@@ -12,6 +12,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { ShareButton } from '@/components/ShareButton'
 import { Preloader } from '@/lib/Preloader'
 import { FormatDate } from '@/components/FormatDate'
+import { Header } from '@/components/Header'
 
 const MyBlog = ({ session }) => {
 	const userId = session?.user?.id || ''
@@ -193,9 +194,12 @@ const MyBlog = ({ session }) => {
 			<Head>
 				<meta name='theme-color' content='#F05252' />
 			</Head>
+			<header id='header' className='relative w-full mb-10 overflow-hidden z-[99999]'>
+				<Header />
+			</header>
 			<ArrowLeft
-				className='flex relative xl:fixed left-[14px] top-[1.6rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
-				onClick={() => window.open('/', '_self')}
+				className='flex relative xl:fixed left-[14px] xl:top-[3.6rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
+				onClick={() => history.back()}
 			/>
 			<BlogHeader session={session} />
 			{posts.map((post) => (
