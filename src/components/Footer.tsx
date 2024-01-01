@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { MyIcon } from '@/components/MyIcon'
 
 export const Footer = () => {
-	
 	const githubLink = [
 		{
 			str: 'solidsnk86',
