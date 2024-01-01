@@ -20,7 +20,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 > [!Important]
-> En esta aplicación web, utilizo Supabase con PostgreSQL como backend para gestionar diversas funcionalidades, como la creación de tablas para usuarios, vistas de artículos, gestión de > likes y el registro de fechas, entre otras características. Aunque se trata de un proyecto personal, tienes la opción de descargar o clonar este repositorio para realizar 
+> En esta aplicación web, utilizo Supabase con PostgreSQL como backend para gestionar diversas funcionalidades, como la creación de tablas para usuarios, vistas de artículos, gestión de  likes y el registro de fechas, entre otras características. Aunque se trata de un proyecto personal, tienes la opción de descargar o clonar este repositorio para realizar 
 > modificaciones según tus preferencias.
 
 Una vez descargado el repositorio y/o clonado con `git clone https://github.com/solidsnk86/portfolioWeb/`
