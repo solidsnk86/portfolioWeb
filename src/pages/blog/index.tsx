@@ -12,7 +12,6 @@ import { v4 as uuidv4 } from 'uuid'
 import { ShareButton } from '@/components/ShareButton'
 import { Preloader } from '@/lib/Preloader'
 import { FormatDate } from '@/components/FormatDate'
-import { Header } from '@/components/Header'
 
 const MyBlog = ({ session }) => {
 	const userId = session?.user?.id || ''
@@ -189,16 +188,13 @@ const MyBlog = ({ session }) => {
 	}
 
 	return (
-		<main className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0 h-[100%]'>
+		<main className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 h-[100%]'>
 			<Preloader />
 			<Head>
 				<meta name='theme-color' content='#F05252' />
 			</Head>
-			<header id='header' className='relative w-full mb-10 overflow-hidden z-[99999]'>
-				<Header />
-			</header>
 			<ArrowLeft
-				className='flex relative xl:fixed left-[14px] xl:top-[3.6rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
+				className='flex relative xl:fixed left-[14px] xl:top-[2.5rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
 				onClick={() => history.back()}
 			/>
 			<BlogHeader session={session} />
