@@ -194,7 +194,7 @@ const MyBlog = ({ session }) => {
 				<meta name='theme-color' content='#F05252' />
 			</Head>
 			<ArrowLeft
-				className='flex relative xl:fixed left-[14px] xl:top-[2.5rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
+				className='flex relative xl:fixed left-[20px] xl:top-[1rem] top-6 cursor-pointer text-zinc-300 hover:opacity-[.8]'
 				onClick={() => history.back()}
 			/>
 			<BlogHeader session={session} />
