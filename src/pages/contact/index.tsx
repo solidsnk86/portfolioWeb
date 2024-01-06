@@ -36,7 +36,10 @@ export default function Example() {
 				<meta name='theme-color' content='#F05252' />
 			</Head>
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
-				<ArrowLeft className='flex sticky left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]' onClick={handleButtonBack} />
+				<ArrowLeft
+					className='flex sticky left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
+					onClick={handleButtonBack}
+				/>
 				<div className='container flex items-center min-h-screen justify-center px-4 mx-auto'>
 					<div className='grid w-full grid-cols-1 gap-8 mx-auto mb-5 mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>
 						{socials.map((s) => (
@@ -55,7 +58,7 @@ export default function Example() {
 									</span>
 									<div className='z-10 flex flex-col items-center'>
 										<span className='text-sm font-medium duration-150 lg:text-2xl text-zinc-200 group-hover:text-white'>
-											{s.href}
+											{s.handle}
 										</span>
 										<span className='mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200'>
 											{s.label}
