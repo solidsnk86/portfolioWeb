@@ -12,7 +12,7 @@
   "dependencies": {
     "@nextui-org/button": "^2.0.26",
     "@supabase/auth-helpers-nextjs": "^0.8.7",
-    "@supabase/supabase-js": "^2.38.4",
+    "@supabase/supabase-js": "^2.39.2",
     "atropos": "2.0.2",
     "autoprefixer": "10.4.15",
     "canvas-confetti": "1.6.0",
