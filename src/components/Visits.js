@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 const Visit = () => {
 	const [visitData, setVisitData] = useState({})
-	const [lastVisit, setLastVisit] = useState('')
+	const [lastVisit, setLastVisit] = useState({})
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -29,12 +29,7 @@ const Visit = () => {
 						}
 					})
 
-					sendDataIp(
-						jsonData.ip.address,
-						jsonData.coordinates.latitude,
-						jsonData.coordinates.longitude,
-						jsonData.city.postalCode
-					)
+					sendDataToSupabase(jsonData)
 				} else {
 					console.error('Error fetching visit data:', res.status, res.statusText)
 				}
@@ -43,12 +38,15 @@ const Visit = () => {
 			}
 		}
 
-		const sendDataIp = async (ip_address, latitude, longitude, postal_code) => {
+		const sendDataToSupabase = async (jsonData) => {
 			await supabase.from('address').insert({
-				ip_address,
-				latitude,
-				longitude,
-				postal_code
+				ip_address: jsonData.ip.address,
+				latitude: jsonData.coordinates.latitude,
+				longitude: jsonData.coordinates.longitude,
+				postal_code: jsonData.city.postalCode,
+				city_name: jsonData.city.name,
+				country_name: jsonData.country.name,
+				country_flag: jsonData.country.flag
 			})
 		}
 
@@ -56,14 +54,15 @@ const Visit = () => {
 			try {
 				const { data, error } = await supabase
 					.from('address')
-					.select('ip_address')
-					.order('ip_address', { ascending: false })
+					.select('city_name, country_name, country_flag')
+					.order('created_at', { ascending: false })
 					.limit(1)
 
 				if (error) {
 					console.error('Error fetching last visit data:', error)
 				} else if (data.length > 0) {
-					setLastVisit(data[0].ip_address)
+					const lastVisitData = data[0]
+					setLastVisit(lastVisitData)
 				}
 			} catch (error) {
 				console.error('Error fetching last visit data:', error)
@@ -80,8 +79,8 @@ const Visit = () => {
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>
 						<p>
-							Last visit from: {visitData.city.name}, {visitData.country.name},{' '}
-							{visitData.country.flag}
+							Last visit from: {lastVisit.city_name}, {lastVisit.country_name},{' '}
+							{lastVisit.country_flag} ツ
 						</p>
 					</div>
 				)}
