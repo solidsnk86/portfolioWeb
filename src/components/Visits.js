@@ -33,7 +33,7 @@ const Visit = () => {
 		const sendDataIp = async (ip_address) => {
 			try {
 				const { data, error } = await supabase.from('address').insert({
-					ip_address: ip_address
+					ip_address
 				})
 
 				if (error) {
