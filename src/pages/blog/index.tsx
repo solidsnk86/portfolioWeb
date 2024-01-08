@@ -191,7 +191,7 @@ const MyBlog = ({ session }) => {
 		<main className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 h-[100%]'>
 			<Preloader />
 			<Head>
-				<meta name='theme-color' content='#F05252' />
+				<meta name='theme-color' content='#48484C' />
 			</Head>
 			<ArrowLeft
 				className='flex relative xl:fixed left-[20px] xl:top-[1rem] top-6 cursor-pointer text-zinc-300 hover:opacity-[.8]'

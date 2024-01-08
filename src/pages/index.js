@@ -8,18 +8,17 @@ import { AboutMe } from '@/components/AboutMe'
 import { GithubStats } from '@/components/GithubStats'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
-import { FaviconIcon } from '@/components/FaviconIcon'
 import { MyIcon } from '../components/MyIcon'
 import { NeoTecsIcon } from '../components/NeotecsIcon'
 import { FormIcon } from '../components/FormIcon'
 import { ScoreBoardIcon } from '../components/TablerIcon'
 import { TresDButton } from '../components/TresDButton'
 import { ScraperIcon } from '../components/ScraperIcon'
+import Visit from '../components/Visits'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
 
-const favicon2String = renderToString(<FaviconIcon />)
 const cvIcon = renderToString(<MyIcon />)
 const neoIcon = renderToString(<NeoTecsIcon />)
 const formIcon = renderToString(<FormIcon />)
@@ -96,13 +95,6 @@ export default function Home() {
 							description: 'Digital scoreboard for bocce.'
 						},
 						{
-							url: 'https://solidsnk86.github.io/Portfolio-CG/',
-							title: 'Currículum Web',
-							repoName: 'Portfolio-CG',
-							logo: `data:image/svg+xml,${encodeURIComponent(favicon2String)}`,
-							description: 'Web curriculum vitae and portfolio.'
-						},
-						{
 							url: 'https://github.com/solidsnk86/neo-scraper',
 							title: 'Neo Scraper',
 							repoName: 'neo-scraper',
@@ -138,6 +130,7 @@ export default function Home() {
 			</main>
 			<TresDButton />
 			<Footer />
+			<Visit />
 		</>
 	)
 }
