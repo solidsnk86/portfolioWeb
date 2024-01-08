@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 const Visit = () => {
 	const [visitData, setVisitData] = useState({})
+	const [lastVisit, setLastVisit] = useState('')
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -50,7 +51,27 @@ const Visit = () => {
 				postal_code
 			})
 		}
+
+		const fetchLastVisit = async () => {
+			try {
+				const { data, error } = await supabase
+					.from('address')
+					.select('ip_address')
+					.order('ip_address', { ascending: false })
+					.limit(1)
+
+				if (error) {
+					console.error('Error fetching last visit data:', error)
+				} else if (data.length > 0) {
+					setLastVisit(data[0].ip_address)
+				}
+			} catch (error) {
+				console.error('Error fetching last visit data:', error)
+			}
+		}
+
 		fetchData()
+		fetchLastVisit()
 	}, [])
 
 	return (
