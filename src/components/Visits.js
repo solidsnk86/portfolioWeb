@@ -11,17 +11,29 @@ const Visit = () => {
 				if (res.ok) {
 					const jsonData = await res.json()
 					setVisitData({
-						city: jsonData.city.name,
+						city: {
+							name: jsonData.city.name,
+							postalCode: jsonData.city.postalCode
+						},
 						country: {
 							name: jsonData.country.name,
 							flag: jsonData.country.flag
 						},
 						ip: {
 							address: jsonData.ip.address
+						},
+						coordinates: {
+							latitude: jsonData.coordinates.latitude,
+							longitude: jsonData.coordinates.longitude
 						}
 					})
 
-					sendDataIp(jsonData.ip.address)
+					sendDataIp(
+						jsonData.ip.address,
+						jsonData.coordinates.latitude,
+						jsonData.coordinates.longitude,
+						jsonData.city.postalCode
+					)
 				} else {
 					console.error('Error fetching visit data:', res.status, res.statusText)
 				}
@@ -30,22 +42,14 @@ const Visit = () => {
 			}
 		}
 
-		const sendDataIp = async (ip_address) => {
-			try {
-				const { data, error } = await supabase.from('address').insert({
-					ip_address
-				})
-
-				if (error) {
-					console.error('Error inserting IP data into Supabase:', error)
-				} else {
-					console.log('IP data inserted successfully:', data)
-				}
-			} catch (error) {
-				console.error('Error inserting IP data into Supabase:', error)
-			}
+		const sendDataIp = async (ip_address, latitude, longitude, postal_code) => {
+			await supabase.from('address').insert({
+				ip_address,
+				latitude,
+				longitude,
+				postal_code
+			})
 		}
-
 		fetchData()
 	}, [])
 
@@ -55,7 +59,7 @@ const Visit = () => {
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>
 						<p>
-							Estás conectado desde: {visitData.city}, {visitData.country.name},{' '}
+							Last visit from: {visitData.city.name}, {visitData.country.name},{' '}
 							{visitData.country.flag}
 						</p>
 					</div>

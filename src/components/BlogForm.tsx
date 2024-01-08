@@ -26,20 +26,13 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 					What Can You Post?
 				</h1>
 				<ul className='list-decimal m-8 space-y-2 text-sm xl:text-[16px]'>
-					<li>
-						🍪 Projects Showcase:
-						<br /> Share your latest and greatest projects! Whether it's a web app, a mobile
-						application, or even a hardware project, I want to see what you've been working on.
-						Don't forget to include details about the technologies you used and the challenges you
-						overcame.
-					</li>
-					<li>
-						⏳ At the moment in this blog, everyone can post. I'm working 👨‍💻 on the user login auth
-						to generate a post with the user's GitHub avatar and username!
-					</li>
+					<li>Basically you can post whatever</li>
+					<li>What's going on?</li>
 				</ul>
 				<div className='border-l-4 border-red-500 px-1 w-fit bg-opacity-[0.6] p-3 pl-4 text-red-500'>
-					<p className='font-semibold text-lg'><InfoCircle className='w-5 inline mb-1' /> Note</p>
+					<p className='font-semibold text-lg'>
+						<InfoCircle className='w-5 inline mb-1' /> Note
+					</p>
 					<p>This feature is in development, use with caution!</p>
 				</div>
 			</div>
