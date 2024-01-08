@@ -12,6 +12,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { ShareButton } from '@/components/ShareButton'
 import { Preloader } from '@/lib/Preloader'
 import { FormatDate } from '@/components/FormatDate'
+import Visit from '@/components/Visits'
 
 const MyBlog = ({ session }) => {
 	const userId = session?.user?.id || ''
@@ -245,6 +246,7 @@ const MyBlog = ({ session }) => {
 			))}
 			<BlogForm newPost={newPost} setNewPost={setNewPost} sendPost={sendPost} />
 			<Footer />
+			<Visit />
 		</main>
 	)
 }

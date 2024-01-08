@@ -1,3 +1,4 @@
+import { supabase } from '@/utils/supabase'
 import { useEffect, useState } from 'react'
 
 const Visit = () => {
@@ -14,8 +15,13 @@ const Visit = () => {
 						country: {
 							name: jsonData.country.name,
 							flag: jsonData.country.flag
+						},
+						ip: {
+							address: jsonData.ip.address
 						}
 					})
+
+					sendDataIp(jsonData.ip.address)
 				} else {
 					console.error('Error fetching visit data:', res.status, res.statusText)
 				}
@@ -24,12 +30,28 @@ const Visit = () => {
 			}
 		}
 
+		const sendDataIp = async (ip_address) => {
+			try {
+				const { data, error } = await supabase.from('address').insert({
+					ip_address: ip_address
+				})
+
+				if (error) {
+					console.error('Error inserting IP data into Supabase:', error)
+				} else {
+					console.log('IP data inserted successfully:', data)
+				}
+			} catch (error) {
+				console.error('Error inserting IP data into Supabase:', error)
+			}
+		}
+
 		fetchData()
 	}, [])
 
 	return (
 		<div>
-			<div id='visit' className='bg-amber-400/10 p-3 text-zinc-100 font-mono text-xs'>
+			<div id='visit' className='p-3 text-amber-400 font-mono text-xs'>
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>
 						<p>
