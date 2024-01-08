@@ -80,7 +80,7 @@ const Visit = () => {
 					<div className='flex mx-auto justify-center'>
 						<p>
 							Last visit from: {lastVisit.city_name}, {lastVisit.country_name}{' '}
-							{lastVisit.country_flag} ツ
+							{lastVisit.country_flag}
 						</p>
 					</div>
 				)}
