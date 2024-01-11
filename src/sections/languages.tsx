@@ -98,7 +98,7 @@ const ReviewCard = ({ logo, name }: { logo: string | ReactNode; name: string }) 
 	return (
 		<div
 			className={
-				'relative min-w-[250px] flex justify-center items-center overflow-hidden rounded-xl border bg-slate-800/50 border-slate-900 w-full py-4 px-12 transition hover:bg-slate-800/75 hover:border-slate-900/75 hover:shadow-lg group'
+				'relative min-w-[250px] flex justify-center items-center overflow-hidden rounded-xl border bg-slate-800/50 border-slate-900 w-full py-4 px-12 transition hover:bg-zinc-800/75 hover:border-slate-900/75 hover:shadow-lg group'
 			}
 		>
 			<div className='flex flex-row grayscale-[100%] items-center justify-center w-full h-auto gap-2 text-white transition group-hover:scale-110 hover:grayscale-0'>
@@ -113,7 +113,7 @@ export const LF = () => {
 	return (
 		<section className='flex flex-col flex-wrap items-center justify-center my-48'>
 			<h2 className='xl:text-5xl md:text-4xl text-2xl font-bold text-center text-sky-100'>
-			"Frameworks, tools, and languages that I mostly use."
+				"Frameworks, tools, and languages that I mostly use."
 			</h2>
 			<VideoReactIcon />
 			<p className='max-w-lg text-xl text-sky-200 text-center [†ext-wrap:balance] mt-4'></p>

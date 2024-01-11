@@ -1,4 +1,5 @@
 import { supabase } from '@/utils/supabase'
+import { Eye } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 const Visit = () => {
@@ -54,7 +55,7 @@ const Visit = () => {
 			try {
 				const { data, error } = await supabase
 					.from('address')
-					.select('city_name, country_name, country_flag')
+					.select('id, city_name, country_name, country_flag')
 					.order('created_at', { ascending: false })
 					.limit(1)
 
@@ -75,6 +76,7 @@ const Visit = () => {
 
 	return (
 		<div>
+			<p className='text-amber-400 font-mono text-xs text-center'>Profile Views: {lastVisit.id}</p>
 			<div id='visit' className='p-3 text-amber-400 font-mono text-xs'>
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>

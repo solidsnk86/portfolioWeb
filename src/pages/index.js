@@ -74,13 +74,6 @@ export default function Home() {
 				<div className='sm:flex items-stretch max-w-3xl mx-auto space-y-4 text-left sm:space-y-0 sm:space-x-8 sm:text-center'>
 					{[
 						{
-							url: 'https://solidsnk86.github.io/formularioWeb/',
-							title: 'Formulario Web',
-							repoName: 'formularioWeb',
-							logo: `data:image/svg+xml,${encodeURIComponent(formIcon)}`,
-							description: 'Project demo of online billing.'
-						},
-						{
 							url: 'https://neotecs.netlify.app/',
 							title: 'NeoTecs Web',
 							repoName: 'NeoTecs',
@@ -100,6 +93,13 @@ export default function Home() {
 							repoName: 'neo-scraper',
 							logo: `data:image/svg+xml,${encodeURIComponent(neoScraper)}`,
 							description: 'Web scraping app with Flask.'
+						},
+						{
+							url: 'https://solidsnk86.github.io/formularioWeb/',
+							title: 'Formulario Web',
+							repoName: 'formularioWeb',
+							logo: `data:image/svg+xml,${encodeURIComponent(formIcon)}`,
+							description: 'Project demo of online billing.'
 						}
 					].map((item) => (
 						<div
