@@ -120,12 +120,12 @@ export default function Home() {
 							<GithubStats repoName={item.repoName} />
 							<a
 								href={item.url}
-								className='hover:brightness-150 px-3 py-1 rounded mt-2 text-md'
+								className='hover:brightness-150 px-3 py-1 rounded mt-2 text-md link'
 								target='_blank'
 								rel='noopener noreferrer'
 							>
 								Link
-								<ExternalLink className='inline-flex mx-1 mb-1 relative text-md w-4 h-4 ' />
+								<ExternalLink className='inline-flex mx-1 mb-1 relative text-md w-4 h-4 link-icon' />
 							</a>
 						</div>
 					))}

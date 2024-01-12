@@ -195,7 +195,7 @@ const MyBlog = ({ session }) => {
 			<Head>
 				<meta name='theme-color' content='#48484C' />
 			</Head>
-			<header id='header' className='relative w-full mb-10 overflow-hidden z-[99999]'>
+			<header id='header' className='relative w-full mb-10 z-[99999]'>
 				<Header />
 			</header>
 			<ArrowLeft

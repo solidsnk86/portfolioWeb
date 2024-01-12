@@ -243,14 +243,13 @@ textarea {
 	display: none;
 	font-size: 12px;
 	position: absolute;
-	top: 25px;
-
+	top: 26px;
 	width: 133px;
 	right: 35px;
 	z-index: 99;
 	gap: 8px;
-	background-color: transparent;
-	border: 1px gray solid;
+	background-color: #1F1F22;
+	border: 1px #45454C solid;
 	border-radius: 15px 0px 15px 15px;
 }
 
@@ -266,6 +265,11 @@ textarea {
 	100% {
 		transform: scale(100%);
 	}
+}
+
+.link:hover .link-icon {
+	transform: translateY(-5px);
+	transition: .2s all;
 }
 
 @keyframes spinn {

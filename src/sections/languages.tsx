@@ -99,7 +99,7 @@ const ReviewCard = ({ logo, name }: { logo: string | ReactNode; name: string }) 
 	return (
 		<div
 			className={
-				'relative min-w-[250px] flex justify-center items-center overflow-hidden rounded-xl border bg-slate-800/50 border-slate-900 w-full py-4 px-12 transition hover:bg-zinc-800/75 hover:border-slate-900/75 hover:shadow-lg group'
+				'relative min-w-[250px] flex justify-center items-center overflow-hidden rounded-xl border bg-zinc-800/80 border-zinc-700/70 w-full py-4 px-12 transition hover:bg-zinc-800/95 hover:border-zinc-600/75 hover:shadow-lg group'
 			}
 		>
 			<div className='flex flex-row grayscale-[100%] items-center justify-center w-full h-auto gap-2 text-white transition group-hover:scale-110 hover:grayscale-0'>

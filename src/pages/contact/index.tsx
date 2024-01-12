@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Card } from '@/components/Card'
 import { TwitterIcon } from '@/components/TwitterIcon'
 import Visit from '@/components/Visits'
+import { Footer } from '@/components/Footer'
 
 const socials = [
 	{
@@ -70,6 +71,7 @@ export default function Example() {
 						))}
 					</div>
 				</div>
+				<Footer />
 				<Visit />
 			</div>
 		</>

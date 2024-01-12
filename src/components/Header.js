@@ -45,15 +45,23 @@ export function Header() {
 					</div>
 				</div>
 				<ul className='absolute right-5 top-3 flex'>
-					<div
-						className='space-x-2 px-4 pt-[1px] language-button'
-					>
-						<Language className='w-[23px] mt-[3px]' />
-						<div className='flex dropdown-content p-3' >
+					<div className='space-x-2 px-4 pt-[1px] language-button'>
+						<Language className='w-[23px] mt-[3px] hover:opacity-50' />
+						<div className='flex dropdown-content p-3'>
 							<button id='top' onClick={() => changeLanguage('en')} className='hover:scale-[1.2]'>
-								<img className='inline' src='/img/estados-unidos-flag.png' width={30} alt='English' /> EN
+								<img
+									className='inline'
+									src='/img/estados-unidos-flag.png'
+									width={30}
+									alt='English'
+								/>{' '}
+								EN
 							</button>
-							<button id='bottom' onClick={() => changeLanguage('es')} className='hover:scale-[1.2]'>
+							<button
+								id='bottom'
+								onClick={() => changeLanguage('es')}
+								className='hover:scale-[1.2]'
+							>
 								<img className='inline' src='/img/espana-flag.png' width={30} alt='Español' /> ES
 							</button>
 						</div>
