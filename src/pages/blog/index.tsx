@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 import ImageAvatar from './AvatarBlog'
 import { ArrowLeft, ArrowRight, EyeIcon, Heart } from 'lucide-react'
 import Head from 'next/head'
+import { Header } from '@/components/Header'
 import { Card } from '@/components/Card'
-import { Footer } from '@/components/Footer'
 import { supabase } from '@/utils/supabase'
 import { BlogHeader } from '@/components/BlogHeader'
 import BlogForm from '@/components/BlogForm'
@@ -13,6 +13,7 @@ import { ShareButton } from '@/components/ShareButton'
 import { Preloader } from '@/lib/Preloader'
 import { FormatDate } from '@/components/FormatDate'
 import Visit from '@/components/Visits'
+import { Footer } from '@/components/Footer'
 
 const MyBlog = ({ session }) => {
 	const userId = session?.user?.id || ''
@@ -194,11 +195,14 @@ const MyBlog = ({ session }) => {
 			<Head>
 				<meta name='theme-color' content='#48484C' />
 			</Head>
+			<header id='header' className='relative w-full mb-10 overflow-hidden z-[99999]'>
+				<Header />
+			</header>
 			<ArrowLeft
 				className='flex relative xl:fixed left-[20px] xl:top-[1rem] top-6 cursor-pointer text-zinc-300 hover:opacity-[.8]'
 				onClick={() => history.back()}
 			/>
-			<BlogHeader session={session} />
+			<BlogHeader />
 			{posts.map((post) => (
 				<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-[33px] px-3'>
 					<Card>

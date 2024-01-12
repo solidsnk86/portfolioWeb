@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { MessageCircleIcon } from 'lucide-react'
-import { InfoCircle } from 'tabler-icons-react'
+import { useTranslation } from 'react-i18next'
 
 const BlogForm = ({ newPost, setNewPost, sendPost }) => {
+	const { t } = useTranslation()
+
 	const [showForm, setShowForm] = useState(false)
 	const {
 		register,
@@ -22,25 +24,17 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 	return (
 		<section className='xl:w-1/2 xl:justify-center xl:m-auto'>
 			<div className='m-10'>
-				<h1 className='text-xl font-semibold border-l-4 border-zinc-600 pl-3'>
-					What Can You Post?
-				</h1>
+				<h1 className='text-xl font-semibold border-l-4 border-zinc-600 pl-3'>{t('whatCanI')}</h1>
 				<ul className='list-decimal m-8 space-y-2 text-sm xl:text-[16px]'>
-					<li>Basically you can post whatever</li>
-					<li>What's going on?</li>
+					<li>{t('m1')}</li>
+					<li>{t('m2')}</li>
 				</ul>
-				<div className='border-l-4 border-red-500 px-1 w-fit bg-opacity-[0.6] p-3 pl-4 text-red-500'>
-					<p className='font-semibold text-lg'>
-						<InfoCircle className='w-5 inline mb-1' /> Note
-					</p>
-					<p>This feature is in development, use with caution!</p>
-				</div>
 			</div>
 			<button
 				onClick={toggleForm}
 				className='flex justify-center mx-auto font-bold cursor-pointer rounded-lg p-2 border border-zinc-600 outline-slate-200 outline-offset-2 outline-4 hover:bg-red-500'
 			>
-				Post Something! <MessageCircleIcon className='mx-1' />
+				{t('buttonPost')} <MessageCircleIcon className='mx-1' />
 			</button>
 			<form
 				className={`${
@@ -51,27 +45,27 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 				<input
 					type='text'
 					{...register('name')}
-					placeholder='Name'
+					placeholder={t('name')}
 					className='placeholder:text-slate-100'
 					onChange={(e) => setNewPost({ ...newPost, name: e.target.value })}
 				/>
 				<input
 					type='text'
 					{...register('user_id')}
-					placeholder='User GitHub ID'
+					placeholder={t('githubUser')}
 					className='placeholder:text-slate-100'
 					onChange={(e) => setNewPost({ ...newPost, user_id: e.target.value })}
 				/>
 				<input
 					type='text'
 					{...register('title')}
-					placeholder='Post Title'
+					placeholder={t('titlePost')}
 					className='placeholder:text-slate-100'
 					onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
 				/>
 				<textarea
 					{...register('description')}
-					placeholder='Description about your post..'
+					placeholder={t('postDescription')}
 					className='placeholder:text-zinc-400'
 					maxLength={500}
 					onChange={(e) => setNewPost({ ...newPost, description: e.target.value })}
@@ -86,8 +80,7 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 				<input
 					type='text'
 					{...register('url')}
-					placeholder='Your site URL here'
-					className='placeholder:text-slate-100'
+					placeholder={t('urlPost')}					className='placeholder:text-slate-100'
 					onChange={(e) => setNewPost({ ...newPost, url: e.target.value })}
 				/>
 				<button

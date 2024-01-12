@@ -15,7 +15,7 @@ import { ScoreBoardIcon } from '../components/TablerIcon'
 import { TresDButton } from '../components/TresDButton'
 import { ScraperIcon } from '../components/ScraperIcon'
 import Visit from '../components/Visits'
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -27,7 +27,7 @@ const scoreBoard = renderToString(<ScoreBoardIcon />)
 const neoScraper = renderToString(<ScraperIcon />)
 
 export default function Home() {
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation()
 
 	const title = 'Portfolio Calcagni Gabriel'
 	const description = '¡Ey, pásate y echa un vistazo a mi portfolio!'

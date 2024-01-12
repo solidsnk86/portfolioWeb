@@ -111,7 +111,7 @@ const ReviewCard = ({ logo, name }: { logo: string | ReactNode; name: string }) 
 }
 
 export const LF = () => {
-	const {t, i18n} = useTranslation()
+	const { t } = useTranslation()
 
 	return (
 		<section className='flex flex-col flex-wrap items-center justify-center my-48'>

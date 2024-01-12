@@ -4,7 +4,7 @@ import { Logo } from './Logo'
 import { useTranslation } from 'react-i18next'
 
 export function AboutMe() {
-	const { t, i18n } = useTranslation()
+	const { t } = useTranslation()
 
 	const CardTitle = ({ Tag = 'p', children }) => {
 		return (

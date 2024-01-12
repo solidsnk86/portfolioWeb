@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
 
 const Visit = () => {
-	const { t, i18n } = useTranslation()
+	const { t } = useTranslation()
 
 	const [visitData, setVisitData] = useState({})
 	const [lastVisit, setLastVisit] = useState({})
@@ -78,12 +78,14 @@ const Visit = () => {
 
 	return (
 		<div>
-			<p className='text-amber-400 font-mono text-xs text-center'>{t('profileViews')} {lastVisit.id}</p>
+			<p className='text-amber-400 font-mono text-xs text-center'>
+				{t('profileViews')} {lastVisit.id}
+			</p>
 			<div id='visit' className='p-3 text-amber-400 font-mono text-xs'>
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>
 						<p>
-							{t('profileViews')} {lastVisit.city_name}, {lastVisit.country_name}{' '}
+							{t('lastVisit')} {lastVisit.city_name}, {lastVisit.country_name}{' '}
 							{lastVisit.country_flag}
 						</p>
 					</div>
