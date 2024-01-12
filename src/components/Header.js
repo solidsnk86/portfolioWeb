@@ -46,7 +46,7 @@ export function Header() {
 				</div>
 				<ul className='absolute right-5 top-3 flex'>
 					<div className='space-x-2 px-4 pt-[1px] language-button'>
-						<Language className='w-[23px] mt-[3px] hover:opacity-50' />
+						<Language className='w-[23px] mt-[3px] hover:opacity-80' />
 						<div className='flex dropdown-content p-3'>
 							<button id='top' onClick={() => changeLanguage('en')} className='hover:scale-[1.2]'>
 								<img
