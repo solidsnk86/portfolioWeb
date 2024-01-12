@@ -65,7 +65,7 @@ export default function Home() {
 				<meta name='theme-color' content='#F05252' />
 			</Head>
 
-			<header id='header' className='relative w-full mb-10 overflow-hidden z-[99999]'>
+			<header id='header' className='relative w-full mb-10 z-[9999]'>
 				<Header />
 			</header>
 

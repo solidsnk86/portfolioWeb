@@ -50,7 +50,7 @@ export const GithubStats = ({ repoName }) => {
 	return (
 		<div className='inline-flex items-center space-x-1'>
 			<a
-				className='text-xs hover:opacity-50 hover:no-underline'
+				className='text-xs hover:brightness-125 hover:no-underline'
 				href={`https://github.com/solidsnk86/${repoName}/`}
 				rel='noopener'
 				target='_blank'

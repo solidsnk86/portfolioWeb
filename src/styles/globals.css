@@ -13,7 +13,7 @@ body {
 
 body.loading * {
 	transition: none !important;
-  }
+}
 
 @keyframes add-shadow {
 	to {
@@ -221,24 +221,59 @@ textarea {
 /* SPINER */
 
 .spinner {
-    position: fixed;
-    left: calc(50% - 20px);
-    top: 50%;
-    border: 4px solid rgba(0, 0, 0, 0.1);
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border-left-color: #F05252;
-    z-index: 99;
-    animation: spinn 1s linear infinite;
+	position: fixed;
+	left: calc(50% - 20px);
+	top: 50%;
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border-left-color: #f05252;
+	z-index: 99;
+	animation: spinn 1s linear infinite;
+}
+
+.language-button {
+	position: relative;
+	display: block;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dropdown-content {
+	display: none;
+	font-size: 12px;
+	position: absolute;
+	top: 25px;
+
+	width: 133px;
+	right: 35px;
+	z-index: 99;
+	gap: 8px;
+	background-color: transparent;
+	border: 1px gray solid;
+	border-radius: 15px 0px 15px 15px;
+}
+
+.language-button:hover .dropdown-content {
+	display: flex;
+	animation: drop-down forwards 0.1s ease-in-out;
+}
+
+@keyframes drop-down {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(100%);
+	}
 }
 
 @keyframes spinn {
-    0% {
-        transform: rotate(0deg);
-    }
+	0% {
+		transform: rotate(0deg);
+	}
 
-    100% {
-        transform: rotate(360deg);
-    }
+	100% {
+		transform: rotate(360deg);
+	}
 }
