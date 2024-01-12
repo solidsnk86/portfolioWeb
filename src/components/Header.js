@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import { Language } from 'tabler-icons-react'
 
 export function Header() {
-	const [isHovered, setIsHovered] = useState(false)
 	const { t, i18n } = useTranslation()
 
 	useEffect(() => {
