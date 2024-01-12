@@ -1,11 +1,26 @@
+import { useEffect } from 'react';
 import Link from 'next/link'
 import { GithubStats } from './GithubStats'
+import { useTranslation } from 'react-i18next';
 
 export function Header() {
+	const { t, i18n } = useTranslation();
+
+	useEffect(() => {
+		const storedLanguage = localStorage.getItem('language');
+		if (storedLanguage) {
+		  i18n.changeLanguage(storedLanguage);
+		}
+	  }, [i18n]);
+	
+	  const changeLanguage = (newLanguage) => {
+		i18n.changeLanguage(newLanguage);
+		localStorage.setItem('language', newLanguage);
+	  };
 	const navigation = [
-		{ name: 'Contact', href: '/contact/' },
+		{ name: t('navLink1'), href: '/contact/' },
 		{ name: 'Blog', href: '/blog/' },
-		{ name: 'Projects', href: '#proyectos' }
+		{ name: t('navLink2'), href: '#proyectos' }
 	]
 
 	return (
@@ -28,6 +43,10 @@ export function Header() {
 					</div>
 				</div>
 				<ul className='absolute right-5 top-3 flex'>
+					<div className=' space-x-2 px-4 mt-1'>
+					<button onClick={() => changeLanguage('en')}>English</button>
+					<button onClick={() => changeLanguage('es')}>Español</button>
+					</div>
 					<li className='mt-[1px]'>
 						{[
 							{

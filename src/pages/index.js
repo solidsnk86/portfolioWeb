@@ -15,6 +15,7 @@ import { ScoreBoardIcon } from '../components/TablerIcon'
 import { TresDButton } from '../components/TresDButton'
 import { ScraperIcon } from '../components/ScraperIcon'
 import Visit from '../components/Visits'
+import { useTranslation } from 'react-i18next';
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
@@ -26,6 +27,8 @@ const scoreBoard = renderToString(<ScoreBoardIcon />)
 const neoScraper = renderToString(<ScraperIcon />)
 
 export default function Home() {
+	const { t, i18n } = useTranslation();
+
 	const title = 'Portfolio Calcagni Gabriel'
 	const description = '¡Ey, pásate y echa un vistazo a mi portfolio!'
 	const ogImg = cvIcon
@@ -70,7 +73,7 @@ export default function Home() {
 				<Particles className='absolute inset-0 -z-10 animate-fade-in' quantity={133} />
 				<AboutMe />
 				<LF />
-				<HomeTitle>My Projects...</HomeTitle>
+				<HomeTitle>{t('projectsTitle')}</HomeTitle>
 				<div className='sm:flex items-stretch max-w-3xl mx-auto space-y-4 text-left sm:space-y-0 sm:space-x-8 sm:text-center'>
 					{[
 						{
@@ -78,28 +81,28 @@ export default function Home() {
 							title: 'NeoTecs Web',
 							repoName: 'NeoTecs',
 							logo: `data:image/svg+xml,${encodeURIComponent(neoIcon)}`,
-							description: 'Documentation for Web Programing.'
+							description: t('project1')
 						},
 						{
 							url: 'https://tablerobap.netlify.app/',
 							title: 'Tablero Digital',
 							repoName: 'tablero-369',
 							logo: `data:image/svg+xml,${encodeURIComponent(scoreBoard)}`,
-							description: 'Digital scoreboard for bocce.'
+							description: t('project2')
 						},
 						{
 							url: 'https://github.com/solidsnk86/neo-scraper',
 							title: 'Neo Scraper',
 							repoName: 'neo-scraper',
 							logo: `data:image/svg+xml,${encodeURIComponent(neoScraper)}`,
-							description: 'Web scraping app with Flask.'
+							description: t('project3')
 						},
 						{
 							url: 'https://solidsnk86.github.io/formularioWeb/',
 							title: 'Formulario Web',
 							repoName: 'formularioWeb',
 							logo: `data:image/svg+xml,${encodeURIComponent(formIcon)}`,
-							description: 'Project demo of online billing.'
+							description: t('project4')
 						}
 					].map((item) => (
 						<div

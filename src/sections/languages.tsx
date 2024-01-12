@@ -2,6 +2,7 @@ import Marquee from '@/components/magicui/Marquee'
 import { ReactNode } from 'react'
 import { VideoReactIcon } from '@/components/VideoReactIcon'
 import { DjangoIcon } from '@/components/DjangoIcon'
+import { useTranslation } from 'react-i18next'
 
 const Lang = [
 	{
@@ -110,10 +111,12 @@ const ReviewCard = ({ logo, name }: { logo: string | ReactNode; name: string }) 
 }
 
 export const LF = () => {
+	const {t, i18n} = useTranslation()
+
 	return (
 		<section className='flex flex-col flex-wrap items-center justify-center my-48'>
 			<h2 className='xl:text-5xl md:text-4xl text-2xl font-bold text-center text-sky-100'>
-				"Frameworks, tools, and languages that I mostly use."
+				{t('sectionLF')}
 			</h2>
 			<VideoReactIcon />
 			<p className='max-w-lg text-xl text-sky-200 text-center [†ext-wrap:balance] mt-4'></p>

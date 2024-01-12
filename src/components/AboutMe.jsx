@@ -1,8 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 import { Logo } from './Logo'
+import { useTranslation } from 'react-i18next'
 
 export function AboutMe() {
+	const { t, i18n } = useTranslation()
+
 	const CardTitle = ({ Tag = 'p', children }) => {
 		return (
 			<Tag className='text-sm md:text-md xl:text-lg from-zinc-300 text-center my-20 italic font-thin'>
@@ -22,15 +25,14 @@ export function AboutMe() {
 					</div>
 					<aside className='flex-col relative top-10 mx-3'>
 						<CardTitle>
-							Hi, my name is Gabriel. I am a Front End developer with 1 year of experience, using
-							technologies such as React and Next.js. I work on my project
+							{t('aboutMe')}
 							<Link
 								className='mx-1 duration-500 text-orange-400 underline link-shadow'
 								href='https://neotecs.netlify.app/'
 							>
 								Neotecs
 							</Link>
-							during the evenings. Currently, I am studying and keep learning!
+							{t('aboutMeLast')}
 						</CardTitle>
 					</aside>
 				</div>
