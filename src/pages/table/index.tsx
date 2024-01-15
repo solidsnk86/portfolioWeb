@@ -1,4 +1,3 @@
-import { FormatDate } from '@/components/FormatDate'
 import { supabase } from '@/utils/supabase'
 import { useState, useEffect } from 'react'
 
@@ -23,8 +22,8 @@ export const VisitData = () => {
 	}, [])
 
 	return (
-		<section className='p-16 text-zinc-100'>
-			<table className='border-zinc-800 border p-3 w-full'>
+		<section className='xl:p-16 xl:flex mx-auto xl:justify-center text-zinc-100'>
+			<table className='border-zinc-800 border'>
 				<thead className='border-zinc-800 border text-justify'>
 					<tr className='head-table'>
 						<th>ID</th>
