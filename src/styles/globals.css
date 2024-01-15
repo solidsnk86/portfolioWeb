@@ -281,3 +281,14 @@ textarea {
 		transform: rotate(360deg);
 	}
 }
+
+.head-table th {
+	padding: 5px;
+	border: 1px solid #27272A;
+	background-color: #0078d4a4;
+}
+
+.result td {
+	border: 1px solid #27272A;
+	padding: 5px;
+}
