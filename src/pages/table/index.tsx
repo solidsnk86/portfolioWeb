@@ -1,3 +1,4 @@
+import FormatDate from '@/components/FormatDate'
 import { supabase } from '@/utils/supabase'
 import { useState, useEffect } from 'react'
 
@@ -20,17 +21,6 @@ export const VisitData = () => {
 
 		dataFetch()
 	}, [])
-
-	const formatDate = (string) => {
-		const date = new Date(string).toLocaleDateString('es-Es', {
-			year: 'numeric',
-			month: 'short',
-			day: '2-digit',
-			hour: '2-digit',
-			minute: '2-digit'
-		})
-		return date
-	}
 
 	return (
 		<section className='xl:p-16 xl:flex mx-auto xl:justify-center text-zinc-100'>
@@ -59,7 +49,7 @@ export const VisitData = () => {
 							<td>{item.city_name}</td>
 							<td>{item.country_name}</td>
 							<td>{item.country_flag}</td>
-							<td>{formatDate(item.created_at)}</td>
+							<td>{FormatDate(item.created_at)}</td>
 						</tr>
 					))}
 				</tbody>

@@ -11,7 +11,7 @@ import BlogForm from '@/components/BlogForm'
 import { v4 as uuidv4 } from 'uuid'
 import { ShareButton } from '@/components/ShareButton'
 import { Preloader } from '@/lib/Preloader'
-import { FormatDate } from '@/components/FormatDate'
+import FormatDate from '@/components/FormatDate'
 import Visit from '@/components/Visits'
 import { Footer } from '@/components/Footer'
 
@@ -208,7 +208,7 @@ const MyBlog = ({ session }) => {
 					<Card>
 						<article className='p-6 space-y-6 relative'>
 							<header>
-								<FormatDate post={post} />
+							<span className='text-zinc-400 text-sm'>{FormatDate(post.posted)}</span>
 								<span className='text-zinc-400 absolute top-[27px] right-5 text-sm'>
 									<EyeIcon className='float-right mx-2 my-[2px] w-4 h-4' />
 									{articleViews[post.article_id] || 0}
