@@ -1,3 +1,4 @@
+'use client'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import ImageAvatar from './AvatarBlog'
@@ -199,7 +200,7 @@ const MyBlog = ({ session }) => {
 				<Header />
 			</header>
 			<ArrowLeft
-				className='flex relative xl:fixed left-[20px] xl:top-[1rem] top-6 cursor-pointer text-zinc-300 hover:opacity-[.8]'
+				className='flex relative xl:fixed left-[20px] xl:top-[4.5rem] top-6 cursor-pointer text-zinc-300 hover:opacity-[.8]'
 				onClick={() => history.back()}
 			/>
 			<BlogHeader />
@@ -208,7 +209,7 @@ const MyBlog = ({ session }) => {
 					<Card>
 						<article className='p-6 space-y-6 relative'>
 							<header>
-							<span className='text-zinc-400 text-sm'>{FormatDate(post.posted)}</span>
+								<span className='text-zinc-400 text-sm'>{FormatDate(post.posted)}</span>
 								<span className='text-zinc-400 absolute top-[27px] right-5 text-sm'>
 									<EyeIcon className='float-right mx-2 my-[2px] w-4 h-4' />
 									{articleViews[post.article_id] || 0}
