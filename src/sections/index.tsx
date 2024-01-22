@@ -6,7 +6,6 @@ import { Button } from '@nextui-org/button'
 import { supabase } from '@/utils/supabase'
 
 /* eslint-disable multiline-ternary */
-
 export default function AuthButton({ session }: { session: Session | null }) {
 	const router = useRouter()
 
@@ -14,7 +13,7 @@ export default function AuthButton({ session }: { session: Session | null }) {
 		await supabase.auth.signInWithOAuth({
 			provider: 'github',
 			options: {
-				redirectTo: 'https://solidsnk86.netlify.app/auth/callback'
+				redirectTo: 'http://localhost:3000/auth/callback'
 			}
 		})
 	}
@@ -25,7 +24,7 @@ export default function AuthButton({ session }: { session: Session | null }) {
 	}
 
 	return (
-		<header>
+		<header className='border border-zinc-800 rounded-md p-4'>
 			{session == null ? (
 				<button
 					onClick={handleSignIn}

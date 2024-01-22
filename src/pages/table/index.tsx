@@ -15,7 +15,6 @@ export const VisitData = () => {
 			if (error) {
 				throw error
 			}
-
 			setItems(data)
 		}
 

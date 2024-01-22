@@ -30,7 +30,8 @@ i18n.use(initReactI18next).init({
 				titlePost: 'Post Title',
 				githubUser: 'Github user ID',
 				postDescription: 'Description about your post..',
-				urlPost: 'Your site URL'
+				urlPost: 'Your site URL',
+				twitterButton: 'Follow me'
 			}
 		},
 		es: {
@@ -60,7 +61,8 @@ i18n.use(initReactI18next).init({
 				titlePost: 'Título de la publicación',
 				githubUser: 'Usuario de Github',
 				postDescription: 'Descripción acerca de tu publicación..',
-				urlPost: 'La URL de tu sitio'
+				urlPost: 'La URL de tu sitio',
+				twitterButton: 'Sígueme'
 			}
 		}
 	},
