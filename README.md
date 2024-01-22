@@ -3,9 +3,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5d10895b-1156-44e7-902b-6eb317642eb5/deploy-status)](https://app.netlify.com/sites/solidsnk86/deploys)
 
-- `Este es mi portafolio web en React con NextJs 13`
+- `This is my web portfolio in React with NextJs 13`
 
-* Herramientas que he usado:
+* Tools I have used:
 
 [![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
 
@@ -20,11 +20,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 > [!Important]
-> En esta aplicación web, utilizo Supabase con PostgreSQL como backend para gestionar diversas funcionalidades, como la creación de tablas para usuarios, vistas de artículos, gestión de  likes y el registro de fechas, entre otras características. Aunque se trata de un proyecto personal, tienes la opción de descargar o clonar este repositorio para realizar 
-> modificaciones según tus preferencias.
+> In this web application, I use Supabase with PostgreSQL as the backend to manage various functionalities, such as creating tables for users, article views, handling likes, and recording dates, among other features. Although it's a personal project, you have the option to download or clone this repository to make modifications according to your preferences.
 
-Una vez descargado el repositorio y/o clonado con `git clone https://github.com/solidsnk86/portfolioWeb/`
-deben instalar todas las dependencias que uso aquí.
+Once the repository is downloaded and/or cloned with `git clone https://github.com/solidsnk86/portfolioWeb/`, you need to install all the dependencies I use here.
 
 ```bash
 npm install @latest
