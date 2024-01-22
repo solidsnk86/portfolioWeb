@@ -12,8 +12,6 @@ module.exports = {
 		extend: {
 			animation: {
 				marquee: 'marquee var(--duration) linear infinite',
-				meteor: 'meteor 5s linear infinite',
-				'text-gradient': 'text-gradient 1.5s linear infinite',
 				spin: 'spin calc(var(--speed) * 2) infinite linear',
 				slide: 'slide var(--speed) ease-in-out infinite alternate'
 			},
@@ -46,20 +44,6 @@ module.exports = {
 						transform: 'translate(calc(100cqw - 100%), 0)'
 					}
 				},
-				meteor: {
-					'0%': { transform: 'rotate(215deg) translateX(0)', opacity: 1 },
-					'70%': { opacity: 1 },
-					'100%': {
-						transform: 'rotate(215deg) translateX(-500px)',
-						opacity: 0
-					}
-				}
-			},
-			colors: {
-				midu: {
-					primary: '#0099FF',
-					secondary: '#DEF2FF'
-				}
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
