@@ -20,11 +20,15 @@ import { useTranslation } from 'react-i18next'
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
 
-const cvIcon = renderToString(<MyIcon />)
-const neoIcon = renderToString(<NeoTecsIcon />)
-const formIcon = renderToString(<FormIcon />)
-const scoreBoard = renderToString(<ScoreBoardIcon />)
-const neoScraper = renderToString(<ScraperIcon />)
+const iconComponents = {
+	cvIcon: <MyIcon />,
+	neoIcon: <NeoTecsIcon />,
+	formIcon: <FormIcon />,
+	scoreBoard: <ScoreBoardIcon />,
+	neoScraper: <ScraperIcon />
+}
+
+const { cvIcon, neoIcon, formIcon, scoreBoard, neoScraper } = iconComponents
 
 export default function Home() {
 	const { t } = useTranslation()
