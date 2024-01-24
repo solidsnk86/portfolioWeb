@@ -16,23 +16,15 @@ import { TresDButton } from '../components/TresDButton'
 import { ScraperIcon } from '../components/ScraperIcon'
 import Visit from '../components/Visits'
 import { useTranslation } from 'react-i18next'
-import ReactDOMServer from 'react-dom/server';
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
 
-const iconComponents = {
-  cvIcon: <MyIcon />,
-  neoIcon: <NeoTecsIcon />,
-  formIcon: <FormIcon />,
-  scoreBoard: <ScoreBoardIcon />,
-  neoScraper: <ScraperIcon />,
-};
-
-const renderedIcons = Object.keys(iconComponents).reduce((acc, key) => {
-  acc[key] = ReactDOMServer.renderToString(iconComponents[key]);
-  return acc;
-}, {});
+const cvIcon = renderToString(<MyIcon />)
+const neoIcon = renderToString(<NeoTecsIcon />)
+const formIcon = renderToString(<FormIcon />)
+const scoreBoard = renderToString(<ScoreBoardIcon />)
+const neoScraper = renderToString(<ScraperIcon />)
 
 export default function Home() {
 	const { t } = useTranslation()
