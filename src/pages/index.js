@@ -12,7 +12,6 @@ import { MyIcon } from '../components/MyIcon'
 import Visit from '../components/Visits'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
-import i18n from '../lib/i18next'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
