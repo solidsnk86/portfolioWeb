@@ -9,40 +9,64 @@ import { GithubStats } from '@/components/GithubStats'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
 import { MyIcon } from '../components/MyIcon'
-import { NeoTecsIcon } from '../components/NeotecsIcon'
-import { FormIcon } from '../components/FormIcon'
-import { ScoreBoardIcon } from '../components/TablerIcon'
-import { TresDButton } from '../components/TresDButton'
-import { ScraperIcon } from '../components/ScraperIcon'
 import Visit from '../components/Visits'
 import { useTranslation } from 'react-i18next'
+import { useEffect, useState } from 'react'
+import i18n from '../lib/i18next'
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
 
-const cvIcon = renderToString(<MyIcon />)
-const neoIcon = renderToString(<NeoTecsIcon />)
-const formIcon = renderToString(<FormIcon />)
-const scoreBoard = renderToString(<ScoreBoardIcon />)
-const neoScraper = renderToString(<ScraperIcon />)
+const favicon = renderToString(<MyIcon />)
+
+const HomeTitle = ({ Tag = 'h2', children }) => {
+	return (
+		<Tag
+			id='proyectos'
+			className='flex justify-center m-auto my-16 text-sky-100 text-4xl xl:text-5xl md:text-5xl font-bold '
+		>
+			{children}
+		</Tag>
+	)
+}
 
 export default function Home() {
 	const { t } = useTranslation()
+	const [projects, setProjects] = useState([])
 
 	const title = 'Portfolio Calcagni Gabriel'
 	const description = '¡Ey, pásate y echa un vistazo a mi portfolio!'
-	const ogImg = cvIcon
+	const ogImg =
+		'https://raw.githubusercontent.com/solidsnk86/NeoTecs/master/public/images/logos/NeoTecs_Tutorial_logo.png'
 
-	const HomeTitle = ({ Tag = 'h2', children }) => {
-		return (
-			<Tag
-				id='proyectos'
-				className='flex justify-center m-auto my-16 text-sky-100 text-4xl xl:text-5xl md:text-5xl font-bold '
-			>
-				{children}
-			</Tag>
-		)
-	}
+	useEffect(() => {
+		const fetchProjects = async () => {
+			try {
+				const res = await fetch(
+					'https://docs.google.com/spreadsheets/d/e/2PACX-1vQEGCqgrFBB4vWjUzNlslVB-rHkbUrcgFcS6dVLjiW94a5yS0KrLebgAHgdDXX0HfYDbYGvos-oFs-O/pub?output=csv'
+				)
+				const csv = await res.text()
+				const parsedProjects = csv
+					.split('\n')
+					.slice(1)
+					.map((row) => {
+						const [url, title, repoName, image, description] = row.split(',')
+						return {
+							url,
+							title,
+							repoName,
+							image,
+							description
+						}
+					})
+				setProjects(parsedProjects)
+			} catch (error) {
+				console.error('Error fetching projects data 😕:', error)
+			}
+		}
+
+		fetchProjects()
+	}, [])
 
 	return (
 		<>
@@ -60,8 +84,8 @@ export default function Home() {
 				<meta property='twitter:url' />
 				<meta property='og:type' content='website' />
 				<meta property='twitter:card' content='summary_large_image' />
-				<link rel='shortcut icon' href={`data:image/svg+xml,${encodeURIComponent(cvIcon)}`} />
-				<link rel='apple-touch-icon' href={`data:image/svg+xml,${encodeURIComponent(cvIcon)}`} />
+				<link rel='shortcut icon' href={`data:image/svg+xml,${encodeURIComponent(favicon)}`} />
+				<link rel='apple-touch-icon' href={`data:image/svg+xml,${encodeURIComponent(favicon)}`} />
 				<meta name='theme-color' content='#F05252' />
 			</Head>
 
@@ -74,53 +98,20 @@ export default function Home() {
 				<AboutMe />
 				<LF />
 				<HomeTitle>{t('projectsTitle')}</HomeTitle>
-				<div className='sm:flex items-stretch max-w-3xl mx-auto space-y-4 text-left sm:space-y-0 sm:space-x-8 sm:text-center'>
-					{[
-						{
-							url: 'https://neotecs.netlify.app/',
-							title: 'NeoTecs Web',
-							repoName: 'NeoTecs',
-							logo: `data:image/svg+xml,${encodeURIComponent(neoIcon)}`,
-							description: t('project1')
-						},
-						{
-							url: 'https://tablerobap.netlify.app/',
-							title: 'Tablero Digital',
-							repoName: 'tablero-369',
-							logo: `data:image/svg+xml,${encodeURIComponent(scoreBoard)}`,
-							description: t('project2')
-						},
-						{
-							url: 'https://github.com/solidsnk86/neo-scraper',
-							title: 'Neo Scraper',
-							repoName: 'neo-scraper',
-							logo: `data:image/svg+xml,${encodeURIComponent(neoScraper)}`,
-							description: t('project3')
-						},
-						{
-							url: 'https://solidsnk86.github.io/formularioWeb/',
-							title: 'Formulario Web',
-							repoName: 'formularioWeb',
-							logo: `data:image/svg+xml,${encodeURIComponent(formIcon)}`,
-							description: t('project4')
-						}
-					].map((item) => (
+				<div className='sm:flex items-stretch max-w-3xl mx-auto text-left sm:space-y-0 sm:space-x-8 sm:text-center'>
+					{projects.map((project) => (
 						<div
-							className='flex flex-col text-zinc-300 items-center w-full sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl px-4 py-6 duration-200 hover:shadow-lg hover:shadow-[#66666b] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 hover:scale-[1.05]'
-							key={item.title}
+							className='flex flex-col text-zinc-300 items-center w-full sm:w-1/2 space-y-4 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl duration-200 hover:shadow-lg hover:shadow-[#66666b] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 overflow-hidden project-card relative'
+							key={project.title}
 						>
-							<img
-								className='w-24 sm:w-24 md:w-24 lg:w-24 xl:w-28 sm:mr-0'
-								src={item.logo}
-								alt={item.title}
-							/>
-							<span className='font-bold mt-4 mb-2'>{item.title}</span>
-							<span className='text-sm mb-2 opacity-[.7]'>{item.description}</span>
+							<img className='w-full h-1/2 rounded-t-xl' src={project.image} alt={project.title} />
+							<span className='font-bold mt-4 mb-2'>{project.title}</span>
+							<span className='text-sm mb-2 opacity-[.7]'>{project.description}</span>
 
-							<GithubStats repoName={item.repoName} />
+							<GithubStats repoName={project.repoName} />
 							<a
-								href={item.url}
-								className='hover:brightness-150 px-3 py-1 rounded mt-2 text-md link'
+								href={project.url}
+								className='hover:brightness-150 px-3 pb-3 rounded mt-2 text-md link'
 								target='_blank'
 								rel='noopener noreferrer'
 							>
@@ -131,7 +122,6 @@ export default function Home() {
 					))}
 				</div>
 			</main>
-			<TresDButton />
 			<Footer />
 			<Visit />
 		</>

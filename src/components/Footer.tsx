@@ -5,7 +5,7 @@ import { MyIcon } from '@/components/MyIcon'
 export const Footer = () => {
 	const githubLink = [
 		{
-			str: <p className='inline'>solidsnk86 &copy;</p>,
+			str: <p className='inline'>&copy;solidsnk86</p>,
 			href: 'https://github.com/solidsnk86',
 			icon: <MyIcon className='inline mx-2 text-zinc-300 w-6 h-6 mb-1 fill-red-500' />,
 			year: new Date().getFullYear()
