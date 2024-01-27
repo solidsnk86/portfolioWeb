@@ -104,7 +104,7 @@ export default function Home() {
 							key={project.title}
 						>
 							<img className='w-full h-1/2 rounded-t-xl' src={project.image} alt={project.title} />
-							<span className='font-bold mt-4 mb-2'>{project.title}</span>
+							<span className='font-bold mt-6 mb-2'>{project.title}</span>
 							<span className='text-sm mb-2 opacity-[.7]'>{project.description}</span>
 
 							<GithubStats repoName={project.repoName} />
