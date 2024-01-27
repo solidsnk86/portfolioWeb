@@ -85,7 +85,7 @@ export default function Home() {
 				<meta property='twitter:card' content='summary_large_image' />
 				<link rel='shortcut icon' href={`data:image/svg+xml,${encodeURIComponent(favicon)}`} />
 				<link rel='apple-touch-icon' href={`data:image/svg+xml,${encodeURIComponent(favicon)}`} />
-				<meta name='theme-color' content='#F05252' />
+				<meta name='theme-color' content='#48484C' />
 			</Head>
 
 			<header id='header' className='relative w-full mb-10 z-[9999]'>

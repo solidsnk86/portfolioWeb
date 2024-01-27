@@ -35,7 +35,7 @@ export default function Example() {
 	return (
 		<>
 			<Head>
-				<meta name='theme-color' content='#F05252' />
+				<meta name='theme-color' content='#48484C' />
 			</Head>
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
 				<ArrowLeft
