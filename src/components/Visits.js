@@ -84,7 +84,7 @@ const Visit = () => {
 			<div id='visit' className='p-3 text-amber-400 font-mono text-xs'>
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>
-						<span className='span-location flex mt-[2px] px-1 h-[8px] rounded-full bg-red-600 mx-3 animate-ping' />
+						<span className='span-location flex mt-[3px] px-1 h-[8px] rounded-full bg-red-600 mx-3 animate-ping' />
 						<p>
 							{t('lastVisit')} {lastVisit.city_name}, {lastVisit.country_name}{' '}
 							{lastVisit.country_flag}
