@@ -100,7 +100,7 @@ export default function Home() {
 				<div className='sm:flex items-stretch max-w-3xl mx-auto text-left sm:space-y-0 sm:space-x-8 sm:text-center'>
 					{projects.map((project) => (
 						<div
-							className='flex flex-col text-zinc-300 my-4 items-center w-full sm:w-1/2 space-y-4 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl duration-200 hover:shadow-lg hover:shadow-[#66666b] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 overflow-hidden project-card relative'
+							className='flex flex-col text-zinc-300 my-4 items-center w-full h-1/2 sm:w-1/2 space-y-4 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl duration-200 hover:shadow-lg hover:shadow-[#66666b] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 overflow-hidden project-card relative'
 							key={project.title}
 						>
 							<img className='w-full h-1/2 rounded-t-xl' src={project.image} alt={project.title} />
