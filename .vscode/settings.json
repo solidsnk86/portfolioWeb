@@ -7,9 +7,11 @@
     "typescriptreact" // Enable .tsx
   ],
   "editor.codeActionsOnSave": {
-	"source.fixAll.eslint": "explicit"
-},
+    "source.fixAll.eslint": "explicit"
+  },
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
   "editor.insertSpaces": false,
-  "editor.detectIndentation": false
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
