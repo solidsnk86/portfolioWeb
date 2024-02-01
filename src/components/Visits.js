@@ -1,6 +1,7 @@
 import { supabase } from '@/utils/supabase'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
+import FormatDate from './FormatDate'
 
 const Visit = () => {
 	const { t } = useTranslation()
@@ -57,7 +58,7 @@ const Visit = () => {
 			try {
 				const { data, error } = await supabase
 					.from('address')
-					.select('id, city_name, country_name, country_flag')
+					.select('id, city_name, country_name, country_flag, created_at')
 					.order('created_at', { ascending: false })
 					.limit(1)
 
@@ -81,13 +82,13 @@ const Visit = () => {
 			<p className='text-amber-400 font-mono text-xs text-center'>
 				{t('profileViews')} {lastVisit.id}
 			</p>
-			<div id='visit' className='p-3 text-amber-400 font-mono text-xs'>
+			<div id='visit' className='p-3 text-center text-amber-400 font-mono text-xs'>
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>
 						<span className='span-location flex mt-[3px] px-1 h-[8px] rounded-full bg-amber-600 mx-3 animate-ping' />
 						<p>
-							{t('lastVisit')} {lastVisit.city_name}, {lastVisit.country_name}{' '}
-							{lastVisit.country_flag}
+							{t('lastVisit')} {FormatDate(lastVisit.created_at)} {t('lastVisitFrom')}{' '}
+							{lastVisit.city_name}, {lastVisit.country_name} {lastVisit.country_flag}
 						</p>
 					</div>
 				)}
