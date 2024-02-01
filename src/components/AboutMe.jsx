@@ -8,7 +8,7 @@ export function AboutMe() {
 
 	const CardTitle = ({ Tag = 'p', children }) => {
 		return (
-			<Tag className='text-xs md:text-md xl:text-lg from-zinc-300 text-center my-20 mx-3 italic font-thin'>
+			<Tag className='text-xs md:text-md xl:text-lg from-zinc-300 text-center my-20 italic font-thin'>
 				{children}
 			</Tag>
 		)
