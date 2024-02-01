@@ -49,13 +49,14 @@ export default function Home() {
 					.split('\n')
 					.slice(1)
 					.map((row) => {
-						const [url, title, repoName, image, description] = row.split(',')
+						const [url, title, repoName, image, description, update] = row.split(',')
 						return {
 							url,
 							title,
 							repoName,
 							image,
-							description
+							description,
+							update
 						}
 					})
 				setProjects(parsedProjects)
@@ -127,10 +128,13 @@ export default function Home() {
 				<div className='sm:flex items-stretch mx-auto gap-4 sm:text-center'>
 					{projects.map((project) => (
 						<div
-							className='flex flex-col text-zinc-300 my-4 items-center w-full h-1/2 sm:w-1/2 space-y-4 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl duration-200 hover:shadow-lg hover:shadow-[#66666b] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 overflow-hidden project-card relative'
+							className='flex flex-col text-zinc-300 my-4 items-center w-full h-1/2 sm:w-1/2 space-y-4 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl duration-200 hover:shadow-lg hover:shadow-[#a8a081a6] hover:border-opacity-0 hover:bg-primary hover:bg-opacity-5 overflow-hidden project-card relative'
 							key={project.title}
 						>
-							<img className=' rounded-t-xl' src={project.image} alt={project.title} />
+							<img className='rounded-t-xl' src={project.image} alt={project.title} />
+							<span className='text-[10px] font-mono absolute top-[-12px] left-[14px] z-10 bg-transparent update-dot uppercase'>
+								update {project.update}
+							</span>
 							<span className='font-bold mt-6 mb-2'>{project.title}</span>
 							<span className='text-sm mb-2 opacity-[.7] h-12'>{project.description}</span>
 

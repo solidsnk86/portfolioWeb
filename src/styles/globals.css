@@ -337,3 +337,14 @@ textarea {
 	border: 1px solid #27272a;
 	padding: 5px;
 }
+
+.update-dot::before {
+	content: '';
+	position: absolute;
+	padding: 2px;
+	margin-top: 4.4px;
+	left: -8px;
+	height: 3px;
+	background-color: limegreen;
+	border-radius: 100%;
+}
