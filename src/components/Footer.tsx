@@ -12,12 +12,14 @@ export const Footer = () => {
 	return (
 		<div className='flex pt-20 pb-5 justify-center m-auto'>
 			{githubLink.map((i) => (
-				<Link key={i.href} href={i.href} className='text-zinc-600 text-sm'>
-					<span className='hover:text-red-500 hover:transition-[.5s] hover:brightness-150 mx-2'>
-						{i.str}
-					</span>
-					·<span className='mx-2'>{i.year}</span>
-				</Link>
+				<>
+					<Link key={i.href} href={i.href} className='text-zinc-600 text-sm'>
+						<span className='hover:text-red-500 hover:transition-[.5s] hover:brightness-150 mx-2'>
+							{i.str}
+						</span>
+						·<span className='mx-2'>{i.year}</span>
+					</Link>
+				</>
 			))}
 		</div>
 	)
