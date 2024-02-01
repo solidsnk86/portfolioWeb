@@ -11,8 +11,7 @@ i18n.use(initReactI18next).init({
 				title: 'Portfolio of Calcagni Gabriel',
 				description: 'Hey, come and take a look at my portfolio!',
 				projectsTitle: 'My Projects...',
-				aboutMe:
-					`Hi, my name is Gabriel. I am Front End developer with +${Experience()} year of experience, using technologies such as React and Next.js. I work on my project`,
+				aboutMe: `Hi, my name is Gabriel. I am Front End developer with +${Experience()} year of experience, using technologies such as React and Next.js. I work on my project`,
 				sectionLF: '"Frameworks, tools, and languages that I mostly use"',
 				project1: 'Documentation for Web Programming',
 				project2: 'Digital Scoreboard for Bocce',
@@ -42,8 +41,7 @@ i18n.use(initReactI18next).init({
 				title: 'Portfolio de Calcagni Gabriel',
 				description: '¡Ey, pásate y echa un vistazo a mi portfolio!',
 				projectsTitle: 'Mis Proyectos...',
-				aboutMe:
-					`Hola, mi nombre es Gabriel. Soy desarrollador Front End con ${Experience()} año de experiencia, utilizando tecnologías como React y Next.js. Trabajo en mi proyecto`,
+				aboutMe: `Hola, mi nombre es Gabriel. Soy desarrollador Front End con +${Experience()} año de experiencia, utilizando tecnologías como React y Next.js. Trabajo en mi proyecto`,
 				sectionLF: '"Marcos, herramientas, y lenguajes que más utilizo"',
 				project1: 'Documentación para Programación Web',
 				project2: 'Tablero Digital para bochas',
