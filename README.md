@@ -42,7 +42,7 @@ You can adjust and modify the ESLint rules based on your preferences.
 [!Note]
 > Enjoy this project, designed as my portfolio to showcase my work. The integration with the GitHub Stats API determines the project's star count, while Google Sheets CSV, cookies for >location tracking, and visitor count information contribute to its dynamic and personalized features.
 
-> This app is deployed on Netlify:
+This app is deployed on Netlify:
 
 [![Netlify](https://img.shields.io/badge/Netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com/)
 
