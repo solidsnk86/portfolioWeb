@@ -20,7 +20,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 > [!Important]
-> In this web application, I use Supabase with PostgreSQL as the backend to manage various functionalities, such as creating tables for users, article views, handling likes, and recording dates, among other features. Although it's a personal project, you have the option to download or clone this repository to make modifications according to your preferences.
+> In this web application, I leverage Supabase with PostgreSQL as the backend to manage various functionalities, such as creating tables for users, tracking article views, handling likes, and recording dates, among other features. Additionally, I employ Google Sheets CSV to dynamically generate content and incorporate information. The application utilizes cookies to gather data, including user location (country and city), and tracks the number of visitors. All this data is seamlessly integrated into my Supabase database in PostgreSQL.
+
+While it's a personal project, you have the option to download or clone this repository to make modifications according to your preferences.
 
 Once the repository is downloaded and/or cloned with `git clone https://github.com/solidsnk86/portfolioWeb/`, you need to install all the dependencies I use here.
 
@@ -31,9 +33,8 @@ yarn install
 ```
 #
 
-Pueden ajustar y modificar las reglas `eslintrc` que por gusto y agrado utilizo para mi proyecto.
+Feel free to adjust and modify the eslintrc rules that I use for this project based on your preferences.
 
-> [!Note]
-> Sin más para añadir, espero les guste este proyecto que uso como portfolio para presentar mis proyectos
-> con la API de GitHub Stats para determinar la cantidad de estrellas del proyecto.
+[!Note]
+Without further ado, I hope you enjoy this project, which serves as my portfolio to showcase my work. The integration with the GitHub Stats API helps determine the project's star count, while Google Sheets CSV, cookies for location tracking, and visitor count information contribute to its dynamic and personalized features.
 
