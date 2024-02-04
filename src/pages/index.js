@@ -1,72 +1,21 @@
-import { Inter, Inter_Tight as InterTight } from 'next/font/google'
 import Head from 'next/head'
-import { renderToString } from 'react-dom/server'
 import { LF } from '@/sections/languages'
 import { Header } from '@/components/Header'
-import Particles from '@/components/particles'
 import { AboutMe } from '@/components/AboutMe'
 import { GithubStats } from '@/components/GithubStats'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
-import { MyIcon } from '../components/MyIcon'
-import Visit from '../components/Visits'
 import { useTranslation } from 'react-i18next'
-import { useEffect, useState } from 'react'
-
-export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
-export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
-
-const favicon = renderToString(<MyIcon />)
-
-const HomeTitle = ({ Tag = 'h2', children }) => {
-	return (
-		<Tag
-			id='proyectos'
-			className='flex justify-center m-auto my-16 text-sky-100 text-4xl xl:text-5xl md:text-5xl font-bold '
-		>
-			{children}
-		</Tag>
-	)
-}
+import { HomeTitle } from '@/components/HomeTitle'
+import { title, description, ogImg, favicon, inter } from '@/components/const'
+import { BackgroundFlares } from '@/components/BackgroundFlares'
+import Particles from '@/components/particles'
+import dataProject from '@/components/DataProjects'
+import Visit from '@/components/Visits'
 
 export default function Home() {
 	const { t } = useTranslation()
-	const [projects, setProjects] = useState([])
-
-	const title = 'Portfolio Calcagni Gabriel'
-	const description = '¡Ey, pásate y echa un vistazo a mi portfolio!'
-	const ogImg =
-		'https://raw.githubusercontent.com/solidsnk86/NeoTecs/master/public/images/logos/NeoTecs_Tutorial_logo.png'
-
-	useEffect(() => {
-		const fetchProjects = async () => {
-			try {
-				const res = await fetch(
-					'https://docs.google.com/spreadsheets/d/e/2PACX-1vQEGCqgrFBB4vWjUzNlslVB-rHkbUrcgFcS6dVLjiW94a5yS0KrLebgAHgdDXX0HfYDbYGvos-oFs-O/pub?output=csv'
-				)
-				const csv = await res.text()
-				const parsedProjects = csv
-					.split('\n')
-					.slice(1)
-					.map((row) => {
-						const [url, title, repoName, image, description, update] = row.split(',')
-						return {
-							url,
-							title,
-							repoName,
-							image,
-							description,
-							update
-						}
-					})
-				setProjects(parsedProjects)
-			} catch (error) {
-				console.error('Error fetching projects data 😕:', error)
-			}
-		}
-
-		fetchProjects()
-	}, [])
+	const projects = dataProject()
 
 	return (
 		<>
@@ -92,34 +41,7 @@ export default function Home() {
 			<header id='header' className='relative w-full mb-10 z-[9999]'>
 				<Header />
 			</header>
-
-			<div className='flares w-full h-full'>
-				<img
-					src='img/flare-top.png'
-					loading='lazy'
-					sizes='(max-width: 1920px) 100vw, 1920px'
-					srcSet='img/flare-top-500.png 500w, img/flare-top-800.png 800w, img/flare-top-1080.png 1080w, img/flare-top.png 1920w'
-					alt=''
-					className='flares-top w-full h-full'
-				/>
-				<img
-					src='img/flare-right.png'
-					loading='lazy'
-					sizes='(max-width: 1622px) 100vw, 1622px'
-					srcSet='img/flare-right-500.png 500w, img/flare-right-800.png 800w, img/flare-right-1080.png 1080w, img/flare-right.png 1622w'
-					alt=''
-					className='new-flare-nav top-right hide-mobile w-full h-full'
-				/>
-				<img
-					src='img/flare-left.png'
-					loading='lazy'
-					sizes='(max-width: 1518px) 100vw, 1518px'
-					srcSet='img/flare-left-500.png 500w, img/flare-left-800.png 800w, img/flare-left.png 1518w'
-					alt=''
-					className='new-flare-nav top-left hide-mobile w-full h-full'
-				/>
-			</div>
-
+			<BackgroundFlares />
 			<main className={`${inter.className} max-w-5xl mx-auto mt-14 pb-20 px-4 `}>
 				<Particles className='absolute inset-0 -z-0 animate-fade-in' quantity={133} />
 				<AboutMe />

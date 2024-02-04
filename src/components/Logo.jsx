@@ -1,4 +1,4 @@
-import { interTight } from '../pages'
+import { interTight } from '../components/const'
 
 export function Logo() {
 	return (

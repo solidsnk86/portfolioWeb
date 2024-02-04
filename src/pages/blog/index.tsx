@@ -1,37 +1,29 @@
 'use client'
 
+import Head from 'next/head'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import ImageAvatar from './AvatarBlog'
 import { ArrowLeft, ArrowRight, EyeIcon, Heart } from 'lucide-react'
-import Head from 'next/head'
 import { Header } from '@/components/Header'
 import { Card } from '@/components/Card'
 import { supabase } from '@/utils/supabase'
 import { BlogHeader } from '@/components/BlogHeader'
-import BlogForm from '@/components/BlogForm'
-import { v4 as uuidv4 } from 'uuid'
 import { ShareButton } from '@/components/ShareButton'
 import { Preloader } from '@/lib/Preloader'
+import { Footer } from '@/components/Footer'
+import sendPost from '@/components/SendPost'
+import sendViews from '@/components/SendViews'
+import sendLike from '@/components/SendLikes'
+import ImageAvatar from './AvatarBlog'
+import BlogForm from '@/components/BlogForm'
 import FormatDate from '@/components/FormatDate'
 import Visit from '@/components/Visits'
-import { Footer } from '@/components/Footer'
 
-const MyBlog = ({ session }) => {
-	const userId = session?.user?.id || ''
-	const [articleViews, setArticleViews] = useState({})
+const MyBlog = () => {
 	const [posts, setPosts] = useState([])
+	const [articleViews, setArticleViews] = useState({})
 	const [likes, setLikes] = useState({})
-	const [newPost, setNewPost] = useState({
-		user_id: userId,
-		name: '',
-		company_dev: '',
-		title: '',
-		description: '',
-		url: '',
-		posted: new Date().toISOString(),
-		article_id: uuidv4()
-	})
+	const [newPost, setNewPost] = useState({})
 
 	useEffect(() => {
 		const fetchArticleViews = async () => {
@@ -98,69 +90,7 @@ const MyBlog = ({ session }) => {
 		fetchArticleViews()
 		fetchLikes()
 		fetchPosts()
-	}, [userId])
-
-	const sendViews = async (articleId) => {
-		try {
-			const { data, error } = await supabase.from('views').upsert([{ article_id: articleId }])
-
-			if (error) {
-				console.error('Error sending views:', error)
-			} else {
-				console.log('Views sent successfully:', data)
-			}
-		} catch (error) {
-			console.error('Error sending views:', error)
-		}
-	}
-
-	const sendPost = async () => {
-		try {
-			const { data, error } = await supabase.from('posts').upsert([newPost])
-
-			if (error) {
-				console.error('Error sending post:', error)
-			} else {
-				console.log('Post sent successfully:', data)
-				sendViews(newPost.article_id)
-				setPosts([...posts, { ...newPost, user_id: userId }])
-			}
-		} catch (error) {
-			console.error('Error sending post:', error)
-		}
-	}
-
-	const sendLike = async (article_id) => {
-		try {
-			const { data: postExists, error: postExistsError } = await supabase
-				.from('posts')
-				.select('id')
-				.eq('article_id', article_id)
-				.single()
-
-			if (postExistsError) {
-				console.error('Error checking if post exists:', postExistsError)
-				return
-			}
-
-			if (!postExists) {
-				console.error('Post does not exist')
-				return
-			}
-			const user_id = userId
-			const { data, error } = await supabase
-				.from('likes')
-				.upsert([{ post_id: article_id, user_id }])
-
-			if (error) {
-				console.error('Error sending like:', error)
-			} else {
-				console.log('Like sent successfully:', data)
-			}
-		} catch (error) {
-			console.error('Error sending like:', error)
-		}
-	}
+	}, [])
 
 	const handleLike = async (post_id) => {
 		try {

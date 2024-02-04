@@ -1,10 +1,11 @@
-import { Github, Mail, ArrowLeft } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Visit from '@/components/Visits'
+import { Github, Mail, ArrowLeft } from 'lucide-react'
 import { Card } from '@/components/Card'
 import { TwitterIcon } from '@/components/TwitterIcon'
-import Visit from '@/components/Visits'
 import { Footer } from '@/components/Footer'
+import { BackgroundFlares } from '@/components/BackgroundFlares'
 
 const socials = [
 	{
@@ -37,6 +38,7 @@ export default function Example() {
 			<Head>
 				<meta name='theme-color' content='#48484C' />
 			</Head>
+			<BackgroundFlares />
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
 				<ArrowLeft
 					className='flex sticky left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
