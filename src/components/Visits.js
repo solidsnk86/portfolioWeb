@@ -1,7 +1,8 @@
-import { supabase } from '@/utils/supabase'
-import { useTranslation } from 'react-i18next'
-import { useEffect, useState } from 'react'
 import FormatDate from './FormatDate'
+import { geolocation } from './const'
+import { useTranslation } from 'react-i18next'
+import { supabase } from '@/utils/supabase'
+import { useEffect, useState } from 'react'
 
 const Visit = () => {
 	const { t } = useTranslation()
@@ -12,9 +13,9 @@ const Visit = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await fetch('https://geolocation.microlink.io')
+				const res = await fetch()
 				if (res.ok) {
-					const jsonData = await res.json()
+					const jsonData = await res.json(geolocation)
 					setVisitData({
 						city: {
 							name: jsonData.city.name,

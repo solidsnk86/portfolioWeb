@@ -8,6 +8,7 @@ export const ogImg =
 	'https://raw.githubusercontent.com/solidsnk86/NeoTecs/master/public/images/logos/NeoTecs_Tutorial_logo.png'
 
 export const csvData = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQEGCqgrFBB4vWjUzNlslVB-rHkbUrcgFcS6dVLjiW94a5yS0KrLebgAHgdDXX0HfYDbYGvos-oFs-O/pub?output=csv'
+export const geolocation = 'https://geolocation.microlink.io'
 
 export const favicon = renderToString(<MyIcon />)
 
