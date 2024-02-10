@@ -13,7 +13,7 @@ const Visit = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const res = await fetch()
+				const res = await fetch(geolocation)
 				if (res.ok) {
 					const jsonData = await res.json(geolocation)
 					setVisitData({
