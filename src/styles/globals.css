@@ -54,10 +54,6 @@ body.loading * {
 	filter: drop-shadow(0 0 9px orange);
 }
 
-/*|||||||||||||||||||
-## POST CARD STYLES |
-|||||||||||||||||||*/
-
 .read-more:hover .arrow {
 	transform: translateX(3px);
 	transition: 0.3s ease-in-out;
@@ -91,8 +87,6 @@ textarea {
 	transition: 0.1s ease-in-out;
 }
 
-/* ==============> HR <============== */
-
 .hr-container {
 	display: flex;
 	align-items: center;
@@ -108,8 +102,6 @@ textarea {
 	border: none;
 	margin: 0 10px;
 }
-
-/* SPINER */
 
 .spinner {
 	position: fixed;
