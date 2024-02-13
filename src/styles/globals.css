@@ -14,6 +14,7 @@ html {
 body {
 	background: #000000;
 	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
 }
 
 body.loading * {
