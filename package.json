@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@nextui-org/button": "^2.0.26",
+    "@nextui-org/spinner": "^2.0.24",
+    "@nextui-org/system": "^2.0.0",
+    "@nextui-org/theme": "^2.1.0",
     "@supabase/auth-helpers-nextjs": "^0.8.7",
     "@supabase/supabase-js": "^2.39.2",
     "atropos": "2.0.2",
@@ -26,7 +29,6 @@
     "lucide-react": "^0.284.0",
     "next": "^13.5.4",
     "next-auth": "^4.24.5",
-    "next-link": "^2.0.0",
     "next-preload-headers": "^3.0.4",
     "postcss": "8.4.29",
     "postcss-import": "^16.0.0",
