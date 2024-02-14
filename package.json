@@ -17,7 +17,6 @@
     "autoprefixer": "10.4.15",
     "canvas-confetti": "1.6.0",
     "dotenv": "^16.4.4",
-    "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "flowbite": "1.8.1",
     "framer-motion": "^10.16.4",
@@ -29,6 +28,7 @@
     "next-auth": "^4.24.5",
     "next-link": "^2.0.0",
     "postcss": "8.4.29",
+    "postcss-import": "^16.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.48.2",
@@ -36,6 +36,7 @@
     "react-icons": "^4.11.0",
     "supabase": "^1.110.1",
     "tabler-icons-react": "^1.56.0",
+    "tailwind-variants": "^0.2.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
@@ -44,7 +45,9 @@
     "@types/react": "18.2.21",
     "@typescript-eslint/eslint-plugin": "6.5.0",
     "clsx": "2.0.0",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "9.0.0",
+    "eslint-config-standard": "^17.1.0",
     "eslint-plugin-next": "^0.0.0",
     "standard": "17.1.0",
     "tailwind-merge": "1.14.0",
