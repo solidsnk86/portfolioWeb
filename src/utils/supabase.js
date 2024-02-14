@@ -1,6 +1,8 @@
+// eslint-disable-next-line import/first
 import { config } from 'dotenv'
 config()
 
+// eslint-disable-next-line import/first
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
