@@ -1,8 +1,6 @@
 | solidsnk86 / portfolio  |
 --------------------------|
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5d10895b-1156-44e7-902b-6eb317642eb5/deploy-status)](https://app.netlify.com/sites/solidsnk86/deploys)
-
 - `This is my web portfolio in React with NextJs 14`
 
 * Tools and frames I have used:
