@@ -41,4 +41,4 @@ You can adjust and modify the ESLint rules based on your preferences.
 
 This app is deployed on Vercel:
 
-[![Vercel](<https://img.shields.io/badge/Vercel-Deployed-linear-gradient(to%20right,#FF6000,#0076FF).svg?logo=vercel&logoColor=white>)](https://portfolio-mgc.vercel.app/)
+[![Deployed on Vercel](https://img.shields.io/badge/Vercel-Deployed-0076FF.svg?logo=vercel&logoColor=white)](https://neotecs.vercel.app/)
