@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Visit from '@/components/Visits'
 import { Github, Mail, ArrowLeft } from 'lucide-react'
 import { Card } from '@/components/Card'
-import { TwitterIcon } from '@/components/TwitterIcon'
+import { TwitterIcon } from '@/components/icons/TwitterIcon'
 import { Footer } from '@/components/Footer'
 import { BackgroundFlares } from '@/components/BackgroundFlares'
 

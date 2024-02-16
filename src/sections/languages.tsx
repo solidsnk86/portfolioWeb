@@ -1,7 +1,7 @@
 import Marquee from '@/components/magicui/Marquee'
 import { ReactNode } from 'react'
-import { VideoReactIcon } from '@/components/VideoReactIcon'
-import { DjangoIcon } from '@/components/DjangoIcon'
+import { VideoReactIcon } from '@/components//icons/VideoReactIcon'
+import { DjangoIcon } from '@/components/icons/DjangoIcon'
 import { useTranslation } from 'react-i18next'
 
 const Lang = [

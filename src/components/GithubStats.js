@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { StarIcon } from './StarIcon'
+import { StarIcon } from './icons/StarIcon'
 
 function getLocalStats(repoName) {
 	return {

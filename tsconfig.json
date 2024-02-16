@@ -25,6 +25,7 @@
     "src/components/contact/page.tsx",
     "src/components/Visits.js",
     "src/components/Header.js",
-    "src/components/HomeTitle.js"
+    "src/components/HomeTitle.js",
+    "src/components/AboutMe.js"
   ]
 }

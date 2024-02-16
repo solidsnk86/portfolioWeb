@@ -1,4 +1,4 @@
-import { TwitterIcon } from '@/components/TwitterIcon'
+import { TwitterIcon } from '@/components/icons/TwitterIcon'
 
 export default function TwitterShare() {
 	const TwitterFollow = () => {
