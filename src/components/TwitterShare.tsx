@@ -1,12 +1,12 @@
+import { ogImg } from './const'
 import { TwitterIcon } from '@/components/icons/TwitterIcon'
 
 export default function TwitterShare() {
 	const TwitterFollow = () => {
-		const tit = 'Portfolio solidsnk86'
-		const ogImg = 'https://github.com/solidsnk86/neotecs.tech/blob/master/img/Image-og.png?raw=true'
+		const title = 'Portfolio solidsnk86'
 		const encodeUri = encodeURIComponent(window.location.href)
 		const urlImg = encodeURIComponent(ogImg)
-		window.open(`https://twitter.com/share?url=${encodeUri}&title=${tit}&image=${urlImg}`)
+		window.open(`https://twitter.com/share?url=${encodeUri}&title=${title}&image=${urlImg}`)
 	}
 
 	return (

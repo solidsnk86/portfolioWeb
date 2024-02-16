@@ -22,7 +22,7 @@ export default function Home() {
 			<Head>
 				<title>Calcagni Gabriel</title>
 				<meta name='description' content={description} />
-				<meta property='og:image' />
+				<meta property='og:image' content={ogImg} />
 				<meta property='author' content='solidSnk86' />
 				<meta property='twitter:image' content={ogImg} />
 				<meta property='og:title' content={title} />
