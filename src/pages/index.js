@@ -58,7 +58,9 @@ export default function Home() {
 								update {project.update}
 							</span>
 							<span className='font-bold mt-6 mb-2'>{project.title}</span>
-							<span className='text-sm mb-2 opacity-[.7] h-12'>{project.description}</span>
+							<span className='text-sm mb-2 opacity-[.7] h-12 description-project'>
+								{project.description}
+							</span>
 
 							<GithubStats repoName={project.repoName} />
 							<a
