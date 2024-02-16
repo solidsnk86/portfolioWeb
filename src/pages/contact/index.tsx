@@ -16,7 +16,7 @@ const socials = [
 	},
 	{
 		icon: <Mail size={24} />,
-		href: 'mailto:calcagni.gabriel86@gmailcom',
+		href: 'mailto:calcagni.gabriel86@gmail.com',
 		label: 'Mail',
 		handle: 'calcagni.gabriel86@gmail.com'
 	},
@@ -28,10 +28,6 @@ const socials = [
 	}
 ]
 
-const handleButtonBack = () => {
-	window.open('/', '_self')
-}
-
 export default function Example() {
 	return (
 		<>
@@ -42,12 +38,12 @@ export default function Example() {
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
 				<ArrowLeft
 					className='flex sticky left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
-					onClick={handleButtonBack}
+					onClick={() => history.back()}
 				/>
 				<div className='container flex items-center min-h-screen justify-center px-4 mx-auto'>
 					<div className='grid w-full grid-cols-1 gap-8 mx-auto mb-5 mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>
-						{socials.map((s) => (
-							<Card key={s.label}>
+						{socials.map((s, index) => (
+							<Card key={index}>
 								<Link
 									href={s.href}
 									target='_blank'
