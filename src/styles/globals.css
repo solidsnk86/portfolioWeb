@@ -213,6 +213,10 @@ textarea {
 	animation: none;
 }
 
+.last-visit {
+	text-wrap: pretty;
+}
+
 .head-table th {
 	padding: 5px;
 	border: 1px solid #27272a;

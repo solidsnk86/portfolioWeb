@@ -86,8 +86,8 @@ const Visit = () => {
 			<div id='visit' className='p-3 text-center text-amber-400 font-mono'>
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>
-						<span className='span-location flex mt-[3px] px-1 h-[8px] rounded-full bg-amber-600 mr-2 animate-ping' />
-						<p className='text-[10px] xl:text-xs'>
+						<span className='span-location flex mt-[3px] px-1 h-[8px] rounded-full bg-amber-600 xl:mr-2 mr-1 animate-ping' />
+						<p className='text-[10px] xl:text-xs last-visit'>
 							{t('lastVisit')} {FormatDate(lastVisit.created_at)} {t('lastVisitFrom')}{' '}
 							{lastVisit.city_name}, {lastVisit.country_name} {lastVisit.country_flag}
 						</p>
