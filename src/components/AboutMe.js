@@ -27,7 +27,7 @@ export function AboutMe() {
 						{t('aboutMe')}
 						<Link
 							className='mx-1 duration-500 text-orange-400 underline link-shadow'
-							href='https://neotecs.netlify.app/'
+							href='https://neotecs.vercel.app/'
 						>
 							Neotecs
 						</Link>
