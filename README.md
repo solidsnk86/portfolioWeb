@@ -23,7 +23,7 @@
 
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23336791.svg?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
-> This web application utilizes Supabase with PostgreSQL as the backend to manage various functionalities, including user tables, article views tracking, likes handling, and date >recording. Google Sheets CSV dynamically generates content and incorporates information. The application uses cookies to collect data, including user location (country and city), and tracks the number of visitors. All this data seamlessly integrates into my Supabase database in PostgreSQL.
+> This web application utilizes Supabase with PostgreSQL as the backend to manage various functionalities, including user tables, article views tracking, likes handling, and date recording. Google Sheets CSV dynamically generates content and incorporates information. The application uses cookies to collect data, including user location (country and city), and tracks the number of visitors. All this data seamlessly integrates into my Supabase database in PostgreSQL.
 
 Feel free to download or clone this repository with git clone https://github.com/solidsnk86/portfolioWeb/. Afterward, install the necessary dependencies using:
 
