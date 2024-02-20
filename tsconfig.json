@@ -26,6 +26,8 @@
     "src/components/Visits.js",
     "src/components/Header.js",
     "src/components/HomeTitle.js",
-    "src/components/AboutMe.js"
+    "src/components/AboutMe.js",
+    "src/utils/supabase.js",
+    "src/pages/login/index.js"
   ]
 }

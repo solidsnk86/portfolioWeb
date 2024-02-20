@@ -13,17 +13,29 @@ import Link from 'next/link'
 import { Preloader } from '@/components/Preloader'
 import { ShareButton } from '@/components/ShareButton'
 import { supabase } from '@/utils/supabase'
-import sendPost from '@/components/SendPost'
 import sendViews from '@/components/SendViews'
 import sendLike from '@/components/SendLikes'
+import { v4 as uuidv4 } from 'uuid'
 import { useState, useEffect } from 'react'
 import Visit from '@/components/Visits'
 
-const MyBlog = () => {
+const MyBlog = ({ session }) => {
 	const [posts, setPosts] = useState([])
 	const [articleViews, setArticleViews] = useState({})
 	const [likes, setLikes] = useState({})
-	const [newPost, setNewPost] = useState({})
+
+	const userId = session?.user?.id || ''
+
+	const [newPost, setNewPost] = useState({
+		user_id: userId,
+		name: '',
+		company_dev: '',
+		title: '',
+		description: '',
+		url: '',
+		posted: new Date().toISOString(),
+		article_id: uuidv4()
+	})
 
 	useEffect(() => {
 		const fetchArticleViews = async () => {
@@ -91,6 +103,22 @@ const MyBlog = () => {
 		fetchLikes()
 		fetchPosts()
 	}, [])
+
+	const sendPost = async () => {
+		try {
+			const { data, error } = await supabase.from('posts').upsert([newPost])
+
+			if (error) {
+				console.error('Error sending post:', error)
+			} else {
+				console.log('Post sent successfully:', data)
+				sendViews(newPost.article_id)
+				setPosts((prevPosts) => [...prevPosts, { ...newPost, user_id: userId }])
+			}
+		} catch (error) {
+			console.error('Error sending post:', error)
+		}
+	}
 
 	const handleLike = async (post_id) => {
 		try {
