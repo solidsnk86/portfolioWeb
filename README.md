@@ -1,6 +1,8 @@
 <div align="center">
+
 | solidsnk86 / portfolio |
 | ---------------------- |
+
 </div>
 
 - `This is my web portfolio in React with NextJs 14`
