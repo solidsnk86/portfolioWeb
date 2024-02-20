@@ -52,3 +52,27 @@ You can adjust and modify the ESLint rules based on your preferences.
 This app is deployed on Vercel:
 
 [![Deployed on Vercel](https://img.shields.io/badge/Vercel-Deployed-0076FF.svg?logo=vercel&logoColor=white)](https://neotecs.vercel.app/)
+
+#
+
+<p>
+  <strong>Error Reporting:</strong> If you encounter any issues or errors while using our application, please don't hesitate to reach out. Provide details about the problem, and I'll work to address it promptly.
+</p>
+<p>
+  <strong>Contributions:</strong> Interested in contributing to the project? Feel free to fork the repository on GitHub and submit a pull request. I appreciate any enhancements, bug fixes, or new features you may bring!
+</p>
+<p>
+  <strong>General Inquiries:</strong> Whether you have questions about the application's functionality, suggestions for improvement, or just want to say hello, your feedback is always welcome.
+</p>
+
+<p>Contact for any queries or feedback, feel free to reach out to my email at:</p>
+
+[![Gmail Badge](https://img.shields.io/badge/-calcagni.gabriel86@gmail.com-d14836?style=flat&logo=Gmail&logoColor=white&link=mailto:mailto:calcagni.gabriel86@gmail.com)](mailto:calcagni.gabriel86@gmail.com)
+
+#
+
+<div align="center">
+
+  <p>NeoTecs Dev ©2023</p>
+  
+</div>
