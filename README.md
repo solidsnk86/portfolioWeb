@@ -11,7 +11,7 @@ Welcome to my portfolio, a space where I showcase my diverse range of projects. 
 
 As you navigate through my portfolio, you'll notice its interactive elements, enriched by cookies for location tracking. This not only enhances the user experience but also allows me to connect with visitors globally. The visitor count information adds another layer of dynamism, highlighting the collaborative and evolving nature of this platform.
 
-I invite you to explore my work, get to know the projects, and witness the fusion of technology and creativity that defines my journey. <p color="#FFEB3B">Thank you for visiting!</p>
+I invite you to explore my work, get to know the projects, and witness the fusion of technology and creativity that defines my journey. <p style="color:#FFEB3B">Thank you for visiting!</p>
 
 ## Front
 
