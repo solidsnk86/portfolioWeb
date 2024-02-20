@@ -5,6 +5,8 @@
 
 * Tools and frames I have used:
 
+## Front
+
 [![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
 
 [![Next.js](https://img.shields.io/badge/Next.js-%23000000.svg?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
@@ -17,7 +19,7 @@
 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-- Backend:
+## Backend:
 
 [![Supabase](https://img.shields.io/badge/Supabase-3540C8.svg?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.io/)
 
