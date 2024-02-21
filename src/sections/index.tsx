@@ -1,35 +1,46 @@
 'use client'
 
 import { type Session } from '@supabase/auth-helpers-nextjs'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 import { Button } from '@nextui-org/button'
 import { supabase } from '@/utils/supabase'
 
-/* eslint-disable multiline-ternary */
+// Componente AuthButton
 export default function AuthButton({ session }: { session: Session | null }) {
+	// Obtiene el router de Next.js
 	const router = useRouter()
 
+	// Manejadores para iniciar sesión y cerrar sesión
 	const handleSignIn = async () => {
-		await supabase.auth.signInWithOAuth({
-			provider: 'github',
-			options: {
-				redirectTo: 'http://localhost:3000/auth/callback'
-			}
-		})
+		try {
+			await supabase.auth.signInWithOAuth({
+				provider: 'github',
+				options: {
+					redirectTo: 'http://localhost:3000/auth/callback'
+				}
+			})
+		} catch (error) {
+			console.error('Error al iniciar sesión con GitHub:', error.message)
+		}
 	}
 
 	const handleSignOut = async () => {
-		await supabase.auth.signOut()
-		router.refresh()
+		try {
+			await supabase.auth.signOut()
+			router.reload()
+		} catch (error) {
+			console.error('Error al cerrar sesión:', error.message)
+		}
 	}
 
 	return (
 		<header className='border border-zinc-800 rounded-md p-4'>
+			{/* eslint-disable-next-line multiline-ternary */}
 			{session == null ? (
 				<button
 					onClick={handleSignIn}
 					type='button'
-					className='text-white hover:bg-zinc-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:ring-gray-500 hover:bg-[#050708]/30 mr-2 mb-2 border border-zinc-700 focus:outline-2 outline-red-400 transition-shadow'
+					className='text-white hover:bg-zinc-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline items-center focus:ring-gray-500 hover:bg-[#050708]/30 mr-2 mb-2 border border-zinc-700 focus:outline-2 outline-red-400 transition-shadow'
 				>
 					<svg
 						className='w-4 h-4 mr-2'

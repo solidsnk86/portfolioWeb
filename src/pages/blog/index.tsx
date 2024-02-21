@@ -18,6 +18,7 @@ import sendLike from '@/components/SendLikes'
 import { v4 as uuidv4 } from 'uuid'
 import { useState, useEffect } from 'react'
 import Visit from '@/components/Visits'
+import PrivateRoute from '@/components/PrivateRoute'
 
 const MyBlog = ({ session }) => {
 	const [posts, setPosts] = useState([])
@@ -208,7 +209,9 @@ const MyBlog = ({ session }) => {
 					</Card>
 				</div>
 			))}
-			<BlogForm newPost={newPost} setNewPost={setNewPost} sendPost={sendPost} />
+			<PrivateRoute>
+				<BlogForm newPost={newPost} setNewPost={setNewPost} sendPost={sendPost} />
+			</PrivateRoute>
 			<Footer />
 			<Visit />
 		</main>

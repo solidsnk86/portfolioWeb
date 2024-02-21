@@ -1,4 +1,3 @@
-// components/PrivateRoute.js
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { supabaseClient } from '@/utils/supabase'
@@ -8,11 +7,15 @@ const PrivateRoute = ({ children }) => {
 
 	useEffect(() => {
 		const checkAuth = async () => {
-			const { user } = await supabaseClient.auth.session()
+			try {
+				const { user } = await supabaseClient.auth.getUser()
 
-			if (!user) {
-				console.log('Usuario no autenticado. Redirigiendo a /login')
-				router.replace('/login')
+				if (!user) {
+					console.log('Usuario no autenticado. Redirigiendo a /login')
+					router.replace('/login')
+				}
+			} catch (error) {
+				console.error('Error al verificar la autenticación:', error)
 			}
 		}
 

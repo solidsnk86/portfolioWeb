@@ -28,6 +28,6 @@
     "src/components/HomeTitle.js",
     "src/components/AboutMe.js",
     "src/utils/supabase.js",
-    "src/pages/login/index.js"
+    "src/pages/login/index.tsx"
   ]
 }
