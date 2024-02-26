@@ -52,7 +52,7 @@ body.loading * {
 }
 
 .link-shadow:hover {
-	filter: drop-shadow(0 0 9px orange);
+	filter: drop-shadow(0 0 15px orange);
 }
 
 .read-more:hover .arrow {
