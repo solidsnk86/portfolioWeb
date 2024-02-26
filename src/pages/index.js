@@ -33,8 +33,8 @@ export default function Home() {
 				<meta property='twitter:url' />
 				<meta property='og:type' content='website' />
 				<meta property='twitter:card' content='summary_large_image' />
-				<link rel='shortcut icon' href={`data:image/svg+xml,${encodeURIComponent(favicon)}`} />
-				<link rel='apple-touch-icon' href={`data:image/svg+xml,${encodeURIComponent(favicon)}`} />
+				<link rel='shortcut icon' href={favicon} />
+				<link rel='apple-touch-icon' href={favicon} />
 				<meta name='theme-color' content='#48484C' />
 			</Head>
 

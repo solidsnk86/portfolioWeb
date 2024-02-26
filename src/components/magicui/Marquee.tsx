@@ -19,7 +19,7 @@ export const Marquee = ({
 	return (
 		<div
 			{...props}
-			className={cn('flex w-full overflow-x-hidden [--duration:40s] [--gap:1rem]', className)}
+			className={cn('flex w-full overflow-x-hidden [--duration:60s] [--gap:1rem]', className)}
 		>
 			<div
 				className={cn('flex w-max animate-marquee items-stretch gap-[--gap]', {

@@ -98,6 +98,7 @@ const Lang = [
 const ReviewCard = ({ logo, name }: { logo: string | ReactNode; name: string }) => {
 	return (
 		<div
+			title={name}
 			className={
 				'relative min-w-[250px] flex justify-center items-center overflow-hidden rounded-xl border bg-zinc-800/80 border-zinc-700/70 w-full py-4 px-12 transition hover:bg-zinc-800/95 hover:border-zinc-600/75 hover:shadow-lg group'
 			}
@@ -121,7 +122,7 @@ export const LF = () => {
 			<VideoReactIcon />
 			<p className='max-w-lg text-xl text-sky-200 text-center [†ext-wrap:balance] mt-4'></p>
 			<div className='relative flex flex-col items-center justify-center w-full h-full gap-4 py-20 overflow-hidden rounded-lg bg-background'>
-				<Marquee pauseOnHover className='[--duration:40s]'>
+				<Marquee pauseOnHover className='[--duration:60s]'>
 					{Lang.map((review) => (
 						<ReviewCard key={review.name} {...review} />
 					))}

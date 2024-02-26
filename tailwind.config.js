@@ -43,7 +43,7 @@ module.exports = {
 					to: {
 						transform: 'translate(calc(100cqw - 100%), 0)'
 					}
-				},
+				}
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
