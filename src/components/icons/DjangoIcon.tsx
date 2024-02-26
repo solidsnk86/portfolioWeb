@@ -6,7 +6,7 @@ export const DjangoIcon = (props) => {
 			aria-label='Django Project'
 			role='img'
 			viewBox='0 0 512 512'
-			height={60}
+			height={30}
 			{...atrrs}
 		>
 			<rect width='512' height='512' rx='15%' fill='#113228' />

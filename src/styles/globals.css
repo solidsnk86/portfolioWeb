@@ -238,3 +238,13 @@ textarea {
 	background-color: limegreen;
 	border-radius: 100%;
 }
+
+@keyframes rotation {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.rotation {
+	animation: rotation 620s forwards ease infinite;
+}
