@@ -17,7 +17,7 @@ export const Footer = () => {
 						<span className='hover:text-red-500 hover:transition-[.5s] hover:brightness-150 mx-2'>
 							{i.str}
 						</span>
-						·<span className='mx-2'>{i.year}</span>
+						•<span className='mx-2'>{i.year}</span>
 					</Link>
 				</div>
 			))}
