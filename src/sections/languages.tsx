@@ -1,4 +1,3 @@
-import Marquee from '@/components/magicui/Marquee'
 import { ReactNode } from 'react'
 import { VideoReactIcon } from '@/components//icons/VideoReactIcon'
 import { DjangoIcon } from '@/components/icons/DjangoIcon'
@@ -27,13 +26,15 @@ const Lang = [
 	},
 	{
 		name: 'Django',
-		logo: <div
-			className={
-				' translate-x-[94px] relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg'
-			}
-		>
-			<DjangoIcon />
-		</div>
+		logo: (
+			<div
+				className={
+					' translate-x-[94px] relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg'
+				}
+			>
+				<DjangoIcon />
+			</div>
+		)
 	},
 	{
 		name: 'Tailwind CSS',
@@ -138,11 +139,8 @@ const Lang = [
 ]
 
 const ReviewCard = ({ logo, name }: { logo: string | ReactNode; name: string }) => {
-
 	return (
-		<div className='flex items-center justify-center text-white transition-transform'>
-			{logo}
-		</div>
+		<div title={name} className='flex items-center justify-center text-white transition-transform'>{logo}</div>
 	)
 }
 
@@ -156,11 +154,37 @@ export const LF = () => {
 			</h2>
 			<VideoReactIcon />
 			<div className='relative flex flex-col items-center justify-center w-full h-full gap-4 py-20 overflow-hidden rounded-lg bg-background'>
-				<img className='absolute rotation' src='/img/blue-marble.png' width={80} height={80} alt='A wanderfull image from the earth' />
-				<img className='absolute translate-x-[194px] rotate-12 z-10' src='/img/saturn.png' width={80} height={80} />
-				<img className='absolute translate-y-[-94px] translate-x-3 rotate-12 z-10' src='/img/marte.png' width={25} height={25} />
-				<img className='absolute translate-y-[-94px] translate-x-3 rotate-12 z-10' src='/img/marte.png' width={25} height={25} />
-				<img className='absolute translate-x-[-172px] translate-y-[90px] rotate-12 z-10' src='/img/jupiter.png' width={65} height={65} />
+				<img
+					className='absolute rotation'
+					src='/img/blue-marble.png'
+					width={80}
+					height={80}
+					alt='A wanderfull image from the earth'
+				/>
+				<img
+					className='absolute translate-x-[194px] rotate-12 z-10'
+					src='/img/saturn.png'
+					width={80}
+					height={80}
+				/>
+				<img
+					className='absolute translate-y-[-94px] translate-x-3 rotate-12 z-10'
+					src='/img/marte.png'
+					width={25}
+					height={25}
+				/>
+				<img
+					className='absolute translate-y-[-94px] translate-x-3 rotate-12 z-10'
+					src='/img/marte.png'
+					width={25}
+					height={25}
+				/>
+				<img
+					className='absolute translate-x-[-172px] translate-y-[90px] rotate-12 z-10'
+					src='/img/jupiter.png'
+					width={65}
+					height={65}
+				/>
 				<span className='absolute border-[1px] border-dashed border-zinc-600/75 h-[390px] w-[390px] rounded-full' />
 				<span className='absolute border-[1px] border-dashed border-zinc-600/75 h-[290px] w-[290px] rounded-full' />
 				<span className='absolute border-[1px] border-dashed border-zinc-600/75 h-[190px] w-[190px] rounded-full' />
