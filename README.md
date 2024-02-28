@@ -47,7 +47,7 @@ yarn install
 
 You can adjust and modify the ESLint rules based on your preferences.
 
-> Enjoy this project, designed as my portfolio to showcase my work. The integration with the GitHub Stats API determines the project's star count, while Google Sheets CSV, cookies for >location tracking, and visitor count information contribute to its dynamic and personalized features.
+> Enjoy this project, designed as my portfolio to showcase my work. The integration with the GitHub Stats API determines the project's star count, while Google Sheets CSV, cookies for location tracking, and visitor count information contribute to its dynamic and personalized features.
 
 This app is deployed on Vercel:
 
