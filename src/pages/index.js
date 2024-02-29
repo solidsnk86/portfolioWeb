@@ -78,9 +78,7 @@ export default function Home() {
 			</main>
 			<Footer />
 			<Visit />
-			<p className='text-center text-zinc-600 text-xs pb-2'>
-				Todos los nombres de productos, logos y marcas son propiedad de sus respectivos creadores.
-			</p>
+			<p className='text-center text-zinc-600 text-xs pb-2'>{t('last_footer')}</p>
 		</>
 	)
 }

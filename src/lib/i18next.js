@@ -31,7 +31,9 @@ i18n.use(initReactI18next).init({
 				titlePost: 'Post Title',
 				githubUser: 'Github user ID',
 				postDescription: 'Description about your post..',
-				urlPost: 'Your site URL'
+				urlPost: 'Your site URL',
+				last_footer:
+					'All product names, logos, and brands are property of their respective creators.'
 			}
 		},
 		es: {
@@ -61,7 +63,9 @@ i18n.use(initReactI18next).init({
 				titlePost: 'Título de la publicación',
 				githubUser: 'Usuario de Github',
 				postDescription: 'Descripción acerca de tu publicación..',
-				urlPost: 'La URL de tu sitio'
+				urlPost: 'La URL de tu sitio',
+				last_footer:
+					'Todos los nombres de productos, logos y marcas son propiedad de sus respectivos creadores.'
 			}
 		}
 	},
