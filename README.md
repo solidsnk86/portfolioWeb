@@ -5,7 +5,7 @@
 
 </div>
 
-- `This is my web portfolio in React with NextJs 14`
+`This is my web portfolio in React with NextJs 14`
 
 Welcome to my portfolio, a space where I showcase my diverse range of projects. Leveraging the `GitHub Stats API`, you can explore the star count of each project, providing insight into their popularity and community engagement. The dynamic and personalized features are powered by `Google Sheets CSV` integration, enabling seamless updates and a tailored experience.
 
@@ -47,7 +47,7 @@ yarn install
 
 You can adjust and modify the ESLint rules based on your preferences.
 
-> Enjoy this project, designed as my portfolio to showcase my work. The integration with the GitHub Stats API determines the project's star count, while Google Sheets CSV, cookies for >location tracking, and visitor count information contribute to its dynamic and personalized features.
+> Enjoy this project, designed as my portfolio to showcase my work. The integration with the GitHub Stats API determines the project's star count, while Google Sheets CSV, cookies for location tracking, and visitor count information contribute to its dynamic and personalized features.
 
 This app is deployed on Vercel:
 
