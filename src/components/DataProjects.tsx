@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { csvData } from './const'
 
-export default function dataProjects() {
+export const DataProjects = () => {
 	const [projects, setProjects] = useState([])
 
 	useEffect(() => {
@@ -20,7 +20,11 @@ export default function dataProjects() {
 							repoName,
 							image,
 							description,
-							update
+							update: new Date(update).toLocaleDateString('es-Es', {
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric'
+							})
 						}
 					})
 				setProjects(parsedProjects)
