@@ -1,8 +1,9 @@
 import { AboutMe } from '@/components/AboutMe'
 import { BackgroundFlares } from '@/components/BackgroundFlares'
-import dataProject from '@/components/DataProjects'
+import { DataProjects } from '../components/DataProjects'
 import { ExternalLink } from 'lucide-react'
 import { Footer } from '@/components/Footer'
+import FormatDate from '@/components/FormatDate'
 import { GithubStats } from '@/components/GithubStats'
 import Head from 'next/head'
 import { HomeTitle } from '@/components/HomeTitle'
@@ -15,7 +16,7 @@ import Visit from '@/components/Visits'
 
 export default function Home() {
 	const { t } = useTranslation()
-	const projects = dataProject()
+	const projects = DataProjects()
 
 	return (
 		<>
@@ -55,7 +56,7 @@ export default function Home() {
 						>
 							<img className='rounded-t-xl' src={project.image} alt={project.title} />
 							<span className='text-[10px] font-mono absolute top-[-12px] left-[14px] z-10 bg-transparent update-dot uppercase'>
-								update {project.update}
+								update {project.created_at}
 							</span>
 							<span className='font-bold mt-6 mb-2'>{project.title}</span>
 							<span className='text-sm mb-2 opacity-[.7] h-12 description-project'>
