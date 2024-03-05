@@ -14,7 +14,7 @@ export const Footer = () => {
 			{githubLink.map((i) => (
 				<div key={i.href}>
 					<Link href={i.href} className='text-zinc-600 text-sm'>
-						<span className='hover:text-red-500 hover:transition-[.5s] hover:brightness-150 mx-2'>
+						<span className='hover:text-red-500 hover:transition-color duration-500 hover:brightness-150 mx-2'>
 							{i.str}
 						</span>
 						•<span className='mx-2'>{i.year}</span>

@@ -213,6 +213,21 @@ textarea {
 	animation: none;
 }
 
+@keyframes custom-ping {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(2);
+		opacity: 0;
+	}
+}
+
+.custom-ping {
+	animation: custom-ping 2s infinite;
+}
+
 .last-visit {
 	text-wrap: pretty;
 }
