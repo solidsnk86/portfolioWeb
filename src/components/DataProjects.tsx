@@ -13,18 +13,13 @@ export const DataProjects = () => {
 					.split('\n')
 					.slice(1)
 					.map((row) => {
-						const [url, title, repoName, image, description, update] = row.split(',')
+						const [url, title, repoName, image, description] = row.split(',')
 						return {
 							url,
 							title,
 							repoName,
 							image,
-							description,
-							update: new Date(update).toLocaleDateString('es-Es', {
-								year: 'numeric',
-								month: 'short',
-								day: 'numeric'
-							})
+							description
 						}
 					})
 				setProjects(parsedProjects)

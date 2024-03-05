@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { supabaseClient } from '@/utils/supabase'
+import { supabase } from '@/utils/supabase'
 
 const PrivateRoute = ({ children }) => {
 	const router = useRouter()
@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
 	useEffect(() => {
 		const checkAuth = async () => {
 			try {
-				const { user } = await supabaseClient.auth.getUser()
+				const { user } = await supabase.auth.getUser()
 
 				if (!user) {
 					console.log('Usuario no autenticado. Redirigiendo a /login')
