@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowLeft, ArrowRight, EyeIcon, Heart } from 'lucide-react'
+import { ArrowRight, EyeIcon, Heart } from 'lucide-react'
 import BlogForm from '@/components/BlogForm'
 import { BlogHeader } from '@/components/BlogHeader'
 import { Card } from '@/components/Card'
@@ -17,8 +17,8 @@ import sendViews from '@/components/SendViews'
 import sendLike from '@/components/SendLikes'
 import { v4 as uuidv4 } from 'uuid'
 import { useState, useEffect } from 'react'
-import Visit from '@/components/Visits'
 import PrivateRoute from '@/components/PrivateRoute'
+import { BackButton } from '@/components/BackButton'
 
 const MyBlog = ({ session }) => {
 	const [posts, setPosts] = useState([])
@@ -159,10 +159,7 @@ const MyBlog = ({ session }) => {
 			<header id='header' className='relative w-full mb-10 z-[99999]'>
 				<Header />
 			</header>
-			<ArrowLeft
-				className='flex relative xl:fixed left-[20px] xl:top-[4.5rem] top-6 cursor-pointer text-zinc-300 hover:opacity-[.8]'
-				onClick={() => history.back()}
-			/>
+			<BackButton />
 			<BlogHeader />
 			{posts.map((post) => (
 				<div key={post.article_id} className='xl:w-1/2 justify-center mx-auto pt-[33px] px-3'>
@@ -210,7 +207,7 @@ const MyBlog = ({ session }) => {
 				</div>
 			))}
 			{/* eslint-disable-next-line multiline-ternary */}
-			{!userId ? (
+			{userId === null ? (
 				<PrivateRoute>
 					<BlogForm newPost={newPost} setNewPost={setNewPost} sendPost={sendPost} />
 				</PrivateRoute>
@@ -218,7 +215,6 @@ const MyBlog = ({ session }) => {
 				<BlogForm newPost={newPost} setNewPost={setNewPost} sendPost={sendPost} />
 			)}
 			<Footer />
-			<Visit />
 		</main>
 	)
 }

@@ -1,12 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Visit from '@/components/Visits'
-import { Github, Mail, ArrowLeft } from 'lucide-react'
+import { Github, Mail } from 'lucide-react'
 import { Card } from '@/components/Card'
 import { TwitterIcon } from '@/components/icons/TwitterIcon'
 import { Footer } from '@/components/Footer'
 import { BackgroundFlares } from '@/components/BackgroundFlares'
-import { useTranslation } from 'react-i18next'
+import { BackButton } from '@/components/BackButton'
 
 const socials = [
 	{
@@ -30,7 +29,6 @@ const socials = [
 ]
 
 export default function Example() {
-	const { t } = useTranslation()
 	return (
 		<>
 			<Head>
@@ -38,12 +36,7 @@ export default function Example() {
 			</Head>
 			<BackgroundFlares />
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
-				<span className='flex xl:sticky w-fit left-[12px] top-[1.8rem] border hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 rounded-md p-1 hover:opacity-[.8] cursor-pointer z-50' title={t('backButton')}>
-					<ArrowLeft
-						className='text-zinc-300'
-						onClick={() => history.back()}
-					/>
-				</span>
+				<BackButton />
 				<div className='container flex items-center min-h-screen justify-center px-4 mx-auto'>
 					<div className='grid w-full grid-cols-1 gap-8 mx-auto mb-5 mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>
 						{socials.map((s, index) => (
@@ -72,9 +65,8 @@ export default function Example() {
 							</Card>
 						))}
 					</div>
-					s</div>
+					sb</div>
 				<Footer />
-				<Visit />
 			</div>
 		</>
 	)

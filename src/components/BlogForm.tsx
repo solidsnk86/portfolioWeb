@@ -80,7 +80,8 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 				<input
 					type='text'
 					{...register('url')}
-					placeholder={t('urlPost')}					className='placeholder:text-slate-100'
+					placeholder={t('urlPost')}
+					className='placeholder:text-slate-100'
 					onChange={(e) => setNewPost({ ...newPost, url: e.target.value })}
 				/>
 				<button

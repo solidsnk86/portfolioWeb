@@ -4,6 +4,7 @@ import { type Session } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/router'
 import { Button } from '@nextui-org/button'
 import { supabase } from '@/utils/supabase'
+import { BackButton } from '@/components/BackButton'
 
 export default function AuthButton({ session }: { session: Session | null }) {
 	const router = useRouter()
@@ -16,6 +17,9 @@ export default function AuthButton({ session }: { session: Session | null }) {
 					redirectTo: 'http://portfolio-mgc.vercel.app/auth/callback'
 				}
 			})
+
+			const user = supabase.auth.getUser()
+			console.log('Usuario:', user)
 		} catch (error) {
 			console.error('Error al iniciar sesión con GitHub:', error.message)
 		}
@@ -31,7 +35,8 @@ export default function AuthButton({ session }: { session: Session | null }) {
 	}
 
 	return (
-		<header className='border border-zinc-800 rounded-md p-4 grid justify-center mx-auto mt-10 w-fit'>
+		<header className='grid justify-center mx-auto mt-10 w-fit'>
+			<BackButton />
 			<div>
 				{/* eslint-disable-next-line multiline-ternary */}
 				{session === null ? (
@@ -56,7 +61,10 @@ export default function AuthButton({ session }: { session: Session | null }) {
 						Iniciar sesión con Github
 					</button>
 				) : (
-					<Button className='text-zinc-100 p-2 rounded-sm' onClick={handleSignOut}>
+					<Button
+						className='text-zinc-100 p-2 border border-zinc-800 rounded-md'
+						onClick={handleSignOut}
+					>
 						Cerrar sesión
 					</Button>
 				)}
