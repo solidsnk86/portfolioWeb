@@ -56,7 +56,7 @@ export default function Home() {
 						>
 							<img className='rounded-t-xl' src={project.image} alt={project.title} />
 							<span className='text-[10px] font-mono absolute top-[-12px] left-[14px] z-10 bg-transparent update-dot uppercase'>
-								update <GithubDescription repoName={project.repoName} />
+								updated <GithubDescription repoName={project.repoName} />
 							</span>
 							<span className='font-bold mt-6 mb-2'>{project.title}</span>
 							<span className='text-sm mb-2 opacity-[.7] h-12 description-project'>
