@@ -160,30 +160,28 @@ export const LF = () => {
 					width={80}
 					height={80}
 					alt='A wanderfull image from the earth'
+					loading='eager'
 				/>
 				<img
 					className='absolute translate-x-[194px] rotate-12 z-10'
 					src='/img/saturn.png'
 					width={80}
 					height={80}
+					loading='lazy'
 				/>
 				<img
 					className='absolute translate-y-[-94px] translate-x-3 rotate-12 z-10'
 					src='/img/marte.png'
 					width={25}
 					height={25}
-				/>
-				<img
-					className='absolute translate-y-[-94px] translate-x-3 rotate-12 z-10'
-					src='/img/marte.png'
-					width={25}
-					height={25}
+					loading='lazy'
 				/>
 				<img
 					className='absolute translate-x-[-172px] translate-y-[90px] rotate-12 z-10'
 					src='/img/jupiter.png'
 					width={65}
 					height={65}
+					loading='lazy'
 				/>
 				<span className='absolute border-[1px] border-dashed border-zinc-600/75 h-[390px] w-[390px] rounded-full' />
 				<span className='absolute border-[1px] border-dashed border-zinc-600/75 h-[290px] w-[290px] rounded-full' />
