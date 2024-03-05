@@ -6,6 +6,7 @@ import { Card } from '@/components/Card'
 import { TwitterIcon } from '@/components/icons/TwitterIcon'
 import { Footer } from '@/components/Footer'
 import { BackgroundFlares } from '@/components/BackgroundFlares'
+import { useTranslation } from 'react-i18next'
 
 const socials = [
 	{
@@ -29,6 +30,7 @@ const socials = [
 ]
 
 export default function Example() {
+	const { t } = useTranslation()
 	return (
 		<>
 			<Head>
@@ -36,10 +38,12 @@ export default function Example() {
 			</Head>
 			<BackgroundFlares />
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
-				<ArrowLeft
-					className='flex sticky left-[14px] top-[1.8rem] cursor-pointer text-zinc-300 hover:opacity-[.8]'
-					onClick={() => history.back()}
-				/>
+				<span className='flex xl:sticky w-fit left-[12px] top-[1.8rem] border hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 rounded-md p-1 hover:opacity-[.8] cursor-pointer' title={t('backButton')}>
+					<ArrowLeft
+						className='text-zinc-300'
+						onClick={() => history.back()}
+					/>
+				</span>
 				<div className='container flex items-center min-h-screen justify-center px-4 mx-auto'>
 					<div className='grid w-full grid-cols-1 gap-8 mx-auto mb-5 mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>
 						{socials.map((s, index) => (
@@ -68,7 +72,7 @@ export default function Example() {
 							</Card>
 						))}
 					</div>
-				</div>
+					s</div>
 				<Footer />
 				<Visit />
 			</div>

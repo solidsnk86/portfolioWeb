@@ -209,9 +209,13 @@ const MyBlog = ({ session }) => {
 					</Card>
 				</div>
 			))}
-			<PrivateRoute>
+			{!userId ? (
+				<PrivateRoute>
+					<BlogForm newPost={newPost} setNewPost={setNewPost} sendPost={sendPost} />
+				</PrivateRoute>
+			) : (
 				<BlogForm newPost={newPost} setNewPost={setNewPost} sendPost={sendPost} />
-			</PrivateRoute>
+			)}
 			<Footer />
 			<Visit />
 		</main>

@@ -13,7 +13,7 @@ export default function AuthButton({ session }: { session: Session | null }) {
 			await supabase.auth.signInWithOAuth({
 				provider: 'github',
 				options: {
-					redirectTo: 'http://localhost:3000/auth/callback'
+					redirectTo: 'http://portfolio-mgc.vercel.app/auth/callback'
 				}
 			})
 		} catch (error) {
@@ -31,10 +31,10 @@ export default function AuthButton({ session }: { session: Session | null }) {
 	}
 
 	return (
-		<header className='border border-zinc-800 rounded-md p-4 grid justify-center mx-auto'>
+		<header className='border border-zinc-800 rounded-md p-4 grid justify-center mx-auto mt-10 w-fit'>
 			<div>
 				{/* eslint-disable-next-line multiline-ternary */}
-				{session == null ? (
+				{session === null ? (
 					<button
 						onClick={handleSignIn}
 						type='button'
@@ -56,7 +56,9 @@ export default function AuthButton({ session }: { session: Session | null }) {
 						Iniciar sesión con Github
 					</button>
 				) : (
-					<Button onClick={handleSignOut}>Cerrar sesión</Button>
+					<Button className='text-zinc-100 p-2 rounded-sm' onClick={handleSignOut}>
+						Cerrar sesión
+					</Button>
 				)}
 			</div>
 		</header>
