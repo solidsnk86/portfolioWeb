@@ -38,7 +38,7 @@ export default function Example() {
 			</Head>
 			<BackgroundFlares />
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
-				<span className='flex xl:sticky w-fit left-[12px] top-[1.8rem] border hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 rounded-md p-1 hover:opacity-[.8] cursor-pointer' title={t('backButton')}>
+				<span className='flex xl:sticky w-fit left-[12px] top-[1.8rem] border hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 rounded-md p-1 hover:opacity-[.8] cursor-pointer z-50' title={t('backButton')}>
 					<ArrowLeft
 						className='text-zinc-300'
 						onClick={() => history.back()}
