@@ -15,7 +15,7 @@ export const Footer = () => {
 				<div key={i.href}>
 					<Link href={i.href} className='text-zinc-600 text-sm'>
 						<span
-							title={`Visitar el perfil de Github de ${i.str}`}
+							title='Visitar el perfil de Github'
 							className='hover:text-red-500 hover:transition-color duration-500 hover:brightness-150 mx-2'
 						>
 							{i.str}
