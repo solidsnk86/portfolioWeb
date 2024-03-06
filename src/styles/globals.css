@@ -254,6 +254,19 @@ textarea {
 	border-radius: 100%;
 }
 
+.shadow-star {
+	stroke: #d4d4d8;
+	stroke-width: 2px;
+	fill: none;
+}
+
+.shadow-star:hover {
+	filter: drop-shadow(0 0 6px #f1e52fee);
+	transition: ease-in-out 0.2s;
+	fill: #ed8a19;
+	stroke: #ed8a19;
+}
+
 @keyframes rotation {
 	to {
 		transform: rotate(360deg);

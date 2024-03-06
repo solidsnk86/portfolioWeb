@@ -56,6 +56,7 @@ export default function AuthButton({ session }: { session: Session | null }) {
 					Iniciar sesión con Github
 				</button>
 			) : (
+				
 				<Button onClick={handleSignOut}>Cerrar sesión</Button>
 			)}
 		</header>

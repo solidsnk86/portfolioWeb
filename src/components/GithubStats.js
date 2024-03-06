@@ -48,14 +48,14 @@ export const GithubStats = ({ repoName }) => {
 	}, [repoName])
 
 	return (
-		<div className='inline-flex items-center space-x-1'>
+		<div className='inline-flex items-center space-x-1' title={`Ir al repositorio ${repoName}`}>
 			<a
 				className='text-xs hover:brightness-150 hover:no-underline'
 				href={`https://github.com/solidsnk86/${repoName}/`}
 				rel='noopener'
 				target='_blank'
 			>
-				<StarIcon className='inline-block text-zinc-300 mb-[2px]' />
+				<StarIcon className='inline-block mb-[2px] shadow-star' />
 			</a>
 			<a
 				className='text-xs text-zinc-300 hover:no-underline'
