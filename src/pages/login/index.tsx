@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { Button } from '@nextui-org/button'
 import { supabase } from '@/utils/supabase'
 import { BackButton } from '@/components/BackButton'
+import MyBlog from '../blog'
 
 export default function AuthButton({ session }: { session: Session | null }) {
 	const router = useRouter()
@@ -36,7 +37,6 @@ export default function AuthButton({ session }: { session: Session | null }) {
 
 	return (
 		<header className='grid justify-center mx-auto mt-10 w-fit'>
-			<BackButton />
 			<div>
 				{/* eslint-disable-next-line multiline-ternary */}
 				{session === null ? (
