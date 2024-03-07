@@ -12,19 +12,22 @@ const socials = [
 		icon: <TwitterIcon />,
 		href: 'https://twitter.com/CalcagniGabriel',
 		label: 'Twitter',
-		handle: '@CalcagniGabriel'
+		handle: '@CalcagniGabriel',
+		title: 'Ir al perfil de Twitter de '
 	},
 	{
 		icon: <Mail size={24} />,
 		href: 'mailto:calcagni.gabriel86@gmail.com',
 		label: 'Mail',
-		handle: 'calcagni.gabriel86@gmail.com'
+		handle: 'calcagni.gabriel86@gmail.com',
+		title: 'Enviar correo electrónico a '
 	},
 	{
 		icon: <Github size={24} />,
 		href: 'https://github.com/solidsnk86',
 		label: 'Github',
-		handle: 'solidsnk86'
+		handle: 'solidsnk86',
+		title: 'Ir al perfil de Github de '
 	}
 ]
 
@@ -44,6 +47,7 @@ export default function Example() {
 								<Link
 									href={s.href}
 									target='_blank'
+									title={s.title + s.handle}
 									className='p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24  lg:pb-48  md:p-16'
 								>
 									<span
@@ -65,7 +69,7 @@ export default function Example() {
 							</Card>
 						))}
 					</div>
-					sb</div>
+				</div>
 				<Footer />
 			</div>
 		</>

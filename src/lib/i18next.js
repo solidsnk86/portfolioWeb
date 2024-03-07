@@ -8,7 +8,7 @@ i18n.use(initReactI18next).init({
 			translation: {
 				navLink1: 'Contact',
 				navLink2: 'Projects',
-				language: 'Language',
+				language: 'Change language',
 				title: 'Portfolio of Calcagni Gabriel',
 				description: 'Hey, come and take a look at my portfolio!',
 				projectsTitle: 'My Projects...',
@@ -42,7 +42,7 @@ i18n.use(initReactI18next).init({
 			translation: {
 				navLink1: 'Contacto',
 				navLink2: 'Proyectos',
-				language: 'Idioma',
+				language: 'Cambiar idioma',
 				title: 'Portfolio de Calcagni Gabriel',
 				description: '¡Ey, pásate y echa un vistazo a mi portfolio!',
 				projectsTitle: 'Mis Proyectos...',
