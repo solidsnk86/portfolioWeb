@@ -68,6 +68,7 @@ export default function Home() {
 								href={project.url}
 								className='hover:brightness-150 px-3 pb-3 rounded mt-2 text-md link'
 								target='_blank'
+								title={`Ir a la web ${project.url}`}
 								rel='noopener noreferrer'
 							>
 								Link
