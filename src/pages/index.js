@@ -12,11 +12,13 @@ import { LF } from '@/sections/languages'
 import Particles from '@/components/particles'
 import { useTranslation } from 'react-i18next'
 import { title, description, ogImg, favicon, inter } from '@/components/const'
+import ChangeThemeColor from '@/components/ChangeThemeColor'
 import Visit from '@/components/Visits'
 
 export default function Home() {
 	const { t } = useTranslation()
 	const projects = DataProjects()
+	const themes = ChangeThemeColor()
 
 	return (
 		<>
@@ -36,7 +38,7 @@ export default function Home() {
 				<meta property='twitter:card' content='summary_large_image' />
 				<link rel='shortcut icon' href={favicon} />
 				<link rel='apple-touch-icon' href={favicon} />
-				<meta name='theme-color' content='#48484C' />
+				<meta name='theme-color' content={themes} />
 			</Head>
 
 			<header id='header' className='relative w-full mb-10 z-[9999]'>
