@@ -11,3 +11,6 @@ export const favicon = 'https://github.com/solidsnk86/CV_GEC/blob/master/solidsn
 
 export const inter = Inter({ weight: ['400', '500', '600', '700', '900'], subsets: ['latin'] })
 export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: ['greek'] })
+
+export const documentEnCv = 'https://docs.google.com/document/d/e/2PACX-1vR6-zR2iVWBSFHnQyRzIuAHQVb231uABnZMYT-jH4_EdG2zKLti8iQh2qqa4SRGZSiyrq1Yc03cx5hk/pub'
+export const documentEsCv = 'https://docs.google.com/document/d/e/2PACX-1vQAF9rx-XQdjxbFTheypncBwCN4gTdrKJhRIotss9eQhmnF_eF_SaHS2WKeTD6MMe1F3v1owExNCxlQ/pub'

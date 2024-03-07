@@ -1,6 +1,7 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import Experience from '../components/Experience'
+import { documentEnCv, documentEsCv } from '../components/const'
 
 i18n.use(initReactI18next).init({
 	resources: {
@@ -35,7 +36,10 @@ i18n.use(initReactI18next).init({
 				urlPost: 'Your site URL',
 				last_footer:
 					'All product names, logos, and brands are property of their respective creators.',
-				backButton: 'Back to Home'
+				backButton: 'Back to Home',
+				documentCv: 'Check my Cv',
+				cvLink: `${documentEnCv}`,
+				cvTitle: 'See the document at Google Docs'
 			}
 		},
 		es: {
@@ -69,7 +73,10 @@ i18n.use(initReactI18next).init({
 				urlPost: 'La URL de tu sitio',
 				last_footer:
 					'Todos los nombres de productos, logos y marcas son propiedad de sus respectivos creadores.',
-				backButton: 'Volver al Inicio'
+				backButton: 'Volver al Inicio',
+				documentCv: 'Chequea mi CV',
+				cvLink: `${documentEsCv}`,
+				cvTitle: 'Ver el documento en Google Docs'
 			}
 		}
 	},

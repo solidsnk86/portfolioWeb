@@ -1,7 +1,7 @@
 import { AboutMe } from '@/components/AboutMe'
 import { BackgroundFlares } from '@/components/BackgroundFlares'
 import { DataProjects } from '../components/DataProjects'
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink, ArrowUpRight } from 'lucide-react'
 import { Footer } from '@/components/Footer'
 import { GithubStats } from '@/components/GithubStats'
 import { GithubDescription } from '../components/GithubDescription'
@@ -9,6 +9,7 @@ import Head from 'next/head'
 import { HomeTitle } from '@/components/HomeTitle'
 import { Header } from '@/components/Header'
 import { LF } from '@/sections/languages'
+import Link from 'next/link'
 import Particles from '@/components/particles'
 import { useTranslation } from 'react-i18next'
 import { title, description, ogImg, favicon, inter } from '@/components/const'
@@ -80,6 +81,15 @@ export default function Home() {
 					))}
 				</div>
 			</main>
+			<Link
+				className='justify-center mx-auto flex text-amber-400 text-sm hover:underline underline-offset-2'
+				href={t('cvLink')}
+				target='_blank'
+				title={t('cvTitle')}
+			>
+				{t('documentCv')}
+				<ArrowUpRight className='inline w-4 h-4 mx-1' />
+			</Link>
 			<Footer />
 			<Visit />
 			<p className='text-center text-zinc-600 text-xs pb-2'>{t('last_footer')}</p>

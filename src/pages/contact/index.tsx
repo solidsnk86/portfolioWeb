@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { Github, Mail } from 'lucide-react'
 import { Card } from '@/components/Card'
@@ -34,12 +33,9 @@ const socials = [
 export default function Example() {
 	return (
 		<>
-			<Head>
-				<meta name='theme-color' content='#48484C' />
-			</Head>
 			<BackgroundFlares />
+			<BackButton className='fixed' />
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
-				<BackButton />
 				<div className='container flex items-center min-h-screen justify-center px-4 mx-auto'>
 					<div className='grid w-full grid-cols-1 gap-8 mx-auto mb-5 mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>
 						{socials.map((s, index) => (
