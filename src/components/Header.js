@@ -22,7 +22,8 @@ export function Header() {
 		{ name: t('navLink1'), href: '/contact/' },
 		{ name: 'Blog', href: '/blog/' },
 		{
-			name: window.location.pathname === '/blog' ? '' : t('navLink2'),
+			name:
+				typeof window !== 'undefined' && window.location.pathname === '/blog' ? '' : t('navLink2'),
 			href: '#proyectos'
 		}
 	]

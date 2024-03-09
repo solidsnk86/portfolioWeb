@@ -17,7 +17,6 @@ import sendViews from '@/components/SendViews'
 import sendLike from '@/components/SendLikes'
 import { v4 as uuidv4 } from 'uuid'
 import { useState, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
 import PrivateRoute from '@/components/PrivateRoute'
 import { BackButton } from '@/components/BackButton'
 
@@ -38,8 +37,6 @@ const MyBlog = ({ session }) => {
 		posted: new Date().toISOString(),
 		article_id: uuidv4()
 	})
-
-	const { t } = useTranslation()
 
 	useEffect(() => {
 		const fetchArticleViews = async () => {
