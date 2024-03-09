@@ -30,7 +30,7 @@ const socials = [
 	}
 ]
 
-export default function Example() {
+export default function Contact() {
 	return (
 		<>
 			<BackgroundFlares />

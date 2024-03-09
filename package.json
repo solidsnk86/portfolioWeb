@@ -39,7 +39,6 @@
     "react-hook-form": "^7.48.2",
     "react-i18next": "^14.0.0",
     "react-icons": "^4.11.0",
-    "react-router-dom": "^6.22.1",
     "supabase": "^1.110.1",
     "tabler-icons-react": "^1.56.0",
     "tailwind-variants": "^0.2.0",

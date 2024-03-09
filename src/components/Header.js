@@ -21,7 +21,10 @@ export function Header() {
 	const navigation = [
 		{ name: t('navLink1'), href: '/contact/' },
 		{ name: 'Blog', href: '/blog/' },
-		{ name: t('navLink2'), href: '#proyectos' }
+		{
+			name: window.location.pathname === '/blog' ? '' : t('navLink2'),
+			href: '#proyectos'
+		}
 	]
 
 	return (

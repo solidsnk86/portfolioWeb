@@ -9,6 +9,7 @@ i18n.use(initReactI18next).init({
 			translation: {
 				navLink1: 'Contact',
 				navLink2: 'Projects',
+				navLink3: 'Go to github repo',
 				language: 'Change language',
 				title: 'Portfolio of Calcagni Gabriel',
 				description: 'Hey, come and take a look at my portfolio!',
@@ -39,13 +40,15 @@ i18n.use(initReactI18next).init({
 				backButton: 'Back to Home',
 				documentCv: 'Check my Cv',
 				cvLink: `${documentEnCv}`,
-				cvTitle: 'See the document at Google Docs'
+				cvTitle: 'See the document at Google Docs',
+				footerLink: 'Go to github profile'
 			}
 		},
 		es: {
 			translation: {
 				navLink1: 'Contacto',
 				navLink2: 'Proyectos',
+				navLink3: 'Ir al repo de github',
 				language: 'Cambiar idioma',
 				title: 'Portfolio de Calcagni Gabriel',
 				description: '¡Ey, pásate y echa un vistazo a mi portfolio!',
@@ -76,7 +79,8 @@ i18n.use(initReactI18next).init({
 				backButton: 'Volver al Inicio',
 				documentCv: 'Chequea mi CV',
 				cvLink: `${documentEsCv}`,
-				cvTitle: 'Ver el documento en Google Docs'
+				cvTitle: 'Ver el documento en Google Docs',
+				footerLink: 'Ir al perfil de github'
 			}
 		}
 	},

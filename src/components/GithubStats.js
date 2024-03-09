@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { StarIcon } from './icons/StarIcon'
+import { useTranslation } from 'react-i18next'
 
 function getLocalStats(repoName) {
 	return {
@@ -35,6 +36,7 @@ async function fetchGitStats(local, repoName) {
 
 export const GithubStats = ({ repoName }) => {
 	const [data, setData] = useState({ stars: 0 })
+	const { t } = useTranslation()
 
 	useEffect(() => {
 		const gitStatsDate = localStorage.getItem(`${repoName}-git-stats-date`)
@@ -48,7 +50,7 @@ export const GithubStats = ({ repoName }) => {
 	}, [repoName])
 
 	return (
-		<div className='inline-flex items-center space-x-1' title={`Ir al repositorio ${repoName}`}>
+		<div className='inline-flex items-center space-x-1' title={t(`navLink3`)}>
 			<a
 				className='text-xs hover:brightness-150 hover:no-underline'
 				href={`https://github.com/solidsnk86/${repoName}/`}
