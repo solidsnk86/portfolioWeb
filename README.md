@@ -13,7 +13,7 @@ As you navigate through my portfolio, you'll notice its interactive elements, en
 
 I invite you to explore my work, get to know the projects, and witness the fusion of technology and creativity that defines my journey. <span style="color:yellow">Thank you for visiting!</span>
 
-## Front
+## Front End
 
 [![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
 
