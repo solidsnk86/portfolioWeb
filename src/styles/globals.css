@@ -152,7 +152,7 @@ textarea {
 }
 
 .link:hover .link-icon {
-	transform: translateY(-5px);
+	transform: translateY(-2px);
 	transition: 0.2s all;
 }
 
@@ -166,12 +166,14 @@ textarea {
 	}
 }
 
-.project-card:hover img {
-	transform: scale(1.1);
+.project-card:hover {
+	border-radius: 8px;
+	transition: 0.3s ease-in-out;
 }
 
-.project-card img {
-	transition: transform 0.3s ease-in-out;
+.project-card:hover img {
+	transform: scale(1.1);
+	transition: .2s all;
 }
 
 .description-project {

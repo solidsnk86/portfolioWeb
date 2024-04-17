@@ -54,7 +54,7 @@ export default function Home() {
 				<div className='sm:flex items-stretch mx-auto gap-4 sm:text-center'>
 					{projects.map((project) => (
 						<div
-							className='flex flex-col text-zinc-300 my-4 items-center w-full h-1/2 sm:w-1/2 space-y-4 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-xl duration-300 hover:border-zinc-700 hover:bg-primary hover:bg-opacity-5 overflow-hidden project-card relative'
+							className='flex flex-col text-zinc-300 my-4 items-center w-full h-1/2 sm:w-1/2 space-y-4 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-2xl hover:border-zinc-700 hover:bg-primary hover:bg-opacity-5 overflow-hidden project-card relative'
 							key={project.title}
 						>
 							<img className='rounded-t-xl' src={project.image} alt={project.title} />
@@ -75,7 +75,7 @@ export default function Home() {
 								rel='noopener noreferrer'
 							>
 								Link
-								<ExternalLink className='inline-flex mx-1 mb-1 relative text-md w-4 h-4 link-icon' />
+								<ExternalLink className='inline-flex ml-[2px] mb-[6px] relative text-md w-4 h-4 link-icon' />
 							</a>
 						</div>
 					))}
@@ -88,7 +88,7 @@ export default function Home() {
 				title={t('cvTitle')}
 			>
 				{t('documentCv')}
-				<ArrowUpRight className='inline w-4 h-4 mx-1' />
+				<ArrowUpRight className='inline w-4 h-4' />
 			</Link>
 			<Footer />
 			<Visit />
