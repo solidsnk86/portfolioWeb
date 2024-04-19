@@ -206,14 +206,7 @@ const MyBlog = ({ session }) => {
 					</Card>
 				</div>
 			))}
-			{/* eslint-disable-next-line multiline-ternary */}
-			{userId === null ? (
-				<PrivateRoute>
-					<BlogForm newPost={newPost} setNewPost={setNewPost} sendPost={sendPost} />
-				</PrivateRoute>
-			) : (
-				<BlogForm newPost={newPost} setNewPost={setNewPost} sendPost={sendPost} />
-			)}
+			<BlogForm newPost={newPost} setNewPost={setNewPost} sendPost={sendPost} />
 			<Footer />
 		</main>
 	)

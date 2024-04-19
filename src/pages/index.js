@@ -13,13 +13,11 @@ import Link from 'next/link'
 import Particles from '@/components/particles'
 import { useTranslation } from 'react-i18next'
 import { title, description, ogImg, favicon, inter } from '@/components/const'
-import ChangeThemeColor from '@/components/ChangeThemeColor'
 import Visit from '@/components/Visits'
 
 export default function Home() {
 	const { t } = useTranslation()
 	const projects = DataProjects()
-	const themes = ChangeThemeColor()
 
 	return (
 		<>
@@ -39,7 +37,7 @@ export default function Home() {
 				<meta property='twitter:card' content='summary_large_image' />
 				<link rel='shortcut icon' href={favicon} />
 				<link rel='apple-touch-icon' href={favicon} />
-				<meta name='theme-color' content={themes} />
+				<meta name='theme-color' content={'#D4D4D8'} />
 			</Head>
 
 			<header id='header' className='relative w-full mb-10 z-[9999]'>
@@ -75,7 +73,7 @@ export default function Home() {
 								rel='noopener noreferrer'
 							>
 								Link
-								<ExternalLink className='inline-flex ml-[2px] mb-[6px] relative text-md w-4 h-4 link-icon' />
+								<ExternalLink className='inline-flex ml-[2px] mb-[6px] relative text-md w-[14px] h-[14px] link-icon' />
 							</a>
 						</div>
 					))}
