@@ -1,6 +1,6 @@
 import { ArrowLeft } from 'lucide-react'
-import React from 'react'
 import { useTranslation } from 'react-i18next'
+import React from 'react'
 
 interface ButtonsProps {
 	className?: string
