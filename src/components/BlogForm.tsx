@@ -1,7 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { MessageCircleIcon } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+
+function resizeTextarea() {
+	const textarea = document.getElementById('text-area')
+	if (textarea) {
+		textarea.addEventListener('input', () => {
+			textarea.style.height = textarea.scrollHeight + 'px'
+		})
+	}
+}
 
 const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 	const { t } = useTranslation()
@@ -20,6 +29,10 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 	const toggleForm = () => {
 		setShowForm(!showForm)
 	}
+
+	useEffect(() => {
+		resizeTextarea()
+	}, [])
 
 	return (
 		<section className='xl:w-1/2 xl:justify-center xl:m-auto'>
@@ -63,13 +76,6 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 					className='placeholder:text-slate-100'
 					onChange={(e) => setNewPost({ ...newPost, title: e.target.value })}
 				/>
-				<textarea
-					{...register('description')}
-					placeholder={t('postDescription')}
-					className='placeholder:text-zinc-400'
-					maxLength={500}
-					onChange={(e) => setNewPost({ ...newPost, description: e.target.value })}
-				/>
 				<input
 					type='text'
 					{...register('company_dev')}
@@ -83,6 +89,14 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 					placeholder={t('urlPost')}
 					className='placeholder:text-slate-100'
 					onChange={(e) => setNewPost({ ...newPost, url: e.target.value })}
+				/>
+				<textarea
+					{...register('description')}
+					placeholder={t('postDescription')}
+					className='placeholder:text-zinc-400 text-area'
+					id='text-area'
+					maxLength={500}
+					onChange={(e) => setNewPost({ ...newPost, description: e.target.value })}
 				/>
 				<button
 					className='border border-salte-800 rounded-full px-4 py-1 my-2 hover:bg-zinc-100 hover:text-black font-bold'

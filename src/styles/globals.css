@@ -278,3 +278,7 @@ textarea {
 .rotation {
 	animation: rotation 369s forwards ease infinite;
 }
+
+.text-area {
+	resize: vertical;
+}
