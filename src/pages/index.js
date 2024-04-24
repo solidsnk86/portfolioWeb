@@ -56,7 +56,7 @@ export default function Home() {
 							key={project.title}
 						>
 							<img className='image-card' src={project.image} alt={project.title} />
-							<span className='text-[10px] px-2 font-mono absolute top-[-12px] left-[14px] z-10 bg-zinc-600/30 rounded-md update-dot uppercase'>
+							<span className='text-[10px] px-2 absolute top-[-12px] left-[14px] z-10 bg-zinc-600/40 rounded-md update-dot capitalize'>
 								updated <GithubDescription repoName={project.repoName} />
 							</span>
 							<div className='grid text-center space-y-3 -translate-y-7'>

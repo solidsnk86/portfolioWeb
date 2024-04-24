@@ -182,7 +182,7 @@ textarea {
 	transform: translateY(-50px) translateX(-100px);
 }
 .project-card:hover img {
-	transform: scale(1.5);
+	transform: scale(1.6);
 	transition-duration: .2s ease-in-out;
 	filter: blur(45px);
 }
@@ -254,6 +254,10 @@ textarea {
 .result td {
 	border: 1px solid #27272a;
 	padding: 5px;
+}
+
+.update-dot {
+	font-family: 'Cascadia Code PL SemiBold', Menlo;
 }
 
 .update-dot::before {
