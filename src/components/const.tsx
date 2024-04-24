@@ -14,3 +14,14 @@ export const interTight = InterTight({ weight: ['500', '800', '900'], subsets: [
 
 export const documentEnCv = 'https://docs.google.com/document/d/e/2PACX-1vR6-zR2iVWBSFHnQyRzIuAHQVb231uABnZMYT-jH4_EdG2zKLti8iQh2qqa4SRGZSiyrq1Yc03cx5hk/pub'
 export const documentEsCv = 'https://docs.google.com/document/d/e/2PACX-1vQAF9rx-XQdjxbFTheypncBwCN4gTdrKJhRIotss9eQhmnF_eF_SaHS2WKeTD6MMe1F3v1owExNCxlQ/pub'
+
+export function dateFormat(string) {
+	const date = new Date(string).toLocaleDateString('es-Es', {
+		year: 'numeric',
+		month: 'short',
+		day: '2-digit',
+		hour: '2-digit',
+		minute: '2-digit'
+	})
+	return date
+}

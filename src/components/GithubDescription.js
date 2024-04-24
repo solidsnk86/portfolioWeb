@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { dateFormat } from './const'
 
 function getLocalStats(repoName) {
 	return {
@@ -16,7 +17,6 @@ async function fetchGitStats(local, repoName) {
 		if (!res.ok) {
 			throw new Error('Error fetching data from GitHub API')
 		}
-		console.log(res)
 		const { pushed_at } = await res.json()
 
 		if (pushed_at) {
@@ -27,11 +27,12 @@ async function fetchGitStats(local, repoName) {
 				new Date(pushed_at).toLocaleDateString('es-Es', {
 					year: 'numeric',
 					month: 'short',
-					day: '2-digit'
+					day: '2-digit',
+					hour: '2-digit',
+					minute: '2-digit'
 				})
 			)
 		}
-
 		return getLocalStats(repoName)
 	} catch (error) {
 		console.error('Error fetching data:', error)
@@ -44,7 +45,7 @@ export const GithubDescription = ({ repoName, className = '' }) => {
 
 	useEffect(() => {
 		const gitStatsDate = localStorage.getItem(`${repoName}-git-stats-info`)
-		const local = gitStatsDate && new Date().getTime() - gitStatsDate < 1000 * 60 * 60
+		const local = gitStatsDate && new Date().getTime() - gitStatsDate < 1000 * 60 * 24
 
 		fetchGitStats(local, repoName).then((res) => {
 			if (res.pushedAt !== null) {
