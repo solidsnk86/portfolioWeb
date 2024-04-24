@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
-import { VideoReactIcon } from '@/components//icons/VideoReactIcon'
 import { DjangoIcon } from '@/components/icons/DjangoIcon'
+import { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
+import { VideoReactIcon } from '@/components//icons/VideoReactIcon'
 
 const Lang = [
 	{
