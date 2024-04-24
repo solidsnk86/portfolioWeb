@@ -89,8 +89,9 @@ export const VisitData = () => {
 			</section>
 			<div className='block justify-center mx-auto'>
 				{githubData.map((data) => (
-					<p className='text-zinc-100 text-center'>{data.login}</p>
+					<p className='text-zinc-100 text-center text-sm'>{data.login}</p>
 				))}
+				<p>{githubData.length}</p>
 			</div>
 		</>
 	)

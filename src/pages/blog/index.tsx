@@ -12,7 +12,6 @@ import { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import BlogForm from '@/components/BlogForm'
 import FormatDate from '@/components/FormatDate'
-import Head from 'next/head'
 import ImageAvatar from './AvatarBlog'
 import Link from 'next/link'
 import sendLike from '@/components/SendLikes'
@@ -151,9 +150,6 @@ const MyBlog = ({ session }) => {
 	return (
 		<main className='text-slate-100 bg-gradient-to-tl from-zinc-900/0 h-[100%]'>
 			<Preloader />
-			<Head>
-				<meta name='theme-color' content='#48484C' />
-			</Head>
 			<header id='header' className='relative w-full mb-10 z-[99999]'>
 				<Header />
 			</header>
@@ -191,7 +187,7 @@ const MyBlog = ({ session }) => {
 							</aside>
 							<button onClick={() => handleLike(post.article_id)}>
 								<Heart className='inline mx-2 hover:fill-red-500 transition-all' />
-								{likes[post.article_id] ? likes[post.article_id].length : 0}
+								{likes[post.article_id] + 1 ? likes[post.article_id].length : 0}
 							</button>
 							<button>
 								<ShareButton

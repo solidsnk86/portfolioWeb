@@ -166,14 +166,25 @@ textarea {
 	}
 }
 
-.project-card:hover {
-	border-radius: 8px;
-	transition: 0.3s ease-in-out;
+.project-card {
+	transition: 0.5s ease-in-out;
 }
 
+.project-card:hover {
+	border-radius: 6px;
+	transition: 0.3s ease-in-out;
+	
+}
+.image-card {
+	transition: 0.5s ease-in-out;
+	filter: drop-shadow(0 0 10px currentColor);
+	filter: blur(45px);
+	transform: translateY(-50px) translateX(-100px);
+}
 .project-card:hover img {
-	transform: scale(1.1);
-	transition: .2s all;
+	transform: scale(1.5);
+	transition-duration: .2s ease-in-out;
+	filter: blur(45px);
 }
 
 .description-project {
