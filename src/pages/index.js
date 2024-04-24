@@ -49,14 +49,14 @@ export default function Home() {
 				<AboutMe />
 				<LF />
 				<HomeTitle>{t('projectsTitle')}</HomeTitle>
-				<div className='sm:flex items-stretch mx-auto gap-4 sm:text-center'>
+				<div className='sm:flex items-stretch mx-auto gap-4 sm:text-center p-6 md:p-0'>
 					{projects.map((project) => (
 						<div
 							className='flex flex-col text-zinc-300 my-4 items-center w-full h-1/2 sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border md:rounded-2xl rounded-md hover:border-zinc-700 hover:bg-primary hover:bg-opacity-5 overflow-hidden project-card relative'
 							key={project.title}
 						>
-							<img className='image-card h-34 md:h-auto' src={project.image} alt={project.title} />
-							<span className='text-[10px] px-2 absolute top-[3px] left-[15px] z-10 bg-zinc-600/40 rounded-md update-dot capitalize'>
+							<img className='image-card h-36 md:h-auto' src={project.image} alt={project.title} />
+							<span className='text-[10px] px-2 absolute top-[4px] left-[15px] z-10 bg-zinc-600/40 rounded-md update-dot capitalize'>
 								updated <GithubDescription repoName={project.repoName} />
 							</span>
 							<div className='grid text-center space-y-3 -translate-y-10 md:-translate-y-8'>
@@ -74,7 +74,7 @@ export default function Home() {
 								rel='noopener noreferrer'
 							>
 								Link
-								<ExternalLink className='inline-flex ml-[2px] mb-[6px] relative transition-all duration-300 text-md w-[14px] h-[14px] link-icon' />
+								<ExternalLink className='inline-flex ml-[2px] mb-[3px] relative transition-all duration-300 text-md w-[14px] h-[14px] link-icon' />
 							</a>
 						</div>
 					))}
