@@ -1,8 +1,8 @@
-import { useEffect } from 'react'
-import Link from 'next/link'
 import { GithubStats } from './GithubStats'
-import { useTranslation } from 'react-i18next'
 import { Language } from 'tabler-icons-react'
+import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import Link from 'next/link'
 
 export function Header() {
 	const { t, i18n } = useTranslation()
