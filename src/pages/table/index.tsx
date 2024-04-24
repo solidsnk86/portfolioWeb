@@ -1,6 +1,6 @@
-import FormatDate from '@/components/FormatDate'
 import { supabase } from '@/utils/supabase'
 import { useState, useEffect } from 'react'
+import FormatDate from '@/components/FormatDate'
 
 export const VisitData = () => {
 	const [items, setItems] = useState([])

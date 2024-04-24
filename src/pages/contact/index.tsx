@@ -1,10 +1,10 @@
-import Link from 'next/link'
-import { Github, Mail } from 'lucide-react'
-import { Card } from '@/components/Card'
-import { TwitterIcon } from '@/components/icons/TwitterIcon'
-import { Footer } from '@/components/Footer'
-import { BackgroundFlares } from '@/components/BackgroundFlares'
 import { BackButton } from '@/components/BackButton'
+import { BackgroundFlares } from '@/components/BackgroundFlares'
+import { Card } from '@/components/Card'
+import { Footer } from '@/components/Footer'
+import { Github, Mail } from 'lucide-react'
+import { TwitterIcon } from '@/components/icons/TwitterIcon'
+import Link from 'next/link'
 
 const socials = [
 	{
