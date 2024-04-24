@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
 import { Logo } from './Logo'
 import { useTranslation } from 'react-i18next'
+import Link from 'next/link'
+import React from 'react'
 
 export function AboutMe() {
 	const { t } = useTranslation()
