@@ -52,14 +52,14 @@ export default function Home() {
 				<div className='sm:flex items-stretch mx-auto gap-4 sm:text-center'>
 					{projects.map((project) => (
 						<div
-							className='flex flex-col text-zinc-300 my-4 items-center w-full h-1/2 sm:w-1/2 space-y-4 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border rounded-2xl hover:border-zinc-700 hover:bg-primary hover:bg-opacity-5 overflow-hidden project-card relative'
+							className='flex flex-col text-zinc-300 my-4 items-center w-full h-1/2 sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border md:rounded-2xl rounded-md hover:border-zinc-700 hover:bg-primary hover:bg-opacity-5 overflow-hidden project-card relative'
 							key={project.title}
 						>
-							<img className='image-card' src={project.image} alt={project.title} />
-							<span className='text-[10px] px-2 absolute top-[-12px] left-[14px] z-10 bg-zinc-600/40 rounded-md update-dot capitalize'>
+							<img className='image-card h-34 md:h-auto' src={project.image} alt={project.title} />
+							<span className='text-[10px] px-2 absolute top-[3px] left-[15px] z-10 bg-zinc-600/40 rounded-md update-dot capitalize'>
 								updated <GithubDescription repoName={project.repoName} />
 							</span>
-							<div className='grid text-center space-y-3 -translate-y-7'>
+							<div className='grid text-center space-y-3 -translate-y-10 md:-translate-y-8'>
 								<span className='font-bold mb-2 text-zinc-50 z-50'>{project.title}</span>
 								<span className='text-sm mb-2 opacity-[.7] h-12 description-project'>
 									{project.description}
@@ -74,7 +74,7 @@ export default function Home() {
 								rel='noopener noreferrer'
 							>
 								Link
-								<ExternalLink className='inline-flex ml-[2px] mb-[6px] relative text-md w-[14px] h-[14px] link-icon' />
+								<ExternalLink className='inline-flex ml-[2px] mb-[6px] relative transition-all duration-300 text-md w-[14px] h-[14px] link-icon' />
 							</a>
 						</div>
 					))}
@@ -94,7 +94,7 @@ export default function Home() {
 				[
 					{ repoName: 'portfolioWeb' }
 				].map((repo) => (
-					<div className='text-zinc-100 p-1 text-xs rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit update-dot'>
+					<div className='text-zinc-200 p-1 text-xs rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit update-dot'>
 						<p className='ml-1'>{t('update')} <GithubDescription className='text-xs mx-1' repoName={repo.repoName} /></p>
 					</div>
 				))
