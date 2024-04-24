@@ -41,7 +41,8 @@ i18n.use(initReactI18next).init({
 				documentCv: 'Check my Cv',
 				cvLink: `${documentEnCv}`,
 				cvTitle: 'See the document at Google Docs',
-				footerLink: 'Go to github profile'
+				footerLink: 'Go to github profile',
+				update: 'Last portfolio update: '
 			}
 		},
 		es: {
@@ -80,7 +81,8 @@ i18n.use(initReactI18next).init({
 				documentCv: 'Chequea mi CV',
 				cvLink: `${documentEsCv}`,
 				cvTitle: 'Ver el documento en Google Docs',
-				footerLink: 'Ir al perfil de github'
+				footerLink: 'Ir al perfil de github',
+				update: 'Última actualización del portfolio: '
 			}
 		}
 	},

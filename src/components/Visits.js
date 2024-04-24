@@ -80,10 +80,10 @@ const Visit = () => {
 
 	return (
 		<div>
-			<p className='text-amber-400 font-mono text-xs text-center'>
+			<p className='text-amber-400 update-dot text-xs text-center'>
 				{t('profileViews')} {lastVisit.id}
 			</p>
-			<div id='visit' className='p-3 text-center text-amber-400 font-mono'>
+			<div id='visit' className='p-3 text-center text-amber-400 update-dot'>
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>
 						<span className='span-location mt-[3px] px-1 h-[8px] rounded-full bg-amber-600 xl:mr-2 mr-1 custom-ping hidden xl:flex' />

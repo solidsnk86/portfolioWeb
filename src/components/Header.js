@@ -70,7 +70,9 @@ export function Header() {
 								repoName: 'portfolioWeb'
 							}
 						].map((item, index) => (
-							<GithubStats key={index} repoName={item.repoName} />
+							<div className=' space-x-2'>
+								<GithubStats key={index} repoName={item.repoName} />
+							</div>
 						))}
 					</li>
 				</ul>

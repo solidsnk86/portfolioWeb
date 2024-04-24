@@ -81,7 +81,7 @@ export default function Home() {
 				</div>
 			</main>
 			<Link
-				className='justify-center mx-auto flex text-amber-400 text-sm hover:underline underline-offset-4 decoration-wavy'
+				className='justify-center mx-auto flex w-fit text-amber-400 text-sm hover:underline underline-offset-4 decoration-wavy'
 				href={t('cvLink')}
 				target='_blank'
 				title={t('cvTitle')}
@@ -90,6 +90,15 @@ export default function Home() {
 				<ArrowUpRight className='inline w-4 h-4' />
 			</Link>
 			<Footer />
+			{
+				[
+					{ repoName: 'portfolioWeb' }
+				].map((repo) => (
+					<div className='text-zinc-100 p-1 text-xs rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit update-dot'>
+						<p className='ml-1'>{t('update')} <GithubDescription className='text-xs mx-1' repoName={repo.repoName} /></p>
+					</div>
+				))
+			}
 			<Visit />
 			<p className='text-center text-zinc-600 text-xs pb-2'>{t('last_footer')}</p>
 		</>

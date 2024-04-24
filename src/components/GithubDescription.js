@@ -38,7 +38,7 @@ async function fetchGitStats(local, repoName) {
 	}
 }
 
-export const GithubDescription = ({ repoName }) => {
+export const GithubDescription = ({ repoName, className = '' }) => {
 	const [repoData, setRepoData] = useState({ pushedAt: null })
 
 	useEffect(() => {
@@ -52,5 +52,5 @@ export const GithubDescription = ({ repoName }) => {
 		})
 	}, [repoName])
 
-	return <>{repoData && <span className='text-[10px]'>{repoData.pushedAt}</span>}</>
+	return <>{repoData && <span className={`text-[10px] ${className}`}>{repoData.pushedAt}</span>}</>
 }
