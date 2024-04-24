@@ -53,14 +53,14 @@ body.loading * {
 }
 
 .link-shadow {
-	padding: 2px;
-	background-color: #ed8a193a;
+	padding-inline: 4px;
+	background-color: #f1870e2c;
 	border-radius: 6px;
 	text-decoration: none;
 }
 
 .link-shadow:hover {
-	filter: drop-shadow(0 0 10px orange) brightness(120%);
+	filter: drop-shadow(0 0 10px orange) brightness(110%);
 }
 
 .read-more:hover .arrow {

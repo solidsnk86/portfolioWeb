@@ -29,7 +29,7 @@ export function AboutMe() {
 							className='mx-1 duration-500 text-orange-400 underline link-shadow'
 							href='https://neotecs.vercel.app/'
 						>
-							Neotecs
+							NeoTecs
 						</Link>
 						{t('aboutMeLast')}
 					</CardTitle>
