@@ -97,7 +97,7 @@ export default function Home() {
 					{ repoName: 'portfolioWeb' }
 				].map((repo) => (
 					<div key={repo.repoName} className='text-zinc-200 p-1 text-[10px] rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit border border-zinc-700 update-dot'>
-						<p className='ml-1'>{t('update')} <GithubDescription className='text-xs mx-1' repoName={repo.repoName} /><GitBranch className='inline mb-[2px] mx-[2px] w-4 h-4' /></p>
+						<p className='ml-1'>{t('update')} <GithubDescription className='text-[10px] mx-1' repoName={repo.repoName} /><GitBranch className='inline mb-[2px] mx-[2px] w-4 h-4' /></p>
 					</div>
 				))
 			}
