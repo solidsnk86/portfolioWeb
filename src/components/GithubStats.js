@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
 import { StarIcon } from './icons/StarIcon'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 function getLocalStats(repoName) {

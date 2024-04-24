@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
 import { csvData } from './const'
+import { useEffect, useState } from 'react'
 
 export const DataProjects = () => {
 	const [projects, setProjects] = useState([])
