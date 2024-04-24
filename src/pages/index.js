@@ -59,11 +59,12 @@ export default function Home() {
 							<span className='text-[10px] px-2 font-mono absolute top-[-12px] left-[14px] z-10 bg-zinc-600/30 rounded-md update-dot uppercase'>
 								updated <GithubDescription repoName={project.repoName} />
 							</span>
-							<span className='font-bold mt-6 mb-2'>{project.title}</span>
-							<span className='text-sm mb-2 opacity-[.7] h-12 description-project'>
-								{project.description}
-							</span>
-
+							<div className='grid text-center space-y-3 -translate-y-7'>
+								<span className='font-bold mb-2 text-zinc-50 z-50'>{project.title}</span>
+								<span className='text-sm mb-2 opacity-[.7] h-12 description-project'>
+									{project.description}
+								</span>
+							</div>
 							<GithubStats repoName={project.repoName} />
 							<a
 								href={project.url}

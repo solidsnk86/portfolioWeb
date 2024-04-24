@@ -2,12 +2,16 @@ import { Share2Icon } from 'lucide-react'
 
 export function ShareButton({ postTitle, postDescription, postUrl }) {
 	const shareButton = () => {
-		if (navigator.share) {
-			navigator.share({
-				title: postDescription,
-				text: postTitle,
-				url: postUrl
-			})
+		try {
+			if (navigator.share) {
+				navigator.share({
+					title: postDescription,
+					text: postTitle,
+					url: postUrl
+				})
+			}
+		} catch (error) {
+			throw new Error(error)
 		}
 	}
 

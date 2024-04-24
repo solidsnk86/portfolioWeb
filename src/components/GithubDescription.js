@@ -52,5 +52,5 @@ export const GithubDescription = ({ repoName }) => {
 		})
 	}, [repoName])
 
-	return <>{repoData && <span className=' text-[10px]'>{repoData.pushedAt}</span>}</>
+	return <>{repoData && <span className='text-[10px]'>{repoData.pushedAt}</span>}</>
 }
