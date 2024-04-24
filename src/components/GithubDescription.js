@@ -16,6 +16,7 @@ async function fetchGitStats(local, repoName) {
 		if (!res.ok) {
 			throw new Error('Error fetching data from GitHub API')
 		}
+		console.log(res)
 		const { pushed_at } = await res.json()
 
 		if (pushed_at) {

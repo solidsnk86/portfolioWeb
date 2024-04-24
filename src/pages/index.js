@@ -94,7 +94,7 @@ export default function Home() {
 				[
 					{ repoName: 'portfolioWeb' }
 				].map((repo) => (
-					<div className='text-zinc-200 p-1 text-xs rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit update-dot'>
+					<div key={repo.repoName} className='text-zinc-200 p-1 text-xs rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit update-dot'>
 						<p className='ml-1'>{t('update')} <GithubDescription className='text-xs mx-1' repoName={repo.repoName} /></p>
 					</div>
 				))
