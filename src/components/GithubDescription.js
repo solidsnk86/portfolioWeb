@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { dateFormat } from './const'
 
 function getLocalStats(repoName) {
 	return {
