@@ -48,11 +48,19 @@ body.loading * {
 }
 
 .text-header-shadow:hover {
-	filter: drop-shadow(0 0 10px tomato);
+	filter: drop-shadow(0 0 10px #ffa600ab);
+	transition: 0.3s ease-in-out;
+}
+
+.link-shadow {
+	padding: 2px;
+	background-color: #ed8a193a;
+	border-radius: 6px;
+	text-decoration: none;
 }
 
 .link-shadow:hover {
-	filter: drop-shadow(0 0 15px orange);
+	filter: drop-shadow(0 0 10px orange) brightness(120%);
 }
 
 .read-more:hover .arrow {
