@@ -4,7 +4,11 @@ import { useEffect } from 'react'
 
 export default function Document() {
 	useEffect(() => {
-		disableZoom()
+		try {
+			disableZoom()
+		} catch (error) {
+			throw new Error(error)
+		}
 	}, [])
 
 	return (
