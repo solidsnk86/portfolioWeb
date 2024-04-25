@@ -79,7 +79,7 @@ const Visit = () => {
 	}, [])
 
 	return (
-		<div>
+		<div className='cursor-default'>
 			<p className='text-amber-400 update-dot text-xs text-center'>
 				{t('profileViews')} {lastVisit.id}
 			</p>

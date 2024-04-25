@@ -83,7 +83,7 @@ export default function Home() {
 				</div>
 			</main>
 			<Link
-				className='justify-center mx-auto flex w-fit text-amber-400 text-sm border p-2 rounded-md'
+				className='justify-center mx-auto flex w-fit text-amber-400 text-sm border p-2 rounded-md border-zinc-600/40 hover:border-zinc-700 transition-all duration-300 cv-link'
 				href={t('cvLink')}
 				target='_blank'
 				title={t('cvTitle')}
@@ -96,7 +96,7 @@ export default function Home() {
 				[
 					{ repoName: 'portfolioWeb' }
 				].map((repo) => (
-					<div key={repo.repoName} className='text-zinc-200 p-1 text-[10px] rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit border border-zinc-700 update-dot'>
+					<div key={repo.repoName} className='text-zinc-200 p-1 text-[10px] rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit border border-zinc-700 update-dot cursor-default'>
 						<p className='ml-1'>{t('update')} <GithubDescription className='text-[10px] mx-1' repoName={repo.repoName} /><GitBranch className='inline mb-[2px] mx-[2px] w-4 h-4' /></p>
 					</div>
 				))

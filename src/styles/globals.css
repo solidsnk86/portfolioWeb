@@ -311,3 +311,45 @@ textarea {
 .text-area {
 	resize: vertical;
 }
+
+.cv-link {
+	position: relative;
+	overflow: hidden;
+}
+.cv-link:hover {
+	color: #ffd726;
+}
+.cv-link::after {
+	content: "";
+	position: absolute;
+	background-color: #f0525267;
+	width: 25px;
+	height: 25px;
+	top: 17%;
+	left: 37%;
+	border-radius: 100%;
+	filter: blur(5px);
+	transition: all;
+	display: none;
+}
+
+.cv-link:hover::after {
+	animation: zoom forwards;
+	animation-duration: 2s;
+	display: block;
+}
+
+@keyframes zoom {
+	0% {
+		transform: scale(9);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(3.8);
+		opacity: 1;
+	}
+}
