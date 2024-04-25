@@ -83,12 +83,12 @@ export default function Home() {
 				</div>
 			</main>
 			<Link
-				className='justify-center mx-auto flex w-fit text-amber-400 text-sm hover:underline underline-offset-4 decoration-wavy'
+				className='justify-center mx-auto flex w-fit text-amber-400 text-sm border p-2 rounded-md'
 				href={t('cvLink')}
 				target='_blank'
 				title={t('cvTitle')}
 			>
-				{t('documentCv')}
+				<p className=''>{t('documentCv')}</p>
 				<ArrowUpRight className='inline w-4 h-4' />
 			</Link>
 			<Footer />
