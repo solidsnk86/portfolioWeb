@@ -335,7 +335,7 @@ textarea {
 
 .cv-link:hover::after {
 	animation: zoom forwards;
-	animation-duration: 2s;
+	animation-duration: 1.5s;
 	display: block;
 }
 
