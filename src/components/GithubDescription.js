@@ -44,7 +44,7 @@ export const GithubDescription = ({ repoName, className = '' }) => {
 
 	useEffect(() => {
 		const gitStatsDate = localStorage.getItem(`${repoName}-git-stats-info`)
-		const local = gitStatsDate && new Date().getTime() - gitStatsDate < 1000 * 60 * 24
+		const local = gitStatsDate && new Date().getTime() - gitStatsDate < 1000 * 60 * 60
 
 		fetchGitStats(local, repoName).then((res) => {
 			if (res.pushedAt !== null) {
