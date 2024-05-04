@@ -4,54 +4,86 @@ import FormatDate from '@/components/FormatDate'
 
 export const VisitData = () => {
 	const [items, setItems] = useState([])
-	const [githubData, setGithubData] = useState([])
+	const [githubFollowersData, setGithubFollowersData] = useState([])
+	const [githubFollowingData, setGithubFollowingData] = useState([])
 
 	useEffect(() => {
-		const dataFetch = async () => {
+		const fetchGitHubFollowing = async () => {
+			let allFollowingUsers = []
+			let page = 1
+			while (true) {
+				const response = await fetch(
+					`https://api.github.com/users/solidsnk86/following?page=${page}`
+				)
+				if (!response.ok) {
+					console.error('Error al recibir los datos de GitHub (Following).')
+					break
+				}
+				const jsonData = await response.json()
+				if (jsonData.length === 0) {
+					break
+				}
+				allFollowingUsers = allFollowingUsers.concat(jsonData)
+				page++
+			}
+			setGithubFollowingData(allFollowingUsers)
+
+			const { error } = await supabase.from('github_following').upsert(allFollowingUsers)
+			if (error) {
+				console.error('Error al enviar los datos a Supabase (Following):', error)
+			} else {
+				console.log('Datos enviados satisfactoriamente (Following).')
+			}
+		}
+
+		const fetchGitHubFollowers = async () => {
+			let allFollowersUsers = []
+			let page = 1
+			while (true) {
+				const response = await fetch(
+					`https://api.github.com/users/solidsnk86/followers?page=${page}`
+				)
+				if (!response.ok) {
+					console.error('Error al recibir los datos de GitHub (Followers).')
+					break
+				}
+				const jsonData = await response.json()
+				if (jsonData.length === 0) {
+					break
+				}
+				allFollowersUsers = allFollowersUsers.concat(jsonData)
+				page++
+			}
+			setGithubFollowersData(allFollowersUsers)
+
+			const { error } = await supabase.from('github_followers').upsert(allFollowersUsers)
+			if (error) {
+				console.error('Error al enviar los datos a Supabase (Followers):', error)
+			} else {
+				console.log('Datos enviados satisfactoriamente (Followers).')
+			}
+		}
+
+		const fetchAddressData = async () => {
 			const { data, error } = await supabase
 				.from('address')
 				.select('*')
 				.order('created_at', { ascending: false })
-
 			if (error) {
-				throw error
-			}
-			setItems(data)
-		}
-		const fetchGithubData = async () => {
-			try {
-				let allUsers = []
-				let page = 1
-				while (true) {
-					const response = await fetch(
-						`https://api.github.com/users/solidsnk86/following?page=${page}`
-					)
-					const jsonData = await response.json()
-
-					if (!response.ok) {
-						throw new Error('Error al requerir los datos de GitHub.')
-					}
-
-					if (jsonData.length === 0) {
-						break
-					}
-
-					allUsers = [...allUsers, ...jsonData]
-					page++
-				}
-
-				setGithubData(allUsers)
-				const usersCount = allUsers.length
-				console.log('La cantidad de personas que sigo es: ', usersCount)
-			} catch (error) {
-				console.error('Error al obtener datos de GitHub:', error)
+				console.error('Error fetching address data:', error)
+			} else {
+				setItems(data)
 			}
 		}
 
-		fetchGithubData()
-		dataFetch()
+		const fetchData = async () => {
+			await fetchGitHubFollowing()
+			await fetchGitHubFollowers()
+			await fetchAddressData()
+		}
+
+		fetchData()
 	}, [])
-
 
 	return (
 		<>
@@ -87,11 +119,19 @@ export const VisitData = () => {
 					</tbody>
 				</table>
 			</section>
+
 			<div className='block justify-center mx-auto'>
-				{githubData.map((data) => (
-					<p className='text-zinc-100 text-center text-sm'>{data.login}</p>
+				{githubFollowingData.map((data) => (
+					<p key={data.node_id} className='text-zinc-100 text-center text-sm'>
+						{data.login}
+					</p>
 				))}
-				<p>{githubData.length}</p>
+				<p>Total GitHub Following: {githubFollowingData.length}</p>
+
+				{githubFollowersData.map((data) => (
+					<p key={data.node_id}>{data.login}</p>
+				))}
+				<p>Total GitHub Followers: {githubFollowersData.length}</p>
 			</div>
 		</>
 	)
