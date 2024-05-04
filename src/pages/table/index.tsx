@@ -122,14 +122,18 @@ export const VisitData = () => {
 
 			<div className='block justify-center mx-auto'>
 				{githubFollowingData.map((data) => (
-					<p key={data.node_id} className='text-zinc-100 text-center text-sm'>
-						{data.login}
-					</p>
+					<div key={data.node_id}>
+						<img src={data.avatar_url} className='w-24 h-24' />
+						<p className='text-zinc-100 text-center text-sm'>{data.login}</p>
+					</div>
 				))}
 				<p>Total GitHub Following: {githubFollowingData.length}</p>
 
 				{githubFollowersData.map((data) => (
-					<p key={data.node_id}>{data.login}</p>
+					<div key={data.node_id}>
+						<img src={data.avatar_url} className='w-24 h-24' />
+						<p className='text-zinc-100 text-center text-sm'>{data.login}</p>
+					</div>
 				))}
 				<p>Total GitHub Followers: {githubFollowersData.length}</p>
 			</div>
