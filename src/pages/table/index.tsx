@@ -204,8 +204,8 @@ export const VisitData = () => {
 					Total GitHub Followers: {githubFollowersData.length}
 				</p>
 
-				<div className='border border-zinc-700 p-4'>
-					<h2 className='text-zinc-50 bg-zinc-700/50 w-full h-auto p-4'>{`No me siguen de vuelta: ${nonFollowers.length}`}</h2>
+				<div className='border border-zinc-700'>
+					<h2 className='text-zinc-50 bg-zinc-700/50 max-w-fit h-auto p-4'>{`No me siguen de vuelta: ${nonFollowers.length}`}</h2>
 					{nonFollowers.map((login) => (
 						<p key={login} className='text-zinc-50'>
 							{login}
