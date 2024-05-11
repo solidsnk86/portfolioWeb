@@ -2,33 +2,8 @@ import { BackButton } from '@/components/BackButton'
 import { BackgroundFlares } from '@/components/BackgroundFlares'
 import { Card } from '@/components/Card'
 import { Footer } from '@/components/Footer'
-import { Github, Mail } from 'lucide-react'
-import { TwitterIcon } from '@/components/icons/TwitterIcon'
+import { socials } from '@/components/const'
 import Link from 'next/link'
-
-const socials = [
-	{
-		icon: <TwitterIcon />,
-		href: 'https://twitter.com/CalcagniGabriel',
-		label: 'Twitter',
-		handle: '@CalcagniGabriel',
-		title: 'Ir al perfil de Twitter de '
-	},
-	{
-		icon: <Mail size={24} />,
-		href: 'mailto:calcagni.gabriel86@gmail.com',
-		label: 'Mail',
-		handle: 'calcagni.gabriel86@gmail.com',
-		title: 'Enviar correo electrónico a '
-	},
-	{
-		icon: <Github size={24} />,
-		href: 'https://github.com/solidsnk86',
-		label: 'Github',
-		handle: 'solidsnk86',
-		title: 'Ir al perfil de Github de '
-	}
-]
 
 export default function Contact() {
 	return (
