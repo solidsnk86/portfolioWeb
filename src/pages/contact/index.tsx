@@ -34,9 +34,9 @@ export default function Contact() {
 	return (
 		<>
 			<BackgroundFlares />
-			<BackButton className='fixed' />
+			<BackButton className=' md:fixed relative' />
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
-				<div className='container flex items-center min-h-screen justify-center px-4 mx-auto'>
+				<div className='container flex items-center min-h-screen justify-center px-6 mx-auto'>
 					<div className='grid w-full grid-cols-1 gap-8 mx-auto mb-5 mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>
 						{socials.map((s, index) => (
 							<Card key={index}>

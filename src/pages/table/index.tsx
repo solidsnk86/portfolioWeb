@@ -69,7 +69,7 @@ export const VisitData = () => {
 					page++
 				}
 				setGithubFollowersData(allFollowersUsers)
-
+				console.log(allFollowersUsers)
 				const { error } = await supabase.from('github_followers').upsert(allFollowersUsers)
 				if (error) {
 					console.error('Error al enviar los datos a Supabase (Followers):', error)
@@ -145,6 +145,9 @@ export const VisitData = () => {
 
 	const nonFollowers = Array.from(followingLogins).filter((login) => !followersLogins.has(login))
 
+	console.log(followers)
+	console.log(following)
+
 	return (
 		<>
 			<section className='xl:p-16 p-3 overflow-hidden overflow-x-auto xl:flex mx-auto xl:justify-center text-zinc-100 h-full'>
@@ -152,13 +155,13 @@ export const VisitData = () => {
 					<thead className='border-zinc-800 border text-justify xl:text-sm text-xs'>
 						<tr>
 							<th>ID</th>
-							<th>IP Address</th>
+							<th>IP</th>
 							<th>Latitude</th>
 							<th>Longitude</th>
-							<th>Postal Code</th>
-							<th>City Name</th>
-							<th>Country Name</th>
-							<th>Country Flag</th>
+							<th>PC</th>
+							<th>City</th>
+							<th>Country</th>
+							<th>Flag</th>
 							<th>Date</th>
 						</tr>
 					</thead>
@@ -204,10 +207,10 @@ export const VisitData = () => {
 					Total GitHub Followers: {githubFollowersData.length}
 				</p>
 
-				<div className='border border-zinc-700'>
-					<h2 className='text-zinc-50 bg-zinc-700/50 max-w-fit h-auto p-4'>{`No me siguen de vuelta: ${nonFollowers.length}`}</h2>
+				<div className='border border-zinc-700 w-fit justify-center mx-auto'>
+					<h2 className='text-zinc-50 bg-zinc-700/50 max-w-fit h-auto p-4 justify-center mx-auto'>{`No me siguen de vuelta: ${nonFollowers.length}`}</h2>
 					{nonFollowers.map((login) => (
-						<p key={login} className='text-zinc-50'>
+						<p key={login} className='text-zinc-50 text-center'>
 							{login}
 						</p>
 					))}
