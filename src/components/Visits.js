@@ -33,8 +33,10 @@ const Visit = () => {
 							longitude: jsonData.coordinates.longitude
 						}
 					})
-
-					sendDataToSupabase(jsonData)
+					const localURL = window.location.href
+					if (!localURL === 'http://localhost:3000/') {
+						sendDataToSupabase(jsonData)
+					}
 				} else {
 					console.error('Error fetching visit data:', res.status, res.statusText)
 				}
@@ -62,7 +64,6 @@ const Visit = () => {
 					.select('id, city_name, country_name, country_flag, created_at')
 					.order('created_at', { ascending: false })
 					.limit(1)
-
 				if (error) {
 					console.error('Error fetching last visit data:', error)
 				} else if (data.length > 0) {
@@ -74,6 +75,19 @@ const Visit = () => {
 			}
 		}
 
+		const fetchToLocal = async () => {
+			const { data, error } = await supabase
+				.from('address')
+				.select('id, city_name, country_name, country_flag, created_at')
+				.order('created_at', { ascending: false })
+			if (error) {
+				console.error('Error fetching to local data', error)
+			}
+			console.log(data)
+			return data
+		}
+
+		fetchToLocal()
 		fetchData()
 		fetchLastVisit()
 	}, [])
