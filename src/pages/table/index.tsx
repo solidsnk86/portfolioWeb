@@ -59,6 +59,7 @@ export const VisitData = () => {
 					allFollowersUsers = allFollowersUsers.concat(jsonData)
 					page++
 				}
+				console.log(allFollowersUsers)
 				setGithubFollowersData(allFollowersUsers)
 			} catch (error) {
 				console.error('Error durante la recuperación de datos de GitHub (Followers):', error)
@@ -84,7 +85,8 @@ export const VisitData = () => {
 		const fetchData = async () => {
 			await fetchAddressData()
 		}
-
+		fetchGitHubFollowers()
+		fetchGitHubFollowing()
 		fetchData()
 	}, [])
 
@@ -132,7 +134,12 @@ export const VisitData = () => {
 				{githubFollowingData.map((data) => (
 					<div key={data.node_id} className='flex mx-1 space-y-2'>
 						<img src={data.avatar_url} className='w-16 h-16 rounded-full my-2' />
-						<LinkComponent url={data.html_url} iconName='Github' color='slate-100' className='underline text-slate-50 pt-4 pl-2'>
+						<LinkComponent
+							url={data.html_url}
+							iconName='Github'
+							color='slate-100'
+							className='underline text-slate-50 pt-4 pl-2'
+						>
 							{data.login}
 						</LinkComponent>
 					</div>

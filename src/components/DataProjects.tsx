@@ -13,13 +13,14 @@ export const DataProjects = () => {
 					.split('\n')
 					.slice(1)
 					.map((row) => {
-						const [url, title, repoName, image, description] = row.split(',')
+						const [url, title, repoName, image, description, colors] = row.split(',')
 						return {
 							url,
 							title,
 							repoName,
 							image,
-							description
+							description,
+							colors: colors.split('\r').shift()
 						}
 					})
 				setProjects(parsedProjects)

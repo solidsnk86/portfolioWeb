@@ -74,20 +74,6 @@ const Visit = () => {
 				console.error('Error fetching last visit data:', error)
 			}
 		}
-
-		const fetchToLocal = async () => {
-			const { data, error } = await supabase
-				.from('address')
-				.select('id, city_name, country_name, country_flag, created_at')
-				.order('created_at', { ascending: false })
-			if (error) {
-				console.error('Error fetching to local data', error)
-			}
-			console.log(data)
-			return data
-		}
-
-		fetchToLocal()
 		fetchData()
 		fetchLastVisit()
 	}, [])
