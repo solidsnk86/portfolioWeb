@@ -8,6 +8,62 @@ export const VisitData = () => {
 	const [githubFollowersData, setGithubFollowersData] = useState([])
 	const [githubFollowingData, setGithubFollowingData] = useState([])
 
+	const sendDataFollowing = async (jsonData) => {
+		await supabase.from('github_followings_user').insert({
+			avatr_url: jsonData.avatar_url,
+			events_url: jsonData.events_url,
+			followers_url: jsonData.followers_url,
+			following_url: jsonData.following_url,
+			gists_url: jsonData.gists_url,
+			gravatar_id: jsonData.gravatar_id,
+			html_url: jsonData.html_url,
+			id: jsonData.od,
+			login: jsonData.login,
+			node_id: jsonData.node_id,
+			organizations_url: jsonData.organizations_url,
+			received_events_url: jsonData.received_events_url,
+			repos_url: jsonData.repos_url,
+			site_admin: jsonData.site_admin,
+			starred_url: jsonData.starred_url,
+			subscriptions_url: jsonData.subscriptions_url,
+			type: jsonData.type,
+			url: jsonData.url
+		})
+		if (sendDataFollowing) {
+			console.log('Data followings sent correctly')
+		} else {
+			console.log('Data followings not sent correctly')
+		}
+	}
+
+	const sendDataFollowers = async (jsonData) => {
+		await supabase.from('github_followers_user').insert({
+			avatr_url: jsonData.avatar_url,
+			events_url: jsonData.events_url,
+			followers_url: jsonData.followers_url,
+			following_url: jsonData.following_url,
+			gists_url: jsonData.gists_url,
+			gravatar_id: jsonData.gravatar_id,
+			html_url: jsonData.html_url,
+			id: jsonData.od,
+			login: jsonData.login,
+			node_id: jsonData.node_id,
+			organizations_url: jsonData.organizations_url,
+			received_events_url: jsonData.received_events_url,
+			repos_url: jsonData.repos_url,
+			site_admin: jsonData.site_admin,
+			starred_url: jsonData.starred_url,
+			subscriptions_url: jsonData.subscriptions_url,
+			type: jsonData.type,
+			url: jsonData.url
+		})
+		if (sendDataFollowers) {
+			console.log('Data followers sent correctly')
+		} else {
+			console.log('Data followers not sent correctly')
+		}
+	}
+
 	useEffect(() => {
 		const fetchGitHubFollowing = async () => {
 			try {
@@ -30,6 +86,7 @@ export const VisitData = () => {
 					}
 					allFollowingUsers = allFollowingUsers.concat(jsonData)
 					page++
+					sendDataFollowing(jsonData)
 				}
 				setGithubFollowingData(allFollowingUsers)
 			} catch (error) {
@@ -58,8 +115,8 @@ export const VisitData = () => {
 					}
 					allFollowersUsers = allFollowersUsers.concat(jsonData)
 					page++
+					sendDataFollowers(jsonData)
 				}
-				console.log(allFollowersUsers)
 				setGithubFollowersData(allFollowersUsers)
 			} catch (error) {
 				console.error('Error durante la recuperación de datos de GitHub (Followers):', error)
@@ -85,9 +142,9 @@ export const VisitData = () => {
 		const fetchData = async () => {
 			await fetchAddressData()
 		}
+		fetchData()
 		fetchGitHubFollowers()
 		fetchGitHubFollowing()
-		fetchData()
 	}, [])
 
 	const followingLogins = new Set(githubFollowingData.map((user) => user.login))
@@ -136,34 +193,41 @@ export const VisitData = () => {
 						<img src={data.avatar_url} className='w-16 h-16 rounded-full my-2' />
 						<LinkComponent
 							url={data.html_url}
-							iconName='Github'
+							iconName='ExternalLink'
 							color='slate-100'
-							className='underline text-slate-50 pt-4 pl-2'
+							className='text-slate-50 pt-4 pl-2 hover:underline'
 						>
 							{data.login}
 						</LinkComponent>
 					</div>
 				))}
 				<p className='p-4 bg-slate-500/50 text-slate-50 my-2 border border-zinc-700'>
-					Total GitHub Following: {githubFollowingData.length}
+					Total que Sigo: {githubFollowingData.length}
 				</p>
 
 				{githubFollowersData.map((data) => (
 					<div key={data.node_id} className='flex mx-1 space-y-2'>
-						<img src={data.avatar_url} className='w-24 h-24 rounded-full my-2' />
-						<span className='text-zinc-100 text-center font-semibold pt-9 mx-4'>{data.login}</span>
+						<img src={data.avatar_url} className='w-16 h-16 rounded-full my-2' />
+						<LinkComponent
+							url={data.html_url}
+							iconName='ExternalLink'
+							color='slate-100'
+							className='text-slate-50 pt-4 pl-2 hover:underline'
+						>
+							{data.login}
+						</LinkComponent>
 					</div>
 				))}
 				<p className='p-4 bg-slate-500/50 text-slate-50 my-2 border border-zinc-700'>
-					Total GitHub Followers: {githubFollowersData.length}
+					Total Seguidores: {githubFollowersData.length}
 				</p>
 
 				<div className='border border-zinc-700 w-fit justify-center mx-auto my-5 rounded-lg bg-zinc-700/50'>
 					<h2 className='text-zinc-50 max-w-fit h-auto p-4 justify-center mx-auto'>{`No me siguen de vuelta: ${nonFollowers.length}`}</h2>
 					{nonFollowers.map((login) => (
-						<p key={login} className='text-zinc-50 text-center'>
+						<div key={login} className='flex p-2 text-slate-50'>
 							{login}
-						</p>
+						</div>
 					))}
 				</div>
 			</div>
