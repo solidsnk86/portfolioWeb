@@ -86,7 +86,7 @@ export const VisitData = () => {
 					}
 					allFollowingUsers = allFollowingUsers.concat(jsonData)
 					page++
-					sendDataFollowing(jsonData)
+					sendDataFollowing(JSON.stringify(jsonData))
 				}
 				setGithubFollowingData(allFollowingUsers)
 			} catch (error) {
@@ -115,7 +115,7 @@ export const VisitData = () => {
 					}
 					allFollowersUsers = allFollowersUsers.concat(jsonData)
 					page++
-					sendDataFollowers(jsonData)
+					sendDataFollowers(JSON.stringify(jsonData))
 				}
 				setGithubFollowersData(allFollowersUsers)
 			} catch (error) {
