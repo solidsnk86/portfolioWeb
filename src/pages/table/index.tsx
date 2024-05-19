@@ -98,7 +98,6 @@ export const VisitData = () => {
 					}
 
 					const jsonData = await response.json()
-					console.log(jsonData)
 					if (jsonData.length === 0) {
 						moreData = false
 						break
