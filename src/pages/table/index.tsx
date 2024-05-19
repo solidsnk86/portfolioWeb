@@ -9,58 +9,72 @@ export const VisitData = () => {
 	const [githubFollowingData, setGithubFollowingData] = useState([])
 
 	const sendDataFollowing = async (jsonData) => {
-		await supabase.from('github_followings_user').insert({
-			avatr_url: jsonData.avatar_url,
-			events_url: jsonData.events_url,
-			followers_url: jsonData.followers_url,
-			following_url: jsonData.following_url,
-			gists_url: jsonData.gists_url,
-			gravatar_id: jsonData.gravatar_id,
-			html_url: jsonData.html_url,
-			id: jsonData.od,
-			login: jsonData.login,
-			node_id: jsonData.node_id,
-			organizations_url: jsonData.organizations_url,
-			received_events_url: jsonData.received_events_url,
-			repos_url: jsonData.repos_url,
-			site_admin: jsonData.site_admin,
-			starred_url: jsonData.starred_url,
-			subscriptions_url: jsonData.subscriptions_url,
-			type: jsonData.type,
-			url: jsonData.url
-		})
-		if (sendDataFollowing) {
-			console.log('Data followings sent correctly')
-		} else {
-			console.log('Data followings not sent correctly')
+		try {
+			const { data, error } = await supabase.from('github_followings_user').insert([
+				{
+					avatar_url: jsonData.avatar_url,
+					events_url: jsonData.events_url,
+					followers_url: jsonData.followers_url,
+					following_url: jsonData.following_url,
+					gists_url: jsonData.gists_url,
+					gravatar_id: jsonData.gravatar_id,
+					html_url: jsonData.html_url,
+					id: jsonData.id,
+					login: jsonData.login,
+					node_id: jsonData.node_id,
+					organizations_url: jsonData.organizations_url,
+					received_events_url: jsonData.received_events_url,
+					repos_url: jsonData.repos_url,
+					site_admin: jsonData.site_admin,
+					starred_url: jsonData.starred_url,
+					subscriptions_url: jsonData.subscriptions_url,
+					type: jsonData.type,
+					url: jsonData.url
+				}
+			])
+
+			if (error) {
+				console.error('Data followings not sent correctly:', error)
+			} else {
+				console.log('Data followings sent correctly:', data)
+			}
+		} catch (error) {
+			console.error('Unexpected error:', error)
 		}
 	}
 
 	const sendDataFollowers = async (jsonData) => {
-		await supabase.from('github_followers_user').insert({
-			avatr_url: jsonData.avatar_url,
-			events_url: jsonData.events_url,
-			followers_url: jsonData.followers_url,
-			following_url: jsonData.following_url,
-			gists_url: jsonData.gists_url,
-			gravatar_id: jsonData.gravatar_id,
-			html_url: jsonData.html_url,
-			id: jsonData.od,
-			login: jsonData.login,
-			node_id: jsonData.node_id,
-			organizations_url: jsonData.organizations_url,
-			received_events_url: jsonData.received_events_url,
-			repos_url: jsonData.repos_url,
-			site_admin: jsonData.site_admin,
-			starred_url: jsonData.starred_url,
-			subscriptions_url: jsonData.subscriptions_url,
-			type: jsonData.type,
-			url: jsonData.url
-		})
-		if (sendDataFollowers) {
-			console.log('Data followers sent correctly')
-		} else {
-			console.log('Data followers not sent correctly')
+		try {
+			const { data, error } = await supabase.from('github_followers_user').insert([
+				{
+					avatar_url: jsonData.avatar_url,
+					events_url: jsonData.events_url,
+					followers_url: jsonData.followers_url,
+					following_url: jsonData.following_url,
+					gists_url: jsonData.gists_url,
+					gravatar_id: jsonData.gravatar_id,
+					html_url: jsonData.html_url,
+					id: jsonData.id,
+					login: jsonData.login,
+					node_id: jsonData.node_id,
+					organizations_url: jsonData.organizations_url,
+					received_events_url: jsonData.received_events_url,
+					repos_url: jsonData.repos_url,
+					site_admin: jsonData.site_admin,
+					starred_url: jsonData.starred_url,
+					subscriptions_url: jsonData.subscriptions_url,
+					type: jsonData.type,
+					url: jsonData.url
+				}
+			])
+
+			if (error) {
+				console.error('Data followers not sent correctly:', error)
+			} else {
+				console.log('Data followers sent correctly:', data)
+			}
+		} catch (error) {
+			console.error('Unexpected error:', error)
 		}
 	}
 
@@ -69,7 +83,9 @@ export const VisitData = () => {
 			try {
 				let allFollowingUsers = []
 				let page = 1
-				while (true) {
+				let moreData = true
+
+				while (moreData) {
 					const response = await fetch(
 						`https://api.github.com/users/solidsnk86/following?page=${page}`
 					)
@@ -80,14 +96,23 @@ export const VisitData = () => {
 						)
 						break
 					}
+
 					const jsonData = await response.json()
+					console.log(jsonData)
 					if (jsonData.length === 0) {
+						moreData = false
 						break
 					}
+
 					allFollowingUsers = allFollowingUsers.concat(jsonData)
+
+					for (const followingUser of jsonData) {
+						await sendDataFollowing(followingUser)
+					}
+
 					page++
-					sendDataFollowing(JSON.stringify(jsonData))
 				}
+
 				setGithubFollowingData(allFollowingUsers)
 			} catch (error) {
 				console.error('Error durante la recuperación de datos de GitHub (Following):', error)
@@ -98,7 +123,9 @@ export const VisitData = () => {
 			try {
 				let allFollowersUsers = []
 				let page = 1
-				while (true) {
+				let moreData = true
+
+				while (moreData) {
 					const response = await fetch(
 						`https://api.github.com/users/solidsnk86/followers?page=${page}`
 					)
@@ -109,14 +136,22 @@ export const VisitData = () => {
 						)
 						break
 					}
+
 					const jsonData = await response.json()
 					if (jsonData.length === 0) {
+						moreData = false
 						break
 					}
+
 					allFollowersUsers = allFollowersUsers.concat(jsonData)
+
+					for (const follower of jsonData) {
+						await sendDataFollowers(follower)
+					}
+
 					page++
-					sendDataFollowers(JSON.stringify(jsonData))
 				}
+
 				setGithubFollowersData(allFollowersUsers)
 			} catch (error) {
 				console.error('Error durante la recuperación de datos de GitHub (Followers):', error)
@@ -128,6 +163,7 @@ export const VisitData = () => {
 				const { data, error } = await supabase
 					.from('address')
 					.select('*')
+					.limit(50)
 					.order('created_at', { ascending: false })
 				if (error) {
 					console.error('Error al recibir los datos de dirección IP:', error)
