@@ -1,8 +1,10 @@
 import { supabase } from '@/utils/supabase'
 import { useState, useEffect } from 'react'
 import FormatDate from '@/components/FormatDate'
-import { sendDataFollowers, sendDataFollowing } from './actions'
+import actions from './actions'
 import { LinkComponent } from '@/components/LinkComponent'
+
+const { sendDataFollowers, sendDataFollowing } = actions
 
 export const VisitData = () => {
 	const [items, setItems] = useState([])

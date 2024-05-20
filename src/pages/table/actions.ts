@@ -1,6 +1,6 @@
 import { supabase } from '@/utils/supabase'
 
-export const sendDataFollowing = async (jsonData) => {
+const sendDataFollowing = async (jsonData) => {
 	try {
 		const { data, error } = await supabase.from('github_followings_user').upsert(
 			[
@@ -40,7 +40,7 @@ export const sendDataFollowing = async (jsonData) => {
 	}
 }
 
-export const sendDataFollowers = async (jsonData) => {
+const sendDataFollowers = async (jsonData) => {
 	try {
 		const { data, error } = await supabase.from('github_followers_user').upsert(
 			[
@@ -79,3 +79,5 @@ export const sendDataFollowers = async (jsonData) => {
 		console.error('Unexpected error:', error)
 	}
 }
+
+export default { sendDataFollowers, sendDataFollowing }
