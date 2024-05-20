@@ -35,10 +35,10 @@ const Visit = () => {
 					})
 					const localURL = window.location.href
 					const dataIPs = ['45.178.0.86', '45.178.0.108']
-
 					if (
 						localURL !== 'http://localhost:3000/' &&
-						(jsonData.ip.address !== dataIPs[0] || jsonData.ip.address !== dataIPs[1])
+						jsonData.ip.address !== dataIPs[0] &&
+						jsonData.ip.address !== dataIPs[1]
 					) {
 						sendDataToSupabase(jsonData)
 					}
