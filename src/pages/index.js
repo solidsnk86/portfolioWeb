@@ -52,7 +52,9 @@ export default function Home() {
 				<div className='sm:flex items-stretch mx-auto gap-4 sm:text-center p-6 md:p-0'>
 					{projects.map((project) => (
 						<div
-							className={'flex flex-col text-zinc-300 my-4 items-center w-full h-1/2 sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border md:rounded-2xl rounded-md hover:border-zinc-700 overflow-hidden project-card relative'}
+							className={
+								'flex flex-col text-zinc-300 my-4 items-center w-full h-1/2 sm:w-1/2 lg:w-1/3 xl:w-1/3 border-white border-opacity-10 border md:rounded-2xl rounded-md hover:border-zinc-700 overflow-hidden project-card relative'
+							}
 							key={project.title}
 						>
 							<img className='image-card h-36 md:h-auto' src={project.image} alt={project.title} />

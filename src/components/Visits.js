@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import FormatDate from './FormatDate'
 
+const dataIp1 = process.env.NEXT_PUBLIC_DATA_IP_1
+const dataIp2 = process.env.NEXT_PUBLIC_DATA_IP_2
+
 const Visit = () => {
 	const { t } = useTranslation()
 
@@ -34,11 +37,10 @@ const Visit = () => {
 						}
 					})
 					const localURL = window.location.href
-					const dataIPs = ['45.178.0.86', '45.178.0.108']
 					if (
 						localURL !== 'http://localhost:3000/' &&
-						jsonData.ip.address !== dataIPs[0] &&
-						jsonData.ip.address !== dataIPs[1]
+						jsonData.ip.address !== dataIp1 &&
+						jsonData.ip.address !== dataIp2
 					) {
 						sendDataToSupabase(jsonData)
 					}
