@@ -55,7 +55,8 @@ i18n.use(initReactI18next).init({
 				send: 'Send',
 				sending: 'Sending...',
 				toastAlert: 'Please, complete all fields.',
-				toastError: 'Error submitting the form. Please try again later.'
+				toastError: 'Error submitting the form. Please try again later.',
+				updated: 'Updated'
 			}
 		},
 		es: {
@@ -108,7 +109,8 @@ i18n.use(initReactI18next).init({
 				send: 'Enviar',
 				sending: 'Enviando...',
 				toastAlert: 'Por favor, completa todos los campos.',
-				toastError: 'Error al enviar el formulario. Por favor, intenta nuevamente más tarde.'
+				toastError: 'Error al enviar el formulario. Por favor, intenta nuevamente más tarde.',
+				updated: 'Actualizado'
 			}
 		}
 	},

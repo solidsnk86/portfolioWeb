@@ -59,7 +59,7 @@ export default function Home() {
 						>
 							<img className='image-card h-36 md:h-auto' src={project.image} alt={project.title} />
 							<span className='text-[10px] px-2 absolute top-[4px] left-[15px] z-10 bg-zinc-600/40 rounded-md update-dot capitalize'>
-								updated <GithubDescription repoName={project.repoName} />
+								{t('updated')} <GithubDescription repoName={project.repoName} />
 							</span>
 							<div className='grid text-center space-y-3 -translate-y-10 md:-translate-y-8'>
 								<span className='font-bold mb-2 text-zinc-50 z-50'>{project.title}</span>
