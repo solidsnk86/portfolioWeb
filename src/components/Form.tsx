@@ -42,7 +42,7 @@ const ContactForm = () => {
 			!formData.asunto ||
 			!formData.telefono
 		) {
-			toast.warning('Por favor, completa todos los campos.', {
+			toast.warning(t('toastAlert'), {
 				position: 'top-center',
 				theme: 'dark'
 			})
@@ -82,21 +82,36 @@ const ContactForm = () => {
 	return (
 		<div>
 			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-8'>
-				{t('contacto')}
+				{t('contact')}
 			</h2>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className='grid justify-center mx-auto gap-3 contact-form'
 			>
-				<input name='nombre' value={formData.nombre} onChange={handleChange} placeholder={t('name')} />
+				<input
+					name='nombre'
+					value={formData.nombre}
+					onChange={handleChange}
+					placeholder={t('name')}
+				/>
 				<input
 					name='telefono'
 					value={formData.telefono}
 					onChange={handleChange}
 					placeholder={t('telephone')}
 				/>
-				<input name='correo' value={formData.correo} onChange={handleChange} placeholder={t('email')} />
-				<input name='asunto' value={formData.asunto} onChange={handleChange} placeholder={t('subject')} />
+				<input
+					name='correo'
+					value={formData.correo}
+					onChange={handleChange}
+					placeholder={t('email')}
+				/>
+				<input
+					name='asunto'
+					value={formData.asunto}
+					onChange={handleChange}
+					placeholder={t('subject')}
+				/>
 				<textarea
 					name='mensaje'
 					id='mensaje'
@@ -109,7 +124,7 @@ const ContactForm = () => {
 					disabled={isSubmitting}
 					className='border border-zinc-800 rounded-md p-2 text-zinc-100 hover:border-zinc-700 hover:brightness-125 active:border-blue-600'
 				>
-					{isSubmitting ? 'Enviando...' : 'Enviar'}
+					{isSubmitting ? t('sending') : t('send')}
 				</button>
 			</form>
 			<ToastContainer closeButton closeOnClick />

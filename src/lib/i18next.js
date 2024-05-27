@@ -51,7 +51,11 @@ i18n.use(initReactI18next).init({
 				cvTitle: 'See the document at Google Docs',
 				footerLink: 'Go to github profile',
 				update: 'Last portfolio update: ',
-				contacto: 'Contact'
+				contact: 'Contact',
+				send: 'Send',
+				sending: 'Sending...',
+				toastAlert: 'Please, complete all fields.',
+				toastError: 'Error submitting the form. Please try again later.'
 			}
 		},
 		es: {
@@ -100,7 +104,11 @@ i18n.use(initReactI18next).init({
 				cvTitle: 'Ver el documento en Google Docs',
 				footerLink: 'Ir al perfil de github',
 				update: 'Última actualización del portfolio: ',
-				contacto: 'Contacto'
+				contact: 'Contacto',
+				send: 'Enviar',
+				sending: 'Enviando...',
+				toastAlert: 'Por favor, completa todos los campos.',
+				toastError: 'Error al enviar el formulario. Por favor, intenta nuevamente más tarde.'
 			}
 		}
 	},
