@@ -42,7 +42,7 @@ const ContactForm = () => {
 		) {
 			toast.warning('Por favor, completa todos los campos.', {
 				position: 'top-center',
-				theme: 'light'
+				theme: 'dark'
 			})
 			return
 		}
@@ -60,19 +60,19 @@ const ContactForm = () => {
 					`Muchas gracias por tu mensaje ${formData.nombre}. Estaremos en contacto pronto al correo ${formData.correo}!`,
 					{
 						position: 'top-center',
-						theme: 'light'
+						theme: 'dark'
 					}
 				)
 			} else {
 				toast.error('Error al enviar el formulario. Por favor, intenta nuevamente más tarde.', {
 					position: 'top-center',
-					theme: 'light'
+					theme: 'dark'
 				})
 			}
 		} catch (error) {
 			toast.error('Error al enviar el formulario. Por favor, intenta nuevamente más tarde.', {
 				position: 'top-center',
-				theme: 'light'
+				theme: 'dark'
 			})
 		}
 	}

@@ -2,6 +2,7 @@ import { BackButton } from '@/components/BackButton'
 import { BackgroundFlares } from '@/components/BackgroundFlares'
 import { Card } from '@/components/Card'
 import { Footer } from '@/components/Footer'
+import ContactForm from '@/components/Form'
 import { socials } from '@/components/const'
 import Link from 'next/link'
 
@@ -41,6 +42,7 @@ export default function Contact() {
 						))}
 					</div>
 				</div>
+				<ContactForm />
 				<Footer />
 			</div>
 		</>
