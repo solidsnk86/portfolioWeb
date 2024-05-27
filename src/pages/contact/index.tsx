@@ -1,6 +1,7 @@
 import { BackButton } from '@/components/BackButton'
 import { BackgroundFlares } from '@/components/BackgroundFlares'
 import { Card } from '@/components/Card'
+import Head from 'next/head'
 import { Footer } from '@/components/Footer'
 import ContactForm from '@/components/Form'
 import { socials } from '@/components/const'
@@ -9,6 +10,9 @@ import Link from 'next/link'
 export default function Contact() {
 	return (
 		<>
+			<Head>
+				<title>Contaco</title>
+			</Head>
 			<BackgroundFlares />
 			<BackButton className=' md:fixed relative' />
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>

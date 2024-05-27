@@ -3,6 +3,7 @@ import { BackgroundFlares } from '@/components/BackgroundFlares'
 import { DataProjects } from '../components/DataProjects'
 import { ExternalLink, ArrowUpRight } from 'lucide-react'
 import { Footer } from '@/components/Footer'
+import { GitBranch } from 'tabler-icons-react'
 import { GithubDescription } from '../components/GithubDescription'
 import { GithubStats } from '@/components/GithubStats'
 import { Header } from '@/components/Header'
@@ -14,7 +15,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Particles from '@/components/particles'
 import Visit from '@/components/Visits'
-import { GitBranch } from 'tabler-icons-react'
 
 export default function Home() {
 	const { t } = useTranslation()
@@ -22,7 +22,7 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Calcagni Gabriel</title>
+				<title>{title}</title>
 				<meta name='description' content={description} />
 				<meta property='og:image' content={ogImg} />
 				<meta property='author' content='solidSnk86' />
