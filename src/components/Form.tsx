@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 
 const ContactForm = () => {
+	const { t } = useTranslation()
 	const [formData, setFormData] = useState({
 		nombre: '',
 		telefono: '',
@@ -79,26 +81,28 @@ const ContactForm = () => {
 
 	return (
 		<div>
-			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-8'>Contacto</h2>
+			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-8'>
+				{t('contacto')}
+			</h2>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className='grid justify-center mx-auto gap-3 contact-form'
 			>
-				<input name='nombre' value={formData.nombre} onChange={handleChange} placeholder='Nombre' />
+				<input name='nombre' value={formData.nombre} onChange={handleChange} placeholder={t('name')} />
 				<input
 					name='telefono'
 					value={formData.telefono}
 					onChange={handleChange}
-					placeholder='Teléfono'
+					placeholder={t('telephone')}
 				/>
-				<input name='correo' value={formData.correo} onChange={handleChange} placeholder='Correo' />
-				<input name='asunto' value={formData.asunto} onChange={handleChange} placeholder='Asunto' />
+				<input name='correo' value={formData.correo} onChange={handleChange} placeholder={t('email')} />
+				<input name='asunto' value={formData.asunto} onChange={handleChange} placeholder={t('subject')} />
 				<textarea
 					name='mensaje'
 					id='mensaje'
 					value={formData.mensaje}
 					onChange={handleChange}
-					placeholder='Mensaje'
+					placeholder={t('comment')}
 				/>
 				<button
 					type='submit'

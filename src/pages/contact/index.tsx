@@ -5,13 +5,15 @@ import Head from 'next/head'
 import { Footer } from '@/components/Footer'
 import ContactForm from '@/components/Form'
 import { socials } from '@/components/const'
+import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 
 export default function Contact() {
+	const { t } = useTranslation()
 	return (
 		<>
 			<Head>
-				<title>Contaco</title>
+				<title>{t('contacto')}</title>
 			</Head>
 			<BackgroundFlares />
 			<BackButton className=' md:fixed relative' />

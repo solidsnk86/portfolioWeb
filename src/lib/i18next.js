@@ -26,7 +26,8 @@ i18n.use(initReactI18next).init({
 				country: 'Country',
 				flag: 'Flag',
 				lastVisitFrom: 'from',
-				aboutMeLast: 'during the evenings. Currently, I am studying at the National Technological University of San Rafael, Mendoza and keep learning!',
+				aboutMeLast:
+					'during the evenings. Currently, I am studying at the National Technological University of San Rafael, Mendoza and keep learning!',
 				blogTitle: 'Welcome to my blog!',
 				latestPost: 'Latest post:',
 				buttonPost: 'Post Something',
@@ -34,6 +35,10 @@ i18n.use(initReactI18next).init({
 				m1: 'Basically you can post whatever',
 				m2: 'Whats going on?',
 				name: 'Name',
+				telephone: 'Telephone',
+				email: 'Email',
+				subject: 'Subject',
+				comment: 'Message',
 				titlePost: 'Post Title',
 				githubUser: 'Github user ID',
 				postDescription: 'Description about your post..',
@@ -45,7 +50,8 @@ i18n.use(initReactI18next).init({
 				cvLink: `${documentEnCv}`,
 				cvTitle: 'See the document at Google Docs',
 				footerLink: 'Go to github profile',
-				update: 'Last portfolio update: '
+				update: 'Last portfolio update: ',
+				contacto: 'Contact'
 			}
 		},
 		es: {
@@ -69,7 +75,8 @@ i18n.use(initReactI18next).init({
 				country: 'País',
 				flag: 'Bandera',
 				lastVisitFrom: 'desde',
-				aboutMeLast: 'durante las tardes. Actualmente, estoy estudiando en la Universidad Tecnológica Nacional de San Rafael, Mendoza y continúo aprendiendo.',
+				aboutMeLast:
+					'durante las tardes. Actualmente, estoy estudiando en la Universidad Tecnológica Nacional de San Rafael, Mendoza y continúo aprendiendo.',
 				blogTitle: 'Bienvenidos a mi blog!',
 				latestPost: 'Último post:',
 				buttonPost: 'Publica algo!',
@@ -77,6 +84,10 @@ i18n.use(initReactI18next).init({
 				m1: 'Básicamente puedes publicar lo que sea',
 				m2: 'Que esta sucediendo?',
 				name: 'Nombre',
+				telephone: 'Teléfono',
+				email: 'Correo',
+				subject: 'Asunto',
+				comment: 'Mensaje',
 				titlePost: 'Título de la publicación',
 				githubUser: 'Usuario de Github',
 				postDescription: 'Descripción acerca de tu publicación..',
@@ -88,7 +99,8 @@ i18n.use(initReactI18next).init({
 				cvLink: `${documentEsCv}`,
 				cvTitle: 'Ver el documento en Google Docs',
 				footerLink: 'Ir al perfil de github',
-				update: 'Última actualización del portfolio: '
+				update: 'Última actualización del portfolio: ',
+				contacto: 'Contacto'
 			}
 		}
 	},
