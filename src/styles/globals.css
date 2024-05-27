@@ -68,32 +68,25 @@ body.loading * {
 	transition: 0.3s ease-in-out;
 }
 
-.form input,
+.contact-form {
+	padding-block: 10px;
+}
+
+.contact-form > input,
 textarea {
-	max-width: 200px;
 	background-color: transparent;
-	border-radius: 10px;
+	border: 1px solid #333;
+	padding: 10px;
+	border-radius: 5px;
+	color: #fff;
 }
 
-textarea {
-	width: 300px;
-	max-height: 300px;
-	overflow: auto;
-	resize: vertical;
-}
-
-.login-form .buttons-login > button {
-	border: 1px solid #666;
-	border-radius: 50px;
-	padding: 4px 12px;
-	font-weight: bold;
-}
-
-.login-form .buttons-login > button:hover {
-	filter: drop-shadow(0 0 6px #999);
-	background-color: #ccc;
-	color: #000000;
-	transition: 0.1s ease-in-out;
+.message-alert {
+	position: fixed;
+	top: 0;
+	left: 20%;
+	justify-content: center;
+	margin: 0 auto;
 }
 
 .hr-container {
