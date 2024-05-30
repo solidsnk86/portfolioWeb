@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react'
 import FormatDate from '@/components/FormatDate'
 import { LinkComponent } from '@/components/LinkComponent'
 
-const sendDataFollowing = async (jsonData) => {
+const sendDataToSupabase = async (tableName, jsonData) => {
 	try {
-		const { data, error } = await supabase.from('github_followings_user').upsert(
+		const { data, error } = await supabase.from(tableName).upsert(
 			[
 				{
 					avatar_url: jsonData.avatar_url,
@@ -34,53 +34,39 @@ const sendDataFollowing = async (jsonData) => {
 		)
 
 		if (error) {
-			console.error('Data followings not sent correctly:', error)
+			console.error(`Data not sent correctly to ${tableName}:`, error)
 		} else {
-			console.log('Data followings sent correctly:', data)
+			console.log(`Data sent correctly to ${tableName}:`, data)
 		}
 	} catch (error) {
-		console.error('Unexpected error:', error)
+		console.error(`Unexpected error sending data to ${tableName}:`, error)
 	}
 }
 
-const sendDataFollowers = async (jsonData) => {
-	try {
-		const { data, error } = await supabase.from('github_followers_user').upsert(
-			[
-				{
-					avatar_url: jsonData.avatar_url,
-					events_url: jsonData.events_url,
-					followers_url: jsonData.followers_url,
-					following_url: jsonData.following_url,
-					gists_url: jsonData.gists_url,
-					gravatar_id: jsonData.gravatar_id,
-					html_url: jsonData.html_url,
-					id: jsonData.id,
-					login: jsonData.login,
-					node_id: jsonData.node_id,
-					organizations_url: jsonData.organizations_url,
-					received_events_url: jsonData.received_events_url,
-					repos_url: jsonData.repos_url,
-					site_admin: jsonData.site_admin,
-					starred_url: jsonData.starred_url,
-					subscriptions_url: jsonData.subscriptions_url,
-					type: jsonData.type,
-					url: jsonData.url
-				}
-			],
-			{
-				onConflict: 'id'
-			}
-		)
-
-		if (error) {
-			console.error('Data followers not sent correctly:', error)
-		} else {
-			console.log('Data followers sent correctly:', data)
-		}
-	} catch (error) {
-		console.error('Unexpected error:', error)
+const fetchGitHubData = async (url) => {
+	const response = await fetch(url)
+	if (!response.ok) {
+		throw new Error(`Error fetching GitHub data. Status: ${response.status}`)
 	}
+	return await response.json()
+}
+
+const fetchAndSendGitHubData = async (type, pageLimit, sendDataFunc) => {
+	let allData = []
+	let page = 1
+
+	while (page <= pageLimit) {
+		const url = `https://api.github.com/users/solidsnk86/${type}?page=${page}`
+		const jsonData = await fetchGitHubData(url)
+		if (jsonData.length === 0) break
+
+		allData = allData.concat(jsonData)
+		await Promise.all(jsonData.map((user) => sendDataFunc(user)))
+
+		page++
+	}
+
+	return allData
 }
 
 export const VisitData = () => {
@@ -89,107 +75,34 @@ export const VisitData = () => {
 	const [githubFollowingData, setGithubFollowingData] = useState([])
 
 	useEffect(() => {
-		const fetchGitHubFollowing = async () => {
+		const fetchData = async () => {
 			try {
-				let allFollowingUsers = []
-				let page = 1
-				let moreData = true
-
-				while (moreData) {
-					const response = await fetch(
-						`https://api.github.com/users/solidsnk86/following?page=${page}`
-					)
-					if (!response.ok) {
-						console.error(
-							'Error al recibir los datos de GitHub (Following). Status:',
-							response.status
-						)
-						break
-					}
-
-					const jsonData = await response.json()
-					if (jsonData.length === 0) {
-						moreData = false
-						break
-					}
-
-					allFollowingUsers = allFollowingUsers.concat(jsonData)
-
-					for (const followingUser of jsonData) {
-						await sendDataFollowing(followingUser)
-					}
-
-					page++
-				}
-
-				setGithubFollowingData(allFollowingUsers)
-			} catch (error) {
-				console.error('Error durante la recuperación de datos de GitHub (Following):', error)
-			}
-		}
-
-		const fetchGitHubFollowers = async () => {
-			try {
-				let allFollowersUsers = []
-				let page = 1
-				let moreData = true
-
-				while (moreData) {
-					const response = await fetch(
-						`https://api.github.com/users/solidsnk86/followers?page=${page}`
-					)
-					if (!response.ok) {
-						console.error(
-							'Error al recibir los datos de GitHub (Followers). Status:',
-							response.status
-						)
-						break
-					}
-
-					const jsonData = await response.json()
-					if (jsonData.length === 0) {
-						moreData = false
-						break
-					}
-
-					allFollowersUsers = allFollowersUsers.concat(jsonData)
-
-					for (const follower of jsonData) {
-						await sendDataFollowers(follower)
-					}
-
-					page++
-				}
-
-				setGithubFollowersData(allFollowersUsers)
-			} catch (error) {
-				console.error('Error durante la recuperación de datos de GitHub (Followers):', error)
-			}
-		}
-
-		const fetchAddressData = async () => {
-			try {
-				const { data, error } = await supabase
+				const { data: addressData, error: addressError } = await supabase
 					.from('address')
 					.select('*')
 					.limit(50)
 					.order('created_at', { ascending: false })
-				if (error) {
-					console.error('Error al recibir los datos de dirección IP:', error)
-				} else {
-					setItems(data)
-				}
+
+				if (addressError) throw addressError
+				setItems(addressData)
+
+				const [followers, following] = await Promise.all([
+					fetchAndSendGitHubData('followers', 5, (user) =>
+						sendDataToSupabase('github_followers_user', user)
+					),
+					fetchAndSendGitHubData('following', 5, (user) =>
+						sendDataToSupabase('github_followings_user', user)
+					)
+				])
+
+				setGithubFollowersData(followers)
+				setGithubFollowingData(following)
 			} catch (error) {
-				console.error('Error durante la recuperación de datos de dirección IP:', error)
+				console.error('Error during data fetching:', error)
 			}
 		}
 
-		const fetchData = async () => {
-			await fetchAddressData()
-		}
 		fetchData()
-		fetchGitHubFollowers()
-		fetchGitHubFollowing()
 	}, [])
 
 	const followingLogins = new Set(githubFollowingData.map((user) => user.login))
