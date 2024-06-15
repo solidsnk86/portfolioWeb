@@ -14,5 +14,6 @@
   "editor.guides.bracketPairs": true,
   "editor.cursorBlinking": "expand",
   "editor.stickyScroll.enabled": true,
-  "editor.experimental.asyncTokenization": true
+  "editor.experimental.asyncTokenization": true,
+  "liveServer.settings.port": 5501
 }
