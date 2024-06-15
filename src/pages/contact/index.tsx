@@ -13,7 +13,7 @@ export default function Contact() {
 	return (
 		<>
 			<Head>
-				<title>{t('contacto')}</title>
+				<title>{t('contact')}</title>
 			</Head>
 			<BackgroundFlares />
 			<BackButton className=' md:fixed relative' />
