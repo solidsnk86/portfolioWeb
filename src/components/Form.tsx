@@ -14,7 +14,9 @@ const ContactForm = () => {
 		mensaje: ''
 	})
 	const {
+		register,
 		handleSubmit,
+		reset,
 		formState: { isSubmitting }
 	} = useForm()
 
@@ -65,6 +67,14 @@ const ContactForm = () => {
 						theme: 'dark'
 					}
 				)
+				reset() // Resetea el formulario
+				setFormData({
+					nombre: '',
+					telefono: '',
+					correo: '',
+					asunto: '',
+					mensaje: ''
+				})
 			} else {
 				toast.error('Error al enviar el formulario. Por favor, intenta nuevamente más tarde.', {
 					position: 'top-center',
@@ -87,30 +97,35 @@ const ContactForm = () => {
 				className='grid justify-center mx-auto gap-3 contact-form'
 			>
 				<input
+					{...register('nombre')}
 					name='nombre'
 					value={formData.nombre}
 					onChange={handleChange}
 					placeholder={t('name')}
 				/>
 				<input
+					{...register('telefono')}
 					name='telefono'
 					value={formData.telefono}
 					onChange={handleChange}
 					placeholder={t('telephone')}
 				/>
 				<input
+					{...register('correo')}
 					name='correo'
 					value={formData.correo}
 					onChange={handleChange}
 					placeholder={t('email')}
 				/>
 				<input
+					{...register('asunto')}
 					name='asunto'
 					value={formData.asunto}
 					onChange={handleChange}
 					placeholder={t('subject')}
 				/>
 				<textarea
+					{...register('mensaje')}
 					name='mensaje'
 					id='mensaje'
 					value={formData.mensaje}
