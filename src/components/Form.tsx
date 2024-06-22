@@ -81,9 +81,7 @@ const ContactForm = () => {
 
 	return (
 		<div>
-			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-8'>
-				{t('contact')}
-			</h2>
+			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-8'>{t('contact')}</h2>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
 				className='grid justify-center mx-auto gap-3 contact-form'

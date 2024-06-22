@@ -81,6 +81,10 @@ textarea {
 	color: #fff;
 }
 
+.contact-form > input:focus {
+	outline: 2px solid #1C64F2;
+}
+
 .message-alert {
 	position: fixed;
 	top: 0;
