@@ -67,7 +67,7 @@ const ContactForm = () => {
 						theme: 'dark'
 					}
 				)
-				reset() // Resetea el formulario
+				reset()
 				setFormData({
 					nombre: '',
 					telefono: '',

@@ -105,7 +105,7 @@ export default function Home() {
 				</div>
 			))}
 			<Visit />
-			<p className='text-center text-zinc-600 text-xs pb-2'>{t('last_footer')}</p>
+			<p className='text-center text-zinc-600 text-[11px] pb-2'>{t('last_footer')}</p>
 		</>
 	)
 }
