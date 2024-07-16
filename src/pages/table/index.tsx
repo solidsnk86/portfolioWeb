@@ -180,6 +180,9 @@ export const VisitData = () => {
 
 	return (
 		<>
+			<h1 className='text-center font-bold text-4xl mt-10 text-zinc-50'>
+				Control de Usuarios de la web y usuarios de Github
+			</h1>
 			<section className='xl:p-16 p-3 overflow-hidden overflow-x-auto xl:flex mx-auto xl:justify-center text-zinc-100 h-full'>
 				<table className='border-zinc-800 border z-50' cellPadding={10}>
 					<thead className='text-justify xl:text-sm text-xs'>
@@ -226,7 +229,8 @@ export const VisitData = () => {
 			</div>
 			<div>
 				<p className='p-4 border border-zinc-700 w-1/2 justify-center font-mono font-semibold mx-auto my-5 rounded-lg bg-zinc-700/50 text-zinc-50 text-center'>
-					Total de usuarios que sigo: {githubFollowingData.length}
+					Total de usuarios que sigo:{' '}
+					<span className='text-orange-400'>{githubFollowingData.length}</span>
 				</p>
 			</div>
 			<div className='justify-center github-users xl:w-10/12'>
@@ -240,11 +244,15 @@ export const VisitData = () => {
 			</div>
 			<div>
 				<p className='p-4 border border-zinc-700 w-1/2 justify-center mx-auto my-5 rounded-lg font-mono font-semibold bg-zinc-700/50 text-zinc-50 text-center'>
-					Total de usuarios seguidores: {githubFollowersData.length}
+					Total de usuarios seguidores:{' '}
+					<span className='text-orange-400'>{githubFollowersData.length}</span>
 				</p>
 			</div>
 			<div className='border border-zinc-700 xl:w-1/2 justify-center mx-auto my-5 rounded-lg bg-zinc-700/50 overflow-hidden'>
-				<h2 className='text-zinc-50 text-center h-auto p-4 bg-zinc-800/60 w-[100%] border-b border-zinc-700/80 font-mono font-semibold'>{`Usuarios que no me siguen de vuelta: ${nonFollowers.length}`}</h2>
+				<h2 className='text-zinc-50 text-center h-auto p-4 bg-zinc-800/60 w-[100%] border-b border-zinc-700/80 font-mono font-semibold'>
+					Usuarios que no me siguen de vuelta:{' '}
+					<span className='text-orange-400'>{nonFollowers.length}</span>
+				</h2>
 				{nonFollowers.map((login) => (
 					<div key={login} className='flex p-2 text-slate-50 mx-auto justify-center'>
 						<a href={`https://github.com/${login}/`} className=' hover:underline'>
