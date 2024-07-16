@@ -68,7 +68,7 @@ export default function Home() {
 							<GithubStats repoName={project.repoName} />
 							<a
 								href={project.url}
-								className='hover:brightness-150 px-3 pb-3 rounded mt-2 text-md link hover:text-[#928BF9]'
+								className='brightness-150 px-3 pb-3 rounded mt-2 text-md link hover:text-[#928BF9] hover:underline'
 								target='_blank'
 								title={`Ir a la web ${project.url}`}
 								rel='noopener noreferrer'

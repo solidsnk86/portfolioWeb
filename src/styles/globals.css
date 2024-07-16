@@ -351,5 +351,4 @@ textarea {
 	display: grid;
 	margin: 0 auto;
 	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-	color: #928bf9;
 }
