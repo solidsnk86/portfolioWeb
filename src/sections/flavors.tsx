@@ -209,7 +209,7 @@ const Lang = [
 
 const CardSkill = ({ logo, name }: { logo: string | ReactNode; name: string }) => {
 	return (
-		<div title={name} className='flex justify-center m-3 text-white transition-transform'>
+		<div title={name} className='flex justify-center m-3 text-white transition-transform logo-icon'>
 			{logo}
 		</div>
 	)
@@ -225,7 +225,7 @@ export const Flavors = () => {
 			</h2>
 			<div className='gap-2 py-20 flavors-section xl:w-10/12'>
 				{Lang.map((card, index) => (
-					<Card key={index}>
+					<Card key={index} radilaGradient='120px' className='flavor-card'>
 						<div className='text-center'>
 							<CardSkill key={card.name} {...card} />
 							<small className='text-[#928bf9] cursor-default'>{card.name}</small>

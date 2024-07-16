@@ -352,3 +352,7 @@ textarea {
 	margin: 0 auto;
 	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
+
+.flavor-card:hover .logo-icon {
+	filter:brightness(150%);
+}
