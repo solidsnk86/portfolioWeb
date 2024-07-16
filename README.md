@@ -5,7 +5,7 @@
 
 </div>
 
-`This is my web portfolio in React with NextJs 14`
+`This is my web portfolio made with React and NextJs 14`
 
 Welcome to my portfolio, a space where I showcase my diverse range of projects. Leveraging the `GitHub Stats API`, you can explore the star count of each project, providing insight into their popularity and community engagement. The dynamic and personalized features are powered by `Google Sheets CSV` integration, enabling seamless updates and a tailored experience.
 
@@ -36,6 +36,7 @@ I invite you to explore my work, get to know the projects, and witness the fusio
 > This web application utilizes Supabase with PostgreSQL as the backend to manage various functionalities, including user tables, article views tracking, likes handling, and date recording. Google Sheets CSV dynamically generates content and incorporates information. The application uses cookies to collect data, including user location (country and city), and tracks the number of visitors. All this data seamlessly integrates into my Supabase database in PostgreSQL.
 
 Feel free to download or clone this repository with git clone:
+
 ```bash
 git clone https://github.com/solidsnk86/portfolioWeb.git
 ```
@@ -56,7 +57,7 @@ You can adjust and modify the ESLint rules based on your preferences.
 
 This app is deployed on Vercel:
 
-[![Deployed on Vercel](https://img.shields.io/badge/Vercel-Deployed-0076FF.svg?logo=vercel&logoColor=white)](https://neotecs.vercel.app/)
+[![Deployed on Vercel](https://img.shields.io/badge/Vercel-Deployed-0076FF.svg?logo=vercel&logoColor=white)](https://vercel.com//)
 
 #
 
