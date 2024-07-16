@@ -1,6 +1,6 @@
 import { AboutMe } from '@/components/AboutMe'
 import { DataProjects } from '../components/DataProjects'
-import { ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { Footer } from '@/components/Footer'
 import { GitBranch } from 'tabler-icons-react'
 import { GithubDescription } from '../components/GithubDescription'
