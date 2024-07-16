@@ -64,7 +64,7 @@ const sendDataToSupabase = async (
 	}
 }
 
-const fetchGitHubData = async (url) => {
+const fetchGitHubData = async (url: string | URL | Request) => {
 	const response = await fetch(url)
 	if (!response.ok) {
 		throw new Error(`Error fetching GitHub data. Status: ${response.status}`)
@@ -72,7 +72,11 @@ const fetchGitHubData = async (url) => {
 	return await response.json()
 }
 
-const fetchAndSendGitHubData = async (type, pageLimit, sendDataFunc) => {
+const fetchAndSendGitHubData = async (
+	type: string,
+	pageLimit: number,
+	sendDataFunc: { (user: any): Promise<void>; (user: any): Promise<void>; (arg0: any): any }
+) => {
 	let allData = []
 	let page = 1
 
@@ -82,7 +86,7 @@ const fetchAndSendGitHubData = async (type, pageLimit, sendDataFunc) => {
 		if (jsonData.length === 0) break
 
 		allData = allData.concat(jsonData)
-		await Promise.all(jsonData.map((user) => sendDataFunc(user)))
+		await Promise.all(jsonData.map((user: any) => sendDataFunc(user)))
 
 		page++
 	}
@@ -108,11 +112,53 @@ export const VisitData = () => {
 				setItems(addressData)
 
 				const [followers, following] = await Promise.all([
-					fetchAndSendGitHubData('followers', 5, (user) =>
-						sendDataToSupabase('github_followers_user', user)
+					fetchAndSendGitHubData(
+						'followers',
+						5,
+						(user: {
+							avatar_url: any
+							events_url: any
+							followers_url: any
+							following_url: any
+							gists_url: any
+							gravatar_id: any
+							html_url: any
+							id: any
+							login: any
+							node_id: any
+							organizations_url: any
+							received_events_url: any
+							repos_url: any
+							site_admin: any
+							starred_url: any
+							subscriptions_url: any
+							type: any
+							url: any
+						}) => sendDataToSupabase('github_followers_user', user)
 					),
-					fetchAndSendGitHubData('following', 5, (user) =>
-						sendDataToSupabase('github_followings_user', user)
+					fetchAndSendGitHubData(
+						'following',
+						5,
+						(user: {
+							avatar_url: any
+							events_url: any
+							followers_url: any
+							following_url: any
+							gists_url: any
+							gravatar_id: any
+							html_url: any
+							id: any
+							login: any
+							node_id: any
+							organizations_url: any
+							received_events_url: any
+							repos_url: any
+							site_admin: any
+							starred_url: any
+							subscriptions_url: any
+							type: any
+							url: any
+						}) => sendDataToSupabase('github_followings_user', user)
 					)
 				])
 
