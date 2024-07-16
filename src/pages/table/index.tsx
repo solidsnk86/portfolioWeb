@@ -1,6 +1,7 @@
 import { supabase } from '@/utils/supabase'
 import { useState, useEffect } from 'react'
 import FormatDate from '@/components/FormatDate'
+import { Footer } from '@/components/Footer'
 
 const sendDataToSupabase = async (
 	tableName: string,
@@ -211,18 +212,20 @@ export const VisitData = () => {
 					</tbody>
 				</table>
 			</section>
-
+			<h1 className='my-10 text-slate-50 text-3xl text-center font-bold'>
+				Control de Usuarios de Github
+			</h1>
 			<div className='justify-center github-users xl:w-10/12'>
 				{githubFollowingData.map((data) => (
 					<div key={data.node_id} className='flex mx-1 space-y-2'>
 						<a href={`https://github.com/${data.login}/`} title={`@${data.login}`}>
-							<img src={data.avatar_url} className='w-16 h-16 rounded-full my-2' />
+							<img src={data.avatar_url} className='w-14 h-14 rounded-full my-2' />
 						</a>
 					</div>
 				))}
 			</div>
 			<div>
-				<p className='p-4 border border-zinc-700 w-1/2 justify-center mx-auto my-5 rounded-lg bg-zinc-700/50 text-zinc-50 text-center'>
+				<p className='p-4 border border-zinc-700 w-1/2 justify-center font-mono font-semibold mx-auto my-5 rounded-lg bg-zinc-700/50 text-zinc-50 text-center'>
 					Total de usuarios que sigo: {githubFollowingData.length}
 				</p>
 			</div>
@@ -230,24 +233,27 @@ export const VisitData = () => {
 				{githubFollowersData.map((data) => (
 					<div key={data.node_id} className='flex mx-1 space-y-2'>
 						<a href={`https://github.com/${data.login}/`} title={`@${data.login}`}>
-							<img src={data.avatar_url} className='w-16 h-16 rounded-full my-2' />
+							<img src={data.avatar_url} className='w-14 h-14 rounded-full my-2' />
 						</a>
 					</div>
 				))}
 			</div>
 			<div>
-				<p className='p-4 border border-zinc-700 w-1/2 justify-center mx-auto my-5 rounded-lg bg-zinc-700/50 text-zinc-50 text-center'>
+				<p className='p-4 border border-zinc-700 w-1/2 justify-center mx-auto my-5 rounded-lg font-mono font-semibold bg-zinc-700/50 text-zinc-50 text-center'>
 					Total de usuarios seguidores: {githubFollowersData.length}
 				</p>
 			</div>
-			<div className='border border-zinc-700 xl:w-1/2 justify-center mx-auto my-5 rounded-lg bg-zinc-700/50'>
-				<h2 className='text-zinc-50 max-w-fit h-auto p-4 justify-center mx-auto'>{`Usuarios que no me siguen de vuelta: ${nonFollowers.length}`}</h2>
+			<div className='border border-zinc-700 xl:w-1/2 justify-center mx-auto my-5 rounded-lg bg-zinc-700/50 overflow-hidden'>
+				<h2 className='text-zinc-50 text-center h-auto p-4 bg-zinc-800/60 w-[100%] border-b border-zinc-700/80 font-mono font-semibold'>{`Usuarios que no me siguen de vuelta: ${nonFollowers.length}`}</h2>
 				{nonFollowers.map((login) => (
-					<div key={login} className='flex p-2 text-slate-50'>
-						<a href={`https://github.com/${login}/`}>{login}</a>
+					<div key={login} className='flex p-2 text-slate-50 mx-auto justify-center'>
+						<a href={`https://github.com/${login}/`} className=' hover:underline'>
+							{login}
+						</a>
 					</div>
 				))}
 			</div>
+			<Footer />
 		</>
 	)
 }

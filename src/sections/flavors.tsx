@@ -209,7 +209,10 @@ const Lang = [
 
 const CardSkill = ({ logo, name }: { logo: string | ReactNode; name: string }) => {
 	return (
-		<div title={name} className='flex justify-center m-3 text-white transition-transform logo-icon'>
+		<div
+			title={name}
+			className='flex justify-center m-3 text-white transition-transform logo-icon duration-300'
+		>
 			{logo}
 		</div>
 	)
