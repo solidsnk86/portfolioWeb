@@ -1,7 +1,5 @@
-import { DjangoIcon } from '@/components/icons/DjangoIcon'
 import { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
-import { VideoReactIcon } from '@/components//icons/VideoReactIcon'
 
 const Lang = [
 	{
@@ -9,7 +7,7 @@ const Lang = [
 		logo: (
 			<div
 				className={
-					'translate-x-[-94px] relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
+					'relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
 				}
 			>
 				<svg
@@ -26,33 +24,21 @@ const Lang = [
 		)
 	},
 	{
-		name: 'Django',
+		name: 'NextJs',
 		logo: (
 			<div
 				className={
-					'translate-x-[94px] relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
-				}
-			>
-				<DjangoIcon />
-			</div>
-		)
-	},
-	{
-		name: 'Tailwind CSS',
-		logo: (
-			<div
-				className={
-					'translate-x-[-133px] relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
+					' relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
 				}
 			>
 				<svg
 					role='img'
 					viewBox='0 0 24 24'
 					xmlns='http://www.w3.org/2000/svg'
-					fill='#06B6D4'
 					height={30}
+					fill='#000000'
 				>
-					<path d='M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z' />
+					<path d='M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z' />
 				</svg>
 			</div>
 		)
@@ -62,7 +48,7 @@ const Lang = [
 		logo: (
 			<div
 				className={
-					'translate-x-[92px] relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
+					' relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
 				}
 			>
 				<svg
@@ -83,7 +69,7 @@ const Lang = [
 		logo: (
 			<div
 				className={
-					'translate-x-[-76px] relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
+					' relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
 				}
 			>
 				<svg
@@ -103,7 +89,7 @@ const Lang = [
 		logo: (
 			<div
 				className={
-					'translate-y-[32px] relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
+					' relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
 				}
 			>
 				<svg
@@ -123,7 +109,7 @@ const Lang = [
 		logo: (
 			<div
 				className={
-					'translate-x-[96px] relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
+					' relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
 				}
 			>
 				<svg
@@ -137,61 +123,52 @@ const Lang = [
 				</svg>
 			</div>
 		)
+	},
+	{
+		name: 'Tailwind CSS',
+		logo: (
+			<div
+				className={
+					' relative w-fit flex justify-center items-center px-1 py-1 overflow-hidden rounded-lg border transition bg-zinc-800/95 border-zinc-600/75 hover:shadow-lg hover:brightness-125'
+				}
+			>
+				<svg
+					role='img'
+					viewBox='0 0 24 24'
+					xmlns='http://www.w3.org/2000/svg'
+					fill='#06B6D4'
+					height={30}
+				>
+					<path d='M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z' />
+				</svg>
+			</div>
+		)
 	}
 ]
 
 const CardSkill = ({ logo, name }: { logo: string | ReactNode; name: string }) => {
 	return (
-		<div title={name} className='flex items-center justify-center text-white transition-transform'>{logo}</div>
+		<div title={name} className='flex items-center justify-center text-white transition-transform'>
+			{logo}
+		</div>
 	)
 }
 
-export const LF = () => {
+export const Flavors = () => {
 	const { t } = useTranslation()
 
 	return (
-		<section className='flex flex-col flex-wrap items-center justify-center'>
+		<>
 			<h2 className='xl:text-5xl md:text-4xl text-2xl font-bold text-center text-sky-100 mt-[100px]'>
 				{t('sectionLF')}
 			</h2>
-			<VideoReactIcon />
-			<div className='relative flex flex-col items-center justify-center w-full h-full gap-4 py-20 overflow-hidden rounded-lg bg-background'>
-				<img
-					className='absolute rotation'
-					src='/img/blue-marble.png'
-					width={80}
-					height={80}
-					alt='A wanderfull image from the earth'
-					loading='eager'
-				/>
-				<img
-					className='absolute translate-x-[194px] rotate-12 z-10'
-					src='/img/saturn.png'
-					width={80}
-					height={80}
-					loading='lazy'
-				/>
-				<img
-					className='absolute translate-y-[-94px] translate-x-3 rotate-12 z-10'
-					src='/img/marte.png'
-					width={25}
-					height={25}
-					loading='lazy'
-				/>
-				<img
-					className='absolute translate-x-[-172px] translate-y-[90px] rotate-12 z-10'
-					src='/img/jupiter.png'
-					width={65}
-					height={65}
-					loading='lazy'
-				/>
-				<span className='absolute border-[1px] border-dashed border-zinc-600/75 h-[390px] w-[390px] rounded-full' />
-				<span className='absolute border-[1px] border-dashed border-zinc-600/75 h-[290px] w-[290px] rounded-full' />
-				<span className='absolute border-[1px] border-dashed border-zinc-600/75 h-[190px] w-[190px] rounded-full' />
-				{Lang.map((card) => (
-					<CardSkill key={card.name} {...card} />
-				))}
-			</div>
-		</section>
+				<div className='relative gap-2 py-20 overflow-hidden flavors-section'>
+					{Lang.map((card) => (
+						<div className='py-4 border border-zinc-800 rounded-lg'>
+							<CardSkill key={card.name} {...card} />
+						</div>
+					))}
+				</div>
+		</>
 	)
 }

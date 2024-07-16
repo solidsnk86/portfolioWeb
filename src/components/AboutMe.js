@@ -26,7 +26,7 @@ export function AboutMe() {
 					<CardTitle>
 						{t('aboutMe')}
 						<Link
-							className='mx-1 duration-500 text-[#ffa600ab] underline link-shadow'
+							className='mx-1 duration-500 text-zinc-50 underline link-shadow'
 							href='https://neotecs.vercel.app/'
 						>
 							NeoTecs

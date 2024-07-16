@@ -1,14 +1,13 @@
 import { AboutMe } from '@/components/AboutMe'
-import { BackgroundFlares } from '@/components/BackgroundFlares'
 import { DataProjects } from '../components/DataProjects'
-import { ExternalLink, ArrowUpRight } from 'lucide-react'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { Footer } from '@/components/Footer'
 import { GitBranch } from 'tabler-icons-react'
 import { GithubDescription } from '../components/GithubDescription'
 import { GithubStats } from '@/components/GithubStats'
 import { Header } from '@/components/Header'
 import { HomeTitle } from '@/components/HomeTitle'
-import { LF } from '@/sections/languages'
+import { Flavors } from '@/sections/flavors'
 import { title, description, ogImg, favicon, inter } from '@/components/const'
 import { useTranslation } from 'react-i18next'
 import Head from 'next/head'
@@ -43,11 +42,10 @@ export default function Home() {
 			<header id='header' className='relative w-full mb-10 z-[9999]'>
 				<Header />
 			</header>
-			<BackgroundFlares />
 			<main className={`${inter.className} max-w-5xl mx-auto mt-14 pb-20 px-4 `}>
 				<Particles className='absolute inset-0 -z-0 animate-fade-in' quantity={133} />
 				<AboutMe />
-				<LF />
+				<Flavors />
 				<HomeTitle>{t('projectsTitle')}</HomeTitle>
 				<div className='sm:flex items-stretch mx-auto gap-4 sm:text-center p-6 md:p-0'>
 					{projects.map((project) => (
@@ -58,7 +56,7 @@ export default function Home() {
 							key={project.title}
 						>
 							<img className='image-card h-36 md:h-auto' src={project.image} alt={project.title} />
-							<span className='text-[10px] px-2 absolute top-[4px] left-[15px] z-10 bg-zinc-600/40 rounded-md update-dot capitalize'>
+							<span className='text-[10px] px-2 absolute top-[4px] left-[15px] z-10 rounded-md update-dot capitalize'>
 								{t('updated')} <GithubDescription repoName={project.repoName} />
 							</span>
 							<div className='grid text-center space-y-3 -translate-y-10 md:-translate-y-8'>
@@ -70,20 +68,20 @@ export default function Home() {
 							<GithubStats repoName={project.repoName} />
 							<a
 								href={project.url}
-								className='hover:brightness-150 px-3 pb-3 rounded mt-2 text-md link'
+								className='hover:brightness-150 px-3 pb-3 rounded mt-2 text-md link hover:text-[#928BF9]'
 								target='_blank'
 								title={`Ir a la web ${project.url}`}
 								rel='noopener noreferrer'
 							>
 								Link
-								<ExternalLink className='inline-flex ml-[2px] mb-[3px] relative transition-all duration-300 text-md w-[14px] h-[14px] link-icon' />
+								<ArrowUpRight className='inline-flex ml-[2px] mb-[3px] relative transition-all duration-300 text-md w-[14px] h-[14px]' />
 							</a>
 						</div>
 					))}
 				</div>
 			</main>
 			<Link
-				className='justify-center mx-auto flex w-fit text-amber-400 text-sm border p-2 rounded-md border-zinc-600/40 hover:border-zinc-700 transition-all duration-300 cv-link'
+				className='justify-center mx-auto flex w-fit text-zinc-50 text-sm border p-2 rounded-md border-zinc-600/40 hover:border-zinc-700 transition-all duration-300 cv-link'
 				href={t('cvLink')}
 				target='_blank'
 				title={t('cvTitle')}

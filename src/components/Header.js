@@ -32,7 +32,7 @@ export function Header() {
 							{navigation.map((item) => (
 								<li
 									key={item.href}
-									className='text-header-shadow font-semibold space-x-4 text-[#E0F2FE] mr-5 cursor-pointer hover:text-zinc-300 transition-all'
+									className='font-semibold space-x-4 text-[#E0F2FE] mr-5 cursor-pointer hover:text-[#928BF9] transition-all'
 								>
 									<Link href={item.href} target='_self'>
 										{item.name}

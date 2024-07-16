@@ -11,22 +11,22 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
 		mouseX.set(clientX - left)
 		mouseY.set(clientY - top)
 	}
-	const maskImage = useMotionTemplate`radial-gradient(340px at ${mouseX}px ${mouseY}px, white, transparent)`
+	const maskImage = useMotionTemplate`radial-gradient(260px at ${mouseX}px ${mouseY}px, white, transparent)`
 	const style = { maskImage, WebkitMaskImage: maskImage }
 
 	return (
 		<div
 			onMouseMove={onMouseMove}
-			className='overflow-hidden relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-800 '
+			className='overflow-hidden relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-500/50 border-zinc-800 '
 		>
 			<div className='pointer-events-none'>
-				<div className='absolute inset-0 z-0 transition duration-1000 [mask-image:linear-gradient(black,transparent)]' />
+				<div className='absolute inset-0 z-0 transition [mask-image:linear-gradient(#18181B,transparent)]' />
 				<motion.div
-					className='absolute inset-0 z-10 bg-gradient-to-bl opacity-100 via-gray-500/50 transition duration-1000 group-hover:opacity-50 '
+					className='absolute inset-0 z-10 bg-gradient-to-br opacity-100 via-[#928BF9] transition group-hover:opacity-50 '
 					style={style}
 				/>
 				<motion.div
-					className='absolute inset-0 z-10 opacity-0 mix-blend-overlay transition duration-1000 group-hover:opacity-100'
+					className='absolute inset-0 z-10 opacity-0 transition group-hover:opacity-100'
 					style={style}
 				/>
 			</div>

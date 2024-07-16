@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	background: #000000;
+	background: #18181b;
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
 }
@@ -54,13 +54,13 @@ body.loading * {
 
 .link-shadow {
 	padding-inline: 4px;
-	background-color: #f1870e2c;
+	background-color: #928bf963;
 	border-radius: 6px;
 	text-decoration: none;
 }
 
 .link-shadow:hover {
-	filter: drop-shadow(0 0 10px orange) brightness(110%);
+	filter: drop-shadow(0 0 10px #928bf9) brightness(110%);
 }
 
 .read-more:hover .arrow {
@@ -82,7 +82,7 @@ textarea {
 }
 
 .contact-form > input:focus {
-	outline: 2px solid #1C64F2;
+	outline: 2px solid #1c64f2;
 }
 
 .message-alert {
@@ -154,11 +154,6 @@ textarea {
 	100% {
 		transform: scale(100%);
 	}
-}
-
-.link:hover .link-icon {
-	transform: translateY(-2px);
-	transition: 0.2s all;
 }
 
 @keyframes spinn {
@@ -314,12 +309,12 @@ textarea {
 	overflow: hidden;
 }
 .cv-link:hover {
-	color: #ffd726;
+	color: #ffffff;
 }
 .cv-link::after {
 	content: '';
 	position: absolute;
-	background-color: #f0525267;
+	background-color: #928bf9a4;
 	width: 25px;
 	height: 25px;
 	top: 17%;
@@ -349,4 +344,12 @@ textarea {
 		transform: scale(3.8);
 		opacity: 1;
 	}
+}
+
+.flavors-section {
+	justify-content: center;
+	display: grid;
+	margin: 0 auto;
+	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+	color: #928bf9;
 }
