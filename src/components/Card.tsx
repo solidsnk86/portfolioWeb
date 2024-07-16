@@ -1,9 +1,5 @@
 import * as React from 'react'
-import {
-	motion,
-	useMotionTemplate,
-	useSpring
-} from 'framer-motion'
+import { motion, useMotionTemplate, useSpring } from 'framer-motion'
 import { PropsWithChildren } from 'react'
 
 export const Card: React.FC<PropsWithChildren> = ({ children }) => {
@@ -26,7 +22,7 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
 			<div className='pointer-events-none'>
 				<div className='absolute inset-0 z-0 transition duration-1000 [mask-image:linear-gradient(black,transparent)]' />
 				<motion.div
-					className='absolute inset-0 z-10 bg-gradient-to-bl opacity-100 via-zinc-500/50 transition duration-1000 group-hover:opacity-50 '
+					className='absolute inset-0 z-10 bg-gradient-to-bl opacity-100 via-gray-500/50 transition duration-1000 group-hover:opacity-50 '
 					style={style}
 				/>
 				<motion.div

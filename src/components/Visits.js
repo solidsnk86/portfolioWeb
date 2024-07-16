@@ -39,6 +39,7 @@ const Visit = () => {
 					const localURL = window.location.href
 					if (
 						localURL !== 'http://localhost:3000/' &&
+						localURL !== 'http://localhost:3001/' &&
 						jsonData.ip.address !== dataIp1 &&
 						jsonData.ip.address !== dataIp2
 					) {
