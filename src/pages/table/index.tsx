@@ -1,9 +1,30 @@
 import { supabase } from '@/utils/supabase'
 import { useState, useEffect } from 'react'
 import FormatDate from '@/components/FormatDate'
-import { LinkComponent } from '@/components/LinkComponent'
 
-const sendDataToSupabase = async (tableName, jsonData) => {
+const sendDataToSupabase = async (
+	tableName: string,
+	jsonData: {
+		avatar_url: any
+		events_url: any
+		followers_url: any
+		following_url: any
+		gists_url: any
+		gravatar_id: any
+		html_url: any
+		id: any
+		login: any
+		node_id: any
+		organizations_url: any
+		received_events_url: any
+		repos_url: any
+		site_admin: any
+		starred_url: any
+		subscriptions_url: any
+		type: any
+		url: any
+	}
+) => {
 	try {
 		const { data, error } = await supabase.from(tableName).upsert(
 			[
@@ -145,49 +166,41 @@ export const VisitData = () => {
 				</table>
 			</section>
 
-			<div className='grid justify-center mx-auto'>
+			<div className='justify-center github-users xl:w-10/12'>
 				{githubFollowingData.map((data) => (
 					<div key={data.node_id} className='flex mx-1 space-y-2'>
-						<img src={data.avatar_url} className='w-16 h-16 rounded-full my-2' />
-						<LinkComponent
-							url={data.html_url}
-							iconName='ExternalLink'
-							color='slate-100'
-							className='text-slate-50 pt-4 pl-2 hover:underline'
-						>
-							{data.login}
-						</LinkComponent>
+						<a href={`https://github.com/${data.login}/`} title={`@${data.login}`}>
+							<img src={data.avatar_url} className='w-16 h-16 rounded-full my-2' />
+						</a>
 					</div>
 				))}
-				<p className='p-4 bg-slate-500/50 text-slate-50 my-2 border border-zinc-700'>
-					Total que Sigo: {githubFollowingData.length}
+			</div>
+			<div>
+				<p className='p-4 border border-zinc-700 w-1/2 justify-center mx-auto my-5 rounded-lg bg-zinc-700/50 text-zinc-50 text-center'>
+					Total de usuarios que sigo: {githubFollowingData.length}
 				</p>
-
+			</div>
+			<div className='justify-center github-users xl:w-10/12'>
 				{githubFollowersData.map((data) => (
 					<div key={data.node_id} className='flex mx-1 space-y-2'>
-						<img src={data.avatar_url} className='w-16 h-16 rounded-full my-2' />
-						<LinkComponent
-							url={data.html_url}
-							iconName='ExternalLink'
-							color='slate-100'
-							className='text-slate-50 pt-4 pl-2 hover:underline'
-						>
-							{data.login}
-						</LinkComponent>
+						<a href={`https://github.com/${data.login}/`} title={`@${data.login}`}>
+							<img src={data.avatar_url} className='w-16 h-16 rounded-full my-2' />
+						</a>
 					</div>
 				))}
-				<p className='p-4 bg-slate-500/50 text-slate-50 my-2 border border-zinc-700'>
-					Total Seguidores: {githubFollowersData.length}
+			</div>
+			<div>
+				<p className='p-4 border border-zinc-700 w-1/2 justify-center mx-auto my-5 rounded-lg bg-zinc-700/50 text-zinc-50 text-center'>
+					Total de usuarios seguidores: {githubFollowersData.length}
 				</p>
-
-				<div className='border border-zinc-700 w-fit justify-center mx-auto my-5 rounded-lg bg-zinc-700/50'>
-					<h2 className='text-zinc-50 max-w-fit h-auto p-4 justify-center mx-auto'>{`No me siguen de vuelta: ${nonFollowers.length}`}</h2>
-					{nonFollowers.map((login) => (
-						<div key={login} className='flex p-2 text-slate-50'>
-							{login}
-						</div>
-					))}
-				</div>
+			</div>
+			<div className='border border-zinc-700 xl:w-1/2 justify-center mx-auto my-5 rounded-lg bg-zinc-700/50'>
+				<h2 className='text-zinc-50 max-w-fit h-auto p-4 justify-center mx-auto'>{`Usuarios que no me siguen de vuelta: ${nonFollowers.length}`}</h2>
+				{nonFollowers.map((login) => (
+					<div key={login} className='flex p-2 text-slate-50'>
+						<a href={`https://github.com/${login}/`}>{login}</a>
+					</div>
+				))}
 			</div>
 		</>
 	)
