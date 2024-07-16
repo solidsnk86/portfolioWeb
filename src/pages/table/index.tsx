@@ -187,7 +187,6 @@ export const VisitData = () => {
 				<table className='border-zinc-800 border z-50' cellPadding={10}>
 					<thead className='text-justify xl:text-sm text-xs'>
 						<tr className='head-table'>
-							<th>ID</th>
 							<th>IP</th>
 							<th>Latitude</th>
 							<th>Longitude</th>
@@ -201,8 +200,7 @@ export const VisitData = () => {
 					<tbody>
 						{items.map((item) => (
 							<tr key={item.id} className='text-zinc-100/80 text-[10px] xl:text-sm result'>
-								<td>{item.id}</td>
-								<td className=' max-w-24 overflow-hidden'>{item.ip_address}</td>
+								<td className='max-w-28 overflow-hidden'>{item.ip_address}</td>
 								<td>{item.latitude}</td>
 								<td>{item.longitude}</td>
 								<td>{item.postal_code}</td>
