@@ -88,13 +88,13 @@ const Visit = () => {
 
 	return (
 		<div className='cursor-default'>
-			<p className='text-amber-400 update-dot text-xs text-center'>
+			<p className='text-zinc-100 update-dot text-xs text-center'>
 				{t('profileViews')} {lastVisit.id}
 			</p>
-			<div id='visit' className='p-3 text-center text-amber-400 update-dot'>
+			<div id='visit' className='p-3 text-center text-[#928bf9] update-dot'>
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>
-						<span className='span-location mt-[3px] px-1 h-[8px] rounded-full bg-amber-600 xl:mr-2 mr-1 custom-ping hidden xl:flex' />
+						<span className='span-location mt-[3px] px-1 h-[8px] rounded-full bg-[#928bf9] xl:mr-2 mr-1 custom-ping hidden xl:flex' />
 						<p className='text-[10px] xl:text-xs last-visit'>
 							{t('lastVisit')} {FormatDate(lastVisit.created_at)} {t('lastVisitFrom')}{' '}
 							{lastVisit.city_name}, {lastVisit.country_name} {lastVisit.country_flag}
