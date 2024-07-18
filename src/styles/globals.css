@@ -363,3 +363,9 @@ textarea {
 	margin: 50px auto;
 	grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 }
+
+@media (width >= 1920px) {
+	body {
+		width: 80%;
+	}
+}
