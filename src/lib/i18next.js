@@ -1,6 +1,6 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import Experience from '../components/Experience'
+import Experience from '../components/Experience.tsx'
 import { documentEnCv, documentEsCv } from '../components/const'
 
 i18n.use(initReactI18next).init({
@@ -14,7 +14,9 @@ i18n.use(initReactI18next).init({
 				title: 'Portfolio of Calcagni Gabriel',
 				description: 'Hey, come and take a look at my portfolio!',
 				projectsTitle: 'My Projects...',
-				aboutMe: `Hi, my name is Gabriel 👋. I am Front End developer with +${Experience()} year of experience, using technologies such as React and Next.js. I work on my project`,
+				exp: 'year',
+				exps: 'years',
+				aboutMe: `Hi, my name is Gabriel 👋. I am Front End developer with ${Experience()} year of experience, using technologies such as React and Next.js. I work on my project`,
 				sectionLF: '"Library, frameworks, and languages that I mostly use"',
 				project1: 'Documentation for Web Programming',
 				project2: 'Digital Scoreboard for Bocce',
@@ -56,7 +58,9 @@ i18n.use(initReactI18next).init({
 				sending: 'Sending...',
 				toastAlert: 'Please, complete all fields.',
 				toastError: 'Error submitting the form. Please try again later.',
-				updated: 'Updated'
+				updated: 'Updated',
+				share: 'Share',
+				language: 'English (US)'
 			}
 		},
 		es: {
@@ -68,7 +72,9 @@ i18n.use(initReactI18next).init({
 				title: 'Portfolio de Calcagni Gabriel',
 				description: '¡Ey, pásate y echa un vistazo a mi portfolio!',
 				projectsTitle: 'Mis Proyectos...',
-				aboutMe: `Hola, mi nombre es Gabriel 👋. Soy desarrollador Front End con +${Experience()} año de experiencia, utilizando tecnologías como React y Next.js. Trabajo en mi proyecto`,
+				exp: 'año',
+				exps: 'años',
+				aboutMe: `Hola, mi nombre es Gabriel 👋. Soy desarrollador Front End con ${Experience()} año de experiencia, utilizando tecnologías como React y Next.js. Trabajo en mi proyecto`,
 				sectionLF: '"Librería, marcos, y lenguajes que más utilizo"',
 				project1: 'Documentación para Programación Web',
 				project2: 'Tablero Digital para bochas',
@@ -110,7 +116,9 @@ i18n.use(initReactI18next).init({
 				sending: 'Enviando...',
 				toastAlert: 'Por favor, completa todos los campos.',
 				toastError: 'Error al enviar el formulario. Por favor, intenta nuevamente más tarde.',
-				updated: 'Actualizado'
+				updated: 'Actualizado',
+				share: 'Compartir',
+				language: 'Español (AR)'
 			}
 		}
 	},

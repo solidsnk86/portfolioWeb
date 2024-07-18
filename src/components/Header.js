@@ -1,5 +1,6 @@
+import { description } from './const'
 import { GithubStats } from './GithubStats'
-import { Language } from 'tabler-icons-react'
+import { Language, Share } from 'tabler-icons-react'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
@@ -23,6 +24,20 @@ export function Header() {
 		{ name: t('navLink2'), href: '#proyectos' }
 	]
 
+	const share = () => {
+		try {
+			if (navigator.share) {
+				navigator.share({
+					title: document.title,
+					text: description,
+					url: location.href
+				})
+			}
+		} catch (_) {
+			console.error('Navigator cannot allow to share')
+		}
+	}
+
 	return (
 		<>
 			<div className='relative w-full h-14 p-2 flex text-white !bg-cover !bg-center'>
@@ -43,8 +58,15 @@ export function Header() {
 					</div>
 				</div>
 				<ul className='absolute right-5 top-3 flex'>
+					<button onClick={share} className='font-semibold text-sm md:text-base mt-[2px] hover:text-[#928BF9]'>
+						<Share className='inline w-[23px] mr-1' />
+						{t('share')}
+					</button>
 					<div className='space-x-2 px-4 pt-[1px] language-button' title={t('language')}>
-						<Language className='w-[23px] mt-[3px] hover:opacity-80' />
+						<button className='font-semibold text-sm md:text-base mt-[2px] hover:text-[#928BF9]'>
+							<Language className='inline w-[23px]' />
+							{t('language')}
+						</button>
 						<div className='flex dropdown-content p-3'>
 							<button id='top' onClick={() => changeLanguage('en')} className='hover:scale-[1.2]'>
 								<img

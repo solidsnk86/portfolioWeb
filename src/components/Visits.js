@@ -6,7 +6,6 @@ import FormatDate from './FormatDate'
 
 const dataIp1 = process.env.NEXT_PUBLIC_DATA_IP_1
 const dataIp2 = process.env.NEXT_PUBLIC_DATA_IP_2
-const dataIpV6 = process.env.NEXT_PUBLIC_DATA_IP_V6
 
 const Visit = () => {
 	const { t } = useTranslation()
@@ -42,7 +41,6 @@ const Visit = () => {
 					if (
 						localURL !== 'http://localhost:3000/' &&
 						localURL !== 'http://localhost:3001/' &&
-						jsonData.ip.v6 !== dataIpV6 &&
 						jsonData.ip.address !== dataIp1 &&
 						jsonData.ip.address !== dataIp2
 					) {

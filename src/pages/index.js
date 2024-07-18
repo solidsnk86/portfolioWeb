@@ -36,13 +36,19 @@ export default function Home() {
 				<meta property='twitter:card' content='summary_large_image' />
 				<link rel='shortcut icon' href={favicon} />
 				<link rel='apple-touch-icon' href={favicon} />
+				<meta
+					name='viewport'
+					content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+				/>
 				<meta name='theme-color' content={'#D4D4D8'} />
 			</Head>
 
 			<header id='header' className='relative w-full mb-10 z-[9999]'>
 				<Header />
 			</header>
-			<main className={`${inter.className} max-w-5xl mx-auto mt-14 pb-20 px-4 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0`}>
+			<main
+				className={`${inter.className} max-w-5xl mx-auto mt-14 pb-20 px-4 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0`}
+			>
 				<Particles className='absolute inset-0 -z-0 animate-fade-in' quantity={133} />
 				<AboutMe />
 				<Flavors />

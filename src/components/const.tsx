@@ -2,8 +2,8 @@ import { Github, Mail } from 'lucide-react'
 import { Inter, Inter_Tight as InterTight } from 'next/font/google'
 import { TwitterIcon } from '@/components/icons/TwitterIcon'
 
-export const title = 'Portfolio Calcagni Gabriel'
-export const description = '¡Ey, pásate y echa un vistazo a mi portfolio!'
+export const title = 'Calcagni Gabriel'
+export const description = '¡Ey, pásate y echa un vistazo a mi portafolio!'
 export const ogImg =
 	'https://raw.githubusercontent.com/solidsnk86/portfolioWeb/master/public/img/og/og-img.png'
 
