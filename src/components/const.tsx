@@ -5,7 +5,7 @@ import { TwitterIcon } from '@/components/icons/TwitterIcon'
 export const title = 'Calcagni Gabriel'
 export const description = '¡Ey, pásate y echa un vistazo a mi portafolio!'
 export const ogImg =
-	'https://raw.githubusercontent.com/solidsnk86/portfolioWeb/master/public/img/og/og-img.png'
+	'https://raw.githubusercontent.com/solidsnk86/portfolioWeb/master/public/img/og/og-portfolio-mgc.png'
 
 export const csvData = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL
 export const geolocation = 'https://geolocation.microlink.io'
