@@ -53,7 +53,7 @@ export default function Home() {
 				<AboutMe />
 				<Flavors />
 				<HomeTitle>{t('projectsTitle')}</HomeTitle>
-				<div className='sm:flex items-stretch mx-auto gap-4 sm:text-center p-6 md:p-0'>
+				<div className='sm:flex mx-auto gap-2 sm:text-center md:p-0 proyects-cards'>
 					{projects.map((project) => (
 						<div
 							className={

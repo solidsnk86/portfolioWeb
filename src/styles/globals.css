@@ -166,6 +166,12 @@ textarea {
 	}
 }
 
+.proyects-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	margin: 0;
+}
+
 .project-card {
 	transition: 0.5s ease-in-out;
 }

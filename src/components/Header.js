@@ -47,7 +47,7 @@ export function Header() {
 							{navigation.map((item) => (
 								<li
 									key={item.href}
-									className='font-semibold space-x-4 text-[#E0F2FE] mr-5 cursor-pointer hover:text-[#928BF9] transition-all'
+									className='font-semibold text-[#E0F2FE] mr-5 cursor-pointer hover:text-[#928BF9] transition-all'
 								>
 									<Link href={item.href} target='_self'>
 										{item.name}
@@ -58,14 +58,39 @@ export function Header() {
 					</div>
 				</div>
 				<ul className='absolute right-5 top-3 flex'>
-					<button onClick={share} className='font-semibold text-sm md:text-base mt-[2px] hover:text-[#928BF9]'>
-						<Share className='inline w-[23px] mr-1' />
-						{t('share')}
+					<button
+						onClick={share}
+						className='font-semibold text-sm md:text-base mt-[2px] hover:text-[#928BF9]'
+					>
+						<span
+							className={`px-[3px] pt-[2px] hidden sm:block duration-100 font-semibold xl:text-sm text-xs`}
+							title={t('share')}
+						>
+							<Share className='inline w-[23px] mr-1' />
+							{t('share')}
+						</span>
+						<span
+							className={`px-[3px] pt-[2px] sm:hidden font-semibold xl:text-sm text-xs`}
+							title={t('share')}
+						>
+							<Share className='inline w-[23px] mr-1 xl:text-sm text-xs' />
+						</span>
 					</button>
-					<div className='space-x-2 px-4 pt-[1px] language-button' title={t('language')}>
+					<div className='px-4 pt-[1px] language-button' title={t('language')}>
 						<button className='font-semibold text-sm md:text-base mt-[2px] hover:text-[#928BF9]'>
-							<Language className='inline w-[23px]' />
-							{t('language')}
+							<span
+								className={`px-[3px] pt-[2px] hidden sm:block duration-100 font-semibold xl:text-sm text-xs`}
+								title={t('lang')}
+							>
+								<Language className='inline w-[23px]' />
+								{t('lang')}
+							</span>
+							<span
+								className={`px-[3px] pt-[2px] sm:hidden font-semibold xl:text-sm text-xs`}
+								title={t('lang')}
+							>
+								<Language className='inline w-[23px] xl:text-sm text-xs' />
+							</span>
 						</button>
 						<div className='flex dropdown-content p-3'>
 							<button id='top' onClick={() => changeLanguage('en')} className='hover:scale-[1.2]'>
