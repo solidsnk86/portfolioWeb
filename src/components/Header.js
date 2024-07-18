@@ -73,7 +73,7 @@ export function Header() {
 							className={`px-[3px] pt-[2px] sm:hidden font-semibold xl:text-sm text-xs`}
 							title={t('share')}
 						>
-							<Share className='inline w-[23px] mr-1 xl:text-sm text-xs' />
+							<Share className='inline w-[20px] xl:w-[23px] mr-1 xl:text-sm text-xs' />
 						</span>
 					</button>
 					<div className='px-4 pt-[1px] language-button' title={t('language')}>
@@ -89,7 +89,7 @@ export function Header() {
 								className={`px-[3px] pt-[2px] sm:hidden font-semibold xl:text-sm text-xs`}
 								title={t('lang')}
 							>
-								<Language className='inline w-[23px] xl:text-sm text-xs' />
+								<Language className='inline w-[20px] xl:w-[23px] xl:text-sm text-xs' />
 							</span>
 						</button>
 						<div className='flex dropdown-content p-3'>
