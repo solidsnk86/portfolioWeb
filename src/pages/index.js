@@ -53,7 +53,7 @@ export default function Home() {
 				<AboutMe />
 				<Flavors />
 				<HomeTitle>{t('projectsTitle')}</HomeTitle>
-				<div className='sm:flex mx-auto gap-2 sm:text-center md:p-0 proyects-cards'>
+				<div className='sm:flex mx-auto gap-2 sm:text-center md:p-0'>
 					{projects.map((project) => (
 						<div
 							className={
@@ -67,7 +67,7 @@ export default function Home() {
 							</span>
 							<div className='grid text-center space-y-3 -translate-y-10 md:-translate-y-8'>
 								<span className='font-bold mb-2 text-zinc-50 z-50'>{project.title}</span>
-								<span className='text-sm mb-2 opacity-[.7] h-12 description-project w-[200px]'>
+								<span className='text-xs md:text-sm mb-2 opacity-[.7] h-12 description-project w-[200px]'>
 									{project.description}
 								</span>
 							</div>

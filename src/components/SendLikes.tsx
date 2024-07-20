@@ -1,6 +1,6 @@
 import { supabase } from '@/utils/supabase'
 
-export default async function sendLike(article_id) {
+export default async function sendLike(article_id: any) {
 	const userId = ''
 
 	try {
