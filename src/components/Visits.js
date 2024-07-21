@@ -89,7 +89,7 @@ const Visit = () => {
 
 	return (
 		<div className='cursor-default'>
-			<p className='text-zinc-300 text-xs text-center'>
+			<p className='text-zinc-300 text-xs text-center update-dot'>
 				{t('profileViews')} {lastVisit.id}
 			</p>
 			<div id='visit' className='p-3 text-center text-[#928bf9] update-dot'>
