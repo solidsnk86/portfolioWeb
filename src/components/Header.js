@@ -63,14 +63,16 @@ export function Header() {
 						className='font-semibold text-sm md:text-base mt-[2px] hover:text-[#928BF9]'
 					>
 						<span
-							className={`px-[3px] pt-[2px] hidden sm:block duration-100 font-semibold xl:text-sm text-xs`}
+							className={
+								'px-[3px] pt-[2px] hidden sm:block duration-100 font-semibold xl:text-sm text-xs'
+							}
 							title={t('share')}
 						>
 							<Share className='inline w-[23px] mr-1' />
 							{t('share')}
 						</span>
 						<span
-							className={`px-[3px] pt-[2px] sm:hidden font-semibold xl:text-sm text-xs`}
+							className={'px-[3px] pt-[2px] sm:hidden font-semibold xl:text-sm text-xs'}
 							title={t('share')}
 						>
 							<Share className='inline w-[20px] xl:w-[23px] mr-1 xl:text-sm text-xs' />
@@ -79,14 +81,16 @@ export function Header() {
 					<div className='px-4 pt-[1px] language-button' title={t('language')}>
 						<button className='font-semibold text-sm md:text-base mt-[2px] hover:text-[#928BF9]'>
 							<span
-								className={`px-[3px] pt-[2px] hidden sm:block duration-100 font-semibold xl:text-sm text-xs`}
+								className={
+									'px-[3px] pt-[2px] hidden sm:block duration-100 font-semibold xl:text-sm text-xs'
+								}
 								title={t('lang')}
 							>
 								<Language className='inline w-[23px]' />
 								{t('lang')}
 							</span>
 							<span
-								className={`px-[3px] pt-[2px] sm:hidden font-semibold xl:text-sm text-xs`}
+								className={'px-[3px] pt-[2px] sm:hidden font-semibold xl:text-sm text-xs'}
 								title={t('lang')}
 							>
 								<Language className='inline w-[20px] xl:w-[23px] xl:text-sm text-xs' />
