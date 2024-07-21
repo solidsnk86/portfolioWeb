@@ -82,7 +82,7 @@ textarea {
 }
 
 .contact-form > input:focus {
-	outline: 2px solid #1c64f2;
+	outline: 2px solid #928bf9;
 }
 
 .message-alert {
@@ -357,6 +357,7 @@ textarea {
 	display: grid;
 	margin: 0 auto;
 	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	margin-top: 20px;
 }
 
 .flavor-card:hover .logo-icon {

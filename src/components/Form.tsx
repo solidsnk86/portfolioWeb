@@ -135,7 +135,7 @@ const ContactForm = () => {
 				<button
 					type='submit'
 					disabled={isSubmitting}
-					className='border border-zinc-800 rounded-md p-2 text-zinc-100 hover:border-zinc-700 hover:brightness-125 active:border-blue-600'
+					className='border border-zinc-800 rounded-md p-2 text-zinc-100 hover:border-zinc-700 hover:brightness-125 active:border-[#928BF9]'
 				>
 					{isSubmitting ? t('sending') : t('send')}
 				</button>

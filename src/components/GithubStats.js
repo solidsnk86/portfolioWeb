@@ -34,7 +34,7 @@ async function fetchGitStats(local, repoName) {
 	}
 }
 
-export const GithubStats = ({ repoName }) => {
+export const GithubStats = ({ repoName, className = '' }) => {
 	const [data, setData] = useState({ stars: 0 })
 	const { t } = useTranslation()
 
@@ -50,7 +50,7 @@ export const GithubStats = ({ repoName }) => {
 	}, [repoName])
 
 	return (
-		<div className='inline-flex items-center space-x-1' title={t('navLink3')}>
+		<div className={`inline-flex items-center space-x-1 ${className}`} title={t('navLink3')}>
 			<a
 				className='text-xs hover:brightness-150 hover:no-underline'
 				href={`https://github.com/solidsnk86/${repoName}/`}
