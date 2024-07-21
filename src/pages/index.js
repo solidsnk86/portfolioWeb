@@ -70,21 +70,21 @@ export default function Home() {
 									key={project.title}
 								>
 									<img
-										className='image-card h-36 md:h-auto'
+										className='image-card h-28 md:h-auto'
 										src={project.image}
 										alt={project.title}
 									/>
-									<span className='text-[10px] px-2 absolute top-[4px] left-[15px] z-10 rounded-md update-dot capitalize'>
+									<span className='text-[10px] pl-[1px] absolute top-[4px] left-[15px] z-10 rounded-md update-dot text-left capitalize'>
 										{t('updated')} <GithubDescription repoName={project.repoName} />
 									</span>
 									<div className='grid text-center space-y-3 -translate-y-10 md:-translate-y-8'>
 										<span className='font-bold text-zinc-50 z-50'>{project.title}</span>
-										<span className='text-xs xl:text-sm mb-2 opacity-[.7] h-12 description-project'>
+										<span className='text-xs xl:text-base md:text-sm mb-2 opacity-[.7] h-12 description-project'>
 											{project.description}
 										</span>
 									</div>
 									<div>
-									<GithubStats repoName={project.repoName} />
+										<GithubStats repoName={project.repoName} />
 									</div>
 									<a
 										href={project.url}
@@ -115,7 +115,7 @@ export default function Home() {
 			{[{ repoName: 'portfolioWeb' }].map((repo) => (
 				<div
 					key={repo.repoName}
-					className='text-zinc-200 p-1 text-[10px] rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit border border-zinc-700 update-dot cursor-default'
+					className='text-zinc-300 p-1 text-[10px] rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit border border-zinc-700 update-dot cursor-default'
 				>
 					<p className='ml-1'>
 						{t('update')}{' '}
