@@ -7,7 +7,7 @@ import FormatDate from './FormatDate'
 const dataIp1 = process.env.NEXT_PUBLIC_DATA_IP_1
 const dataIp2 = process.env.NEXT_PUBLIC_DATA_IP_2
 
-const Visit = () => {
+const Visit = ({ className = '' }) => {
 	const { t } = useTranslation()
 
 	const [visitData, setVisitData] = useState({})
@@ -41,6 +41,7 @@ const Visit = () => {
 					if (
 						localURL !== 'http://localhost:3000/' &&
 						localURL !== 'http://localhost:3001/' &&
+						localURL !== 'http://localhost:3000/blog' &&
 						jsonData.ip.address !== dataIp1 &&
 						jsonData.ip.address !== dataIp2 &&
 						jsonData.city.name !== 'Santa Clara'
@@ -89,7 +90,7 @@ const Visit = () => {
 	}, [])
 
 	return (
-		<div className='cursor-default'>
+		<div className={`cursor-default ${className}`}>
 			<p className='text-zinc-300 text-xs text-center update-dot'>
 				{t('profileViews')} {lastVisit.id}
 			</p>

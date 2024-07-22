@@ -3,10 +3,11 @@ import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import React, { useState, useEffect } from 'react'
 
-function resizeTextarea() {
+export function resizeTextarea() {
 	const textarea = document.getElementById('text-area')
 	if (textarea) {
 		textarea.addEventListener('input', () => {
+			textarea.style.height = 'auto'
 			textarea.style.height = textarea.scrollHeight + 'px'
 		})
 	}

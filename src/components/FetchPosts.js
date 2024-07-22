@@ -55,7 +55,7 @@ export function FetchPost() {
 								</article>
 							))
 						) : (
-							<p className='bg-red-400 p-2 rounded-lg text-white w-fit mx-auto'>No posts found</p>
+							<p className='bg-red-400 p-2 rounded-lg text-white w-fit absolute top-0'>No posts found</p>
 						)}
 					</Masonry>
 				</ResponsiveMasonry>

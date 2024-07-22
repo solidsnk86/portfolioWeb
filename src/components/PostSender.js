@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { useIP } from './GetIP'
+import { resizeTextarea } from './BlogForm'
 
 export function PostSender() {
 	const { t } = useTranslation()
@@ -26,6 +27,8 @@ export function PostSender() {
 		if (ipData.ip_address && ipData.city_name) {
 			setFormData((prev) => ({ ...prev, ip: ipData.ip_address, city: ipData.city_name }))
 		}
+
+		resizeTextarea()
 	}, [ipData])
 
 	const handleChange = (e) => {
@@ -44,7 +47,9 @@ export function PostSender() {
 
 			if (res.ok) {
 				reset()
-				location.reload()
+				setTimeout(() => {
+					location.reload()
+				}, 600)
 				setFormData((prev) => ({
 					ip: prev.ip,
 					city: prev.city,
@@ -88,10 +93,12 @@ export function PostSender() {
 				<textarea
 					{...register('message')}
 					className='border-none resize-none'
+					id='text-area'
 					name='message'
 					value={formData.message}
 					onChange={handleChange}
 					placeholder={t('comment')}
+					maxLength={100}
 					required
 				/>
 				<button

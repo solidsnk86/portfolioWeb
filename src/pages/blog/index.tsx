@@ -1,5 +1,6 @@
 import { FetchPost } from '@/components/FetchPosts'
 import { PostSender } from '@/components/PostSender'
+import Visit from '@/components/Visits'
 
 function Blog() {
 	return (
@@ -7,6 +8,7 @@ function Blog() {
 			<PostSender />
 			<h1 className='text-4xl font-bold text-center text-zinc-300 my-6'>Blog</h1>
 			<FetchPost />
+			<Visit className='mt-10' />
 		</main>
 	)
 }
