@@ -29,5 +29,5 @@
     "src/components/AboutMe.js",
     "src/utils/supabase.js",
     "src/pages/login/index.tsx"
-, "src/components/BrowserRouter.tsx", "src/components/ZoomDisable.js", "src/components/Experience.tsx", "src/pages/api-bra/index.js", "src/hooks/useIsClient.js"  ]
+, "src/components/BrowserRouter.tsx", "src/components/ZoomDisable.js", "src/components/Experience.tsx", "src/pages/api-bra/index.js", "src/hooks/useIsClient.js", "src/components/PostSender.js"  ]
 }

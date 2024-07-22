@@ -371,6 +371,14 @@ textarea {
 	grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 }
 
+.post-form {
+	& > input {
+		border: none;
+		padding: 10px;
+		background-color: transparent;
+	}
+}
+
 @media (width >= 1920px) {
 	body {
 		width: 80%;

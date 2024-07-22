@@ -42,7 +42,8 @@ const Visit = () => {
 						localURL !== 'http://localhost:3000/' &&
 						localURL !== 'http://localhost:3001/' &&
 						jsonData.ip.address !== dataIp1 &&
-						jsonData.ip.address !== dataIp2
+						jsonData.ip.address !== dataIp2 &&
+						jsonData.city.name !== 'Santa Clara'
 					) {
 						sendDataToSupabase(jsonData)
 					}

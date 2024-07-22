@@ -60,7 +60,8 @@ i18n.use(initReactI18next).init({
 				toastError: 'Error submitting the form. Please try again later.',
 				updated: 'Updated',
 				share: 'Share',
-				lang: 'English (US)'
+				lang: 'English (US)',
+				postTitle: 'Blog posts sender'
 			}
 		},
 		es: {
@@ -118,7 +119,8 @@ i18n.use(initReactI18next).init({
 				toastError: 'Error al enviar el formulario. Por favor, intenta nuevamente más tarde.',
 				updated: 'Actualizado',
 				share: 'Compartir',
-				lang: 'Español (AR)'
+				lang: 'Español (AR)',
+				postTitle: 'Postear al blog'
 			}
 		}
 	},
