@@ -6,7 +6,7 @@ export const Footer = () => {
 		{
 			str: <p className='inline'>&copy;solidsnk86</p>,
 			href: 'https://github.com/solidsnk86',
-			year: 2023
+			year: new Date().getFullYear()
 		}
 	]
 	return (
