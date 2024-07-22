@@ -9,7 +9,7 @@ import { useIsClient } from '@/hooks/useIsClient'
 export function FetchPost() {
 	const [data, setData] = useState([])
 	const isClient = useIsClient()
-	const mobile = useMatchMedia('(min-width: 400px)', false)
+	const mobile = useMatchMedia('(max-width: 400px)', false)
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -32,12 +32,12 @@ export function FetchPost() {
 		<>
 			{isClient && (
 				<ResponsiveMasonry columnsCountBreakPoints={{ 750: 2, 800: 3, 900: 4, 1200: 5 }}>
-					<Masonry gutter={mobile ? '0.5rem' : '1rem'}>
+					<Masonry gutter={mobile ? '0.2rem' : '0.3rem'}>
 						{data.length > 0 ? (
 							data.map((d) => (
 								<article
 									key={d.id}
-									className='bg-zinc-900 border border-zinc-700 p-6 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out mx-auto max-w-lg text-zinc-300'
+									className='bg-zinc-900 border border-zinc-700 p-6 rounded-xl shadow-xl text-zinc-300'
 								>
 									<header className='flex justify-between items-center mb-3'>
 										<small className='text-xs text-zinc-500'>Post número {d.id}</small>
@@ -48,7 +48,7 @@ export function FetchPost() {
 										<p className='text-sm md:text-base text-zinc-400'>{d.description}</p>
 										<p className='text-base md:text-lg'>{d.message}</p>
 									</div>
-									<footer className='mt-4 text-xs text-zinc-500 flex justify-between items-center'>
+									<footer className='mt-4 text-xs text-zinc-500 grid'>
 										<span>Post enviado desde: {d.city}</span>
 										<span>IP: {d.ip}</span>
 									</footer>

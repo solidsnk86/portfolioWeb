@@ -43,8 +43,8 @@ export function PostSender() {
 			})
 
 			if (res.ok) {
-				console.log('Data sent:', res.statusText)
 				reset()
+				location.reload()
 				setFormData((prev) => ({
 					ip: prev.ip,
 					city: prev.city,
@@ -67,14 +67,14 @@ export function PostSender() {
 			</h2>
 			<form
 				onSubmit={handleSubmit(sendFormData)}
-				className='grid justify-center mx-auto gap-3 bg-black p-4 rounded-md m-4 w-fit post-form'
+				className='grid justify-center mx-auto text-zinc-300 gap-3 border border-zinc-800 p-4 rounded-md m-4 w-fit post-form'
 			>
 				<input
 					{...register('title')}
 					name='title'
 					value={formData.title}
 					onChange={handleChange}
-					placeholder={t('name')}
+					placeholder={'Title'}
 					required
 				/>
 				<input
@@ -82,12 +82,12 @@ export function PostSender() {
 					name='description'
 					value={formData.description}
 					onChange={handleChange}
-					placeholder={t('email')}
+					placeholder={'Description'}
 					required
 				/>
 				<textarea
 					{...register('message')}
-					className='border-none'
+					className='border-none resize-none'
 					name='message'
 					value={formData.message}
 					onChange={handleChange}
@@ -98,7 +98,7 @@ export function PostSender() {
 					id='send-button'
 					type='submit'
 					disabled={isSubmitting}
-					className='bg-sky-800 rounded-full hover:brightness-125 active:border-[#928BF9]'
+					className='bg-sky-600 text-zinc-300 font-semibold rounded-full hover:brightness-125 active:border-[#928BF9]'
 				>
 					{isSubmitting ? t('sending') : t('send')}
 				</button>
