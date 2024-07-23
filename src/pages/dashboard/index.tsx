@@ -18,6 +18,7 @@ export default function Post() {
 			/>
 			<main className='m-4 grid'>
 				<PostSender />
+				<h1 className='text-3xl font-bold text-zinc-300'>Blog Posts</h1>
 				<Posts edit={'flex'} />
 			</main>
 			<Footer />
