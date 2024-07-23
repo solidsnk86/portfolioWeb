@@ -13,9 +13,7 @@ function Blog() {
 			<BackButton className='m-3 static' />
 			<main className='m-4 bg-[#18181b]'>
 				<h1 className='text-4xl font-bold text-center text-zinc-300 my-20'>Blog</h1>
-				<article className=' h-screen'>
-					<FetchPost />
-				</article>
+				<FetchPost />
 				<Footer />
 				<Visit className='mt-10' />
 			</main>
