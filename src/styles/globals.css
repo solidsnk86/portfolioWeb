@@ -113,11 +113,11 @@ textarea {
 	position: fixed;
 	left: calc(50% - 20px);
 	top: 50%;
-	border: 4px solid rgba(0, 0, 0, 0.1);
-	width: 36px;
-	height: 36px;
+	border: 6px solid rgba(0, 0, 0, 0.1);
+	width: 46px;
+	height: 46px;
 	border-radius: 50%;
-	border-left-color: #f05252;
+	border-left-color: #928bf9;
 	z-index: 99;
 	animation: spinn 1s linear infinite;
 }

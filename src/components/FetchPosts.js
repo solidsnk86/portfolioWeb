@@ -7,6 +7,7 @@ import useMatchMedia from '@/hooks/useMatchMedia'
 import { useIsClient } from '@/hooks/useIsClient'
 import { History, Location } from 'tabler-icons-react'
 import { detectIf } from '@/hooks/useIPIs'
+import { Preloader } from './Preloader'
 
 export function FetchPost() {
 	const [data, setData] = useState([])
@@ -76,9 +77,12 @@ export function FetchPost() {
 								</a>
 							))
 						) : (
-							<p className='absolute top-4 bg-red-500 p-2 rounded-lg text-white w-fit'>
-								There are no posts...
-							</p>
+							<>
+								<Preloader />
+								<span className='absolute top-4 left-[44%] bg-red-500 p-2 rounded-lg text-white w-fit'>
+									There are no posts...
+								</span>
+							</>
 						)}
 					</Masonry>
 				</ResponsiveMasonry>
