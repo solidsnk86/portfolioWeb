@@ -1,4 +1,4 @@
-import { FetchPost } from '@/components/FetchPosts'
+import { Posts } from '@/components/Posts'
 import { Footer } from '@/components/Footer'
 import { PostSender } from '@/components/PostSender'
 import Head from 'next/head'
@@ -13,7 +13,7 @@ export default function Post() {
 			</Head>
 			<main className='m-4'>
 				<PostSender />
-				<FetchPost edit={'flex'} />
+				<Posts edit={'flex'} />
 				<Footer />
 			</main>
 		</>

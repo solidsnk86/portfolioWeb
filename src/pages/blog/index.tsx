@@ -1,4 +1,4 @@
-import { FetchPost } from '@/components/FetchPosts'
+import { Posts } from '@/components/Posts'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import Head from 'next/head'
@@ -16,7 +16,7 @@ function Blog() {
 			<Header />
 			<main className='m-4 bg-[#18181b]'>
 				<h1 className='text-4xl font-bold text-center text-zinc-300 my-20'>Blog</h1>
-				<FetchPost edit={'hidden'} />
+				<Posts edit={'hidden'} />
 				<Footer />
 			</main>
 		</>
