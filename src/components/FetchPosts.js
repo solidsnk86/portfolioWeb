@@ -154,6 +154,7 @@ export function FetchPost({ edit }) {
 										<a
 											className='text-sm flex justify-end hover:text-sky-600 text-gray-600'
 											href={post.url}
+											title={`Ir al post ${post.title} en NeoTecs`}
 										>
 											Ver más
 											<ArrowUpRight className='inline w-3 -translate-y-[1px]' />
