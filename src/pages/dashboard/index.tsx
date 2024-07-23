@@ -7,7 +7,7 @@ export default function Post() {
 	return (
 		<>
 			<Head>
-				<title>Create Post</title>
+				<title>SolidSnk86 - Dashboard</title>
 			</Head>
 			<main className='m-4'>
 				<PostSender />
