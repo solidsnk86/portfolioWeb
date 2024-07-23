@@ -134,30 +134,30 @@ export function FetchPost({ edit }) {
 										<div className='mb-4'>
 											<p className='message text-sm text-gray-600'>{post.message}</p>
 										</div>
-										<a
-											className='text-sm flex justify-end hover:text-sky-500 text-gray-600'
-											href={post.url}
-										>
-											Ver más
-											<ArrowUpRight className='inline w-3 -translate-y-[1px]' />
-										</a>
+										{isI ? (
+											<div className='flex items-center font-semibold text-xs text-gray-600'>
+												<img
+													className='rounded-full w-6 h-6 mr-1'
+													src='https://avatars.githubusercontent.com/u/93176365?s=400&u=256e212b81ba355aa6d1bda5b4f9882ed53474ea&v=4'
+												/>
+												solidSnk86
+											</div>
+										) : (
+											<span>{post.ip}</span>
+										)}
 										<footer className='grid justify-between items-center text-xs md:text-sm text-gray-500'>
-											{isI ? (
-												<div className='flex items-center'>
-													<img
-														className='rounded-full w-8 h-8 mr-2'
-														src='https://avatars.githubusercontent.com/u/93176365?s=400&u=256e212b81ba355aa6d1bda5b4f9882ed53474ea&v=4'
-													/>
-													solidSnk86
-												</div>
-											) : (
-												<span>{post.ip}</span>
-											)}
 											<small className='flex md:items-center mt-2'>
 												<Location className='inline w-[14px] h-[14px] mr-[1px] mt-[2px] md:mt-0' />
 												{post.city}, {post.country} {post.flag}
 											</small>
 										</footer>
+										<a
+											className='text-sm flex justify-end hover:text-sky-600 text-gray-600'
+											href={post.url}
+										>
+											Ver más
+											<ArrowUpRight className='inline w-3 -translate-y-[1px]' />
+										</a>
 									</article>
 									{editMode === post.id && (
 										<button
