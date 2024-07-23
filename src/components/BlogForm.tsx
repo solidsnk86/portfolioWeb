@@ -10,6 +10,9 @@ export function resizeTextarea() {
 			textarea.style.height = 'auto'
 			textarea.style.height = textarea.scrollHeight + 'px'
 		})
+	} else if (textarea.textContent !== '') {
+		const button = document.getElementById('button')
+		button.removeAttribute('disabled')
 	}
 }
 

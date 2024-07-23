@@ -2,11 +2,11 @@ import { supabase } from '@/utils/supabase'
 
 export default async function handler(req, res) {
 	if (req.method === 'POST') {
-		const { title, description, message, ip, city } = req.body
+		const { title, description, message, ip, city, url, country, flag } = req.body
 
 		const { data, error } = await supabase
 			.from('posts')
-			.insert([{ title, description, message, ip, city }])
+			.insert([{ title, description, message, ip, city, url, country, flag }])
 
 		if (error) {
 			return res

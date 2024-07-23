@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { useIP } from './GetIP'
 import { resizeTextarea } from './BlogForm'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export function PostSender() {
 	const { t } = useTranslation()
@@ -11,9 +13,12 @@ export function PostSender() {
 	const [formData, setFormData] = useState({
 		ip: '',
 		city: '',
+		country: '',
+		flag: '',
 		title: '',
 		description: '',
-		message: ''
+		message: '',
+		url: ''
 	})
 
 	const {
@@ -24,8 +29,14 @@ export function PostSender() {
 	} = useForm()
 
 	useEffect(() => {
-		if (ipData.ip_address && ipData.city_name) {
-			setFormData((prev) => ({ ...prev, ip: ipData.ip_address, city: ipData.city_name }))
+		if (ipData.ip_address && ipData.city_name && ipData.country_name && ipData.country_flag) {
+			setFormData((prev) => ({
+				...prev,
+				ip: ipData.ip_address,
+				city: ipData.city_name,
+				country: ipData.country_name,
+				flag: ipData.country_flag
+			}))
 		}
 
 		resizeTextarea()
@@ -47,15 +58,22 @@ export function PostSender() {
 
 			if (res.ok) {
 				reset()
+				toast.success('Post enviado Correctamente!', {
+					position: 'top-center',
+					theme: 'dark'
+				})
 				setTimeout(() => {
 					location.reload()
 				}, 600)
 				setFormData((prev) => ({
 					ip: prev.ip,
 					city: prev.city,
+					country: prev.country,
+					flag: prev.flag,
 					title: '',
 					description: '',
-					message: ''
+					message: '',
+					url: ''
 				}))
 			} else {
 				console.error('Data not sent properly', res.statusText)
@@ -98,18 +116,27 @@ export function PostSender() {
 					value={formData.message}
 					onChange={handleChange}
 					placeholder={t('comment')}
-					maxLength={100}
+					maxLength={125}
+					required
+				/>
+				<input
+					{...register('url')}
+					name='url'
+					value={formData.url}
+					onChange={handleChange}
+					placeholder={'Your URL post'}
 					required
 				/>
 				<button
 					id='send-button'
 					type='submit'
-					disabled={isSubmitting}
+					disabled={resizeTextarea}
 					className='bg-sky-600 text-zinc-300 font-semibold rounded-full hover:brightness-125 active:border-[#928BF9]'
 				>
 					{isSubmitting ? t('sending') : t('send')}
 				</button>
 			</form>
+			<ToastContainer closeButton closeOnClick />
 		</div>
 	)
 }

@@ -8,7 +8,7 @@ export const useIP = () => {
 			try {
 				const { data, error } = await supabase
 					.from('address')
-					.select('ip_address, city_name')
+					.select('ip_address, city_name, country_name, country_flag')
 					.limit(1)
 					.order('created_at', { ascending: false })
 
