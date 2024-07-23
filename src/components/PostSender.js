@@ -60,11 +60,11 @@ export function PostSender() {
 				reset()
 				toast.success('Post enviado Correctamente!', {
 					position: 'top-center',
-					theme: 'dark'
+					theme: 'light'
 				})
 				setTimeout(() => {
 					location.reload()
-				}, 600)
+				}, 2000)
 				setFormData((prev) => ({
 					ip: prev.ip,
 					city: prev.city,
