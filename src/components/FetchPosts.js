@@ -43,8 +43,8 @@ export function FetchPost() {
 									<article className='bg-gray-100 border border-gray-300 p-5 rounded-lg shadow-lg text-gray-800 hover:bg-gray-200 transition-colors'>
 										<header className='mb-3 text-xs md:text-sm'>
 											<h2 className='text-xl font-bold'>{d.title}</h2>
-											<small className='mt-1 text-gray-500 flex items-center'>
-												<History className='inline w-[14px] h-[14px] mr-[2px]' />
+											<small className='mt-1 text-gray-500 flex md:items-center'>
+												<History className='inline w-[14px] h-[14px] mr-[2px] mt-[2px] md:mt-0' />
 												Publicado {FormatDate(d.created_at)}
 											</small>
 										</header>
@@ -68,8 +68,8 @@ export function FetchPost() {
 											) : (
 												<span>{d.ip}</span>
 											)}
-											<small className='flex items-center mt-2'>
-												<Location className='inline w-[14px] h-[14px] mr-[1px]' />
+											<small className='flex md:items-center mt-2'>
+												<Location className='inline w-[14px] h-[14px] mr-[1px] mt-[2px] md:mt-0' />
 												{d.city}, {d.country} {d.flag}
 											</small>
 										</footer>
