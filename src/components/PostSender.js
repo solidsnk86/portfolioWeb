@@ -25,7 +25,7 @@ export function PostSender() {
 		register,
 		handleSubmit,
 		reset,
-		formState: { isSubmitting }
+		formState: { isSubmitting, isEmpty }
 	} = useForm()
 
 	useEffect(() => {
@@ -130,7 +130,7 @@ export function PostSender() {
 				<button
 					id='send-button'
 					type='submit'
-					disabled={resizeTextarea}
+					disabled={isSubmitting}
 					className='bg-sky-600 px-4 py-1 flex mx-auto w-fit text-zinc-300 font-semibold rounded-full hover:brightness-125'
 				>
 					{isSubmitting ? t('sending') : t('send')}

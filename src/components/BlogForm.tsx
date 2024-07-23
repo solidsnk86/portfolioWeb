@@ -10,9 +10,6 @@ export function resizeTextarea() {
 			textarea.style.height = 'auto'
 			textarea.style.height = textarea.scrollHeight + 'px'
 		})
-	} else if (textarea.textContent !== '') {
-		const button = document.getElementById('button')
-		button.removeAttribute('disabled')
 	}
 }
 
@@ -33,10 +30,6 @@ const BlogForm = ({ newPost, setNewPost, sendPost }) => {
 	const toggleForm = () => {
 		setShowForm(!showForm)
 	}
-
-	useEffect(() => {
-		resizeTextarea()
-	}, [])
 
 	return (
 		<section className='xl:w-1/2 xl:justify-center xl:m-auto'>

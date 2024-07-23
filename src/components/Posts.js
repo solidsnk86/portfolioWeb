@@ -5,7 +5,15 @@ import FormatDate from './FormatDate'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import useMatchMedia from '@/hooks/useMatchMedia'
 import { useIsClient } from '@/hooks/useIsClient'
-import { ArrowRight, History, Location, Pencil, Trash } from 'tabler-icons-react'
+import {
+	ArrowRight,
+	DeviceFloppy,
+	Disc,
+	History,
+	Location,
+	Pencil,
+	Trash
+} from 'tabler-icons-react'
 import { detectIf } from '@/hooks/useIPIs'
 import { Preloader } from './Preloader'
 
@@ -107,17 +115,21 @@ export function Posts({ edit }) {
 										className='bg-gray-100 border border-gray-300 p-5 rounded-lg shadow-lg text-gray-800 hover:opacity-90 transition-colors relative'
 										contentEditable={editMode === post.id}
 									>
-										<Pencil
-											onClick={() => handleEdit(post.id)}
-											className={`w-4 ${edit} absolute top-1 left-3 hover:scale-125 cursor-pointer`}
-										/>
-										<Trash
-											className={`w-4 ${edit} absolute top-1 right-3 hover:scale-125 cursor-pointer`}
-											onClick={(e) => {
-												e.preventDefault()
-												handleDelete(post.id)
-											}}
-										/>
+										<small title={`Editar post id: ${post.id}`}>
+											<Pencil
+												onClick={() => handleEdit(post.id)}
+												className={`w-4 ${edit} absolute top-1 left-3 hover:scale-125 cursor-pointer`}
+											/>
+										</small>
+										<small title={`Borrar post id: ${post.id}`}>
+											<Trash
+												className={`w-4 ${edit} absolute top-1 right-3 hover:scale-125 cursor-pointer`}
+												onClick={(e) => {
+													e.preventDefault()
+													handleDelete(post.id)
+												}}
+											/>
+										</small>
 										<header className='mb-3 text-xs md:text-sm'>
 											<h2 className='title text-xl font-bold'>{post.title}</h2>
 											<small className='mt-1 text-gray-500 flex md:items-center'>
@@ -138,7 +150,7 @@ export function Posts({ edit }) {
 											{isI ? (
 												<div className='flex items-center font-semibold text-xs text-gray-600'>
 													<img
-														className='rounded-full w-6 h-6 mr-1'
+														className='rounded-full w-7 h-7 mr-1'
 														src='https://avatars.githubusercontent.com/u/93176365?s=400&u=256e212b81ba355aa6d1bda5b4f9882ed53474ea&v=4'
 													/>
 													solidSnk86
@@ -147,14 +159,14 @@ export function Posts({ edit }) {
 												<span>{post.ip}</span>
 											)}
 											<small className='flex md:items-center mt-2'>
-												<Location className='inline w-3 h-3 mr-[1px] mt-[2px] md:mt-0' />
+												<Location className='inline w-3 h-3 mr-[1px]  md:mt-0' />
 												{post.city}, {post.country} {post.flag}
 											</small>
 										</footer>
 										<a
 											className='text-sm flex justify-end hover:text-sky-600 text-gray-600 translate-y-3'
 											href={post.url}
-											title={`Ir al post ${post.title} en NeoTecs`}
+											title={`Ver ${post.title} en ${post.url}`}
 										>
 											Ver más
 											<ArrowRight className='inline w-4 -translate-y-[1px]' />
@@ -162,10 +174,10 @@ export function Posts({ edit }) {
 									</article>
 									{editMode === post.id && (
 										<button
-											className='mt-2 p-1 bg-blue-500 text-white rounded-md hover:brightness-110'
+											className='mt-2 px-2 py-1 font-semibold bg-blue-500 text-white text-sm rounded-full hover:brightness-110'
 											onClick={() => handleUpdate(post.id)}
 										>
-											Guardar
+											<DeviceFloppy className='w-4 inline -translate-y-[1px]' /> Guardar
 										</button>
 									)}
 								</div>
