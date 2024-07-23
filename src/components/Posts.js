@@ -162,7 +162,7 @@ export function Posts({ edit }) {
 									</article>
 									{editMode === post.id && (
 										<button
-											className='mt-2 p-1 bg-blue-500 text-white rounded-md'
+											className='mt-2 p-1 bg-blue-500 text-white rounded-md hover:brightness-110'
 											onClick={() => handleUpdate(post.id)}
 										>
 											Guardar
