@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { useIP } from './GetIP'
-import { resizeTextarea } from './BlogForm'
+import { useIP } from '../../../components/GetIP'
+import { resizeTextarea } from '../../../components/ResizeTextarea'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -25,7 +25,7 @@ export function PostSender() {
 		register,
 		handleSubmit,
 		reset,
-		formState: { isSubmitting, isEmpty }
+		formState: { isSubmitting }
 	} = useForm()
 
 	useEffect(() => {

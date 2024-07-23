@@ -62,7 +62,7 @@ i18n.use(initReactI18next).init({
 				updated: 'Updated',
 				share: 'Share',
 				lang: 'English (US)',
-				postTitle: 'Blog posts sender'
+				postTitle: 'Create Blog'
 			}
 		},
 		es: {
@@ -122,7 +122,7 @@ i18n.use(initReactI18next).init({
 				updated: 'Actualizado',
 				share: 'Compartir',
 				lang: 'Español (AR)',
-				postTitle: 'Postear al blog'
+				postTitle: 'Crear Blog'
 			}
 		}
 	},

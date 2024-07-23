@@ -5,15 +5,7 @@ import FormatDate from './FormatDate'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import useMatchMedia from '@/hooks/useMatchMedia'
 import { useIsClient } from '@/hooks/useIsClient'
-import {
-	ArrowRight,
-	DeviceFloppy,
-	Disc,
-	History,
-	Location,
-	Pencil,
-	Trash
-} from 'tabler-icons-react'
+import { ArrowRight, DeviceFloppy, History, Location, Pencil, Trash } from 'tabler-icons-react'
 import { detectIf } from '@/hooks/useIPIs'
 import { Preloader } from './Preloader'
 
