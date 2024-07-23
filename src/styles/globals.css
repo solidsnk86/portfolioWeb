@@ -132,7 +132,7 @@ textarea {
 	display: none;
 	font-size: 12px;
 	position: absolute;
-	top: 30px;
+	top: 28px;
 	width: 133px;
 	right: 35px;
 	z-index: 99;
@@ -372,10 +372,16 @@ textarea {
 }
 
 .post-form {
-	& > input {
-		border: none;
+	& > input,
+	textarea {
+		border: 1px solid #222;
+		border-radius: 6px;
 		padding: 10px;
 		background-color: transparent;
+	}
+
+	& > input:focus {
+		outline: 1px solid #928bf9;
 	}
 }
 

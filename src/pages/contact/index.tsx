@@ -1,4 +1,3 @@
-import { BackButton } from '@/components/BackButton'
 import { Card } from '@/components/Card'
 import Head from 'next/head'
 import { Footer } from '@/components/Footer'
@@ -6,6 +5,7 @@ import ContactForm from '@/components/Form'
 import { socials } from '@/components/const'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
+import { Header } from '@/components/Header'
 
 export default function Contact() {
 	const { t } = useTranslation()
@@ -14,7 +14,7 @@ export default function Contact() {
 			<Head>
 				<title>{t('contact')}</title>
 			</Head>
-			<BackButton className=' md:fixed relative' />
+			<Header />
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
 				<div className='container flex items-center justify-center px-6 mx-auto pt-14 xl:pt-0'>
 					<div className='grid w-full grid-cols-1 gap-8 mx-auto mb-5 mt-0 xl:mt-32 sm:grid-cols-3 lg:gap-16'>

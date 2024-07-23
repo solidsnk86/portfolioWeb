@@ -8,7 +8,7 @@
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
-		"eslint-config-prettier",
+		"prettier",
 		"standard"
 	],
 	"parser": "@typescript-eslint/parser",
@@ -33,16 +33,22 @@
 		"no-tabs": "off",
 		"indent": [
 			"warn",
-			"tab"
+			"tab",
+			{
+				"SwitchCase": 1
+			}
 		],
-		"quotes": [
-			"warn",
-			"single"
-		],
-		"jsx-quotes": [
-			"warn",
-			"prefer-single"
-		],
+		"quotes": ["warn", "single"],
+		"jsx-quotes": ["warn", "prefer-single"],
 		"eol-last": "off"
-	}
+	},
+	"overrides": [
+		{
+			"files": ["src/components/Header.js", "src/components/FetchPosts.js"],
+			"rules": {
+				"indent": "off",
+				"no-mixed-spaces-and-tabs": "off"
+			}
+		}
+	]
 }

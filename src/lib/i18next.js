@@ -7,6 +7,7 @@ i18n.use(initReactI18next).init({
 	resources: {
 		en: {
 			translation: {
+				navLink0: 'Home',
 				navLink1: 'Contact',
 				navLink2: 'Projects',
 				navLink3: 'Go to github repo',
@@ -66,6 +67,7 @@ i18n.use(initReactI18next).init({
 		},
 		es: {
 			translation: {
+				navLink0: 'Inicio',
 				navLink1: 'Contacto',
 				navLink2: 'Proyectos',
 				navLink3: 'Ir al repo de github',

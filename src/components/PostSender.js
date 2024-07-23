@@ -85,12 +85,12 @@ export function PostSender() {
 
 	return (
 		<div>
-			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-8'>
+			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-10'>
 				{t('postTitle')}
 			</h2>
 			<form
 				onSubmit={handleSubmit(sendFormData)}
-				className='grid justify-center mx-auto text-zinc-300 gap-3 border border-zinc-800 p-4 rounded-md m-4 w-fit post-form'
+				className='grid justify-center mx-auto text-zinc-300 gap-3 border border-zinc-800 p-4 rounded-md m-4 w-fit post-form mb-20'
 			>
 				<input
 					{...register('title')}
@@ -131,7 +131,7 @@ export function PostSender() {
 					id='send-button'
 					type='submit'
 					disabled={resizeTextarea}
-					className='bg-sky-600 text-zinc-300 font-semibold rounded-full hover:brightness-125 active:border-[#928BF9]'
+					className='bg-sky-600 px-4 py-1 flex mx-auto w-fit text-zinc-300 font-semibold rounded-full hover:brightness-125'
 				>
 					{isSubmitting ? t('sending') : t('send')}
 				</button>

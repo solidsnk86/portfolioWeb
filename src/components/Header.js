@@ -4,9 +4,14 @@ import { Language, Share } from 'tabler-icons-react'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export function Header() {
 	const { t, i18n } = useTranslation()
+	const router = useRouter()
+
+	const isPathBlog = router.asPath === '/blog'
+	const isPathContact = router.asPath === '/contact'
 
 	useEffect(() => {
 		const storedLanguage = localStorage.getItem('language')
@@ -20,7 +25,8 @@ export function Header() {
 		localStorage.setItem('language', newLanguage)
 	}
 	const navigation = [
-		{ name: t('navLink1'), href: '/contact/' },
+		{ name: t('navLink0'), href: '/' },
+		{ name: t('navLink1'), href: '/contact' },
 		{ name: t('navLink2'), href: '#proyectos' },
 		{ name: t('Blog'), href: '/blog' }
 	]
@@ -40,21 +46,33 @@ export function Header() {
 	}
 
 	return (
-		<>
 			<div className='relative w-full h-14 p-2 flex text-white !bg-cover !bg-center'>
 				<div className='relative z-10 flex items-center justify-center'>
 					<div className='w-full flex gap-3 md:gap-6 items-center md:justify-center text-sm md:text-base !justify-center'>
 						<ul className='flex'>
-							{navigation.map((item) => (
-								<li
-									key={item.href}
-									className='font-semibold text-[#E0F2FE] mr-5 cursor-pointer hover:text-[#928BF9] transition-all'
-								>
-									<Link href={item.href} target='_self'>
-										{item.name}
-									</Link>
-								</li>
-							))}
+							{isPathBlog || isPathContact
+								? navigation
+										.filter((item) => item.name === t('navLink0') || item.name === t('navLink1'))
+										.map((item) => (
+											<li
+												key={item.href}
+												className='font-semibold text-[#E0F2FE] mr-5 cursor-pointer hover:text-[#928BF9] transition-all item'
+											>
+												<Link href={item.href} target='_self'>
+													{item.name}
+												</Link>
+											</li>
+										))
+								: navigation.map((item) => (
+										<li
+											key={item.href}
+											className='font-semibold text-[#E0F2FE] mr-5 cursor-pointer hover:text-[#928BF9] transition-all item'
+										>
+											<Link href={item.href} target='_self'>
+												{item.name}
+											</Link>
+										</li>
+							 ))}
 						</ul>
 					</div>
 				</div>
@@ -129,6 +147,5 @@ export function Header() {
 					</li>
 				</ul>
 			</div>
-		</>
 	)
 }
