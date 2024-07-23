@@ -41,22 +41,22 @@ export function FetchPost() {
 							data.map((d) => (
 								<a href={d.url} target='_blank' key={d.id}>
 									<article className='bg-gray-100 border border-gray-300 p-5 rounded-lg shadow-lg text-gray-800 hover:bg-gray-200 transition-colors'>
-										<header className='mb-3'>
+										<header className='mb-3 text-xs md:text-sm'>
 											<h2 className='text-xl font-bold'>{d.title}</h2>
-											<small className='text-xs mt-1 text-gray-500 flex items-center'>
+											<small className='mt-1 text-gray-500 flex items-center'>
 												<History className='inline w-[14px] h-[14px] mr-[2px]' />
 												Publicado {FormatDate(d.created_at)}
 											</small>
 										</header>
 										<div className='mb-3'>
-											<p className='text-sm font-semibold bg-slate-300/50 w-fit px-1 rounded-full border border-zinc-300'>
+											<p className='text-sm text-zinc-600 font-semibold bg-slate-300/50 w-fit px-1 rounded-full border border-zinc-300'>
 												{d.description}
 											</p>
 										</div>
 										<div className='mb-4'>
 											<p className='text-sm text-gray-600'>{d.message}</p>
 										</div>
-										<footer className='grid justify-between items-center text-sm text-gray-500'>
+										<footer className='grid justify-between items-center text-xs md:text-sm text-gray-500'>
 											{isI ? (
 												<div className='flex items-center'>
 													<img
@@ -69,7 +69,7 @@ export function FetchPost() {
 												<span>{d.ip}</span>
 											)}
 											<small className='flex items-center mt-2'>
-												<Location className='inline w-[14px] h-[14px] mr-1' />
+												<Location className='inline w-[14px] h-[14px] mr-[1px]' />
 												{d.city}, {d.country} {d.flag}
 											</small>
 										</footer>
@@ -80,7 +80,7 @@ export function FetchPost() {
 							<>
 								<Preloader />
 								<span className='absolute top-4 left-[44%] bg-red-500 p-2 rounded-lg text-white w-fit'>
-									There are no posts...
+									No hay posts...
 								</span>
 							</>
 						)}
