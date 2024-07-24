@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-export const Footer = () => {
+export const Footer = ({ className }: { className: string }) => {
 	const githubLink = [
 		{
 			str: <p className='inline'>&copy;solidsnk86</p>,
@@ -10,7 +10,7 @@ export const Footer = () => {
 		}
 	]
 	return (
-		<footer className='flex pt-20 pb-5 justify-center m-auto'>
+		<footer className={`flex pt-20 pb-5 justify-center m-auto ${className}`}>
 			{githubLink.map((i) => (
 				<div key={i.href} className='text-zinc-600 text-sm'>
 					<Link href={i.href}>

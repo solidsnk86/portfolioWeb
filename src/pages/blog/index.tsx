@@ -17,7 +17,7 @@ function Blog() {
 			<main className='m-4 bg-[#18181b]'>
 				<h1 className='text-4xl font-bold text-center text-zinc-300 my-20'>Blog</h1>
 				<Posts edit={'hidden'} />
-				<Footer />
+				<Footer className='' />
 			</main>
 		</>
 	)

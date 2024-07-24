@@ -5,7 +5,7 @@ import FormatDate from './FormatDate'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import useMatchMedia from '@/hooks/useMatchMedia'
 import { useIsClient } from '@/hooks/useIsClient'
-import { ArrowRight, DeviceFloppy, History, Location, Pencil, Trash } from 'tabler-icons-react'
+import { ArrowRight, DeviceFloppy, History, Pencil, Trash } from 'tabler-icons-react'
 import { detectIf } from '@/hooks/useIPIs'
 import { Preloader } from './Preloader'
 
@@ -97,14 +97,14 @@ export function Posts({ edit }) {
 	return (
 		<>
 			{isClient && (
-				<ResponsiveMasonry columnsCountBreakPoints={{ 750: 2, 800: 3, 900: 4, 1200: 5 }}>
+				<ResponsiveMasonry columnsCountBreakPoints={{ 400: 1, 700: 3, 900: 4, 1200: 4, 1600: 5 }}>
 					<Masonry gutter={mobile ? '0.2rem' : '0.5rem'}>
 						{posts.length > 0 ? (
 							posts.map((post) => (
 								<div key={post.id}>
 									<article
 										id={`article-${post.id}`}
-										className='bg-gray-100 border border-gray-300 p-5 rounded-lg shadow-lg text-gray-800 hover:opacity-90 transition-colors relative'
+										className='bg-gray-100 border border-gray-300 p-5 rounded-lg shadow-lg text-gray-800 hover:opacity-90 transition-colors relative w-full'
 										contentEditable={editMode === post.id}
 									>
 										<small title={`Editar post id: ${post.id}`}>
@@ -146,14 +146,13 @@ export function Posts({ edit }) {
 														src='https://avatars.githubusercontent.com/u/93176365?s=400&u=256e212b81ba355aa6d1bda5b4f9882ed53474ea&v=4'
 													/>
 													solidSnk86
+													<small className=' justi'>
+														{post.city}, {post.country} {post.flag}
+													</small>
 												</div>
 											) : (
 												<span>{post.ip}</span>
 											)}
-											<small className='flex md:items-center mt-2'>
-												<Location className='inline w-3 h-3 mr-[1px]  md:mt-0' />
-												{post.city}, {post.country} {post.flag}
-											</small>
 										</footer>
 										<a
 											className='text-sm flex justify-end hover:text-sky-600 text-gray-600 translate-y-3'

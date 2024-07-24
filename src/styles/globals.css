@@ -372,16 +372,18 @@ textarea {
 }
 
 .post-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    
 	& > input,
 	textarea {
-		border: 1px solid #222;
-		border-radius: 6px;
+		border-bottom: 1px solid #222;
 		padding: 10px;
 		background-color: transparent;
 	}
 
 	& > input:focus {
-		outline: 1px solid #928bf9;
+		outline: none;
 	}
 }
 

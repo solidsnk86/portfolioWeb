@@ -259,7 +259,7 @@ export const VisitData = () => {
 					</div>
 				))}
 			</div>
-			<Footer />
+			<Footer className='' />
 		</>
 	)
 }

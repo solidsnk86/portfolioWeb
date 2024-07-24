@@ -5,8 +5,9 @@ import { useIP } from '../../../components/GetIP'
 import { resizeTextarea } from '../../../components/ResizeTextarea'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Header from './Header'
 
-export function PostSender() {
+export const PostSender = () => {
 	const { t } = useTranslation()
 	const ipData = useIP()
 
@@ -60,7 +61,8 @@ export function PostSender() {
 				reset()
 				toast.success('Post enviado Correctamente!', {
 					position: 'top-center',
-					theme: 'light'
+					theme: 'light',
+					hideProgressBar: true
 				})
 				setTimeout(() => {
 					location.reload()
@@ -85,12 +87,16 @@ export function PostSender() {
 
 	return (
 		<div>
+			<Header
+				className='h-[53px] border-b border-zinc-700 p-4 sticky top-0'
+				h3=' -translate-y-[2px]'
+			/>
 			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-10'>
 				{t('postTitle')}
 			</h2>
 			<form
 				onSubmit={handleSubmit(sendFormData)}
-				className='grid justify-center mx-auto text-zinc-300 gap-3 border border-zinc-800 p-4 rounded-md m-4 w-fit post-form mb-20'
+				className='justify-center mx-auto text-zinc-300 gap-3 border border-zinc-800 p-4 rounded-md m-4 w-fit post-form mb-20'
 			>
 				<input
 					{...register('title')}
@@ -111,12 +117,11 @@ export function PostSender() {
 				<textarea
 					{...register('message')}
 					className='border-none resize-none'
-					id='text-area'
 					name='message'
 					value={formData.message}
 					onChange={handleChange}
 					placeholder={t('comment')}
-					maxLength={125}
+					maxLength={160}
 					required
 				/>
 				<input
@@ -140,3 +145,5 @@ export function PostSender() {
 		</div>
 	)
 }
+
+export default PostSender
