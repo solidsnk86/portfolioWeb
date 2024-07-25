@@ -109,7 +109,7 @@ export default function Posts({ edit }) {
 
 	async function countViews(id) {
 		try {
-			let { data: post, error } = await supabase.from('posts').select('views').eq('id', id).single()
+			const { data: post, error } = await supabase.from('posts').select('views').eq('id', id).single()
 
 			if (error) {
 				throw new Error('Error fetching post views', error)
