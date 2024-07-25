@@ -44,7 +44,7 @@ export const socials = [
 	}
 ]
 
-export function dateFormat(repo) {
+export function dateFormat(repo: string | number | Date) {
 	const date = new Date(repo).toLocaleDateString('es-Es', {
 		year: 'numeric',
 		month: 'short',

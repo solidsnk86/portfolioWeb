@@ -1,8 +1,8 @@
 import { supabase } from '@/utils/supabase'
 
-export default async function sendViews(articleId) {
+export default async function sendViews(id) {
 	try {
-		const { data, error } = await supabase.from('views').upsert([{ article_id: articleId }])
+		const { data, error } = await supabase.from('posts').upsert([{ views: id }])
 
 		if (error) {
 			console.error('Error sending views:', error)
@@ -13,5 +13,5 @@ export default async function sendViews(articleId) {
 		console.error('Error sending views:', error)
 	}
 
-	return sendViews(articleId)
+	return sendViews(id)
 }

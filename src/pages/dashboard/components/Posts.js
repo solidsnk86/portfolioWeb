@@ -7,15 +7,15 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import useMatchMedia from '@/hooks/useMatchMedia'
 import { useIsClient } from '@/hooks/useIsClient'
 import {
-	ArrowRight,
+	ChevronRight,
 	DeviceFloppy,
 	DotsVertical,
+	Eye,
 	History,
 	MapPin,
 	Pencil,
 	Trash
 } from 'tabler-icons-react'
-import { detectIf } from '@/hooks/useIPIs'
 import { Preloader } from '../../../components/Preloader'
 
 export default function Posts({ edit }) {
@@ -24,7 +24,6 @@ export default function Posts({ edit }) {
 	const [activeMenu, setActiveMenu] = useState(null)
 	const isClient = useIsClient()
 	const mobile = useMatchMedia('(max-width: 700px)', false)
-	const isI = detectIf()
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -108,6 +107,31 @@ export default function Posts({ edit }) {
 		setActiveMenu(activeMenu === id ? null : id)
 	}
 
+	async function countViews(id) {
+		try {
+			let { data: post, error } = await supabase.from('posts').select('views').eq('id', id).single()
+
+			if (error) {
+				throw new Error('Error fetching post views', error)
+			}
+
+			const currentViews = post.views || 0
+
+			const { data, error: updateError } = await supabase
+				.from('posts')
+				.update({ views: currentViews + 1 })
+				.eq('id', id)
+
+			if (updateError) {
+				throw new Error('Error updating post views', updateError)
+			} else {
+				console.log('View count updated', data)
+			}
+		} catch (error) {
+			console.error('Error counting views:', error.message)
+		}
+	}
+
 	return (
 		<>
 			{isClient && (
@@ -163,6 +187,17 @@ export default function Posts({ edit }) {
 												<MapPin className='inline w-3 h-3 mr-[2px]' />
 												{post.city}, {post.country} {post.flag}
 											</small>
+											{post.views <= 0 ? (
+												<small className='text-gray-500 text-xs items-center flex'>
+													<Eye className='inline w-3 h-3 mr-[2px]' />
+													Vistas {0}
+												</small>
+											) : (
+												<small className='text-gray-500 text-xs items-center flex'>
+													<Eye className='inline w-3 h-3 mr-[2px]' />
+													Vistas {post.views}
+												</small>
+											)}
 										</header>
 										<div className='mb-3'>
 											<p className='description text-sm text-zinc-600 font-semibold bg-slate-300/50 w-fit px-1 rounded-full border border-zinc-300'>
@@ -174,25 +209,23 @@ export default function Posts({ edit }) {
 										</div>
 
 										<footer className='grid justify-between items-center text-xs md:text-sm text-gray-500'>
-											{isI ? (
-												<div className='flex items-center justify-between font-semibold text-xs text-gray-600'>
-													<img
-														className='rounded-full w-8 h-8 mr-1'
-														src='https://avatars.githubusercontent.com/u/93176365?s=400&u=256e212b81ba355aa6d1bda5b4f9882ed53474ea&v=4'
-													/>
-													solidSnk86
-												</div>
-											) : (
-												<span>{post.ip}</span>
-											)}
+											<div className='flex items-center justify-between font-semibold text-xs text-gray-600'>
+												<img
+													className='rounded-full w-8 h-8 mr-1'
+													src='https://avatars.githubusercontent.com/u/93176365?s=400&u=256e212b81ba355aa6d1bda5b4f9882ed53474ea&v=4'
+												/>
+												solidSnk86
+											</div>
 										</footer>
 										<a
 											className='text-sm w-fit absolute bottom-8 right-4 hover:text-sky-600 text-gray-600 translate-y-3 see-more'
 											href={post.url}
+											target='_blank'
+											onClick={() => countViews(post.id)}
 											title={`Ver ${post.title} en ${post.url}`}
 										>
 											Ver más
-											<ArrowRight className='inline w-4 -translate-y-[1px] arrow-right' />
+											<ChevronRight className='inline w-4 -translate-y-[1px] arrow-right' />
 										</a>
 									</article>
 									{editMode === post.id && (
