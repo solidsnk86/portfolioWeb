@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { useTranslation } from 'react-i18next'
 import { useIP } from '../../../components/GetIP'
 import { resizeTextarea } from '../../../components/ResizeTextarea'
 import { ToastContainer, toast } from 'react-toastify'
@@ -8,7 +7,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import Header from './Header'
 
 export const PostSender = () => {
-	const { t } = useTranslation()
 	const ipData = useIP()
 
 	const [formData, setFormData] = useState({
@@ -91,9 +89,7 @@ export const PostSender = () => {
 				className='h-[53px] border-b border-zinc-700 p-4 sticky top-0'
 				h3=' -translate-y-[2px]'
 			/>
-			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-10'>
-				Crear Blog
-			</h2>
+			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-10'>Crear Blog</h2>
 			<form
 				onSubmit={handleSubmit(sendFormData)}
 				className='justify-center mx-auto text-zinc-300 gap-3 border border-zinc-800 p-4 rounded-md m-4 w-fit post-form mb-20'
@@ -140,7 +136,7 @@ export const PostSender = () => {
 					disabled={isSubmitting}
 					className='bg-sky-600 px-4 py-1 flex mx-auto w-fit text-zinc-300 font-semibold rounded-full hover:brightness-125'
 				>
-					{isSubmitting ? t('sending') : t('send')}
+					{isSubmitting ? 'Enviando' : 'Enviar'}
 				</button>
 			</form>
 			<ToastContainer closeButton closeOnClick />
