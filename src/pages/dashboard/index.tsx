@@ -89,8 +89,8 @@ export default function Dashboard() {
 							<h1 className='text-3xl font-bold text-zinc-300 text-center my-12'>
 								Edición del Post
 							</h1>
-							<Posts edit={''} />
 							<span id='edit'></span>
+							<Posts edit={''} />
 						</section>
 					</main>
 				</div>
