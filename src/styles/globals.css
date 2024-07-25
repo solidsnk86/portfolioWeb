@@ -117,7 +117,7 @@ textarea {
 	width: 46px;
 	height: 46px;
 	border-radius: 50%;
-	border-left-color: #928bf9;
+	border-left-color: #0284c7;
 	z-index: 99;
 	animation: spinn 1s linear infinite;
 }
@@ -187,6 +187,7 @@ textarea {
 	filter: blur(45px);
 	transform: translateY(-50px) translateX(-100px);
 }
+
 .project-card:hover img {
 	transform: scale(1.6);
 	transition-duration: 0.2s ease-in-out;
@@ -195,29 +196,6 @@ textarea {
 
 .description-project {
 	text-wrap: balance;
-}
-
-.flares {
-	z-index: 0;
-	overflow: hidden;
-	background-image: linear-gradient(#010202, transparent);
-	position: absolute;
-	top: 0;
-}
-
-.flares img {
-	position: absolute;
-	top: 0%;
-	bottom: auto;
-}
-.flares .flares-top {
-	left: 0%;
-	right: 0%;
-}
-
-.flares .flares-right {
-	left: auto;
-	right: 0%;
 }
 
 .span-location::before {
@@ -372,9 +350,9 @@ textarea {
 }
 
 .post-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
 	& > input,
 	textarea {
 		border-bottom: 1px solid #222;
@@ -388,8 +366,8 @@ textarea {
 }
 
 .see-more:hover .arrow-right {
-    transform: translateX(3px) translateY(-1px);
-    transition: 0.2s ease-in-out;
+	transform: translateX(3px) translateY(-1px);
+	transition: 0.2s ease-in-out;
 }
 
 @media (width >= 1920px) {
