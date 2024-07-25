@@ -387,6 +387,11 @@ textarea {
 	}
 }
 
+.see-more:hover .arrow-right {
+    transform: translateX(3px) translateY(-1px);
+    transition: 0.2s ease-in-out;
+}
+
 @media (width >= 1920px) {
 	body {
 		width: 80%;
