@@ -38,7 +38,7 @@ export default function Dashboard() {
 						<div>
 							<div className='text-lg font-bold p-3 border-b border-zinc-700'>Dashboard</div>
 							<nav className='p-1'>
-								<ul>
+								<ul className='font-semibold'>
 									<li className='mb-4'>
 										<a href='#create' className='block p-2 rounded hover:bg-zinc-800/70 text-sm'>
 											Crear Posts
@@ -54,7 +54,7 @@ export default function Dashboard() {
 						</div>
 						<div>
 							<nav className='p-1'>
-								<ul>
+								<ul className='font-semibold'>
 									<li className='mb-4'>
 										<a href='#' className='block p-2 rounded hover:bg-zinc-800/70 text-sm'>
 											Preferencias

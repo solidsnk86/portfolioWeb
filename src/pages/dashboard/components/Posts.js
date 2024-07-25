@@ -218,7 +218,7 @@ export default function Posts({ edit }) {
 											</div>
 										</footer>
 										<a
-											className='text-sm w-fit absolute bottom-8 right-4 hover:text-sky-600 text-gray-600 translate-y-3 see-more'
+											className='text-sm w-fit absolute bottom-4 right-4 hover:text-sky-600 text-gray-600 translate-y-3 see-more'
 											href={post.url}
 											target='_blank'
 											onClick={() => countViews(post.id)}

@@ -28,18 +28,20 @@ export const PostSender = () => {
 	} = useForm()
 
 	useEffect(() => {
-		if (ipData.ip_address && ipData.city_name && ipData.country_name && ipData.country_flag) {
+		if (ipData.ip && ipData.city.name && ipData.country.name && ipData.country.flag) {
 			setFormData((prev) => ({
 				...prev,
-				ip: ipData.ip_address,
-				city: ipData.city_name,
-				country: ipData.country_name,
-				flag: ipData.country_flag
+				ip: ipData.ip.address,
+				city: ipData.city.name,
+				country: ipData.country.name,
+				flag: ipData.country.flag
 			}))
 		}
 
 		resizeTextarea()
 	}, [ipData])
+
+	console.log(ipData)
 
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value })
