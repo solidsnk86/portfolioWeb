@@ -92,7 +92,7 @@ export const PostSender = () => {
 				h3=' -translate-y-[2px]'
 			/>
 			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-10'>
-				{t('postTitle')}
+				Crear Blog
 			</h2>
 			<form
 				onSubmit={handleSubmit(sendFormData)}
@@ -103,24 +103,26 @@ export const PostSender = () => {
 					name='title'
 					value={formData.title}
 					onChange={handleChange}
-					placeholder={'Title'}
+					placeholder={'Título'}
 					required
 				/>
+
 				<input
 					{...register('description')}
 					name='description'
 					value={formData.description}
 					onChange={handleChange}
-					placeholder={'Description'}
+					placeholder={'Descripción'}
 					required
 				/>
 				<textarea
 					{...register('message')}
+					id='text-area'
 					className='border-none resize-none'
 					name='message'
 					value={formData.message}
 					onChange={handleChange}
-					placeholder={t('comment')}
+					placeholder={'Mensaje'}
 					maxLength={160}
 					required
 				/>
@@ -129,7 +131,7 @@ export const PostSender = () => {
 					name='url'
 					value={formData.url}
 					onChange={handleChange}
-					placeholder={'Your URL post'}
+					placeholder={'La URL de tu post'}
 					required
 				/>
 				<button

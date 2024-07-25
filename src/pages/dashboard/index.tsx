@@ -1,5 +1,5 @@
 /* eslint-disable multiline-ternary */
-import { Posts } from '@/components/Posts'
+import Posts from '@/pages/dashboard/components/Posts'
 import PostSender from '@/pages/dashboard/components/PostSender'
 import Head from 'next/head'
 import { favicon } from '@/components/const'
@@ -23,7 +23,7 @@ export default function Dashboard() {
 	return (
 		<>
 			<Head>
-				<title>SolidSnk86 - Dashboard</title>
+				<title>Dashboard</title>
 				<link rel='shortcut icon' href={favicon} type='image/x-icon' />
 			</Head>
 
@@ -41,12 +41,12 @@ export default function Dashboard() {
 								<ul>
 									<li className='mb-4'>
 										<a href='#create' className='block p-2 rounded hover:bg-zinc-800/70 text-sm'>
-											Create Posts
+											Crear Posts
 										</a>
 									</li>
 									<li>
 										<a href='#edit' className='block p-2 rounded hover:bg-zinc-800/70 text-sm'>
-											Edit Posts
+											Editar Posts
 										</a>
 									</li>
 								</ul>
@@ -57,23 +57,23 @@ export default function Dashboard() {
 								<ul>
 									<li className='mb-4'>
 										<a href='#' className='block p-2 rounded hover:bg-zinc-800/70 text-sm'>
-											Preferences
+											Preferencias
 										</a>
 									</li>
 									<li className='mb-4'>
 										<a href='#' className='block p-2 rounded hover:bg-zinc-800/70 text-sm'>
-											Access
+											Políticas
 										</a>
 									</li>
 									<li className='mb-4'>
 										<a href='#' className='block p-2 rounded hover:bg-zinc-800/70 text-sm'>
-											Security
+											Seguridad
 										</a>
 									</li>
 									<li>
 										<a href='#' className='block p-2 rounded hover:bg-zinc-800/70 text-sm'>
 											<Logout className='inline w-4 mr-2' />
-											Log out
+											Cerrar Sesión
 										</a>
 									</li>
 								</ul>
@@ -86,9 +86,11 @@ export default function Dashboard() {
 						<span id='create'></span>
 						<PostSender />
 						<section className='p-4'>
-							<h1 className='text-3xl font-bold text-zinc-300 text-center my-12'>Blog Posts</h1>
-							<span id='edit'></span>
+							<h1 className='text-3xl font-bold text-zinc-300 text-center my-12'>
+								Edición del Post
+							</h1>
 							<Posts edit={''} />
+							<span id='edit'></span>
 						</section>
 					</main>
 				</div>

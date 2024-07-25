@@ -9,7 +9,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ className, h3 }) => {
 	return (
 		<header className={`relative bg-[#1C1C1C] ${className}`}>
-			<h3 className={cn('text-md font-semibold', h3)}>Content</h3>
+			<h3 className={cn('text-md font-semibold', h3)}> SolidSnk86</h3>
 		</header>
 	)
 }

@@ -25,7 +25,10 @@ export function Header() {
 		localStorage.setItem('language', newLanguage)
 	}
 	const navigation = [
-		{ name: router.asPath === '/' || router.asPath.includes('/#') ? null : t('navLink0'), href: '/' },
+		{
+			name: router.asPath === '/' || router.asPath.includes('/#') ? null : t('navLink0'),
+			href: '/'
+		},
 		{ name: isPathContact ? null : t('navLink1'), href: '/contact' },
 		{ name: isPathContact || isPathBlog ? null : t('navLink2'), href: '#proyectos' },
 		{ name: isPathBlog ? null : t('Blog'), href: '/blog' }

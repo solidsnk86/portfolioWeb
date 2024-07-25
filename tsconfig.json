@@ -35,5 +35,5 @@
     "src/pages/api-bra/index.js",
     "src/hooks/useIsClient.js",
     "src/pages/dashboard/components/PostSender.js"
-  ]
+, "src/pages/dashboard/actions/actions.js", "src/pages/dashboard/components/FormatPostsDate.tsx"  ]
 }

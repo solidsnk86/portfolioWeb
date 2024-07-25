@@ -1,7 +1,8 @@
 /* eslint-disable multiline-ternary */
-import { supabase } from '../utils/supabase'
+import { supabase } from '@/utils/supabase'
 import { useState, useEffect } from 'react'
-import FormatDate from './FormatDate'
+import FormatDate from '@/components/FormatDate'
+import FormaPostsDate from '@/pages/dashboard/components/FormatPostsDate'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import useMatchMedia from '@/hooks/useMatchMedia'
 import { useIsClient } from '@/hooks/useIsClient'
@@ -15,9 +16,9 @@ import {
 	Trash
 } from 'tabler-icons-react'
 import { detectIf } from '@/hooks/useIPIs'
-import { Preloader } from './Preloader'
+import { Preloader } from '../../../components/Preloader'
 
-export function Posts({ edit }) {
+export default function Posts({ edit }) {
 	const [posts, setPosts] = useState([])
 	const [editMode, setEditMode] = useState(null)
 	const [activeMenu, setActiveMenu] = useState(null)
@@ -128,7 +129,7 @@ export function Posts({ edit }) {
 											id='menu-edit'
 											className={`${
 												activeMenu === post.id ? 'block' : 'hidden'
-											} absolute flex right-6 top-0 w-fit p-1 rounded-lg gap-1 bg-gray-100 border border-gray-300`}
+											} absolute flex right-6 top-0 w-fit p-1 rounded-lg gap-3 bg-gray-100 border border-gray-300`}
 										>
 											<small title={`Editar post id: ${post.id}`}>
 												<Pencil
@@ -136,7 +137,7 @@ export function Posts({ edit }) {
 													className={`w-4 ${edit} hover:scale-125 cursor-pointer`}
 												/>
 											</small>
-											<small title={`Borrar post id: ${post.id}`}>
+											<small title={`Borrar post: ${post.title}`}>
 												<Trash
 													className={`w-4 ${edit} hover:scale-125 cursor-pointer`}
 													onClick={(e) => {
@@ -150,10 +151,16 @@ export function Posts({ edit }) {
 											<h2 className='title text-xl font-bold'>{post.title}</h2>
 											<small className='mt-1 text-gray-500 flex md:items-center'>
 												<History className='inline w-3 h-3 mr-[2px] mt-[2px] md:mt-0' />
-												Publicado {FormatDate(post.created_at)}
+												Publicado ·
+												<span
+													className='ml-1 hover:underline cursor-default'
+													title={FormatDate(post.created_at)}
+												>
+													{FormaPostsDate(post.created_at)}
+												</span>
 											</small>
-											<small className='flex text-gray-500 md:items-center'>
-												<MapPin className='inline w-3 h-3 mr-[2px] translate-y-1' />
+											<small className='flex text-gray-500 items-center'>
+												<MapPin className='inline w-3 h-3 mr-[2px]' />
 												{post.city}, {post.country} {post.flag}
 											</small>
 										</header>
@@ -170,7 +177,7 @@ export function Posts({ edit }) {
 											{isI ? (
 												<div className='flex items-center justify-between font-semibold text-xs text-gray-600'>
 													<img
-														className='rounded-full w-7 h-7 mr-1'
+														className='rounded-full w-8 h-8 mr-1'
 														src='https://avatars.githubusercontent.com/u/93176365?s=400&u=256e212b81ba355aa6d1bda5b4f9882ed53474ea&v=4'
 													/>
 													solidSnk86
@@ -180,7 +187,7 @@ export function Posts({ edit }) {
 											)}
 										</footer>
 										<a
-											className='text-sm w-fit absolute bottom-4 right-4 hover:text-sky-600 text-gray-600 translate-y-3 see-more'
+											className='text-sm w-fit absolute bottom-8 right-4 hover:text-sky-600 text-gray-600 translate-y-3 see-more'
 											href={post.url}
 											title={`Ver ${post.title} en ${post.url}`}
 										>
