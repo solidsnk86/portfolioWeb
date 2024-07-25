@@ -152,7 +152,7 @@ export function Posts({ edit }) {
 												<History className='inline w-3 h-3 mr-[2px] mt-[2px] md:mt-0' />
 												Publicado {FormatDate(post.created_at)}
 											</small>
-											<small className='flex text-gray-500'>
+											<small className='flex text-gray-500 md:items-center'>
 												<MapPin className='inline w-3 h-3 mr-[2px] translate-y-1' />
 												{post.city}, {post.country} {post.flag}
 											</small>
