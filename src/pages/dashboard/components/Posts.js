@@ -109,7 +109,11 @@ export default function Posts({ edit }) {
 
 	async function countViews(id) {
 		try {
-			const { data: post, error } = await supabase.from('posts').select('views').eq('id', id).single()
+			const { data: post, error } = await supabase
+				.from('posts')
+				.select('views')
+				.eq('id', id)
+				.single()
 
 			if (error) {
 				throw new Error('Error fetching post views', error)
@@ -136,7 +140,7 @@ export default function Posts({ edit }) {
 		<>
 			{isClient && (
 				<ResponsiveMasonry columnsCountBreakPoints={{ 400: 1, 700: 3, 900: 4, 1200: 4, 1600: 5 }}>
-					<Masonry gutter={mobile ? '0.2rem' : '0.5rem'}>
+					<Masonry gutter={mobile ? '0.8rem' : '1rem'}>
 						{posts.length > 0 ? (
 							posts.map((post) => (
 								<div key={post.id}>
@@ -190,7 +194,7 @@ export default function Posts({ edit }) {
 											{post.views <= 0 ? (
 												<small className='text-gray-500 text-xs items-center flex'>
 													<Eye className='inline w-3 h-3 mr-[2px]' />
-													Vistas {0}
+													Vistas 0
 												</small>
 											) : (
 												<small className='text-gray-500 text-xs items-center flex'>
@@ -218,7 +222,7 @@ export default function Posts({ edit }) {
 											</div>
 										</footer>
 										<a
-											className='text-sm w-fit absolute bottom-4 right-4 hover:text-sky-600 text-gray-600 translate-y-3 see-more'
+											className='flex justify-end text-sm hover:text-sky-600 text-gray-600 see-more'
 											href={post.url}
 											target='_blank'
 											onClick={() => countViews(post.id)}

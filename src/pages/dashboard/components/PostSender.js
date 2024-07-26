@@ -94,7 +94,7 @@ export const PostSender = () => {
 			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-10'>Crear Blog</h2>
 			<form
 				onSubmit={handleSubmit(sendFormData)}
-				className='justify-center mx-auto text-zinc-300 gap-3 border border-zinc-800 p-4 rounded-md m-4 w-fit post-form mb-20'
+				className='justify-center bg-gray-300 mx-auto text-zinc-300 gap-3 border border-zinc-700 p-6 rounded-lg m-4 w-fit post-form mb-20'
 			>
 				<input
 					{...register('title')}
@@ -136,7 +136,7 @@ export const PostSender = () => {
 					id='send-button'
 					type='submit'
 					disabled={isSubmitting}
-					className='bg-sky-600 px-4 py-1 flex mx-auto w-fit text-zinc-300 font-semibold rounded-full hover:brightness-125'
+					className='bg-sky-600 px-4 py-1 flex mx-auto w-fit text-zinc-300 font-semibold rounded-sm hover:brightness-125'
 				>
 					{isSubmitting ? 'Enviando' : 'Enviar'}
 				</button>
