@@ -18,7 +18,7 @@ import {
 } from 'tabler-icons-react'
 import { Preloader } from '../../../components/Preloader'
 
-export default function Posts({ edit }) {
+export default function Posts({ edit, className = '' }) {
 	const [posts, setPosts] = useState([])
 	const [editMode, setEditMode] = useState(null)
 	const [activeMenu, setActiveMenu] = useState(null)
@@ -137,7 +137,7 @@ export default function Posts({ edit }) {
 	}
 
 	return (
-		<>
+		<section className={className}>
 			{isClient && (
 				<ResponsiveMasonry columnsCountBreakPoints={{ 400: 1, 700: 3, 900: 4, 1200: 4, 1600: 5 }}>
 					<Masonry gutter={mobile ? '0.8rem' : '1rem'}>
@@ -248,7 +248,7 @@ export default function Posts({ edit }) {
 					</Masonry>
 				</ResponsiveMasonry>
 			)}
-		</>
+		</section>
 	)
 }
 /* eslint-enable multiline-ternary */
