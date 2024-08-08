@@ -1,6 +1,6 @@
 import { geolocation } from './const'
 import { supabase } from '@/utils/supabase'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import FormatDate from './FormatDate'
 
