@@ -7,12 +7,12 @@ import TypingEffect from './TypoEffect'
 export function AboutMe() {
 	const { t } = useTranslation()
 	const data = useIP()
-	const country = data.country && data.country.flag
-	const city = data.city && data.city.name
+	const country = data.country?.flag
+	const city = data.city?.name
 
 	const CardTitle = ({ Tag = 'p', children }) => {
 		return (
-			<Tag className='text-xs text-balance justify-center mx-auto md:text-md xl:text-lg from-zinc-300 text-center my-20 italic font-thin'>
+			<Tag className='text-xs text-pritty justify-center mx-auto md:text-md xl:text-lg from-zinc-300 text-center my-20 italic font-thin'>
 				{children}
 			</Tag>
 		)
@@ -28,9 +28,7 @@ export function AboutMe() {
 				</div>
 				<aside className='flex-col relative top-10 mx-3'>
 					<CardTitle>
-						<TypingEffect typingSpeed={100}>
-							{`¡Hola bienvenido! Un gusto recibirte desde ${city} ${country}`}
-						</TypingEffect>
+						<TypingEffect typingSpeed={100}>{`${t('welcome')} ${city} ${country}`}</TypingEffect>
 						<br />
 						{t('aboutMe')}
 						<Link
