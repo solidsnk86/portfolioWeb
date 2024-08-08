@@ -1,6 +1,6 @@
 import { geolocation } from './const'
 import { supabase } from '@/utils/supabase'
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import FormatDate from './FormatDate'
 
@@ -37,6 +37,7 @@ const Visit = ({ className = '' }) => {
 							longitude: jsonData.coordinates.longitude
 						}
 					})
+					console.log(jsonData.ip.address)
 					const localURL = window.location.href
 					if (
 						localURL !== 'http://localhost:3000/' &&
