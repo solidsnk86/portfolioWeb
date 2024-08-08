@@ -28,7 +28,9 @@ export function AboutMe() {
 				</div>
 				<aside className='flex-col relative top-10 mx-3'>
 					<CardTitle>
-						<TypingEffect typingSpeed={60}>{`${t('welcome')} ${city} ${country}`}</TypingEffect>
+						{city && (
+							<TypingEffect typingSpeed={60}>{`${t('welcome')} ${city} ${country}`}</TypingEffect>
+						)}
 						<br />
 						{t('aboutMe')}
 						<Link
