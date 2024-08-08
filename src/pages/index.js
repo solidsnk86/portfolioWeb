@@ -62,7 +62,7 @@ export default function Home() {
 				<HomeTitle>{t('projectsTitle')}</HomeTitle>
 
 				{isClient && (
-					<ResponsiveMasonry columnsCountBreakPoints={{ 750: 2, 900: 3, 1200: 4 }}>
+					<ResponsiveMasonry columnsCountBreakPoints={{ 750: 2, 900: 3, 1200: 4 }} cl>
 						<Masonry gutter={mobile ? '0.3rem' : '0.4rem'}>
 							{projects.map((project) => (
 								<div
@@ -111,11 +111,10 @@ export default function Home() {
 				<p className=''>{t('documentCv')}</p>
 				<ArrowUpRight className='inline w-4 h-4' />
 			</Link>
-			<Footer />
 			{[{ repoName: 'portfolioWeb' }].map((repo) => (
 				<div
 					key={repo.repoName}
-					className='text-zinc-300 p-1 text-[10px] rounded-md my-6 justify-center mx-auto flex bg-zinc-600/30 w-fit border border-zinc-700 update-dot cursor-default'
+					className='text-zinc-300 p-1 text-[10px] rounded-md my-20 justify-center mx-auto flex bg-gradient-to-t from-orange-200/15 via-zinc-700 to-zinc-800 w-fit border border-zinc-700 update-dot cursor-default'
 				>
 					<p className='ml-1'>
 						{t('update')}{' '}
@@ -124,8 +123,9 @@ export default function Home() {
 					</p>
 				</div>
 			))}
-			<Visit />
-			<p className='text-center text-zinc-600 text-[11px] pb-2'>{t('last_footer')}</p>
+			<Visit className='visits' />
+			<Footer />
+			<p className='text-center text-zinc-500 text-[11px] pb-2'>{t('last_footer')}</p>
 		</>
 	)
 }

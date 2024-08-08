@@ -90,14 +90,24 @@ const Visit = ({ className = '' }) => {
 	}, [])
 
 	return (
-		<div className={`cursor-default ${className}`}>
-			<p className='text-zinc-300 text-xs text-center update-dot'>
-				{t('profileViews')} {lastVisit.id}
-			</p>
-			<div id='visit' className='p-3 text-center text-[#928bf9] update-dot'>
+		<div className={`justify-center md:mx-auto mx-5 grid bg-gradient-to-t from-zinc-500 via-zinc-700 to-zinc-800 w-fit border border-zinc-700 rounded-lg cursor-default ${className}`}>
+			<header className='border-b border-zinc-600/65 py-1'>
+				{lastVisit.id > 5000
+					? (
+						<p className='text-zinc-300 text-xs text-center'>
+							{t('profileViews')} <span className='text-lime-400'>{((lastVisit.id) / 1000).toFixed(2)}K</span>
+						</p>
+					)
+					: (
+						<p className='text-zinc-300 text-xs text-center'>
+							{t('profileViews')} {lastVisit.id}
+						</p>
+					)}
+			</header>
+			<div id='visit' className='p-3 text-center'>
 				{visitData.city && (
 					<div className='flex mx-auto justify-center'>
-						<span className='span-location mt-[3px] px-1 h-[8px] rounded-full bg-[#928bf9] xl:mr-2 mr-1 custom-ping hidden xl:flex' />
+						<span className='span-location mt-[3px] px-1 h-[8px] rounded-full bg-[#FF8A4C] xl:mr-2 mr-1 custom-ping hidden xl:flex' />
 						<p className='text-[10px] xl:text-xs last-visit'>
 							{t('lastVisit')} {FormatDate(lastVisit.created_at)} {t('lastVisitFrom')}{' '}
 							{lastVisit.city_name}, {lastVisit.country_name} {lastVisit.country_flag}

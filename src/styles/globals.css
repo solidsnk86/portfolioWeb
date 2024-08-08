@@ -206,7 +206,7 @@ textarea {
 	right: 2px;
 	height: 3px;
 	border-radius: 100%;
-	background-color: #161515;
+	background-color: #515159;
 	animation: none;
 }
 
@@ -227,6 +227,26 @@ textarea {
 
 .last-visit {
 	text-wrap: pretty;
+	color: #ff8a4c;
+}
+
+.visits {
+    position: relative;
+}
+
+.visits::before {
+	content: '';
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background-color: #eb9b6f;
+    z-index: 0;
+    filter: blur(180px) drop-shadow(0 0 150px #e99d73dc);
+}
+
+#visit {
+    font-family:monospace;
 }
 
 .head-table th {

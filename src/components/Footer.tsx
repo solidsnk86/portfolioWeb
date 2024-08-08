@@ -12,10 +12,10 @@ export const Footer = ({ className }: { className: string }) => {
 	return (
 		<footer className={`flex pt-20 pb-5 justify-center m-auto ${className}`}>
 			{githubLink.map((i) => (
-				<div key={i.href} className='text-zinc-600 text-sm'>
+				<div key={i.href} className='text-zinc-500 text-sm'>
 					<Link href={i.href}>
 						<span
-							title='Visitar el perfil de Github'
+							title={`Ir al perfil de Github: ${i.href}`}
 							className='hover:text-[#928bf9] hover:transition-color duration-500 mx-2'
 						>
 							{i.str}
