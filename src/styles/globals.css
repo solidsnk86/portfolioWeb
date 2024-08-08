@@ -166,15 +166,6 @@ textarea {
 	}
 }
 
-.welcome {
-	justify-content: center;
-	margin: 0 auto;
-	font-size: large;
-	border-radius: 8px;
-	font-style: oblique;
-	font-weight: 500;
-}
-
 .proyects-cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

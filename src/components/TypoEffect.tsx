@@ -19,7 +19,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({ children, typingSpeed }) =>
 		typeText()
 	}, [children, typingSpeed])
 
-	return <span className='welcome'>{text}</span>
+	return <span>{text}</span>
 }
 
 export default TypingEffect
