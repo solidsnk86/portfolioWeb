@@ -16,7 +16,7 @@ function Blog() {
 				<title>Blog</title>
 			</Head>
 			<Header />
-			<main className='m-4 bg-[#18181b]'>
+			<main className='m-10 bg-[#18181b]'>
 				<h1 className='text-4xl font-bold text-center text-zinc-300 my-20'>Blog</h1>
 				<Posts edit='hidden' className='aspect-square' />
 				<Footer className='' />

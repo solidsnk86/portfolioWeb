@@ -1,14 +1,17 @@
 import { Logo } from './Logo'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
-import React from 'react'
+import { useIP } from './GetIP'
 
 export function AboutMe() {
 	const { t } = useTranslation()
+	const data = useIP()
+	const country = data.country && data.country.flag
+	const city = data.city && data.city.name
 
 	const CardTitle = ({ Tag = 'p', children }) => {
 		return (
-			<Tag className='text-xs md:text-md xl:text-lg from-zinc-300 text-center my-20 italic font-thin h-[250px]'>
+			<Tag className='text-xs text-balance justify-center mx-auto md:text-md xl:text-lg from-zinc-300 text-center my-20 italic font-thin'>
 				{children}
 			</Tag>
 		)
@@ -23,6 +26,9 @@ export function AboutMe() {
 					</div>
 				</div>
 				<aside className='flex-col relative top-10 mx-3'>
+					<p className='mt-10 xl:mt-20 text-center text-zinc-400 welcome'>
+						¡Hola bienvenido! Un gusto recibirte desde {city} {country}
+					</p>
 					<CardTitle>
 						{t('aboutMe')}
 						<Link

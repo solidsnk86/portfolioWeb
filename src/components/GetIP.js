@@ -10,13 +10,13 @@ export const useIP = () => {
 				if (response.ok) {
 					const data = await response.json(geolocation)
 					setItem({
-						city: {
-							name: data.city.name,
-							postalCode: data.city.postalCode
-						},
 						country: {
 							name: data.country.name,
 							flag: data.country.flag
+						},
+						city: {
+							name: data.city.name,
+							postalCode: data.city.postalCode
 						},
 						ip: {
 							address: data.ip.address,

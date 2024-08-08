@@ -166,6 +166,13 @@ textarea {
 	}
 }
 
+.welcome {
+	font-size: large;
+	font-style: italic;
+	font-weight: 500;
+	text-shadow: 1px 2px 3px #45454c;
+}
+
 .proyects-cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -350,13 +357,13 @@ textarea {
 }
 
 .post-form {
-    color: #1f1f22;
+	color: #1f1f22;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 
 	& > input,
 	textarea {
-        color: #1f1f22;
+		color: #1f1f22;
 		border-bottom: 1px solid #999;
 		padding: 10px;
 		background-color: transparent;

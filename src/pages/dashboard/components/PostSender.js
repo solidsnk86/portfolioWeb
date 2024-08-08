@@ -8,7 +8,6 @@ import Header from './Header'
 
 export const PostSender = () => {
 	const ipData = useIP()
-
 	const [formData, setFormData] = useState({
 		ip: '',
 		city: '',
@@ -40,8 +39,6 @@ export const PostSender = () => {
 
 		resizeTextarea()
 	}, [ipData])
-
-	console.log(ipData)
 
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value })
