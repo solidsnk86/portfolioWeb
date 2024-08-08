@@ -99,7 +99,7 @@ const Visit = ({ className = '' }) => {
 						</p>
 					)
 					: (
-						<p className='text-zinc-300 text-xs text-center'>
+						<p className='text-zinc-300 text-xs text-center font-semibold font-mono'>
 							{t('profileViews')} {lastVisit.id}
 						</p>
 					)}

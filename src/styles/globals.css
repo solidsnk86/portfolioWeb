@@ -318,7 +318,7 @@ textarea {
 .cv-link::after {
 	content: '';
 	position: absolute;
-	background-color: #928bf9a4;
+	background-color: #eb9a6f86;
 	width: 25px;
 	height: 25px;
 	top: 17%;

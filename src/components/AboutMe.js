@@ -7,8 +7,8 @@ import TypingEffect from './TypoEffect'
 export function AboutMe() {
 	const { t } = useTranslation()
 	const data = useIP()
-	const country = data.country && data.country.flag
-	const city = data.city && data.city.name
+	const country = data.country?.flag
+	const city = data.city?.name
 
 	const CardTitle = ({ Tag = 'p', children }) => {
 		return (
