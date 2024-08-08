@@ -78,7 +78,7 @@ i18n.use(initReactI18next).init({
 				projectsTitle: 'Mis Proyectos...',
 				exp: 'año',
 				exps: 'años',
-				welcome: 'Hola, bienvenido! Me alegro recibirte desde',
+				welcome: 'Hola, bienvenido! Me alegra recibirte desde',
 				aboutMe: `Mi nombre es Gabriel 👋. Soy desarrollador Front End con ${Experience()} año de experiencia, utilizando tecnologías como React y Next.js. Trabajo en mi proyecto`,
 				sectionLF: '"Librería, marcos, y lenguajes que más utilizo"',
 				project1: 'Documentación para Programación Web',
