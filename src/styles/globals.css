@@ -167,10 +167,12 @@ textarea {
 }
 
 .welcome {
+	justify-content: center;
+	margin: 0 auto;
 	font-size: large;
-	font-style: italic;
+	border-radius: 8px;
+	font-style: oblique;
 	font-weight: 500;
-	text-shadow: 1px 2px 3px #45454c;
 }
 
 .proyects-cards {

@@ -2,6 +2,7 @@ import { Logo } from './Logo'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { useIP } from './GetIP'
+import TypingEffect from './TypoEffect'
 
 export function AboutMe() {
 	const { t } = useTranslation()
@@ -26,10 +27,11 @@ export function AboutMe() {
 					</div>
 				</div>
 				<aside className='flex-col relative top-10 mx-3'>
-					<p className='mt-10 xl:mt-20 text-center text-zinc-400 welcome'>
-						¡Hola bienvenido! Un gusto recibirte desde {city} {country}
-					</p>
 					<CardTitle>
+						<TypingEffect typingSpeed={100}>
+							{`¡Hola bienvenido! Un gusto recibirte desde ${city} ${country}`}
+						</TypingEffect>
+						<br />
 						{t('aboutMe')}
 						<Link
 							className='mx-1 duration-500 text-zinc-50 underline link-shadow'

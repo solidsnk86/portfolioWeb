@@ -54,7 +54,7 @@ export default function Home() {
 				<Header />
 			</header>
 			<main
-				className={`${inter.className} max-w-5xl mx-auto mt-14 pb-20 px-4`}
+				className={`${inter.className} max-w-5xl mx-auto mt-14 pb-20 px-4 bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0`}
 			>
 				<Particles className='absolute inset-0 -z-0 animate-fade-in' quantity={133} />
 				<AboutMe />
