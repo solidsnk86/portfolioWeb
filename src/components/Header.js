@@ -116,15 +116,7 @@ export function Header() {
 					</div>
 				</div>
 				<li className='mt-[1px]'>
-					{[
-						{
-							repoName: 'portfolioWeb'
-						}
-					].map((item, index) => (
-						<div className='space-x-2' key={item.repoName}>
-							<GithubStats key={index} repoName={item.repoName} />
-						</div>
-					))}
+					<GithubStats repoName='portfolioWeb' />
 				</li>
 			</ul>
 		</div>

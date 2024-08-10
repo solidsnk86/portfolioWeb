@@ -2,7 +2,7 @@ import { Logo } from './Logo'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { useIP } from './GetIP'
-import TypingEffect from './TypoEffect'
+import TypingEffect from './TypoEffect.ts'
 
 export function AboutMe() {
 	const { t } = useTranslation()
