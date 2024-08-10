@@ -47,11 +47,14 @@ export function Header() {
 	}
 
 	return (
-		<header className='relative w-full bg-stone-600/10 backdrop-blur-md text-white z-50 h-16'>
-			<div className='container mx-auto px-4 py-4 flex justify-between items-center'>
-				<div className='flex items-center'>
+		<header className='relative w-full text-white z-50 h-16' id='header'>
+			<div className='container mx-auto px-4 pt-3 flex justify-between items-center'>
+				<div className='flex items-center overflow-visible' title='solidSnk86'>
 					<Link href='/' className='text-xl font-bold'>
-						solidSnk86
+						<img
+							src='https://raw.githubusercontent.com/solidsnk86/portfolio-mgc-2024/master/public/solidsnk86.png'
+							className='w-10 h-10 text-header-shadow'
+						/>
 					</Link>
 				</div>
 				{/* Desktop Navigation */}
@@ -118,7 +121,7 @@ export function Header() {
 			</div>
 			{/* Mobile Menu */}
 			{isMenuOpen && (
-				<div className='fixed inset-0 bg-gray-900/10 backdrop-blur-md z-50'>
+				<div className='fixed top-0 inset-0 bg-gray-900/10 backdrop-blur-md z-50'>
 					<div className='container bg-[#18181b] h-screen mx-auto px-4 py-6 flex flex-col'>
 						<div className='flex justify-end'>
 							<button

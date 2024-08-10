@@ -66,7 +66,7 @@ export const GithubStats = ({ repoName, className = '' }) => {
 				target='_blank'
 			>
 				<span className='text-sm md:text-base font-medium mx-1'>{data.stars}</span>
-				<span className='hover:text-[#928BF9]'>stars</span>
+				<span className='hover:text-blue-400'>stars</span>
 			</a>
 		</div>
 	)
