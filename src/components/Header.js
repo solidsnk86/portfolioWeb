@@ -4,16 +4,13 @@ import { Language, Menu2, X } from 'tabler-icons-react'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { ShareIcon } from 'lucide-react'
+import { useRouter } from 'next/router'
 
 export function Header() {
 	const { t, i18n } = useTranslation()
-	const router = useRouter()
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-	const isPathBlog = router.asPath === '/blog'
-	const isPathContact = router.asPath === '/contact'
+	const router = useRouter()
 
 	useEffect(() => {
 		const storedLanguage = localStorage.getItem('language')
@@ -27,13 +24,10 @@ export function Header() {
 		localStorage.setItem('language', newLanguage)
 	}
 	const navigation = [
-		{
-			name: router.asPath === '/' || router.asPath.includes('/#') ? null : t('navLink0'),
-			href: '/'
-		},
-		{ name: isPathContact ? null : t('navLink1'), href: '/contact' },
-		{ name: isPathContact || isPathBlog ? null : t('navLink2'), href: '#proyectos' },
-		{ name: isPathBlog ? null : t('Blog'), href: '/blog' }
+		{ name: t('navLink0'), href: '/' },
+		{ name: t('navLink1'), href: '/contact' },
+		{ name: t('navLink2'), href: '#proyectos' },
+		{ name: t('Blog'), href: '/blog' }
 	]
 
 	const share = () => {
@@ -55,8 +49,8 @@ export function Header() {
 	}
 
 	return (
-		<header className='relative w-full bg-gray-900/10 backdrop-blur-md text-white'>
-			<div className='container mx-auto px-4 py-2 flex justify-between items-center'>
+		<header className='relative w-full bg-stone-600/10 backdrop-blur-md text-white z-50 h-16'>
+			<div className='container mx-auto px-4 py-4 flex justify-between items-center'>
 				<div className='flex items-center'>
 					<Link href='/' className='text-xl font-bold'>
 						solidSnk86
