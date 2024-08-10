@@ -5,12 +5,10 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { ShareIcon } from 'lucide-react'
-import { useRouter } from 'next/router'
 
 export function Header() {
 	const { t, i18n } = useTranslation()
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
-	const router = useRouter()
 
 	useEffect(() => {
 		const storedLanguage = localStorage.getItem('language')
