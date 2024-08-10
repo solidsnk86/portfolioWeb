@@ -48,7 +48,7 @@ body.loading * {
 }
 
 .text-header-shadow:hover {
-	filter: drop-shadow(0 0 10px #ffa600ab);
+	filter: drop-shadow(0 0 10px #928bf9);
 	transition: 0.3s ease-in-out;
 }
 
