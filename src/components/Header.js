@@ -1,14 +1,16 @@
 import { description } from './const'
 import { GithubStats } from './GithubStats'
-import { Language, Share } from 'tabler-icons-react'
-import { useEffect } from 'react'
+import { Language, Menu2, X } from 'tabler-icons-react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { ShareIcon } from 'lucide-react'
 
 export function Header() {
 	const { t, i18n } = useTranslation()
 	const router = useRouter()
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 	const isPathBlog = router.asPath === '/blog'
 	const isPathContact = router.asPath === '/contact'
@@ -48,77 +50,134 @@ export function Header() {
 		}
 	}
 
+	const toggleMenu = () => {
+		setIsMenuOpen(!isMenuOpen)
+	}
+
 	return (
-		<div className='relative w-full h-14 p-2 flex text-white !bg-cover !bg-center'>
-			<div className='relative z-10 flex items-center justify-center'>
-				<div className='w-full flex gap-3 md:gap-6 items-center md:justify-center text-sm md:text-base !justify-center'>
-					<ul className='flex'>
-						{navigation.map((item) => (
-							<li
-								key={item.href}
-								className='font-semibold text-[#E0F2FE] mr-5 cursor-pointer hover:text-[#928BF9] transition-all item'
+		<header className='relative w-full bg-gray-900/10 backdrop-blur-md text-white'>
+			<div className='container mx-auto px-4 py-2 flex justify-between items-center'>
+				<div className='flex items-center'>
+					<Link href='/' className='text-xl font-bold'>
+						solidSnk86
+					</Link>
+				</div>
+				{/* Desktop Navigation */}
+				<nav className='hidden md:flex space-x-4'>
+					{navigation.map((item) => (
+						<Link
+							key={item.href}
+							href={item.href}
+							className='hover:text-blue-400 transition-colors'
+						>
+							{item.name}
+						</Link>
+					))}
+				</nav>
+				{/* Mobile Menu Button */}
+				<button
+					className='md:hidden text-white focus:outline-none'
+					onClick={toggleMenu}
+					aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+				>
+					{isMenuOpen ? '' : <Menu2 size={24} />}
+				</button>
+				{/* Language and Share buttons */}
+				<div className='hidden md:flex items-center space-x-4'>
+					<button
+						onClick={share}
+						className='hover:text-blue-400 transition-colors flex items-center'
+					>
+						<ShareIcon size={18} className='mr-1' />
+						<span>{t('share')}</span>
+					</button>
+					<div className='relative group'>
+						<button className='hover:text-blue-400 transition-colors flex items-center'>
+							<Language size={20} className='mr-1' />
+							<span>{t('lang')}</span>
+						</button>
+						<div className='absolute right-0 w-48 bg-white rounded-md shadow-lg hidden group-hover:block'>
+							<button
+								onClick={() => changeLanguage('en')}
+								className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md w-full text-left'
 							>
-								<Link href={item.href} target='_self'>
-									{item.name}
-								</Link>
-							</li>
-						))}
-					</ul>
+								<img
+									src='/img/estados-unidos-flag.png'
+									alt='English'
+									className='w-5 h-5 inline-block mr-2'
+								/>
+								English
+							</button>
+							<button
+								onClick={() => changeLanguage('es')}
+								className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md w-full text-left'
+							>
+								<img
+									src='/img/espana-flag.png'
+									alt='Español'
+									className='w-5 h-5 inline-block mr-2'
+								/>
+								Español
+							</button>
+						</div>
+					</div>
+					<GithubStats repoName='portfolioWeb' />
 				</div>
 			</div>
-			<ul className='absolute right-5 top-3 flex'>
-				<button
-					onClick={share}
-					className='font-semibold text-sm md:text-base mt-[2px] hover:text-[#928BF9]'
-				>
-					<span
-						className={
-							'px-[3px] pt-[2px] hidden sm:block duration-100 font-semibold xl:text-sm text-xs'
-						}
-						title={t('share')}
-					>
-						<Share className='inline w-[23px] mr-1' />
-						{t('share')}
-					</span>
-					<span
-						className={'px-[3px] pt-[2px] sm:hidden font-semibold xl:text-sm text-xs'}
-						title={t('share')}
-					>
-						<Share className='inline w-[20px] xl:w-[23px] mr-1 xl:text-sm text-xs' />
-					</span>
-				</button>
-				<div className='px-4 pt-[1px] language-button' title={t('language')}>
-					<button className='font-semibold text-sm md:text-base mt-[2px] hover:text-[#928BF9]'>
-						<span
-							className={
-								'px-[3px] pt-[2px] hidden sm:block duration-100 font-semibold xl:text-sm text-xs'
-							}
-							title={t('lang')}
-						>
-							<Language className='inline w-[23px]' />
-							{t('lang')}
-						</span>
-						<span
-							className={'px-[3px] pt-[2px] sm:hidden font-semibold xl:text-sm text-xs'}
-							title={t('lang')}
-						>
-							<Language className='inline w-[20px] xl:w-[23px] xl:text-sm text-xs' />
-						</span>
-					</button>
-					<div className='flex dropdown-content p-3'>
-						<button id='top' onClick={() => changeLanguage('en')} className='hover:scale-[1.2]'>
-							<img className='inline' src='/img/estados-unidos-flag.png' width={30} alt='English' />{' '}
-							EN
-						</button>
-						<button id='bottom' onClick={() => changeLanguage('es')} className='hover:scale-[1.2]'>
-							<img className='inline' src='/img/espana-flag.png' width={30} alt='Español' /> ES
-						</button>
+			{/* Mobile Menu */}
+			{isMenuOpen && (
+				<div className='fixed inset-0 bg-gray-900/10 backdrop-blur-md z-50'>
+					<div className='container bg-[#18181b] h-screen mx-auto px-4 py-6 flex flex-col'>
+						<div className='flex justify-end'>
+							<button
+								className='text-white focus:outline-none'
+								onClick={toggleMenu}
+								aria-label='Close menu'
+							>
+								<X size={24} />
+							</button>
+						</div>
+						<nav className='flex flex-col items-center justify-center flex-grow'>
+							{navigation.map((item) => (
+								<Link
+									key={item.href}
+									href={item.href}
+									className='text-2xl py-4 hover:text-blue-400 transition-colors'
+									onClick={toggleMenu}
+								>
+									{item.name}
+								</Link>
+							))}
+						</nav>
+						<div className='flex flex-col items-center space-y-4 pb-8'>
+							<button
+								onClick={share}
+								className='hover:text-blue-400 transition-colors flex items-center'
+							>
+								<ShareIcon size={18} className='mr-2' />
+								<span>{t('share')}</span>
+							</button>
+							<div className='flex space-x-4'>
+								<button
+									onClick={() => changeLanguage('en')}
+									className='hover:text-blue-400 transition-colors flex items-center'
+								>
+									<img src='/img/estados-unidos-flag.png' alt='English' className='w-5 h-5 mr-2' />
+									EN
+								</button>
+								<button
+									onClick={() => changeLanguage('es')}
+									className='hover:text-blue-400 transition-colors flex items-center'
+								>
+									<img src='/img/espana-flag.png' alt='Español' className='w-5 h-5 mr-2' />
+									ES
+								</button>
+							</div>
+							<GithubStats repoName='portfolioWeb' />
+						</div>
 					</div>
 				</div>
-				<li className='mt-[1px]'>
-					<GithubStats repoName='portfolioWeb' />
-				</li>
-			</ul>
-		</div>
+			)}
+		</header>
 	)
 }
