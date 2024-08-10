@@ -37,7 +37,6 @@ const Visit = ({ className = '' }) => {
 							longitude: jsonData.coordinates.longitude
 						}
 					})
-					console.log(jsonData.ip.address)
 					const localURL = window.location.href
 					if (
 						localURL !== 'http://localhost:3000/' &&
