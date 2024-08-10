@@ -29,7 +29,9 @@ export function AboutMe() {
 				<aside className='flex-col relative top-10 mx-3'>
 					<CardTitle>
 						{city && (
-							<TypingEffect typingSpeed={60}>{`${t('welcome')} ${city} ${country} ツ`}</TypingEffect>
+							<TypingEffect typingSpeed={60}>{`${t(
+								'welcome'
+							)} ${city} ${country} ツ`}</TypingEffect>
 						)}
 						<br />
 						{t('aboutMe')}
