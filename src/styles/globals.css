@@ -265,6 +265,10 @@ textarea {
 	src: url('/fonts/CascadiaCodePL-SemiBold.ttf') format('truetype');
 }
 
+.aspect {
+	aspect-ratio: 800 / 300;
+}
+
 .update-dot {
 	font-family: 'CascadiaCodePL', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

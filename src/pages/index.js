@@ -18,6 +18,7 @@ import Visit from '@/components/Visits'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import useMatchMedia from '@/hooks/useMatchMedia'
 import { useIsClient } from '@/hooks/useIsClient'
+import { Preloader } from '../components/Preloader'
 
 export default function Home() {
 	const { t } = useTranslation()
@@ -62,7 +63,11 @@ export default function Home() {
 				<HomeTitle>{t('projectsTitle')}</HomeTitle>
 
 				{isClient && (
-					<ResponsiveMasonry columnsCountBreakPoints={{ 750: 2, 900: 3, 1200: 4 }} cl>
+					<ResponsiveMasonry
+						columnsCountBreakPoints={{ 750: 2, 900: 3, 1200: 4 }}
+						className='aspect'
+					>
+						<Preloader />
 						<Masonry gutter={mobile ? '0.3rem' : '0.4rem'}>
 							{projects.map((project) => (
 								<div
