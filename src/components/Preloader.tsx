@@ -4,7 +4,7 @@ export const Preloader = () => {
 	const [preloaderVisible, setPreloaderVisible] = useState(true)
 	useEffect(() => {
 		const preloaderTimeout = setTimeout(() => {
-			setPreloaderVisible(true)
+			setPreloaderVisible(false)
 		}, 2000)
 
 		return () => clearTimeout(preloaderTimeout)
