@@ -54,13 +54,14 @@ body.loading * {
 
 .link-shadow {
 	padding-inline: 4px;
-	background-color: #76a9fa;
+	background-color: #27272a;
 	border-radius: 6px;
 	text-decoration: none;
+	color: #928bf9;
 }
 
 .link-shadow:hover {
-	filter: drop-shadow(0 0 10px #928bf9) brightness(110%);
+	color: currentColor;
 }
 
 .read-more:hover .arrow {
