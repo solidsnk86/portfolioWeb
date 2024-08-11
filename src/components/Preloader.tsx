@@ -4,11 +4,17 @@ export const Preloader = () => {
 	const [preloaderVisible, setPreloaderVisible] = useState(true)
 	useEffect(() => {
 		const preloaderTimeout = setTimeout(() => {
-			setPreloaderVisible(false)
+			setPreloaderVisible(true)
 		}, 2000)
 
 		return () => clearTimeout(preloaderTimeout)
 	}, [])
 
-	return preloaderVisible && <div className='spinner'></div>
+	return (
+		preloaderVisible && (
+			<section className='relative'>
+				<div className='spinner'></div>
+			</section>
+		)
+	)
 }
