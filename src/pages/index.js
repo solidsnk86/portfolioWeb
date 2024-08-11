@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import React from 'react'
 import { AboutMe } from '@/components/AboutMe'
 import { DataProjects } from '../components/DataProjects'
@@ -67,40 +68,44 @@ export default function Home() {
 						className='aspect'
 					>
 						<Masonry gutter={mobile ? '0.3rem' : '0.4rem'}>
-							{projects.map((project) => (
-								<div
-									className='grid text-zinc-300 text-center border-white border-opacity-10 border md:rounded-2xl rounded-md hover:border-zinc-700 overflow-hidden project-card relative'
-									key={project.title}
-								>
-									<img
-										className='image-card h-28 md:h-auto'
-										src={project.image}
-										alt={project.title}
-									/>
-									<span className='text-[10px] pl-[1px] absolute top-[4px] left-[15px] z-10 rounded-md update-dot text-left capitalize'>
-										{t('updated')} <GithubDescription repoName={project.repoName} />
-									</span>
-									<div className='grid text-center space-y-3 -translate-y-10 md:-translate-y-8'>
-										<span className='font-bold text-zinc-50 z-50'>{project.title}</span>
-										<span className='text-xs xl:text-base md:text-sm mb-2 opacity-[.7] h-12 description-project'>
-											{project.description}
-										</span>
-									</div>
-									<div>
-										<GithubStats repoName={project.repoName} />
-									</div>
-									<a
-										href={project.url}
-										className='brightness-150 px-3 pb-3 rounded mt-2 text-md link hover:text-[#928BF9] hover:underline'
-										target='_blank'
-										title={`Ir a la web ${project.url}`}
-										rel='noopener noreferrer'
-									>
-										Link
-										<ArrowUpRight className='inline-flex ml-[2px] mb-[3px] relative transition-all duration-300 text-md w-[14px] h-[14px]' />
-									</a>
+							{projects.length <= 0
+								? <div className='flex justify-center mx-auto'>
+									<p className='text-zinc-100 text-center italic'>Cargando Proyectos...</p>
 								</div>
-							))}
+								: projects.map((project) => (
+									<div
+										className='grid text-zinc-300 text-center border-white border-opacity-10 border md:rounded-2xl rounded-md hover:border-zinc-700 overflow-hidden project-card relative'
+										key={project.title}
+									>
+										<img
+											className='image-card h-28 md:h-auto'
+											src={project.image}
+											alt={project.title}
+										/>
+										<span className='text-[10px] pl-[1px] absolute top-[4px] left-[15px] z-10 rounded-md update-dot text-left capitalize'>
+											{t('updated')} <GithubDescription repoName={project.repoName} />
+										</span>
+										<div className='grid text-center space-y-3 -translate-y-10 md:-translate-y-8'>
+											<span className='font-bold text-zinc-50 z-50'>{project.title}</span>
+											<span className='text-xs xl:text-base md:text-sm mb-2 opacity-[.7] h-12 description-project'>
+												{project.description}
+											</span>
+										</div>
+										<div>
+											<GithubStats repoName={project.repoName} />
+										</div>
+										<a
+											href={project.url}
+											className='brightness-150 px-3 pb-3 rounded mt-2 text-md link hover:text-[#928BF9] hover:underline'
+											target='_blank'
+											title={`Ir a la web ${project.url}`}
+											rel='noopener noreferrer'
+										>
+												Link
+											<ArrowUpRight className='inline-flex ml-[2px] mb-[3px] relative transition-all duration-300 text-md w-[14px] h-[14px]' />
+										</a>
+									</div>
+								  ))}
 						</Masonry>
 					</ResponsiveMasonry>
 				)}

@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { ShareIcon } from 'lucide-react'
+import Particles from './particles'
 
 export function Header() {
 	const { t, i18n } = useTranslation()
@@ -123,36 +124,40 @@ export function Header() {
 			{isMenuOpen && (
 				<div className='fixed top-0 inset-0 z-50'>
 					<div className='container bg-[#18181b] h-screen mx-auto px-4 py-6 flex flex-col'>
-						<div className='flex justify-end'>
+						<div className='flex justify-end z-50'>
 							<button
 								className='text-white focus:outline-none'
 								onClick={toggleMenu}
 								aria-label='Close menu'
 							>
-								<X size={24} className='x' />
+								<X size={26} className='x' />
 							</button>
 						</div>
 						<nav className='flex flex-col items-center justify-center flex-grow'>
+							<Particles
+								quantity={133}
+								className='absolute w-screen h-screen justify-center mx-auto flex -z-0'
+							/>
 							{navigation.map((item) => (
 								<Link
 									key={item.href}
 									href={item.href}
-									className='text-2xl py-4 hover:text-blue-400 transition-colors'
+									className='text-2xl py-4 hover:text-blue-400 transition-colors z-50'
 									onClick={toggleMenu}
 								>
 									{item.name}
 								</Link>
 							))}
 						</nav>
-						<div className='flex flex-col items-center space-y-4 pb-8'>
+						<div className='flex flex-col items-center space-y-4 pb-8 footer-menu'>
 							<button
 								onClick={share}
-								className='hover:text-blue-400 transition-colors flex items-center'
+								className='hover:text-blue-400 transition-colors flex items-center z-50'
 							>
 								<ShareIcon size={18} className='mr-2' />
 								<span>{t('share')}</span>
 							</button>
-							<div className='flex space-x-4'>
+							<div className='flex space-x-4 z-50'>
 								<button
 									onClick={() => changeLanguage('en')}
 									className='hover:text-blue-400 transition-colors flex items-center'
@@ -168,7 +173,7 @@ export function Header() {
 									ES
 								</button>
 							</div>
-							<GithubStats repoName='portfolioWeb' />
+							<GithubStats className='z-50' repoName='portfolioWeb' />
 						</div>
 					</div>
 				</div>
