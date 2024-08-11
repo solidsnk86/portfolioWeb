@@ -24,12 +24,12 @@ body.loading * {
 @keyframes add-shadow {
 	to {
 		box-shadow: 0 5px 5px -3px rgba(85, 85, 85, 0.25);
-		background: rgba(0, 0, 0, 0.3);
+		background: #18181b0b;
 	}
 }
 
 #header {
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(8px);
 	animation: add-shadow linear both;
 }
 
@@ -37,7 +37,7 @@ body.loading * {
 	#header {
 		position: sticky;
 		top: 0;
-		backdrop-filter: blur(10px);
+		backdrop-filter: blur(8px);
 		animation: add-shadow linear both;
 	}
 }
@@ -64,32 +64,42 @@ body.loading * {
 	color: currentColor;
 }
 
+.burguer {
+	padding: 2px;
+}
+
+.burguer:hover {
+	background-color: #27272a;
+	border-radius: 50px;
+}
+
 .x {
 	transform: rotate(-45deg);
 	animation: rotate 0.3s linear both;
-    padding: 2px;
+	padding: 2px;
 }
 
 .x:hover {
-    border: 1px solid #1f1f22;
-    background-color: #27272a;
-    border-radius: 50px;
+	border: 1px solid #1f1f22;
+	background-color: #27272a;
+	border-radius: 50px;
 }
 
 .footer-menu {
-    position: relative;
+	position: relative;
 }
 
 .footer-menu::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #5c5caa;
-    filter: blur(155px) drop-shadow(0 0 100px #272727);
-    z-index: 0;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #5c5caa;
+	filter: blur(155px) drop-shadow(0 0 100px #272727);
+	transform: rotate(90deg);
+	z-index: 0;
 }
 
 @keyframes rotate {
@@ -168,7 +178,7 @@ textarea {
 	animation: spin 3s linear infinite;
 	box-shadow: 0 0 5px violet, 0 0 10px violet, 0 0 15px violet, 0 0 20px violet;
 	filter: blur(1px);
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .spinner::after {
@@ -184,7 +194,6 @@ textarea {
 	animation: spin 3s linear infinite;
 	box-shadow: 0 0 10px violet, 0 0 20px violet, 0 0 30px violet, 0 0 40px violet;
 	filter: blur(3px);
-	
 }
 
 @keyframes spin {

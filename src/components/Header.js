@@ -76,7 +76,7 @@ export function Header() {
 					onClick={toggleMenu}
 					aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
 				>
-					{isMenuOpen ? '' : <Menu2 size={24} />}
+					{isMenuOpen ? '' : <Menu2 size={25} className='burguer' />}
 				</button>
 				{/* Language and Share buttons */}
 				<div className='hidden md:flex items-center space-x-4'>
@@ -92,10 +92,10 @@ export function Header() {
 							<Language size={20} className='mr-1' />
 							<span>{t('lang')}</span>
 						</button>
-						<div className='absolute right-0 w-48 bg-white rounded-md shadow-lg hidden group-hover:block'>
+						<div className='absolute right-0 w-48 bg-[#18181b] overflow-hidden border border-zinc-800 rounded-md shadow-lg hidden group-hover:block'>
 							<button
 								onClick={() => changeLanguage('en')}
-								className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md w-full text-left'
+								className='block px-4 py-2 text-sm text-gray-400 hover:bg-zinc-800/50 w-full text-left items-center'
 							>
 								<img
 									src='/img/estados-unidos-flag.png'
@@ -106,7 +106,7 @@ export function Header() {
 							</button>
 							<button
 								onClick={() => changeLanguage('es')}
-								className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md w-full text-left'
+								className='block px-4 py-2 text-sm text-gray-400 hover:bg-zinc-800/50 w-full text-left'
 							>
 								<img
 									src='/img/espana-flag.png'
@@ -135,7 +135,7 @@ export function Header() {
 						</div>
 						<nav className='flex flex-col items-center justify-center flex-grow'>
 							<Particles
-								quantity={133}
+								quantity={66}
 								className='absolute w-screen h-screen justify-center mx-auto flex -z-0'
 							/>
 							{navigation.map((item) => (
@@ -149,7 +149,7 @@ export function Header() {
 								</Link>
 							))}
 						</nav>
-						<div className='flex flex-col items-center space-y-4 pb-8 footer-menu'>
+						<div className='flex flex-col items-center space-y-4 pb-12 footer-menu'>
 							<button
 								onClick={share}
 								className='hover:text-blue-400 transition-colors flex items-center z-50'

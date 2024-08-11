@@ -26,7 +26,7 @@ export function AboutMe() {
 						<Logo className='w-[500px]' />
 					</div>
 				</div>
-				<aside className='flex-col relative top-10 mx-3'>
+				<aside className='flex-col relative top-24 mx-3'>
 					<CardTitle>
 						{city && (
 							<TypingEffect typingSpeed={60}>{`${t(
