@@ -64,6 +64,17 @@ body.loading * {
 	color: currentColor;
 }
 
+.x {
+	transform: rotate(-45deg);
+	animation: rotate 0.3s linear both;
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(0);
+	}
+}
+
 .read-more:hover .arrow {
 	transform: translateX(3px);
 	transition: 0.3s ease-in-out;

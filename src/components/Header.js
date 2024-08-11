@@ -129,7 +129,7 @@ export function Header() {
 								onClick={toggleMenu}
 								aria-label='Close menu'
 							>
-								<X size={24} />
+								<X size={24} className='x' />
 							</button>
 						</div>
 						<nav className='flex flex-col items-center justify-center flex-grow'>
