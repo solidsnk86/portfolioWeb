@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation'
 export default function Login({ searchParams }: { searchParams: { message: string } }) {
 	const signInWithGitHub = async () => {
 		'use server'
-
 		const supabase = createClient()
 		const { data, error } = await supabase.auth.signInWithOAuth({
 			provider: 'github',

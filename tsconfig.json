@@ -28,7 +28,7 @@
     "src/components/HomeTitle.js",
     "src/components/AboutMe.js",
     "src/utils/supabase.js",
-    "src/pages/login/page.tsx",
+    "src/login/page.tsx",
     "src/components/BrowserRouter.tsx",
     "src/components/ZoomDisable.js",
     "src/components/Experience.tsx",
