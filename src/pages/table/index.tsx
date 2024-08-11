@@ -253,7 +253,7 @@ export const VisitData = () => {
 				</h2>
 				{nonFollowers.map((login) => (
 					<div key={login} className='flex p-2 text-slate-50 mx-auto justify-center'>
-						<a href={`https://github.com/${login}/`} className=' hover:underline'>
+						<a href={`https://github.com/${login}/`} className=' hover:underline' target='_blank'>
 							{login}
 						</a>
 					</div>
