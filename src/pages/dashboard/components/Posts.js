@@ -146,7 +146,7 @@ export default function Posts({ edit, className = '' }) {
 								<div key={post.id}>
 									<article
 										id={`article-${post.id}`}
-										className='bg-gray-100 border border-gray-300 p-5 rounded-lg shadow-lg text-gray-800 hover:opacity-90 transition-colors relative w-full'
+										className='bg-gray-300 border border-gray-300 p-5 rounded-lg shadow-lg text-gray-800 hover:opacity-90 transition-colors relative w-full'
 										contentEditable={editMode === post.id}
 									>
 										<DotsVertical
