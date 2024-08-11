@@ -223,7 +223,7 @@ export const Flavors = () => {
 
 	return (
 		<>
-			<h2 className='xl:text-5xl md:text-4xl text-2xl font-bold text-center text-sky-100 mt-[100px]'>
+			<h2 className='xl:text-5xl md:text-4xl text-2xl font-bold text-center text-sky-100 mt-[180px]'>
 				{t('sectionLF')}
 			</h2>
 			<div className='gap-[6px] py-20 flavors-section xl:w-10/12'>
