@@ -84,12 +84,12 @@ export function Header() {
 						onClick={share}
 						className='hover:text-blue-400 transition-colors flex items-center'
 					>
-						<ShareIcon size={18} className='mr-1' />
+						<ShareIcon size={17} className='mr-1 -translate-y-[1px]' />
 						<span>{t('share')}</span>
 					</button>
 					<div className='relative group'>
 						<button className='hover:text-blue-400 transition-colors flex items-center'>
-							<Language size={20} className='mr-1' />
+							<Language size={19} className='mr-1' />
 							<span>{t('lang')}</span>
 						</button>
 						<div className='absolute right-0 w-48 bg-[#18181b] overflow-hidden border border-zinc-800 rounded-md shadow-lg hidden group-hover:block'>
@@ -150,13 +150,7 @@ export function Header() {
 							))}
 						</nav>
 						<div className='flex flex-col items-center space-y-4 pb-12 footer-menu'>
-							<button
-								onClick={share}
-								className='hover:text-blue-400 transition-colors flex items-center z-50'
-							>
-								<ShareIcon size={18} className='mr-2' />
-								<span>{t('share')}</span>
-							</button>
+							<GithubStats className='z-50' repoName='portfolioWeb' />
 							<div className='flex space-x-4 z-50'>
 								<button
 									onClick={() => changeLanguage('en')}
@@ -173,7 +167,13 @@ export function Header() {
 									ES
 								</button>
 							</div>
-							<GithubStats className='z-50' repoName='portfolioWeb' />
+							<button
+								onClick={share}
+								className='hover:text-blue-400 transition-colors flex items-center z-50'
+							>
+								<ShareIcon size={18} className='mr-2' />
+								<span>{t('share')}</span>
+							</button>
 						</div>
 					</div>
 				</div>

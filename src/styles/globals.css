@@ -29,7 +29,6 @@ body.loading * {
 }
 
 #header {
-	backdrop-filter: blur(8px);
 	animation: add-shadow linear both;
 }
 
