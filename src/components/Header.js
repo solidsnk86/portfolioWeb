@@ -122,7 +122,7 @@ export function Header() {
 			{/* Mobile Menu */}
 			{isMenuOpen && (
 				<div className='fixed top-0 inset-0 z-50'>
-					<div className='container bg-[#18181b] h-svh mx-auto px-4 py-6 flex flex-col'>
+					<div className='container bg-[#18181b] h-screen mx-auto px-4 py-6 flex flex-col'>
 						<div className='flex justify-end'>
 							<button
 								className='text-white focus:outline-none'
