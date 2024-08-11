@@ -1,15 +1,23 @@
 import { geolocation } from './const'
 import { supabase } from '@/utils/supabase'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import FormatDate from './FormatDate'
+import { useRouter } from 'next/router'
 
 const dataIp1 = process.env.NEXT_PUBLIC_DATA_IP_1
 const dataIp2 = process.env.NEXT_PUBLIC_DATA_IP_2
 
 const Visit = ({ className = '' }) => {
 	const { t } = useTranslation()
+	const router = useRouter()
 
+	const pathRoutes = useMemo(() => [
+		`http://localhost:3000${router.asPath}`,
+		`http://localhost:3001${router.asPath}`
+	],
+	[router.asPath]
+	)
 	const [visitData, setVisitData] = useState({})
 	const [lastVisit, setLastVisit] = useState({})
 
@@ -39,9 +47,7 @@ const Visit = ({ className = '' }) => {
 					})
 					const localURL = window.location.href
 					if (
-						localURL !== 'http://localhost:3000/' &&
-						localURL !== 'http://localhost:3001/' &&
-						localURL !== 'http://localhost:3000/blog' &&
+						!pathRoutes.includes(localURL) &&
 						jsonData.ip.address !== dataIp1 &&
 						jsonData.ip.address !== dataIp2 &&
 						jsonData.city.name !== 'Santa Clara'
@@ -90,12 +96,15 @@ const Visit = ({ className = '' }) => {
 	}, [])
 
 	return (
-		<div className={`justify-center md:mx-auto mx-5 grid bg-gradient-to-t from-zinc-500 via-zinc-700 to-zinc-800 w-fit border border-zinc-700 rounded-lg cursor-default ${className}`}>
+		<div
+			className={`justify-center md:mx-auto mx-5 grid bg-gradient-to-t from-zinc-500 via-zinc-700 to-zinc-800 w-fit border border-zinc-700 rounded-lg cursor-default ${className}`}
+		>
 			<header className='border-b border-zinc-600/65 py-1'>
 				{lastVisit.id > 5000
 					? (
 						<p className='text-zinc-300 text-xs text-center'>
-							{t('profileViews')} <span className='text-lime-400'>{((lastVisit.id) / 1000).toFixed(2)}K</span>
+							{t('profileViews')}{' '}
+							<span className='text-lime-400'>{(lastVisit.id / 1000).toFixed(2)}K</span>
 						</p>
 					)
 					: (
