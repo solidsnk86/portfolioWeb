@@ -33,7 +33,7 @@ I invite you to explore my work, get to know the projects, and witness the fusio
 
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23336791.svg?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
-> This web application utilizes Supabase with PostgreSQL as the backend to manage various functionalities, including user tables, article views tracking, likes handling, and date recording. Google Sheets CSV dynamically generates content and incorporates information. The application uses cookies to collect data, including user location (country and city), and tracks the number of visitors. All this data seamlessly integrates into my Supabase database in PostgreSQL.
+> This web application utilizes Supabase with PostgreSQL as the backend to manage various functionalities, including user tables, article views tracking, you can create update and delete posts form blog section (CRUD) and date recording. Google Sheets CSV dynamically generates content and incorporates information. The application uses cookies to collect data, including user location (country and city), and tracks the number of visitors. All this data seamlessly integrates into my Supabase database in PostgreSQL.
 
 Feel free to download or clone this repository with git clone:
 
@@ -53,7 +53,7 @@ yarn install
 
 You can adjust and modify the ESLint rules based on your preferences.
 
-> Enjoy this project, designed as my portfolio to showcase my work. The integration with the GitHub Stats API determines the project's star count, while Google Sheets CSV, cookies for location tracking, and visitor count information contribute to its dynamic and personalized features.
+> Enjoy this project, designed as my portfolio to showcase my work. The integration with the GitHub Stats API determines the project's star count, whith Google Sheets CSV for the proyects items section, cookies for location tracking, and visitor count information contribute to its dynamic and personalized features.
 
 This app is deployed on Vercel:
 
