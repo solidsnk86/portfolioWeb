@@ -50,7 +50,8 @@ const Visit = ({ className = '' }) => {
 						!pathRoutes.includes(localURL) &&
 						jsonData.ip.address !== dataIp1 &&
 						jsonData.ip.address !== dataIp2 &&
-						jsonData.city.name !== 'Santa Clara'
+						jsonData.city.name !== 'Santa Clara' &&
+                        jsonData.city.name !== 'San Francisco'
 					) {
 						sendDataToSupabase(jsonData)
 					}
