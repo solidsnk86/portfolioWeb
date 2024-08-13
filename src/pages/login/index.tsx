@@ -1,11 +1,9 @@
 import Link from 'next/link'
-import { createClient } from '@/utils/server'
+import { supabase } from '@/utils/supabase'
 import { redirect } from 'next/navigation'
 
-export default function Login({ searchParams }: { searchParams: { message: string } }) {
+export default function Page({ searchParams }: { searchParams: { message: string } }) {
 	const signInWithGitHub = async () => {
-		'use server'
-		const supabase = createClient()
 		const { data, error } = await supabase.auth.signInWithOAuth({
 			provider: 'github',
 			options: {
@@ -44,8 +42,11 @@ export default function Login({ searchParams }: { searchParams: { message: strin
 			</Link>
 
 			<form
-				action={signInWithGitHub}
 				className='flex-1 flex flex-col w-full justify-center gap-2 text-foreground'
+				onSubmit={async (e) => {
+					e.preventDefault()
+					await signInWithGitHub()
+				}}
 			>
 				<button
 					className='w-fit bg-[#24292e] text-white rounded-md px-4 py-2 text-foreground mb-2 flex items-center justify-center'
