@@ -73,8 +73,6 @@ body.loading * {
 }
 
 .x {
-	transform: rotate(-45deg);
-	animation: rotate 0.3s linear both;
 	padding: 2px;
 }
 
@@ -99,12 +97,6 @@ body.loading * {
 	filter: blur(155px) drop-shadow(0 0 100px #272727);
 	transform: rotate(90deg);
 	z-index: 0;
-}
-
-@keyframes rotate {
-	to {
-		transform: rotate(0);
-	}
 }
 
 .read-more:hover .arrow {
