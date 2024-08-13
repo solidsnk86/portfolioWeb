@@ -23,8 +23,8 @@ body.loading * {
 
 @keyframes add-shadow {
 	to {
-		box-shadow: 0 5px 5px -3px rgba(85, 85, 85, 0.25);
 		background: #18181b0b;
+		box-shadow: 0 0 1px #333;
 	}
 }
 
