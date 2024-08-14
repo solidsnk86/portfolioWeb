@@ -8,10 +8,9 @@ import { z } from 'zod'
 
 const formSchema = z.object({
 	nombre: z.string().min(1, { message: 'El nombre es requerido' }),
-	telefono: z
-		.number({ invalid_type_error: 'El teléfono debe ser un número' })
-		.int('El teléfono debe ser un número entero')
-		.positive('El teléfono debe ser un número positivo'),
+	telefono: z.string().refine((value) => /^\d+$/.test(value), {
+		message: 'El teléfono debe contener solo números'
+	}),
 	correo: z.string().email({ message: 'Correo electrónico inválido' }),
 	asunto: z
 		.string()
@@ -87,10 +86,7 @@ const ContactForm = () => {
 	return (
 		<div className='md:max-w-sm max-w-xs mx-auto'>
 			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-8'>{t('contact')}</h2>
-			<form
-				onSubmit={handleSubmit(onSubmit)}
-				className='grid gap-3 contact-form'
-			>
+			<form onSubmit={handleSubmit(onSubmit)} className='grid gap-3 contact-form'>
 				<input {...register('nombre')} placeholder={t('name')} />
 				{errors.nombre && <small className='error'>{errors.nombre.message}</small>}
 
