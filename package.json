@@ -10,6 +10,7 @@
     "lint:eslint": "npm run lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@nextui-org/button": "^2.0.26",
     "@nextui-org/spinner": "^2.0.24",
     "@nextui-org/system": "^2.0.0",
@@ -49,7 +50,8 @@
     "tabler-icons-react": "^1.56.0",
     "tailwind-variants": "^0.2.0",
     "uuid": "^9.0.1",
-    "xml2js": "^0.6.2"
+    "xml2js": "^0.6.2",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.0.4",

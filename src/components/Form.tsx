@@ -2,27 +2,41 @@ import { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
+import { z } from 'zod'
+
+const formSchema = z.object({
+	nombre: z.string().min(1, { message: 'El nombre es requerido' }),
+	telefono: z
+		.number({ invalid_type_error: 'El teléfono debe ser un número' })
+		.int('El teléfono debe ser un número entero')
+		.positive('El teléfono debe ser un número positivo'),
+	correo: z.string().email({ message: 'Correo electrónico inválido' }),
+	asunto: z
+		.string()
+		.min(1, { message: 'El asunto es requerido' })
+		.max(50, { message: 'El asunto no debe exceder 50 caracteres' }),
+	mensaje: z
+		.string()
+		.min(50, { message: 'El mensaje debe tener al menos 50 caracteres' })
+		.max(160, { message: 'El mensaje no debe exceder 160 caracteres' })
+})
+
+type FormData = z.infer<typeof formSchema>
 
 const ContactForm = () => {
 	const { t } = useTranslation()
-	const [formData, setFormData] = useState({
-		nombre: '',
-		telefono: '',
-		correo: '',
-		asunto: '',
-		mensaje: ''
-	})
 	const {
 		register,
 		handleSubmit,
 		reset,
-		formState: { isSubmitting }
-	} = useForm()
+		formState: { errors, isSubmitting }
+	} = useForm<FormData>({
+		resolver: zodResolver(formSchema)
+	})
 
-	const handleChange = (e: { target: { name: any; value: any } }) => {
-		setFormData({ ...formData, [e.target.name]: e.target.value })
-	}
+	const [mensaje, setMensaje] = useState('')
 
 	useEffect(() => {
 		function resize() {
@@ -34,47 +48,28 @@ const ContactForm = () => {
 		}
 
 		resize()
-	}, [formData.mensaje])
+	}, [mensaje])
 
-	const onSubmit = async () => {
-		if (
-			!formData.nombre ||
-			!formData.correo ||
-			!formData.mensaje ||
-			!formData.asunto ||
-			!formData.telefono
-		) {
-			toast.warning(t('toastAlert'), {
-				position: 'top-center',
-				theme: 'dark'
-			})
-			return
-		}
+	const onSubmit = async (data: FormData) => {
 		try {
 			const response = await fetch('/api/send-mail', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(formData)
+				body: JSON.stringify(data)
 			})
 
 			if (response.ok) {
 				toast.success(
-					`Muchas gracias por tu mensaje ${formData.nombre}. Estaremos en contacto pronto al correo ${formData.correo}!`,
+					`Muchas gracias por tu mensaje ${data.nombre}. Estaremos en contacto pronto al correo ${data.correo}!`,
 					{
 						position: 'top-center',
 						theme: 'dark'
 					}
 				)
 				reset()
-				setFormData({
-					nombre: '',
-					telefono: '',
-					correo: '',
-					asunto: '',
-					mensaje: ''
-				})
+				setMensaje('')
 			} else {
 				toast.error('Error al enviar el formulario. Por favor, intenta nuevamente más tarde.', {
 					position: 'top-center',
@@ -96,42 +91,26 @@ const ContactForm = () => {
 				onSubmit={handleSubmit(onSubmit)}
 				className='grid justify-center mx-auto gap-3 contact-form'
 			>
-				<input
-					{...register('nombre')}
-					name='nombre'
-					value={formData.nombre}
-					onChange={handleChange}
-					placeholder={t('name')}
-				/>
-				<input
-					{...register('telefono')}
-					name='telefono'
-					value={formData.telefono}
-					onChange={handleChange}
-					placeholder={t('telephone')}
-				/>
-				<input
-					{...register('correo')}
-					name='correo'
-					value={formData.correo}
-					onChange={handleChange}
-					placeholder={t('email')}
-				/>
-				<input
-					{...register('asunto')}
-					name='asunto'
-					value={formData.asunto}
-					onChange={handleChange}
-					placeholder={t('subject')}
-				/>
+				<input {...register('nombre')} placeholder={t('name')} />
+				{errors.nombre && <small className='error'>{errors.nombre.message}</small>}
+
+				<input {...register('telefono')} placeholder={t('telephone')} />
+				{errors.telefono && <small className='error'>{errors.telefono.message}</small>}
+
+				<input {...register('correo')} placeholder={t('email')} />
+				{errors.correo && <small className='error'>{errors.correo.message}</small>}
+
+				<input {...register('asunto')} placeholder={t('subject')} />
+				{errors.asunto && <small className='error'>{errors.asunto.message}</small>}
+
 				<textarea
 					{...register('mensaje')}
-					name='mensaje'
 					id='mensaje'
-					value={formData.mensaje}
-					onChange={handleChange}
 					placeholder={t('comment')}
+					onChange={(e) => setMensaje(e.target.value)}
 				/>
+				{errors.mensaje && <small className='error'>{errors.mensaje.message}</small>}
+
 				<button
 					type='submit'
 					disabled={isSubmitting}

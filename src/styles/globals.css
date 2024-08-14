@@ -121,12 +121,9 @@ textarea {
 	outline: 2px solid #928bf9;
 }
 
-.message-alert {
-	position: fixed;
-	top: 0;
-	left: 20%;
-	justify-content: center;
-	margin: 0 auto;
+.error {
+	color: tomato;
+	font-size: 12px;
 }
 
 .hr-container {
