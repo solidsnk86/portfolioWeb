@@ -2,7 +2,7 @@ import { Card } from '@/components/Card'
 import Head from 'next/head'
 import { Footer } from '@/components/Footer'
 import ContactForm from '@/components/Form'
-import { socials } from '@/components/const'
+import { favicon, socials } from '@/components/const'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { Header } from '@/components/Header'
@@ -13,6 +13,7 @@ export default function Contact() {
 		<>
 			<Head>
 				<title>{t('contact')}</title>
+				<link rel='shortcut icon' href={favicon} type='image/x-icon' />
 			</Head>
 			<Header />
 			<div className='bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0'>
