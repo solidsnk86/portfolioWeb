@@ -85,11 +85,11 @@ const ContactForm = () => {
 	}
 
 	return (
-		<div>
+		<div className='md:max-w-sm max-w-xs mx-auto'>
 			<h2 className='text-3xl text-zinc-100 font-bold text-center md:py-10 py-8'>{t('contact')}</h2>
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className='grid justify-center mx-auto gap-3 contact-form'
+				className='grid gap-3 contact-form'
 			>
 				<input {...register('nombre')} placeholder={t('name')} />
 				{errors.nombre && <small className='error'>{errors.nombre.message}</small>}
