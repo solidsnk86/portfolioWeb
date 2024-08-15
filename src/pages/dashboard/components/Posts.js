@@ -192,14 +192,14 @@ export default function Posts({ edit, className = '' }) {
 												{post.city}, {post.country} {post.flag}
 											</small>
 											{post.views <= 0 ? (
-												<small className='text-gray-500 text-[10px] items-center flex'>
+												<small className='text-gray-500 items-center flex'>
 													<Eye className='inline w-3 h-3 mr-[2px]' />
-													VISTAS 0
+													Vistas 0
 												</small>
 											) : (
-												<small className='text-gray-500 text-[10px] items-center flex'>
+												<small className='text-gray-500 items-center flex'>
 													<Eye className='inline w-3 h-3 mr-[2px]' />
-													VISTAS {post.views}
+													Vistas {post.views}
 												</small>
 											)}
 										</header>
