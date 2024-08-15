@@ -6,26 +6,27 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
 import { z } from 'zod'
 
-const formSchema = z.object({
-	nombre: z.string().min(1, { message: 'El nombre es requerido' }),
-	telefono: z.string().refine((value) => /^\d+$/.test(value), {
-		message: 'El teléfono debe contener solo números'
-	}),
-	correo: z.string().email({ message: 'Correo electrónico inválido' }),
-	asunto: z
-		.string()
-		.min(1, { message: 'El asunto es requerido' })
-		.max(50, { message: 'El asunto no debe exceder 50 caracteres' }),
-	mensaje: z
-		.string()
-		.min(50, { message: 'El mensaje debe tener al menos 50 caracteres' })
-		.max(160, { message: 'El mensaje no debe exceder 160 caracteres' })
-})
-
-type FormData = z.infer<typeof formSchema>
-
 const ContactForm = () => {
 	const { t } = useTranslation()
+
+	const formSchema = z.object({
+		nombre: z.string().min(1, { message: `${t('nameForm')}` }),
+		telefono: z.string().refine((value) => /^\d+$/.test(value), {
+			message: `${t('phoneForm')}`
+		}),
+		correo: z.string().email({ message: `${t('emailForm')}` }),
+		asunto: z
+			.string()
+			.min(1, { message: `${t('subjectForm')}` })
+			.max(50, { message: `${t('')}` }),
+		mensaje: z
+			.string()
+			.min(50, { message: `${t('messageForm')}` })
+			.max(160, { message: `${t('messageForm1')}` })
+	})
+
+	type FormData = z.infer<typeof formSchema>
+
 	const {
 		register,
 		handleSubmit,
@@ -89,16 +90,12 @@ const ContactForm = () => {
 			<form onSubmit={handleSubmit(onSubmit)} className='grid gap-3 contact-form'>
 				<input {...register('nombre')} placeholder={t('name')} />
 				{errors.nombre && <small className='error'>{errors.nombre.message}</small>}
-
 				<input {...register('telefono')} placeholder={t('telephone')} />
 				{errors.telefono && <small className='error'>{errors.telefono.message}</small>}
-
 				<input {...register('correo')} placeholder={t('email')} />
 				{errors.correo && <small className='error'>{errors.correo.message}</small>}
-
 				<input {...register('asunto')} placeholder={t('subject')} />
 				{errors.asunto && <small className='error'>{errors.asunto.message}</small>}
-
 				<textarea
 					{...register('mensaje')}
 					id='mensaje'
@@ -106,11 +103,10 @@ const ContactForm = () => {
 					onChange={(e) => setMensaje(e.target.value)}
 				/>
 				{errors.mensaje && <small className='error'>{errors.mensaje.message}</small>}
-
 				<button
 					type='submit'
 					disabled={isSubmitting}
-					className='border border-zinc-800 rounded-md p-2 text-zinc-100 hover:border-zinc-700 hover:brightness-125 active:border-[#928BF9]'
+					className='bg-zinc-800/30 border border-zinc-800 rounded-md p-2 text-zinc-100 hover:border-zinc-700 hover:brightness-125 active:border-[#928BF9]'
 				>
 					{isSubmitting ? t('sending') : t('send')}
 				</button>
