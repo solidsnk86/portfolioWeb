@@ -204,7 +204,7 @@ export default function Posts({ edit, className = '' }) {
 											)}
 										</header>
 										<div className='mb-3'>
-											<p className='description text-sm text-zinc-600 font-semibold bg-slate-300/50 w-fit px-1 rounded-full border border-zinc-300'>
+											<p className='description text-sm text-zinc-600 font-semibold bg-zinc-400/25 w-fit px-2 rounded-full border border-zinc-300'>
 												{post.description}
 											</p>
 										</div>
