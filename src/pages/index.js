@@ -133,7 +133,6 @@ export default function Home() {
 			))}
 			<Visit className='visits' />
 			<Footer />
-			<p className='text-center text-zinc-500 text-[11px] pb-2'>{t('last_footer')}</p>
 		</>
 	)
 }
