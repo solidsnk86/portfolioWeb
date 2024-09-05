@@ -37,9 +37,9 @@ export function AboutMe() {
 						{t('aboutMe')}
 						<Link
 							className='mx-1 duration-500 text-zinc-50 underline link-shadow'
-							href='https://neotecs.vercel.app/'
+							href='https://gossip-app.vercel.app/'
 						>
-							NeoTecs
+							ChismeApp
 						</Link>
 						{t('aboutMeLast')}
 					</CardTitle>
