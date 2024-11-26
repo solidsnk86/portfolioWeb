@@ -13,7 +13,7 @@ export default async function nonFollowers(req, res) {
 			data: {
 				dataFollowers: followers,
 				dataFollowing: following,
-				'non-following': nonFollowers
+				'non-followers': nonFollowers
 			}
 		})
 	} catch (err) {
