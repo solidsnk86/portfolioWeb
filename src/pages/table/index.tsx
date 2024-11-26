@@ -181,7 +181,7 @@ export const VisitData = () => {
 
     const sendNonFollowers = async () => {
         try {
-            const { data, error } = await supabse.from("non_followers_github").insert([nonFollowers])
+            const { data, error } = await supabase.from("non_followers_github").insert([nonFollowers])
 
         if (error) {
             console.error("Error to send data non-followers to Supabase", error)
