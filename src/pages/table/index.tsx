@@ -171,7 +171,6 @@ export const VisitData = () => {
 		}
 
 		fetchData()
-        sendNonFollowers()
 	}, [])
 
 	const followingLogins = new Set(githubFollowingData.map((user) => user.login))
@@ -179,24 +178,6 @@ export const VisitData = () => {
 
 	const nonFollowers = Array.from(followingLogins).filter((login) => !followersLogins.has(login))
 
-   	useEffect(() => {
-   const sendNonFollowers = async () => {
-     const followingLogins = new Set(githubFollowingData.map((user) => user.login)) 
-     const followersLogins = new Set(githubFollowersData.map((user) => user.login)) 
-     const nonFollowers = Array.from(followingLogins).filter((login) => !followersLogins.has(login)) 
-     const nonFollowersData = nonFollowers.map(login => ({ login })); 
-     try { const { data, error } = await supabase.from("non_followers_github").insert(nonFollowersData) 
-     if (error) {
-       console.error("Error to send data non-followers to Supabase", error) 
-      } 
-    } catch (e) {
-       console.error("Cannot send data: ", e) 
-      } 
-    } 
-    if (githubFollowingData.length && githubFollowersData.length) {
-       sendNonFollowers(); 
-      } 
-    }, [githubFollowersData, githubFollowingData]);
 	return (
 		<>
 			<h1 className='text-center font-bold text-4xl mt-10 text-zinc-50'>
