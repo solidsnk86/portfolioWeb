@@ -179,17 +179,7 @@ export const VisitData = () => {
 
 	const nonFollowers = Array.from(followingLogins).filter((login) => !followersLogins.has(login))
 
-    const sendNonFollowers = async () => {
-        try {
-            const { data, error } = await supabase.from("non_followers_github").insert([nonFollowers])
-
-        if (error) {
-            console.error("Error to send data non-followers to Supabase", error)
-        }
-        } catch (e) {
-            console.error("Cannot send data: ", e.message)
-        }
-    }
+    useEffect(() => { const sendNonFollowers = async () => { const followingLogins = new Set(githubFollowingData.map((user) => user.login)) const followersLogins = new Set(githubFollowersData.map((user) => user.login)) const nonFollowers = Array.from(followingLogins).filter((login) => !followersLogins.has(login)) const nonFollowersData = nonFollowers.map(login => ({ login })); try { const { data, error } = await supabase.from("non_followers_github").insert(nonFollowersData) if (error) { console.error("Error to send data non-followers to Supabase", error) } } catch (e) { console.error("Cannot send data: ", e.message) } } if (githubFollowingData.length && githubFollowersData.length) { sendNonFollowers(); } },
 
 	return (
 		<>
