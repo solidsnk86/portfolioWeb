@@ -1,9 +1,15 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -15,9 +21,12 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "target": "ES2017"
   },
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -34,6 +43,9 @@
     "src/components/Experience.tsx",
     "src/pages/api-bra/index.js",
     "src/hooks/useIsClient.js",
-    "src/pages/dashboard/components/PostSender.js"
-, "src/pages/dashboard/actions/actions.js", "src/pages/dashboard/components/FormatPostsDate.tsx", "src/components/GetIP.js"  ]
+    "src/pages/dashboard/components/PostSender.js",
+    "src/pages/dashboard/actions/actions.js",
+    "src/pages/dashboard/components/FormatPostsDate.tsx",
+    "src/components/GetIP.js"
+  ]
 }
