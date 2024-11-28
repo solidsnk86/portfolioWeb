@@ -441,7 +441,7 @@ textarea {
 	display: grid;
 	justify-content: center;
 	margin: 50px auto;
-	grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
 }
 
 .post-form {

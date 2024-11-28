@@ -1,13 +1,13 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import React from 'react'
 import { AboutMe } from '@/components/AboutMe'
-import { DataProjects } from '../components/DataProjects'
+import { DataProjects } from '@/components/DataProjects'
 import { ArrowUpRight } from 'lucide-react'
 import { Footer } from '@/components/Footer'
 import { GitBranch } from 'tabler-icons-react'
-import { GithubDescription } from '../components/GithubDescription'
+import { GithubDescription } from '@/components/GithubDescription'
 import { GithubStats } from '@/components/GithubStats'
-import { Header } from '../components/Header'
+import { Header } from '@/components/Header'
 import { HomeTitle } from '@/components/HomeTitle'
 import { Flavors } from '@/sections/flavors'
 import { title, description, ogImg, favicon, inter } from '@/components/const'
@@ -16,14 +16,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Particles from '@/components/particles'
 import Visit from '@/components/Visits'
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
-import useMatchMedia from '@/hooks/useMatchMedia'
 import { useIsClient } from '@/hooks/useIsClient'
 
 export default function Home() {
 	const { t } = useTranslation()
 	const projects = DataProjects()
-	const mobile = useMatchMedia('(max-width: 768px)', false)
 	const isClient = useIsClient()
 
 	return (
@@ -62,53 +59,38 @@ export default function Home() {
 				<Flavors />
 				<HomeTitle>{t('projectsTitle')}</HomeTitle>
 
-				{isClient && (
-					<ResponsiveMasonry
-						columnsCountBreakPoints={{ 750: 2, 900: 3, 1200: 4 }}
-						className='aspect'
-					>
-						<Masonry gutter={mobile ? '0.3rem' : '0.4rem'}>
-							{projects.length <= 0
-								? <div className='flex justify-center mx-auto'>
-									<p className='text-zinc-100 text-center italic'>Cargando Proyectos...</p>
+				{isClient &&
+						projects.map((project) => (
+							<div
+								className='grid text-zinc-300 text-center border-white border-opacity-10 border md:rounded-2xl rounded-md hover:border-zinc-700 overflow-hidden project-card relative'
+								key={project.title}
+							>
+								<img className='image-card h-28 md:h-auto' src={project.image} alt={project.title} />
+								<span className='text-[10px] pl-[1px] absolute top-[4px] left-[15px] z-10 rounded-md update-dot text-left capitalize'>
+									{t('updated')} <GithubDescription repoName={project.repoName} />
+								</span>
+								<div className='grid text-center space-y-3 -translate-y-10 md:-translate-y-8'>
+									<span className='font-bold text-zinc-50 z-50'>{project.title}</span>
+									<span className='text-xs xl:text-base md:text-sm mb-2 opacity-[.7] h-12 description-project'>
+										{project.description}
+									</span>
 								</div>
-								: projects.map((project) => (
-									<div
-										className='grid text-zinc-300 text-center border-white border-opacity-10 border md:rounded-2xl rounded-md hover:border-zinc-700 overflow-hidden project-card relative'
-										key={project.title}
-									>
-										<img
-											className='image-card h-28 md:h-auto'
-											src={project.image}
-											alt={project.title}
-										/>
-										<span className='text-[10px] pl-[1px] absolute top-[4px] left-[15px] z-10 rounded-md update-dot text-left capitalize'>
-											{t('updated')} <GithubDescription repoName={project.repoName} />
-										</span>
-										<div className='grid text-center space-y-3 -translate-y-10 md:-translate-y-8'>
-											<span className='font-bold text-zinc-50 z-50'>{project.title}</span>
-											<span className='text-xs xl:text-base md:text-sm mb-2 opacity-[.7] h-12 description-project'>
-												{project.description}
-											</span>
-										</div>
-										<div>
-											<GithubStats repoName={project.repoName} />
-										</div>
-										<a
-											href={project.url}
-											className='brightness-150 px-3 pb-3 rounded mt-2 text-md link hover:text-[#928BF9] hover:underline'
-											target='_blank'
-											title={`Ir a la web ${project.url}`}
-											rel='noopener noreferrer'
-										>
-												Link
-											<ArrowUpRight className='inline-flex ml-[2px] mb-[3px] relative transition-all duration-300 text-md w-[14px] h-[14px]' />
-										</a>
-									</div>
-								  ))}
-						</Masonry>
-					</ResponsiveMasonry>
-				)}
+								<div>
+									<GithubStats repoName={project.repoName} />
+								</div>
+								<a
+									href={project.url}
+									className='brightness-150 px-3 pb-3 rounded mt-2 text-md link hover:text-[#928BF9] hover:underline'
+									target='_blank'
+									title={`Ir a la web ${project.url}`}
+									rel='noopener noreferrer'
+								>
+								Link
+									<ArrowUpRight className='inline-flex ml-[2px] mb-[3px] relative transition-all duration-300 text-md w-[14px] h-[14px]' />
+								</a>
+							</div>
+						))
+				}
 			</main>
 			<Link
 				className='justify-center mx-auto flex w-fit text-zinc-50 text-sm border p-2 rounded-md border-zinc-600/40 hover:border-zinc-700 transition-all duration-300 cv-link'

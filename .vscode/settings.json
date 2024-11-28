@@ -5,7 +5,6 @@
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
   "editor.detectIndentation": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
   "files.autoSave": "afterDelay",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",

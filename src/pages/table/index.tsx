@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import FormatDate from '@/components/FormatDate'
 import { Footer } from '@/components/Footer'
 
+const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN
+
 const sendDataToSupabase = async (
 	tableName: string,
 	jsonData: {
@@ -66,7 +68,15 @@ const sendDataToSupabase = async (
 }
 
 const fetchGitHubData = async (url: string | URL | Request) => {
-	const response = await fetch(url)
+	const headers = GITHUB_TOKEN
+		? {
+			Authorization: `token ${GITHUB_TOKEN}`,
+			Accept: 'application/vnd.github.v3+json'
+		}
+		: {
+			Accept: 'application/vnd.github.v3+json'
+		}
+	const response = await fetch(url, { headers })
 	if (!response.ok) {
 		throw new Error(`Error fetching GitHub data. Status: ${response.status}`)
 	}
@@ -115,7 +125,7 @@ export const VisitData = () => {
 				const [followers, following] = await Promise.all([
 					fetchAndSendGitHubData(
 						'followers',
-						5,
+						8,
 						(user: {
 							avatar_url: any
 							events_url: any
@@ -139,7 +149,7 @@ export const VisitData = () => {
 					),
 					fetchAndSendGitHubData(
 						'following',
-						5,
+						8,
 						(user: {
 							avatar_url: any
 							events_url: any
@@ -216,9 +226,9 @@ export const VisitData = () => {
 			<h1 className='my-10 text-slate-50 text-3xl text-center font-bold'>
 				Control de Usuarios de Github
 			</h1>
-			<div className='justify-center github-users xl:w-10/12'>
+			<div className='justify-center github-users flex xl:w-10/12'>
 				{githubFollowingData.map((data) => (
-					<div key={data.node_id} className='flex mx-1 space-y-2'>
+					<div key={data.node_id} className='flex mx-1'>
 						<a href={`https://github.com/${data.login}/`} title={`@${data.login}`}>
 							<img src={data.avatar_url} className='w-14 h-14 rounded-full my-2' />
 						</a>
@@ -233,7 +243,7 @@ export const VisitData = () => {
 			</div>
 			<div className='justify-center github-users xl:w-10/12'>
 				{githubFollowersData.map((data) => (
-					<div key={data.node_id} className='flex mx-1 space-y-2'>
+					<div key={data.node_id} className='flex mx-1'>
 						<a href={`https://github.com/${data.login}/`} title={`@${data.login}`}>
 							<img src={data.avatar_url} className='w-14 h-14 rounded-full my-2' />
 						</a>

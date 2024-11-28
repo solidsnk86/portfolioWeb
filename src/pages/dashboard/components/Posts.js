@@ -3,8 +3,6 @@ import { supabase } from '@/utils/supabase'
 import { useState, useEffect } from 'react'
 import FormatDate from '@/components/FormatDate'
 import FormaPostsDate from '@/pages/dashboard/components/FormatPostsDate'
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
-import useMatchMedia from '@/hooks/useMatchMedia'
 import { useIsClient } from '@/hooks/useIsClient'
 import {
 	ChevronRight,
@@ -23,7 +21,6 @@ export default function Posts({ edit, className = '' }) {
 	const [editMode, setEditMode] = useState(null)
 	const [activeMenu, setActiveMenu] = useState(null)
 	const isClient = useIsClient()
-	const mobile = useMatchMedia('(max-width: 700px)', false)
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -137,117 +134,112 @@ export default function Posts({ edit, className = '' }) {
 	}
 
 	return (
-		<section className={className}>
-			{isClient && (
-				<ResponsiveMasonry columnsCountBreakPoints={{ 400: 1, 700: 3, 900: 4, 1200: 4, 1600: 5 }}>
-					<Masonry gutter={mobile ? '0.8rem' : '1rem'}>
-						{posts.length > 0 ? (
-							posts.map((post) => (
-								<div key={post.id}>
-									<article
-										id={`article-${post.id}`}
-										className='bg-gray-300 border border-gray-300 p-5 rounded-lg shadow-lg text-gray-800 hover:opacity-90 transition-colors relative w-full'
-										contentEditable={editMode === post.id}
+		<section className={`${className} grid grid-cols-4 gap-2 auto-cols-fr`}>
+			{isClient && posts.length > 0 ? (
+				posts.map((post) => (
+					<div key={post.id}>
+						<article
+							id={`article-${post.id}`}
+							className='bg-gray-300 border border-gray-300 p-5 rounded-lg shadow-lg text-gray-800 hover:opacity-90 transition-colors relative w-full'
+							contentEditable={editMode === post.id}
+						>
+							<DotsVertical
+								onClick={() => toggleMenu(post.id)}
+								className={`${edit} w-5 h-5 absolute right-1 top-1 cursor-pointer hover:bg-slate-300/50 rounded-full`}
+							/>
+							<div
+								id='menu-edit'
+								className={`${
+									activeMenu === post.id ? 'block' : 'hidden'
+								} absolute flex right-6 top-0 w-fit p-1 rounded-lg gap-3 bg-gray-100 border border-gray-300`}
+							>
+								<small title={`Editar post id: ${post.id}`}>
+									<Pencil
+										onClick={() => handleEdit(post.id)}
+										className={`w-4 ${edit} hover:scale-125 cursor-pointer`}
+									/>
+								</small>
+								<small title={`Borrar post: ${post.title}`}>
+									<Trash
+										className={`w-4 ${edit} hover:scale-125 cursor-pointer`}
+										onClick={(e) => {
+											e.preventDefault()
+											handleDelete(post.id)
+										}}
+									/>
+								</small>
+							</div>
+							<header className='mb-3 text-xs md:text-sm'>
+								<h2 className='title text-xl font-bold'>{post.title}</h2>
+								<small className='mt-1 text-gray-500 flex md:items-center'>
+									<History className='inline w-3 h-3 mr-[2px] mt-[2px] md:mt-0' />
+									Publicado ·
+									<span
+										className='ml-1 hover:underline cursor-default'
+										title={FormatDate(post.created_at)}
 									>
-										<DotsVertical
-											onClick={() => toggleMenu(post.id)}
-											className={`${edit} w-5 h-5 absolute right-1 top-1 cursor-pointer hover:bg-slate-300/50 rounded-full`}
-										/>
-										<div
-											id='menu-edit'
-											className={`${
-												activeMenu === post.id ? 'block' : 'hidden'
-											} absolute flex right-6 top-0 w-fit p-1 rounded-lg gap-3 bg-gray-100 border border-gray-300`}
-										>
-											<small title={`Editar post id: ${post.id}`}>
-												<Pencil
-													onClick={() => handleEdit(post.id)}
-													className={`w-4 ${edit} hover:scale-125 cursor-pointer`}
-												/>
-											</small>
-											<small title={`Borrar post: ${post.title}`}>
-												<Trash
-													className={`w-4 ${edit} hover:scale-125 cursor-pointer`}
-													onClick={(e) => {
-														e.preventDefault()
-														handleDelete(post.id)
-													}}
-												/>
-											</small>
-										</div>
-										<header className='mb-3 text-xs md:text-sm'>
-											<h2 className='title text-xl font-bold'>{post.title}</h2>
-											<small className='mt-1 text-gray-500 flex md:items-center'>
-												<History className='inline w-3 h-3 mr-[2px] mt-[2px] md:mt-0' />
-												Publicado ·
-												<span
-													className='ml-1 hover:underline cursor-default'
-													title={FormatDate(post.created_at)}
-												>
-													{FormaPostsDate(post.created_at)}
-												</span>
-											</small>
-											<small className='flex text-gray-500 items-center'>
-												<MapPin className='inline w-3 h-3 mr-[2px]' />
-												{post.city}, {post.country} {post.flag}
-											</small>
-											{post.views <= 0 ? (
-												<small className='text-gray-500 items-center flex'>
-													<Eye className='inline w-3 h-3 mr-[2px]' />
-													Vistas 0
-												</small>
-											) : (
-												<small className='text-gray-500 items-center flex'>
-													<Eye className='inline w-3 h-3 mr-[2px]' />
-													Vistas {post.views}
-												</small>
-											)}
-										</header>
-										<div className='mb-3'>
-											<p className='description text-sm text-zinc-600 font-semibold bg-zinc-400/25 w-fit px-2 rounded-full border border-zinc-300'>
-												{post.description}
-											</p>
-										</div>
-										<div className='mb-4'>
-											<p className='message text-sm text-gray-600'>{post.message}</p>
-										</div>
+										{FormaPostsDate(post.created_at)}
+									</span>
+								</small>
+								<small className='flex text-gray-500 items-center'>
+									<MapPin className='inline w-3 h-3 mr-[2px]' />
+									{post.city}, {post.country} {post.flag}
+								</small>
+								{post.views <= 0 ? (
+									<small className='text-gray-500 items-center flex'>
+										<Eye className='inline w-3 h-3 mr-[2px]' />
+										Vistas 0
+									</small>
+								) : (
+									<small className='text-gray-500 items-center flex'>
+										<Eye className='inline w-3 h-3 mr-[2px]' />
+										Vistas {post.views}
+									</small>
+								)}
+							</header>
+							<div className='mb-3'>
+								<p className='description text-sm text-zinc-600 font-semibold bg-zinc-400/25 w-fit px-2 rounded-full border border-zinc-300'>
+									{post.description}
+								</p>
+							</div>
+							<div className='mb-4'>
+								<p className='message text-sm text-gray-600'>{post.message}</p>
+							</div>
 
-										<footer className='grid justify-between items-center text-xs md:text-sm text-gray-500'>
-											<div className='flex items-center justify-between font-semibold text-xs text-gray-600'>
-												<img
-													className='rounded-full w-8 h-8 mr-1'
-													src='https://avatars.githubusercontent.com/u/93176365?s=400&u=256e212b81ba355aa6d1bda5b4f9882ed53474ea&v=4'
-												/>
-												solidSnk86
-											</div>
-										</footer>
-										<a
-											className='flex justify-end text-sm hover:text-sky-600 text-gray-600 see-more'
-											href={post.url}
-											target='_blank'
-											onClick={() => countViews(post.id)}
-											title={`Ver ${post.title} en ${post.url}`}
-										>
-											Ver más
-											<ChevronRight className='inline w-4 -translate-y-[1px] arrow-right' />
-										</a>
-									</article>
-									{editMode === post.id && (
-										<button
-											className='mt-2 px-2 py-1 font-semibold bg-blue-500 text-white text-sm rounded-full hover:brightness-110'
-											onClick={() => handleUpdate(post.id)}
-										>
-											<DeviceFloppy className='w-4 inline -translate-y-[1px]' /> Guardar
-										</button>
-									)}
+							<footer className='grid justify-between items-center text-xs md:text-sm text-gray-500'>
+								<div className='flex items-center justify-between font-semibold text-xs text-gray-600'>
+									<img
+										className='rounded-full w-8 h-8 mr-1'
+										src='https://avatars.githubusercontent.com/u/93176365?s=400&u=256e212b81ba355aa6d1bda5b4f9882ed53474ea&v=4'
+									/>
+									solidSnk86
 								</div>
-							))
-						) : (
-							<Preloader />
+							</footer>
+							<a
+								className='flex justify-end text-sm hover:text-sky-600 text-gray-600 see-more'
+								href={post.url}
+								target='_blank'
+								onClick={() => countViews(post.id)}
+								title={`Ver ${post.title} en ${post.url}`}
+							>
+								Ver más
+								<ChevronRight className='inline w-4 -translate-y-[1px] arrow-right' />
+							</a>
+						</article>
+						{editMode === post.id && (
+							<button
+								className='mt-2 px-2 py-1 font-semibold bg-blue-500 text-white text-sm rounded-full hover:brightness-110'
+								onClick={() => handleUpdate(post.id)}
+							>
+								<DeviceFloppy className='w-4 inline -translate-y-[1px]' /> Guardar
+							</button>
 						)}
-					</Masonry>
-				</ResponsiveMasonry>
+					</div>
+				))
+			) : (
+				<Preloader />
 			)}
+			)
 		</section>
 	)
 }
